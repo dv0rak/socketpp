@@ -1,2 +1,7 @@
 $ make
 % make install
+
+To remove intermediate installation files:
+ $ make clean
+To remove the library from the system:
+ % make uninstall
