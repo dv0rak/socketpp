@@ -1,0 +1,80 @@
+\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket}{
+\section{socketpp::ICMP\_\-IP\_\-RawSocket Class Reference}
+\label{classsocketpp_1_1ICMP__IP__RawSocket}\index{socketpp::ICMP\_\-IP\_\-RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}}
+}
+ICMP raw socket with IP header handling.  
+
+
+{\tt \#include $<$RawSocket.h$>$}
+
+Inheritance diagram for socketpp::ICMP\_\-IP\_\-RawSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classsocketpp_1_1ICMP__IP__RawSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_c94fd53fce785a8b9ac5e53c8b1fb694}{ICMP\_\-IP\_\-RawSocket} ()
+\begin{CompactList}\small\item\em constructor which calls RawSocket(ipproto\_\-udp) and setsockopt(ip\_\-hdrincl) \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_c3f54f7a266586af46e4bfa4494f90d6}{adjust\_\-ICMP\_\-IP\_\-all} ()
+\begin{CompactList}\small\item\em calls adjust\_\-ICMP\_\-all() and \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all()} \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_49a62078d6febf7a11b9350de1e23903}{\_\-build\_\-packet} (std::string \&packet)
+\item 
+void \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_6d2f188d46030afa13f9c3971d43d518}{\_\-set\_\-fields} (const std::string \&packet)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+ICMP raw socket with IP header handling. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_c94fd53fce785a8b9ac5e53c8b1fb694}{
+\index{socketpp::ICMP\_\-IP\_\-RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}!ICMP\_\-IP\_\-RawSocket@{ICMP\_\-IP\_\-RawSocket}}
+\index{ICMP\_\-IP\_\-RawSocket@{ICMP\_\-IP\_\-RawSocket}!socketpp::ICMP_IP_RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}}
+\subsubsection[{ICMP\_\-IP\_\-RawSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::ICMP\_\-IP\_\-RawSocket::ICMP\_\-IP\_\-RawSocket ()}}
+\label{classsocketpp_1_1ICMP__IP__RawSocket_c94fd53fce785a8b9ac5e53c8b1fb694}
+
+
+constructor which calls RawSocket(ipproto\_\-udp) and setsockopt(ip\_\-hdrincl) 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_49a62078d6febf7a11b9350de1e23903}{
+\index{socketpp::ICMP\_\-IP\_\-RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}!\_\-build\_\-packet@{\_\-build\_\-packet}}
+\index{\_\-build\_\-packet@{\_\-build\_\-packet}!socketpp::ICMP_IP_RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}}
+\subsubsection[{\_\-build\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-IP\_\-RawSocket::\_\-build\_\-packet (std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classsocketpp_1_1ICMP__IP__RawSocket_49a62078d6febf7a11b9350de1e23903}
+
+
+
+
+Reimplemented from \hyperlink{classsocketpp_1_1IP__RawSocket_6863cc399c543073e9aa3615c3f50940}{socketpp::IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_6d2f188d46030afa13f9c3971d43d518}{
+\index{socketpp::ICMP\_\-IP\_\-RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}!\_\-set\_\-fields@{\_\-set\_\-fields}}
+\index{\_\-set\_\-fields@{\_\-set\_\-fields}!socketpp::ICMP_IP_RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}}
+\subsubsection[{\_\-set\_\-fields}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-IP\_\-RawSocket::\_\-set\_\-fields (const std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classsocketpp_1_1ICMP__IP__RawSocket_6d2f188d46030afa13f9c3971d43d518}
+
+
+
+
+Reimplemented from \hyperlink{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}{socketpp::IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_c3f54f7a266586af46e4bfa4494f90d6}{
+\index{socketpp::ICMP\_\-IP\_\-RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}!adjust\_\-ICMP\_\-IP\_\-all@{adjust\_\-ICMP\_\-IP\_\-all}}
+\index{adjust\_\-ICMP\_\-IP\_\-all@{adjust\_\-ICMP\_\-IP\_\-all}!socketpp::ICMP_IP_RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}}
+\subsubsection[{adjust\_\-ICMP\_\-IP\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-IP\_\-RawSocket::adjust\_\-ICMP\_\-IP\_\-all ()}}
+\label{classsocketpp_1_1ICMP__IP__RawSocket_c3f54f7a266586af46e4bfa4494f90d6}
+
+
+calls adjust\_\-ICMP\_\-all() and \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all()} 
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{RawSocket_8h}{RawSocket.h}\item 
+\hyperlink{RawSocket_8cpp}{RawSocket.cpp}\end{CompactItemize}

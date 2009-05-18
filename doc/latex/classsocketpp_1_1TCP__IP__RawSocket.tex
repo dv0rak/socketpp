@@ -1,0 +1,102 @@
+\hypertarget{classsocketpp_1_1TCP__IP__RawSocket}{
+\section{socketpp::TCP\_\-IP\_\-RawSocket Class Reference}
+\label{classsocketpp_1_1TCP__IP__RawSocket}\index{socketpp::TCP\_\-IP\_\-RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}}
+}
+TCP raw socket with IP header handling.  
+
+
+{\tt \#include $<$RawSocket.h$>$}
+
+Inheritance diagram for socketpp::TCP\_\-IP\_\-RawSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classsocketpp_1_1TCP__IP__RawSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classsocketpp_1_1TCP__IP__RawSocket_1b08f12274fd9590f805bc876c44edd9}{TCP\_\-IP\_\-RawSocket} ()
+\begin{CompactList}\small\item\em constructor which calls RawSocket(ipproto\_\-tcp) and setsockopt(ip\_\-hdrincl) \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_c203b188308532333bdf53a4e18bc230}{adjust\_\-TCP\_\-csum} ()
+\begin{CompactList}\small\item\em sets TCP checksum, using source and dest IP addresses token by IP header \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_3644327ff72d322ff809ac432f59783b}{adjust\_\-TCP\_\-all} ()
+\begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1TCP__RawSocket_029eb8bfbf19531253edf046775d9f5f}{adjust\_\-TCP\_\-doff()} \&\& \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_c203b188308532333bdf53a4e18bc230}{adjust\_\-TCP\_\-csum()} \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_dd3b21314f1768962bf399291f406768}{adjust\_\-TCP\_\-IP\_\-all} ()
+\begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_3644327ff72d322ff809ac432f59783b}{adjust\_\-TCP\_\-all()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all()} \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_281508237add8a3c530bb0be0b6a1e7b}{\_\-build\_\-packet} (std::string \&packet)
+\item 
+void \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_f8f606ce33835813cc5c3a530e181432}{\_\-set\_\-fields} (const std::string \&packet)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+TCP raw socket with IP header handling. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_1b08f12274fd9590f805bc876c44edd9}{
+\index{socketpp::TCP\_\-IP\_\-RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}!TCP\_\-IP\_\-RawSocket@{TCP\_\-IP\_\-RawSocket}}
+\index{TCP\_\-IP\_\-RawSocket@{TCP\_\-IP\_\-RawSocket}!socketpp::TCP_IP_RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}}
+\subsubsection[{TCP\_\-IP\_\-RawSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::TCP\_\-IP\_\-RawSocket::TCP\_\-IP\_\-RawSocket ()}}
+\label{classsocketpp_1_1TCP__IP__RawSocket_1b08f12274fd9590f805bc876c44edd9}
+
+
+constructor which calls RawSocket(ipproto\_\-tcp) and setsockopt(ip\_\-hdrincl) 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_281508237add8a3c530bb0be0b6a1e7b}{
+\index{socketpp::TCP\_\-IP\_\-RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}!\_\-build\_\-packet@{\_\-build\_\-packet}}
+\index{\_\-build\_\-packet@{\_\-build\_\-packet}!socketpp::TCP_IP_RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}}
+\subsubsection[{\_\-build\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-IP\_\-RawSocket::\_\-build\_\-packet (std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classsocketpp_1_1TCP__IP__RawSocket_281508237add8a3c530bb0be0b6a1e7b}
+
+
+
+
+Reimplemented from \hyperlink{classsocketpp_1_1IP__RawSocket_6863cc399c543073e9aa3615c3f50940}{socketpp::IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_f8f606ce33835813cc5c3a530e181432}{
+\index{socketpp::TCP\_\-IP\_\-RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}!\_\-set\_\-fields@{\_\-set\_\-fields}}
+\index{\_\-set\_\-fields@{\_\-set\_\-fields}!socketpp::TCP_IP_RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}}
+\subsubsection[{\_\-set\_\-fields}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-IP\_\-RawSocket::\_\-set\_\-fields (const std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classsocketpp_1_1TCP__IP__RawSocket_f8f606ce33835813cc5c3a530e181432}
+
+
+
+
+Reimplemented from \hyperlink{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}{socketpp::IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_3644327ff72d322ff809ac432f59783b}{
+\index{socketpp::TCP\_\-IP\_\-RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}!adjust\_\-TCP\_\-all@{adjust\_\-TCP\_\-all}}
+\index{adjust\_\-TCP\_\-all@{adjust\_\-TCP\_\-all}!socketpp::TCP_IP_RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}}
+\subsubsection[{adjust\_\-TCP\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-IP\_\-RawSocket::adjust\_\-TCP\_\-all ()}}
+\label{classsocketpp_1_1TCP__IP__RawSocket_3644327ff72d322ff809ac432f59783b}
+
+
+calls \hyperlink{classsocketpp_1_1TCP__RawSocket_029eb8bfbf19531253edf046775d9f5f}{adjust\_\-TCP\_\-doff()} \&\& \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_c203b188308532333bdf53a4e18bc230}{adjust\_\-TCP\_\-csum()} 
+
+\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_c203b188308532333bdf53a4e18bc230}{
+\index{socketpp::TCP\_\-IP\_\-RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}!adjust\_\-TCP\_\-csum@{adjust\_\-TCP\_\-csum}}
+\index{adjust\_\-TCP\_\-csum@{adjust\_\-TCP\_\-csum}!socketpp::TCP_IP_RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}}
+\subsubsection[{adjust\_\-TCP\_\-csum}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-IP\_\-RawSocket::adjust\_\-TCP\_\-csum ()}}
+\label{classsocketpp_1_1TCP__IP__RawSocket_c203b188308532333bdf53a4e18bc230}
+
+
+sets TCP checksum, using source and dest IP addresses token by IP header 
+
+\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_dd3b21314f1768962bf399291f406768}{
+\index{socketpp::TCP\_\-IP\_\-RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}!adjust\_\-TCP\_\-IP\_\-all@{adjust\_\-TCP\_\-IP\_\-all}}
+\index{adjust\_\-TCP\_\-IP\_\-all@{adjust\_\-TCP\_\-IP\_\-all}!socketpp::TCP_IP_RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}}
+\subsubsection[{adjust\_\-TCP\_\-IP\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-IP\_\-RawSocket::adjust\_\-TCP\_\-IP\_\-all ()}}
+\label{classsocketpp_1_1TCP__IP__RawSocket_dd3b21314f1768962bf399291f406768}
+
+
+calls \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_3644327ff72d322ff809ac432f59783b}{adjust\_\-TCP\_\-all()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all()} 
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{RawSocket_8h}{RawSocket.h}\item 
+\hyperlink{RawSocket_8cpp}{RawSocket.cpp}\end{CompactItemize}

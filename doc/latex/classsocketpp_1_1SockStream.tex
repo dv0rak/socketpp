@@ -1,0 +1,101 @@
+\hypertarget{classsocketpp_1_1SockStream}{
+\section{socketpp::SockStream Class Reference}
+\label{classsocketpp_1_1SockStream}\index{socketpp::SockStream@{socketpp::SockStream}}
+}
+inherits from std::iostream, it allows the C++ stream approach with sockets  
+
+
+{\tt \#include $<$SockStream.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classsocketpp_1_1SockStream_562a217e536c888c569fde2c9031c94d}{SockStream} ()
+\item 
+\hyperlink{classsocketpp_1_1SockStream_11fbfc7bda45c178c6e09ac6d67512fd}{SockStream} (\hyperlink{classsocketpp_1_1SockBuf}{SockBuf} \&s)
+\begin{CompactList}\small\item\em calls std::iostream(\&s) \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SockStream_704f4e77af424bd0638e736653e2d1b3}{SockStream} (const \hyperlink{classsocketpp_1_1Socket}{Socket} \&s)
+\begin{CompactList}\small\item\em calls std::iostream(new SockBuf(s)) \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SockStream_0310cdd1f212beec6b686d0a549f1788}{SockStream} (const \hyperlink{classsocketpp_1_1SockStream}{SockStream} \&s)
+\begin{CompactList}\small\item\em copy constructor \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SockStream_4baa8d20dd73480832c7dd9cbad15f75}{SockStream} (\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} t, \hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf}{protocol} prot=ipproto\_\-ip)
+\begin{CompactList}\small\item\em calls std::iostream(new SockBuf(t,prot)) \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SockBuf}{SockBuf} $\ast$ \hyperlink{classsocketpp_1_1SockStream_4b14a0ce8d640deb5f5bd64807c7b68d}{sockbuf} () const 
+\begin{CompactList}\small\item\em returns pointer to internal \hyperlink{classsocketpp_1_1SockBuf}{SockBuf} object \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SockBuf}{SockBuf} $\ast$ \hyperlink{classsocketpp_1_1SockStream_c5509fd039943c07c4506e42c75605e3}{operator $\rightarrow$ } ()
+\begin{CompactList}\small\item\em operates on internal \hyperlink{classsocketpp_1_1SockBuf}{SockBuf} object \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+inherits from std::iostream, it allows the C++ stream approach with sockets 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsocketpp_1_1SockStream_562a217e536c888c569fde2c9031c94d}{
+\index{socketpp::SockStream@{socketpp::SockStream}!SockStream@{SockStream}}
+\index{SockStream@{SockStream}!socketpp::SockStream@{socketpp::SockStream}}
+\subsubsection[{SockStream}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockStream::SockStream ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockStream_562a217e536c888c569fde2c9031c94d}
+
+
+\hypertarget{classsocketpp_1_1SockStream_11fbfc7bda45c178c6e09ac6d67512fd}{
+\index{socketpp::SockStream@{socketpp::SockStream}!SockStream@{SockStream}}
+\index{SockStream@{SockStream}!socketpp::SockStream@{socketpp::SockStream}}
+\subsubsection[{SockStream}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockStream::SockStream ({\bf SockBuf} \& {\em s})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockStream_11fbfc7bda45c178c6e09ac6d67512fd}
+
+
+calls std::iostream(\&s) 
+
+\hypertarget{classsocketpp_1_1SockStream_704f4e77af424bd0638e736653e2d1b3}{
+\index{socketpp::SockStream@{socketpp::SockStream}!SockStream@{SockStream}}
+\index{SockStream@{SockStream}!socketpp::SockStream@{socketpp::SockStream}}
+\subsubsection[{SockStream}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockStream::SockStream (const {\bf Socket} \& {\em s})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockStream_704f4e77af424bd0638e736653e2d1b3}
+
+
+calls std::iostream(new SockBuf(s)) 
+
+\hypertarget{classsocketpp_1_1SockStream_0310cdd1f212beec6b686d0a549f1788}{
+\index{socketpp::SockStream@{socketpp::SockStream}!SockStream@{SockStream}}
+\index{SockStream@{SockStream}!socketpp::SockStream@{socketpp::SockStream}}
+\subsubsection[{SockStream}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockStream::SockStream (const {\bf SockStream} \& {\em s})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockStream_0310cdd1f212beec6b686d0a549f1788}
+
+
+copy constructor 
+
+\hypertarget{classsocketpp_1_1SockStream_4baa8d20dd73480832c7dd9cbad15f75}{
+\index{socketpp::SockStream@{socketpp::SockStream}!SockStream@{SockStream}}
+\index{SockStream@{SockStream}!socketpp::SockStream@{socketpp::SockStream}}
+\subsubsection[{SockStream}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockStream::SockStream ({\bf type} {\em t}, \/  {\bf protocol} {\em prot} = {\tt ipproto\_\-ip})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockStream_4baa8d20dd73480832c7dd9cbad15f75}
+
+
+calls std::iostream(new SockBuf(t,prot)) 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1SockStream_c5509fd039943c07c4506e42c75605e3}{
+\index{socketpp::SockStream@{socketpp::SockStream}!operator-$>$@{operator-$>$}}
+\index{operator-$>$@{operator-$>$}!socketpp::SockStream@{socketpp::SockStream}}
+\subsubsection[{operator-$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SockBuf}$\ast$ socketpp::SockStream::operator $\rightarrow$  ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockStream_c5509fd039943c07c4506e42c75605e3}
+
+
+operates on internal \hyperlink{classsocketpp_1_1SockBuf}{SockBuf} object 
+
+\hypertarget{classsocketpp_1_1SockStream_4b14a0ce8d640deb5f5bd64807c7b68d}{
+\index{socketpp::SockStream@{socketpp::SockStream}!sockbuf@{sockbuf}}
+\index{sockbuf@{sockbuf}!socketpp::SockStream@{socketpp::SockStream}}
+\subsubsection[{sockbuf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SockBuf}$\ast$ socketpp::SockStream::sockbuf () const\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockStream_4b14a0ce8d640deb5f5bd64807c7b68d}
+
+
+returns pointer to internal \hyperlink{classsocketpp_1_1SockBuf}{SockBuf} object 
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{SockStream_8h}{SockStream.h}\end{CompactItemize}

@@ -1,0 +1,360 @@
+\hypertarget{namespacesocketpp}{
+\section{socketpp Namespace Reference}
+\label{namespacesocketpp}\index{socketpp@{socketpp}}
+}
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class \hyperlink{classsocketpp_1_1AddrHandler}{AddrHandler}
+\begin{CompactList}\small\item\em Class which deals with several things, like dns resolving or address format conversion. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1BaseSocket}{BaseSocket}
+\begin{CompactList}\small\item\em Abstract base class. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1RawSocket}{RawSocket}
+\begin{CompactList}\small\item\em abstract base raw socket class. This class and all its derived classes don't require to perform any byte order conversion \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1IP__RawSocket}{IP\_\-RawSocket}
+\begin{CompactList}\small\item\em IP raw socket, without transport-based protocol. ONLY SENDING METHODS WORK. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1ICMP__RawSocket}{ICMP\_\-RawSocket}
+\begin{CompactList}\small\item\em ICMP raw socket without IP header handling. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket}{ICMP\_\-IP\_\-RawSocket}
+\begin{CompactList}\small\item\em ICMP raw socket with IP header handling. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1UDP__RawSocket}{UDP\_\-RawSocket}
+\begin{CompactList}\small\item\em UDP raw socket without IP header handling. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1UDP__IP__RawSocket}{UDP\_\-IP\_\-RawSocket}
+\begin{CompactList}\small\item\em UDP raw socket with IP header handling. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1TCP__RawSocket}{TCP\_\-RawSocket}
+\begin{CompactList}\small\item\em TCP raw socket without IP header handling. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1TCP__IP__RawSocket}{TCP\_\-IP\_\-RawSocket}
+\begin{CompactList}\small\item\em TCP raw socket with IP header handling. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1Socket}{Socket}
+\begin{CompactList}\small\item\em inherits from \hyperlink{classsocketpp_1_1BaseSocket}{BaseSocket}, it aims to be a simple C-socket wrapper \item\end{CompactList}\item 
+struct \hyperlink{structsocketpp_1_1icmphdr}{icmphdr}
+\item 
+class \hyperlink{classsocketpp_1_1SocketServer}{SocketServer}
+\begin{CompactList}\small\item\em TCP server class which can accept simultaneously multiple connections through multithreading. \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1SockException}{SockException}
+\begin{CompactList}\small\item\em socket++ exception class \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1SockBuf}{SockBuf}
+\begin{CompactList}\small\item\em publicly derived from std::streambuf and \hyperlink{classsocketpp_1_1BaseSocket}{BaseSocket} \item\end{CompactList}\item 
+class \hyperlink{classsocketpp_1_1SockStream}{SockStream}
+\begin{CompactList}\small\item\em inherits from std::iostream, it allows the C++ stream approach with sockets \item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef unsigned char \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8}
+\item 
+typedef unsigned short \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16}
+\item 
+typedef unsigned long \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32}
+\item 
+typedef \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} \{ \par
+\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52de143592455509a8551e0fa943d772b4b}{sock\_\-stream} =  SOCK\_\-STREAM, 
+\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52df52f36418990c9bbf4e7949e1f9ff0ee}{sock\_\-dgram} =  SOCK\_\-DGRAM, 
+\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d7b7c5341d5909dbbfcaa3fe1c04c949d}{sock\_\-raw} =  SOCK\_\-RAW, 
+\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52da9b74c88a8baf194644eb089ae6457f4}{sock\_\-rdm} =  SOCK\_\-RDM, 
+\par
+\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d0ae85ce0e589a95e5f14d6cdeecbbd45}{sock\_\-seqpacket} =  SOCK\_\-SEQPACKET
+ \}
+\item 
+enum \hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf}{protocol} \{ \par
+\hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cfd8acf62568228b356df343026beade8e}{ipproto\_\-ip} =  IPPROTO\_\-IP, 
+\hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf94f358c113043dc156bb95873844546d}{ipproto\_\-tcp} =  IPPROTO\_\-TCP, 
+\hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cfc2d1745e811f3d9addde50aad5e8ac9f}{ipproto\_\-udp} =  IPPROTO\_\-UDP, 
+\hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf23bb252119b970b87c8705d2d3f304a3}{ipproto\_\-raw} =  IPPROTO\_\-RAW, 
+\par
+\hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cfdb0258c0c773db97d6c9eac3f9485219}{ipproto\_\-icmp} =  IPPROTO\_\-ICMP
+ \}
+\item 
+enum \hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc4}{option} \{ \par
+\hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc470df783608fa9cb2b9cb450fb7027a65}{ip\_\-hdrincl} =  IP\_\-HDRINCL, 
+\hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc4ef3c9ddad8c80879ccd993f0cbf2ddaa}{so\_\-reuseaddr} =  SO\_\-REUSEADDR, 
+\hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc49396ae8f83e53dfde8b5d07f2e0668a3}{so\_\-broadcast} =  SO\_\-BROADCAST, 
+\hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc45358c0a824b24bb17b03805a8fb60a52}{so\_\-sndtimeo} =  SO\_\-SNDTIMEO, 
+\par
+\hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc4ecd98d0c015681e55d1877cf27011440}{so\_\-rcvtimeo} =  SO\_\-RCVTIMEO
+ \}
+\item 
+enum \hyperlink{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5}{level} \{ \hyperlink{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5d7ddf065e140601e3ad93d72e6c787ab}{sol\_\-ip} =  SOL\_\-IP, 
+\hyperlink{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb568097d5b8690a9619c42192ee5da5252}{sol\_\-socket} =  SOL\_\-SOCKET
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+in\_\-addr\_\-t \hyperlink{namespacesocketpp_e04237b3f443ecc14051f52a59450692}{get\_\-iface\_\-ip} (const std::string \&name)
+\begin{CompactList}\small\item\em gets IP address bound to specified interface \item\end{CompactList}\item 
+std::ostream \& \hyperlink{namespacesocketpp_0c17a8fc8340bca21992d92cf17f8df5}{crlf} (std::ostream \&s)
+\begin{CompactList}\small\item\em \hyperlink{classsocketpp_1_1SockStream}{SockStream} manipulator which writes \char`\"{}$\backslash$r$\backslash$n\char`\"{}. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+const int \hyperlink{namespacesocketpp_5200e43bde971e8003068a622cba2f58}{inaddr\_\-any} = INADDR\_\-ANY
+\item 
+const int \hyperlink{namespacesocketpp_733551c5151802fc12691a868a366a5f}{inaddr\_\-broadcast} = INADDR\_\-BROADCAST
+\item 
+const int \hyperlink{namespacesocketpp_8a9e04cf907ec163f43cf6c3bf9e213c}{inaddr\_\-loopback} = INADDR\_\-LOOPBACK
+\item 
+const int \hyperlink{namespacesocketpp_26bb72049a9cf272f6c116b0a2187c0b}{inaddr\_\-none} = INADDR\_\-NONE
+\item 
+const int \hyperlink{namespacesocketpp_1beda002d2e23bf757355444fd9279e2}{IPSIZE} = sizeof(struct iphdr)
+\item 
+const int \hyperlink{namespacesocketpp_34c3bb51b882d2ae59d483d1e8faeebd}{TCPSIZE} = sizeof(struct tcphdr)
+\item 
+const int \hyperlink{namespacesocketpp_1c4f449aef7a6c706b546343c4d16dd3}{UDPSIZE} = sizeof(struct udphdr)
+\item 
+const int \hyperlink{namespacesocketpp_fa361b148e87f58b86a95abc48e281fb}{ICMPSIZE} = sizeof(struct \hyperlink{structsocketpp_1_1icmphdr}{icmphdr})
+\item 
+const int \hyperlink{namespacesocketpp_11f9a39ced6614326ba993c3245d8912}{MAX\_\-PACKET\_\-SIZE} = 65535
+\end{CompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{
+\index{socketpp@{socketpp}!\_\-u16@{\_\-u16}}
+\index{\_\-u16@{\_\-u16}!socketpp@{socketpp}}
+\subsubsection[{\_\-u16}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned short {\bf socketpp::\_\-u16}}}
+\label{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}
+
+
+\hypertarget{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{
+\index{socketpp@{socketpp}!\_\-u32@{\_\-u32}}
+\index{\_\-u32@{\_\-u32}!socketpp@{socketpp}}
+\subsubsection[{\_\-u32}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long {\bf socketpp::\_\-u32}}}
+\label{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}
+
+
+\hypertarget{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{
+\index{socketpp@{socketpp}!\_\-u8@{\_\-u8}}
+\index{\_\-u8@{\_\-u8}!socketpp@{socketpp}}
+\subsubsection[{\_\-u8}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf socketpp::\_\-u8}}}
+\label{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}
+
+
+\hypertarget{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{
+\index{socketpp@{socketpp}!port\_\-t@{port\_\-t}}
+\index{port\_\-t@{port\_\-t}!socketpp@{socketpp}}
+\subsubsection[{port\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf \_\-u16} {\bf socketpp::port\_\-t}}}
+\label{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}
+
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5}{
+\index{socketpp@{socketpp}!level@{level}}
+\index{level@{level}!socketpp@{socketpp}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf socketpp::level}}}
+\label{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{sol\_\-ip@{sol\_\-ip}!socketpp@{socketpp}}\index{socketpp@{socketpp}!sol\_\-ip@{sol\_\-ip}}\item[{\em 
+\hypertarget{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5d7ddf065e140601e3ad93d72e6c787ab}{
+sol\_\-ip}
+\label{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5d7ddf065e140601e3ad93d72e6c787ab}
+}]\index{sol\_\-socket@{sol\_\-socket}!socketpp@{socketpp}}\index{socketpp@{socketpp}!sol\_\-socket@{sol\_\-socket}}\item[{\em 
+\hypertarget{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb568097d5b8690a9619c42192ee5da5252}{
+sol\_\-socket}
+\label{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb568097d5b8690a9619c42192ee5da5252}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{namespacesocketpp_ea335944de1f6b81489c90507884cfc4}{
+\index{socketpp@{socketpp}!option@{option}}
+\index{option@{option}!socketpp@{socketpp}}
+\subsubsection[{option}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf socketpp::option}}}
+\label{namespacesocketpp_ea335944de1f6b81489c90507884cfc4}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ip\_\-hdrincl@{ip\_\-hdrincl}!socketpp@{socketpp}}\index{socketpp@{socketpp}!ip\_\-hdrincl@{ip\_\-hdrincl}}\item[{\em 
+\hypertarget{namespacesocketpp_ea335944de1f6b81489c90507884cfc470df783608fa9cb2b9cb450fb7027a65}{
+ip\_\-hdrincl}
+\label{namespacesocketpp_ea335944de1f6b81489c90507884cfc470df783608fa9cb2b9cb450fb7027a65}
+}]\index{so\_\-reuseaddr@{so\_\-reuseaddr}!socketpp@{socketpp}}\index{socketpp@{socketpp}!so\_\-reuseaddr@{so\_\-reuseaddr}}\item[{\em 
+\hypertarget{namespacesocketpp_ea335944de1f6b81489c90507884cfc4ef3c9ddad8c80879ccd993f0cbf2ddaa}{
+so\_\-reuseaddr}
+\label{namespacesocketpp_ea335944de1f6b81489c90507884cfc4ef3c9ddad8c80879ccd993f0cbf2ddaa}
+}]\index{so\_\-broadcast@{so\_\-broadcast}!socketpp@{socketpp}}\index{socketpp@{socketpp}!so\_\-broadcast@{so\_\-broadcast}}\item[{\em 
+\hypertarget{namespacesocketpp_ea335944de1f6b81489c90507884cfc49396ae8f83e53dfde8b5d07f2e0668a3}{
+so\_\-broadcast}
+\label{namespacesocketpp_ea335944de1f6b81489c90507884cfc49396ae8f83e53dfde8b5d07f2e0668a3}
+}]\index{so\_\-sndtimeo@{so\_\-sndtimeo}!socketpp@{socketpp}}\index{socketpp@{socketpp}!so\_\-sndtimeo@{so\_\-sndtimeo}}\item[{\em 
+\hypertarget{namespacesocketpp_ea335944de1f6b81489c90507884cfc45358c0a824b24bb17b03805a8fb60a52}{
+so\_\-sndtimeo}
+\label{namespacesocketpp_ea335944de1f6b81489c90507884cfc45358c0a824b24bb17b03805a8fb60a52}
+}]\index{so\_\-rcvtimeo@{so\_\-rcvtimeo}!socketpp@{socketpp}}\index{socketpp@{socketpp}!so\_\-rcvtimeo@{so\_\-rcvtimeo}}\item[{\em 
+\hypertarget{namespacesocketpp_ea335944de1f6b81489c90507884cfc4ecd98d0c015681e55d1877cf27011440}{
+so\_\-rcvtimeo}
+\label{namespacesocketpp_ea335944de1f6b81489c90507884cfc4ecd98d0c015681e55d1877cf27011440}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf}{
+\index{socketpp@{socketpp}!protocol@{protocol}}
+\index{protocol@{protocol}!socketpp@{socketpp}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf socketpp::protocol}}}
+\label{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ipproto\_\-ip@{ipproto\_\-ip}!socketpp@{socketpp}}\index{socketpp@{socketpp}!ipproto\_\-ip@{ipproto\_\-ip}}\item[{\em 
+\hypertarget{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cfd8acf62568228b356df343026beade8e}{
+ipproto\_\-ip}
+\label{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cfd8acf62568228b356df343026beade8e}
+}]\index{ipproto\_\-tcp@{ipproto\_\-tcp}!socketpp@{socketpp}}\index{socketpp@{socketpp}!ipproto\_\-tcp@{ipproto\_\-tcp}}\item[{\em 
+\hypertarget{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf94f358c113043dc156bb95873844546d}{
+ipproto\_\-tcp}
+\label{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf94f358c113043dc156bb95873844546d}
+}]\index{ipproto\_\-udp@{ipproto\_\-udp}!socketpp@{socketpp}}\index{socketpp@{socketpp}!ipproto\_\-udp@{ipproto\_\-udp}}\item[{\em 
+\hypertarget{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cfc2d1745e811f3d9addde50aad5e8ac9f}{
+ipproto\_\-udp}
+\label{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cfc2d1745e811f3d9addde50aad5e8ac9f}
+}]\index{ipproto\_\-raw@{ipproto\_\-raw}!socketpp@{socketpp}}\index{socketpp@{socketpp}!ipproto\_\-raw@{ipproto\_\-raw}}\item[{\em 
+\hypertarget{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf23bb252119b970b87c8705d2d3f304a3}{
+ipproto\_\-raw}
+\label{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf23bb252119b970b87c8705d2d3f304a3}
+}]\index{ipproto\_\-icmp@{ipproto\_\-icmp}!socketpp@{socketpp}}\index{socketpp@{socketpp}!ipproto\_\-icmp@{ipproto\_\-icmp}}\item[{\em 
+\hypertarget{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cfdb0258c0c773db97d6c9eac3f9485219}{
+ipproto\_\-icmp}
+\label{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cfdb0258c0c773db97d6c9eac3f9485219}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{
+\index{socketpp@{socketpp}!type@{type}}
+\index{type@{type}!socketpp@{socketpp}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf socketpp::type}}}
+\label{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{sock\_\-stream@{sock\_\-stream}!socketpp@{socketpp}}\index{socketpp@{socketpp}!sock\_\-stream@{sock\_\-stream}}\item[{\em 
+\hypertarget{namespacesocketpp_635f4c3b3f85aba331587404d59ae52de143592455509a8551e0fa943d772b4b}{
+sock\_\-stream}
+\label{namespacesocketpp_635f4c3b3f85aba331587404d59ae52de143592455509a8551e0fa943d772b4b}
+}]\index{sock\_\-dgram@{sock\_\-dgram}!socketpp@{socketpp}}\index{socketpp@{socketpp}!sock\_\-dgram@{sock\_\-dgram}}\item[{\em 
+\hypertarget{namespacesocketpp_635f4c3b3f85aba331587404d59ae52df52f36418990c9bbf4e7949e1f9ff0ee}{
+sock\_\-dgram}
+\label{namespacesocketpp_635f4c3b3f85aba331587404d59ae52df52f36418990c9bbf4e7949e1f9ff0ee}
+}]\index{sock\_\-raw@{sock\_\-raw}!socketpp@{socketpp}}\index{socketpp@{socketpp}!sock\_\-raw@{sock\_\-raw}}\item[{\em 
+\hypertarget{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d7b7c5341d5909dbbfcaa3fe1c04c949d}{
+sock\_\-raw}
+\label{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d7b7c5341d5909dbbfcaa3fe1c04c949d}
+}]\index{sock\_\-rdm@{sock\_\-rdm}!socketpp@{socketpp}}\index{socketpp@{socketpp}!sock\_\-rdm@{sock\_\-rdm}}\item[{\em 
+\hypertarget{namespacesocketpp_635f4c3b3f85aba331587404d59ae52da9b74c88a8baf194644eb089ae6457f4}{
+sock\_\-rdm}
+\label{namespacesocketpp_635f4c3b3f85aba331587404d59ae52da9b74c88a8baf194644eb089ae6457f4}
+}]\index{sock\_\-seqpacket@{sock\_\-seqpacket}!socketpp@{socketpp}}\index{socketpp@{socketpp}!sock\_\-seqpacket@{sock\_\-seqpacket}}\item[{\em 
+\hypertarget{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d0ae85ce0e589a95e5f14d6cdeecbbd45}{
+sock\_\-seqpacket}
+\label{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d0ae85ce0e589a95e5f14d6cdeecbbd45}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{namespacesocketpp_0c17a8fc8340bca21992d92cf17f8df5}{
+\index{socketpp@{socketpp}!crlf@{crlf}}
+\index{crlf@{crlf}!socketpp@{socketpp}}
+\subsubsection[{crlf}]{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& socketpp::crlf (std::ostream \& {\em s})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{namespacesocketpp_0c17a8fc8340bca21992d92cf17f8df5}
+
+
+\hyperlink{classsocketpp_1_1SockStream}{SockStream} manipulator which writes \char`\"{}$\backslash$r$\backslash$n\char`\"{}. 
+
+\hypertarget{namespacesocketpp_e04237b3f443ecc14051f52a59450692}{
+\index{socketpp@{socketpp}!get\_\-iface\_\-ip@{get\_\-iface\_\-ip}}
+\index{get\_\-iface\_\-ip@{get\_\-iface\_\-ip}!socketpp@{socketpp}}
+\subsubsection[{get\_\-iface\_\-ip}]{\setlength{\rightskip}{0pt plus 5cm}in\_\-addr\_\-t socketpp::get\_\-iface\_\-ip (const std::string \& {\em name})}}
+\label{namespacesocketpp_e04237b3f443ecc14051f52a59450692}
+
+
+gets IP address bound to specified interface 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]interface name \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]IP numerical address, BaseSocket::inaddr\_\-none on failure \end{Desc}
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespacesocketpp_fa361b148e87f58b86a95abc48e281fb}{
+\index{socketpp@{socketpp}!ICMPSIZE@{ICMPSIZE}}
+\index{ICMPSIZE@{ICMPSIZE}!socketpp@{socketpp}}
+\subsubsection[{ICMPSIZE}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::ICMPSIZE} = sizeof(struct {\bf icmphdr})}}
+\label{namespacesocketpp_fa361b148e87f58b86a95abc48e281fb}
+
+
+\hypertarget{namespacesocketpp_5200e43bde971e8003068a622cba2f58}{
+\index{socketpp@{socketpp}!inaddr\_\-any@{inaddr\_\-any}}
+\index{inaddr\_\-any@{inaddr\_\-any}!socketpp@{socketpp}}
+\subsubsection[{inaddr\_\-any}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::inaddr\_\-any} = INADDR\_\-ANY}}
+\label{namespacesocketpp_5200e43bde971e8003068a622cba2f58}
+
+
+\hypertarget{namespacesocketpp_733551c5151802fc12691a868a366a5f}{
+\index{socketpp@{socketpp}!inaddr\_\-broadcast@{inaddr\_\-broadcast}}
+\index{inaddr\_\-broadcast@{inaddr\_\-broadcast}!socketpp@{socketpp}}
+\subsubsection[{inaddr\_\-broadcast}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::inaddr\_\-broadcast} = INADDR\_\-BROADCAST}}
+\label{namespacesocketpp_733551c5151802fc12691a868a366a5f}
+
+
+\hypertarget{namespacesocketpp_8a9e04cf907ec163f43cf6c3bf9e213c}{
+\index{socketpp@{socketpp}!inaddr\_\-loopback@{inaddr\_\-loopback}}
+\index{inaddr\_\-loopback@{inaddr\_\-loopback}!socketpp@{socketpp}}
+\subsubsection[{inaddr\_\-loopback}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::inaddr\_\-loopback} = INADDR\_\-LOOPBACK}}
+\label{namespacesocketpp_8a9e04cf907ec163f43cf6c3bf9e213c}
+
+
+\hypertarget{namespacesocketpp_26bb72049a9cf272f6c116b0a2187c0b}{
+\index{socketpp@{socketpp}!inaddr\_\-none@{inaddr\_\-none}}
+\index{inaddr\_\-none@{inaddr\_\-none}!socketpp@{socketpp}}
+\subsubsection[{inaddr\_\-none}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::inaddr\_\-none} = INADDR\_\-NONE}}
+\label{namespacesocketpp_26bb72049a9cf272f6c116b0a2187c0b}
+
+
+\hypertarget{namespacesocketpp_1beda002d2e23bf757355444fd9279e2}{
+\index{socketpp@{socketpp}!IPSIZE@{IPSIZE}}
+\index{IPSIZE@{IPSIZE}!socketpp@{socketpp}}
+\subsubsection[{IPSIZE}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::IPSIZE} = sizeof(struct iphdr)}}
+\label{namespacesocketpp_1beda002d2e23bf757355444fd9279e2}
+
+
+\hypertarget{namespacesocketpp_11f9a39ced6614326ba993c3245d8912}{
+\index{socketpp@{socketpp}!MAX\_\-PACKET\_\-SIZE@{MAX\_\-PACKET\_\-SIZE}}
+\index{MAX\_\-PACKET\_\-SIZE@{MAX\_\-PACKET\_\-SIZE}!socketpp@{socketpp}}
+\subsubsection[{MAX\_\-PACKET\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::MAX\_\-PACKET\_\-SIZE} = 65535}}
+\label{namespacesocketpp_11f9a39ced6614326ba993c3245d8912}
+
+
+\hypertarget{namespacesocketpp_34c3bb51b882d2ae59d483d1e8faeebd}{
+\index{socketpp@{socketpp}!TCPSIZE@{TCPSIZE}}
+\index{TCPSIZE@{TCPSIZE}!socketpp@{socketpp}}
+\subsubsection[{TCPSIZE}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::TCPSIZE} = sizeof(struct tcphdr)}}
+\label{namespacesocketpp_34c3bb51b882d2ae59d483d1e8faeebd}
+
+
+\hypertarget{namespacesocketpp_1c4f449aef7a6c706b546343c4d16dd3}{
+\index{socketpp@{socketpp}!UDPSIZE@{UDPSIZE}}
+\index{UDPSIZE@{UDPSIZE}!socketpp@{socketpp}}
+\subsubsection[{UDPSIZE}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::UDPSIZE} = sizeof(struct udphdr)}}
+\label{namespacesocketpp_1c4f449aef7a6c706b546343c4d16dd3}
+
+

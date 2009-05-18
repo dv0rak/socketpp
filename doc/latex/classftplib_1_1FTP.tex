@@ -1,0 +1,171 @@
+\hypertarget{classftplib_1_1FTP}{
+\section{ftplib::FTP Class Reference}
+\label{classftplib_1_1FTP}\index{ftplib::FTP@{ftplib::FTP}}
+}
+This class tries to imitate the \hyperlink{classftplib_1_1FTP}{ftplib.FTP} python class, with a few differences. Before I write the whole documentation try to adapt yourself to these differences intuitively. See the python documentation.  
+
+
+{\tt \#include $<$ftp.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classftplib_1_1FTP_7f153b44f41536e85297b08ed65b948e}{FTP} (const std::string \&host=\char`\"{}\char`\"{}, const std::string \&user=\char`\"{}\char`\"{}, const std::string \&passwd=\char`\"{}\char`\"{})
+\item 
+std::string \hyperlink{classftplib_1_1FTP_fbd3444a33e5dd055474c9a0d6aabba5}{connect} (const std::string \&host, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{socketpp::port\_\-t} port=21)
+\item 
+std::string \hyperlink{classftplib_1_1FTP_dc39751d00808d35183fb19c483b3589}{login} (const std::string \&user=\char`\"{}anonymous\char`\"{}, const std::string \&passwd=\char`\"{}\char`\"{})
+\item 
+std::string \hyperlink{classftplib_1_1FTP_5a876d670107df4b5924238450440eee}{sendcmd} (const std::string \&cmd)
+\item 
+std::string \hyperlink{classftplib_1_1FTP_b04e374d4835e124959cee085df3fa4e}{retrlines} (const std::string \&cmd, std::ostream \&os=std::cout)
+\item 
+std::string \hyperlink{classftplib_1_1FTP_ad060fdb45fec7ccd5949e475df96982}{retrbinary} (const std::string \&cmd, std::ostream \&os)
+\item 
+std::string \hyperlink{classftplib_1_1FTP_37c828c7d98c7da3fe3b936526118416}{storbinary} (const std::string \&cmd, std::istream \&is)
+\item 
+std::string \hyperlink{classftplib_1_1FTP_956c5fa0546d7a6a2db0b4dee28f6868}{storlines} (const std::string \&cmd, std::istream \&is)
+\item 
+std::vector$<$ std::string $>$ \hyperlink{classftplib_1_1FTP_a793fa113ee6fc82e3db3b7ed769ff3f}{nlst} (const std::string \&path=\char`\"{}.\char`\"{})
+\item 
+std::string \hyperlink{classftplib_1_1FTP_7cd3c7fc71ae0c7dbdfcee88417d2685}{cwd} (const std::string \&path)
+\item 
+std::string \hyperlink{classftplib_1_1FTP_7c01c7b062848c7fc1d3caf95758b109}{pwd} ()
+\item 
+\hyperlink{classsocketpp_1_1Socket}{socketpp::Socket} \& \hyperlink{classftplib_1_1FTP_c949b3cd7b92534705ff041bb43d989b}{transfercmd} (const std::string \&cmd)
+\item 
+void \hyperlink{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{set\_\-pasv} (bool p)
+\item 
+std::string \hyperlink{classftplib_1_1FTP_bd6e018a5cc17b1c8007064830823c71}{quit} ()
+\item 
+void \hyperlink{classftplib_1_1FTP_4f36be9f23721435f19a7e5b1d702718}{close} ()
+\item 
+void \hyperlink{classftplib_1_1FTP_5e1c861ff05a0e2ecc0d49d81ba73c5a}{settimeout} (unsigned int sec, unsigned int usec=0)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This class tries to imitate the \hyperlink{classftplib_1_1FTP}{ftplib.FTP} python class, with a few differences. Before I write the whole documentation try to adapt yourself to these differences intuitively. See the python documentation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classftplib_1_1FTP_7f153b44f41536e85297b08ed65b948e}{
+\index{ftplib::FTP@{ftplib::FTP}!FTP@{FTP}}
+\index{FTP@{FTP}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{FTP}]{\setlength{\rightskip}{0pt plus 5cm}ftplib::FTP::FTP (const std::string \& {\em host} = {\tt \char`\"{}\char`\"{}}, \/  const std::string \& {\em user} = {\tt \char`\"{}\char`\"{}}, \/  const std::string \& {\em passwd} = {\tt \char`\"{}\char`\"{}})}}
+\label{classftplib_1_1FTP_7f153b44f41536e85297b08ed65b948e}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classftplib_1_1FTP_4f36be9f23721435f19a7e5b1d702718}{
+\index{ftplib::FTP@{ftplib::FTP}!close@{close}}
+\index{close@{close}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void ftplib::FTP::close ()}}
+\label{classftplib_1_1FTP_4f36be9f23721435f19a7e5b1d702718}
+
+
+\hypertarget{classftplib_1_1FTP_fbd3444a33e5dd055474c9a0d6aabba5}{
+\index{ftplib::FTP@{ftplib::FTP}!connect@{connect}}
+\index{connect@{connect}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::connect (const std::string \& {\em host}, \/  {\bf socketpp::port\_\-t} {\em port} = {\tt 21})}}
+\label{classftplib_1_1FTP_fbd3444a33e5dd055474c9a0d6aabba5}
+
+
+\hypertarget{classftplib_1_1FTP_7cd3c7fc71ae0c7dbdfcee88417d2685}{
+\index{ftplib::FTP@{ftplib::FTP}!cwd@{cwd}}
+\index{cwd@{cwd}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{cwd}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::cwd (const std::string \& {\em path})}}
+\label{classftplib_1_1FTP_7cd3c7fc71ae0c7dbdfcee88417d2685}
+
+
+\hypertarget{classftplib_1_1FTP_dc39751d00808d35183fb19c483b3589}{
+\index{ftplib::FTP@{ftplib::FTP}!login@{login}}
+\index{login@{login}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{login}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::login (const std::string \& {\em user} = {\tt \char`\"{}anonymous\char`\"{}}, \/  const std::string \& {\em passwd} = {\tt \char`\"{}\char`\"{}})}}
+\label{classftplib_1_1FTP_dc39751d00808d35183fb19c483b3589}
+
+
+\hypertarget{classftplib_1_1FTP_a793fa113ee6fc82e3db3b7ed769ff3f}{
+\index{ftplib::FTP@{ftplib::FTP}!nlst@{nlst}}
+\index{nlst@{nlst}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{nlst}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::string $>$ ftplib::FTP::nlst (const std::string \& {\em path} = {\tt \char`\"{}.\char`\"{}})}}
+\label{classftplib_1_1FTP_a793fa113ee6fc82e3db3b7ed769ff3f}
+
+
+\hypertarget{classftplib_1_1FTP_7c01c7b062848c7fc1d3caf95758b109}{
+\index{ftplib::FTP@{ftplib::FTP}!pwd@{pwd}}
+\index{pwd@{pwd}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{pwd}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::pwd ()}}
+\label{classftplib_1_1FTP_7c01c7b062848c7fc1d3caf95758b109}
+
+
+\hypertarget{classftplib_1_1FTP_bd6e018a5cc17b1c8007064830823c71}{
+\index{ftplib::FTP@{ftplib::FTP}!quit@{quit}}
+\index{quit@{quit}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{quit}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::quit ()}}
+\label{classftplib_1_1FTP_bd6e018a5cc17b1c8007064830823c71}
+
+
+\hypertarget{classftplib_1_1FTP_ad060fdb45fec7ccd5949e475df96982}{
+\index{ftplib::FTP@{ftplib::FTP}!retrbinary@{retrbinary}}
+\index{retrbinary@{retrbinary}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{retrbinary}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::retrbinary (const std::string \& {\em cmd}, \/  std::ostream \& {\em os})}}
+\label{classftplib_1_1FTP_ad060fdb45fec7ccd5949e475df96982}
+
+
+\hypertarget{classftplib_1_1FTP_b04e374d4835e124959cee085df3fa4e}{
+\index{ftplib::FTP@{ftplib::FTP}!retrlines@{retrlines}}
+\index{retrlines@{retrlines}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{retrlines}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::retrlines (const std::string \& {\em cmd}, \/  std::ostream \& {\em os} = {\tt std::cout})}}
+\label{classftplib_1_1FTP_b04e374d4835e124959cee085df3fa4e}
+
+
+\hypertarget{classftplib_1_1FTP_5a876d670107df4b5924238450440eee}{
+\index{ftplib::FTP@{ftplib::FTP}!sendcmd@{sendcmd}}
+\index{sendcmd@{sendcmd}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{sendcmd}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::sendcmd (const std::string \& {\em cmd})}}
+\label{classftplib_1_1FTP_5a876d670107df4b5924238450440eee}
+
+
+\hypertarget{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{
+\index{ftplib::FTP@{ftplib::FTP}!set\_\-pasv@{set\_\-pasv}}
+\index{set\_\-pasv@{set\_\-pasv}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{set\_\-pasv}]{\setlength{\rightskip}{0pt plus 5cm}void ftplib::FTP::set\_\-pasv (bool {\em p})}}
+\label{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}
+
+
+\hypertarget{classftplib_1_1FTP_5e1c861ff05a0e2ecc0d49d81ba73c5a}{
+\index{ftplib::FTP@{ftplib::FTP}!settimeout@{settimeout}}
+\index{settimeout@{settimeout}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{settimeout}]{\setlength{\rightskip}{0pt plus 5cm}void ftplib::FTP::settimeout (unsigned int {\em sec}, \/  unsigned int {\em usec} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classftplib_1_1FTP_5e1c861ff05a0e2ecc0d49d81ba73c5a}
+
+
+\hypertarget{classftplib_1_1FTP_37c828c7d98c7da3fe3b936526118416}{
+\index{ftplib::FTP@{ftplib::FTP}!storbinary@{storbinary}}
+\index{storbinary@{storbinary}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{storbinary}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::storbinary (const std::string \& {\em cmd}, \/  std::istream \& {\em is})}}
+\label{classftplib_1_1FTP_37c828c7d98c7da3fe3b936526118416}
+
+
+\hypertarget{classftplib_1_1FTP_956c5fa0546d7a6a2db0b4dee28f6868}{
+\index{ftplib::FTP@{ftplib::FTP}!storlines@{storlines}}
+\index{storlines@{storlines}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{storlines}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::storlines (const std::string \& {\em cmd}, \/  std::istream \& {\em is})}}
+\label{classftplib_1_1FTP_956c5fa0546d7a6a2db0b4dee28f6868}
+
+
+\hypertarget{classftplib_1_1FTP_c949b3cd7b92534705ff041bb43d989b}{
+\index{ftplib::FTP@{ftplib::FTP}!transfercmd@{transfercmd}}
+\index{transfercmd@{transfercmd}!ftplib::FTP@{ftplib::FTP}}
+\subsubsection[{transfercmd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf socketpp::Socket} \& ftplib::FTP::transfercmd (const std::string \& {\em cmd})}}
+\label{classftplib_1_1FTP_c949b3cd7b92534705ff041bb43d989b}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{ftp_8h}{ftp.h}\item 
+\hyperlink{ftp_8cpp}{ftp.cpp}\end{CompactItemize}

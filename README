@@ -1,0 +1,23 @@
+socket++ v.1.5
+library which offers an high-level and object-oriented interface to manipulate UNIX Inet4 sockets.
+It includes these main classes:
+
+- AddrHandler : it deals with several things, like dns resolving or address format conversion
+- BaseSocket : abstract base class
+- Socket : a wrapper for the C socket interface
+- SocketServer : it makes easier the server construction and the multithreaded concurrent approach
+- SockBuf : publicly derived from std::streambuf and BaseSocket
+- SockStream : extension of std::iostream, it works with SockBuf objects, and allows the well-known stream approach with sockets
+- RawSocket : family of several protocol-based raw socket classes, including TCP, ICMP, and UDP with or without IP header handling. It doesn't require programmer to perform any byte order conversion
+- SockException : socket exception class
+- ftp : This class tries to imitate the ftplib.FTP python class, with a few differences. Before I write the whole documentation try to adapt yourself to these differences intuitively. See the python documentation
+
+
+Full documentation:
+	see in the doc/ directory
+
+To use the library:
+        Include the <socket++.h> header and compile with -lsocketpp
+
+by Lorenzo Vitale, copyleft 2009
+Released under GNU GPL licence 3

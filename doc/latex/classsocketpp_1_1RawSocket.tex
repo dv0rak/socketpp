@@ -1,0 +1,380 @@
+\hypertarget{classsocketpp_1_1RawSocket}{
+\section{socketpp::RawSocket Class Reference}
+\label{classsocketpp_1_1RawSocket}\index{socketpp::RawSocket@{socketpp::RawSocket}}
+}
+abstract base raw socket class. This class and all its derived classes don't require to perform any byte order conversion  
+
+
+{\tt \#include $<$RawSocket.h$>$}
+
+Inheritance diagram for socketpp::RawSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.9244cm]{classsocketpp_1_1RawSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classsocketpp_1_1RawSocket_1a77e11388869bc70457efb75cd40b82}{RawSocket} (\hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf}{protocol} prot)
+\begin{CompactList}\small\item\em constructor which calls BaseSocket(sock\_\-raw, prot) \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1RawSocket_99ea2415525269d24ba088a58d62abdd}{build\_\-data\_\-payload} (const char $\ast$data, size\_\-t len)
+\begin{CompactList}\small\item\em builds the internal data payload to send \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1RawSocket_a5e01f4dec94dbbef1c122ce4d7ed4ad}{build\_\-data\_\-payload} (const std::string \&buf)
+\begin{CompactList}\small\item\em builds the internal data payload to send \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1RawSocket_5c812c1bf584f40c3fc6263a8014395b}{send\_\-packet} (in\_\-addr\_\-t addr)
+\begin{CompactList}\small\item\em sends the internal built packet \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1RawSocket_6dfb29dbfedf61d8f082dc1893320d42}{send\_\-packet} (const std::string \&addr)
+\begin{CompactList}\small\item\em sends the internal built packet \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1RawSocket_e987bb77fd3ac6d0e99b5311ff81c1ea}{send\_\-packet} ()
+\begin{CompactList}\small\item\em sends the internal built packet on a connected socket \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1RawSocket_1564181b6422fb3918c419051b34ae2d}{read\_\-packet} (size\_\-t len, std::string \&addr)
+\begin{CompactList}\small\item\em reads the next packet on the socket \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1RawSocket_08b8bec945928764f2d7ee11890b8625}{read\_\-packet} (size\_\-t len, in\_\-addr\_\-t \&addr)
+\begin{CompactList}\small\item\em reads the next packet on the socket \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1RawSocket_ea48bec4596e2afc89adba2ccb13f6c8}{read\_\-packet} (size\_\-t len)
+\begin{CompactList}\small\item\em reads the next packet on the connected socket \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1RawSocket_bd9631abfa5165ad4ed9e2a31640d1f0}{get\_\-data\_\-payload} (char $\ast$data, size\_\-t len)
+\begin{CompactList}\small\item\em gets the received data payload \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1RawSocket_de47c63d60cba25d1ae82f242851610d}{get\_\-data\_\-payload} (std::string \&data)
+\begin{CompactList}\small\item\em gets the received data payload \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_bb78ecebb5bd5ab5be4ee46d786fe5cd}{checksum} (const void $\ast$buf, size\_\-t nchar)
+\begin{CompactList}\small\item\em calculates internet checksum \item\end{CompactList}\item 
+static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_67af2c9f3bc37146b54fc9fb69c0dd8d}{checksum} (const std::string \&buf)
+\begin{CompactList}\small\item\em calculates internet checksum \item\end{CompactList}\item 
+static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_bc807e5fcf41891e21faadd7b44b851a}{tcp\_\-checksum} (const void $\ast$buf, size\_\-t nchar, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
+\begin{CompactList}\small\item\em calculates tcp checksum on pseudo-header \item\end{CompactList}\item 
+static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_01e34dbdba36284d5e96896dc083702b}{tcp\_\-checksum} (const std::string \&buf, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
+\begin{CompactList}\small\item\em calculates tcp checksum on pseudo-header \item\end{CompactList}\item 
+static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_25eef0a35fc66b33bed3abd176a5175e}{udp\_\-checksum} (const void $\ast$buf, size\_\-t nchar, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
+\begin{CompactList}\small\item\em calculates udp checksum on pseudo-header \item\end{CompactList}\item 
+static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_eb3d9cfc5e2893487d7e076ef56693d4}{udp\_\-checksum} (const std::string \&buf, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
+\begin{CompactList}\small\item\em calculates udp checksum on pseudo-header \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+virtual void \hyperlink{classsocketpp_1_1RawSocket_eb0a3f716c0fc46efa4123acf0fe1e66}{\_\-build\_\-packet} (std::string \&packet)=0
+\item 
+virtual void \hyperlink{classsocketpp_1_1RawSocket_45e6b041703cb8ae0f93dd19766865d5}{\_\-set\_\-fields} (const std::string \&packet)=0
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+std::string \hyperlink{classsocketpp_1_1RawSocket_4d3a1236c4ac42ab029323ae14586ff8}{data\_\-payload}
+\item 
+std::string \hyperlink{classsocketpp_1_1RawSocket_3e166c1c401c30b5721dc54f93772b36}{rcvd\_\-data\_\-payload}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+abstract base raw socket class. This class and all its derived classes don't require to perform any byte order conversion 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsocketpp_1_1RawSocket_1a77e11388869bc70457efb75cd40b82}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!RawSocket@{RawSocket}}
+\index{RawSocket@{RawSocket}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{RawSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::RawSocket::RawSocket ({\bf protocol} {\em prot})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_1a77e11388869bc70457efb75cd40b82}
+
+
+constructor which calls BaseSocket(sock\_\-raw, prot) 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em prot}]\hyperlink{classsocketpp_1_1Socket}{Socket} protocol \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1RawSocket_eb0a3f716c0fc46efa4123acf0fe1e66}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!\_\-build\_\-packet@{\_\-build\_\-packet}}
+\index{\_\-build\_\-packet@{\_\-build\_\-packet}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{\_\-build\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}virtual void socketpp::RawSocket::\_\-build\_\-packet (std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, pure virtual\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_eb0a3f716c0fc46efa4123acf0fe1e66}
+
+
+
+
+Implemented in \hyperlink{classsocketpp_1_1IP__RawSocket_6863cc399c543073e9aa3615c3f50940}{socketpp::IP\_\-RawSocket}, \hyperlink{classsocketpp_1_1ICMP__RawSocket_d8aa8d45c57eb77ab99ee84f1c5dd7da}{socketpp::ICMP\_\-RawSocket}, \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_49a62078d6febf7a11b9350de1e23903}{socketpp::ICMP\_\-IP\_\-RawSocket}, \hyperlink{classsocketpp_1_1UDP__RawSocket_fe8cc7391c23dcf011f285b1605cad6b}{socketpp::UDP\_\-RawSocket}, \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_16035f1b701b898f0e4de44a9ac8bbb3}{socketpp::UDP\_\-IP\_\-RawSocket}, \hyperlink{classsocketpp_1_1TCP__RawSocket_d89a39d4bc91a76d0cb50da5cdd10fbc}{socketpp::TCP\_\-RawSocket}, and \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_281508237add8a3c530bb0be0b6a1e7b}{socketpp::TCP\_\-IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1RawSocket_45e6b041703cb8ae0f93dd19766865d5}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!\_\-set\_\-fields@{\_\-set\_\-fields}}
+\index{\_\-set\_\-fields@{\_\-set\_\-fields}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{\_\-set\_\-fields}]{\setlength{\rightskip}{0pt plus 5cm}virtual void socketpp::RawSocket::\_\-set\_\-fields (const std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, pure virtual\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_45e6b041703cb8ae0f93dd19766865d5}
+
+
+
+
+Implemented in \hyperlink{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}{socketpp::IP\_\-RawSocket}, \hyperlink{classsocketpp_1_1ICMP__RawSocket_e183b11c080f5d74dbc386ec53e7feb5}{socketpp::ICMP\_\-RawSocket}, \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_6d2f188d46030afa13f9c3971d43d518}{socketpp::ICMP\_\-IP\_\-RawSocket}, \hyperlink{classsocketpp_1_1UDP__RawSocket_a2dd7ab190a6730f9272eced4e648b50}{socketpp::UDP\_\-RawSocket}, \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_40fde867fa138b495f660864023a3eb1}{socketpp::UDP\_\-IP\_\-RawSocket}, \hyperlink{classsocketpp_1_1TCP__RawSocket_6976a4726503eef03a8d446afdbaddbe}{socketpp::TCP\_\-RawSocket}, and \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_f8f606ce33835813cc5c3a530e181432}{socketpp::TCP\_\-IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1RawSocket_a5e01f4dec94dbbef1c122ce4d7ed4ad}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!build\_\-data\_\-payload@{build\_\-data\_\-payload}}
+\index{build\_\-data\_\-payload@{build\_\-data\_\-payload}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{build\_\-data\_\-payload}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::RawSocket::build\_\-data\_\-payload (const std::string \& {\em buf})}}
+\label{classsocketpp_1_1RawSocket_a5e01f4dec94dbbef1c122ce4d7ed4ad}
+
+
+builds the internal data payload to send 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buf}]data payload string \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_99ea2415525269d24ba088a58d62abdd}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!build\_\-data\_\-payload@{build\_\-data\_\-payload}}
+\index{build\_\-data\_\-payload@{build\_\-data\_\-payload}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{build\_\-data\_\-payload}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::RawSocket::build\_\-data\_\-payload (const char $\ast$ {\em data}, \/  size\_\-t {\em len})}}
+\label{classsocketpp_1_1RawSocket_99ea2415525269d24ba088a58d62abdd}
+
+
+builds the internal data payload to send 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em data}]pointer to data payload buffer \item[{\em len}]deta length in bytes \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_67af2c9f3bc37146b54fc9fb69c0dd8d}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!checksum@{checksum}}
+\index{checksum@{checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::checksum (const std::string \& {\em buf})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_67af2c9f3bc37146b54fc9fb69c0dd8d}
+
+
+calculates internet checksum 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buf}]packet string \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_bb78ecebb5bd5ab5be4ee46d786fe5cd}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!checksum@{checksum}}
+\index{checksum@{checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_bb78ecebb5bd5ab5be4ee46d786fe5cd}
+
+
+calculates internet checksum 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buf}]pointer to packet top \item[{\em nchar}]size of packet in bytes \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_de47c63d60cba25d1ae82f242851610d}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!get\_\-data\_\-payload@{get\_\-data\_\-payload}}
+\index{get\_\-data\_\-payload@{get\_\-data\_\-payload}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{get\_\-data\_\-payload}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::RawSocket::get\_\-data\_\-payload (std::string \& {\em data})}}
+\label{classsocketpp_1_1RawSocket_de47c63d60cba25d1ae82f242851610d}
+
+
+gets the received data payload 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em data}]string to fill with data \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes written \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_bd9631abfa5165ad4ed9e2a31640d1f0}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!get\_\-data\_\-payload@{get\_\-data\_\-payload}}
+\index{get\_\-data\_\-payload@{get\_\-data\_\-payload}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{get\_\-data\_\-payload}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::RawSocket::get\_\-data\_\-payload (char $\ast$ {\em data}, \/  size\_\-t {\em len})}}
+\label{classsocketpp_1_1RawSocket_bd9631abfa5165ad4ed9e2a31640d1f0}
+
+
+gets the received data payload 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em data}]pointer to buffer to fill with data \item[{\em len}]max number of bytes to write on buffer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes written \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_ea48bec4596e2afc89adba2ccb13f6c8}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!read\_\-packet@{read\_\-packet}}
+\index{read\_\-packet@{read\_\-packet}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{read\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::RawSocket::read\_\-packet (size\_\-t {\em len})}}
+\label{classsocketpp_1_1RawSocket_ea48bec4596e2afc89adba2ccb13f6c8}
+
+
+reads the next packet on the connected socket 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em len}]max number of bytes to read \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes red \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_08b8bec945928764f2d7ee11890b8625}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!read\_\-packet@{read\_\-packet}}
+\index{read\_\-packet@{read\_\-packet}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{read\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::RawSocket::read\_\-packet (size\_\-t {\em len}, \/  in\_\-addr\_\-t \& {\em addr})}}
+\label{classsocketpp_1_1RawSocket_08b8bec945928764f2d7ee11890b8625}
+
+
+reads the next packet on the socket 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em len}]max number of bytes to read \item[{\em addr}]in\_\-addr\_\-t to fill in with sender's address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes red \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_1564181b6422fb3918c419051b34ae2d}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!read\_\-packet@{read\_\-packet}}
+\index{read\_\-packet@{read\_\-packet}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{read\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::RawSocket::read\_\-packet (size\_\-t {\em len}, \/  std::string \& {\em addr})}}
+\label{classsocketpp_1_1RawSocket_1564181b6422fb3918c419051b34ae2d}
+
+
+reads the next packet on the socket 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em len}]max number of bytes to read \item[{\em addr}]string to fill in with sender's address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes red \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_e987bb77fd3ac6d0e99b5311ff81c1ea}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!send\_\-packet@{send\_\-packet}}
+\index{send\_\-packet@{send\_\-packet}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{send\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::RawSocket::send\_\-packet ()}}
+\label{classsocketpp_1_1RawSocket_e987bb77fd3ac6d0e99b5311ff81c1ea}
+
+
+sends the internal built packet on a connected socket 
+
+\begin{Desc}
+\item[Returns:]number of bytes sent \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_6dfb29dbfedf61d8f082dc1893320d42}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!send\_\-packet@{send\_\-packet}}
+\index{send\_\-packet@{send\_\-packet}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{send\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::RawSocket::send\_\-packet (const std::string \& {\em addr})}}
+\label{classsocketpp_1_1RawSocket_6dfb29dbfedf61d8f082dc1893320d42}
+
+
+sends the internal built packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em addr}]destination hostname or dotted decimal address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes sent \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_5c812c1bf584f40c3fc6263a8014395b}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!send\_\-packet@{send\_\-packet}}
+\index{send\_\-packet@{send\_\-packet}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{send\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::RawSocket::send\_\-packet (in\_\-addr\_\-t {\em addr})}}
+\label{classsocketpp_1_1RawSocket_5c812c1bf584f40c3fc6263a8014395b}
+
+
+sends the internal built packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em addr}]destination IP address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]number of bytes sent \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_01e34dbdba36284d5e96896dc083702b}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!tcp\_\-checksum@{tcp\_\-checksum}}
+\index{tcp\_\-checksum@{tcp\_\-checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::tcp\_\-checksum (const std::string \& {\em buf}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_01e34dbdba36284d5e96896dc083702b}
+
+
+calculates tcp checksum on pseudo-header 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buf}]packet string \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_bc807e5fcf41891e21faadd7b44b851a}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!tcp\_\-checksum@{tcp\_\-checksum}}
+\index{tcp\_\-checksum@{tcp\_\-checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::tcp\_\-checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_bc807e5fcf41891e21faadd7b44b851a}
+
+
+calculates tcp checksum on pseudo-header 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buf}]pointer to packet top \item[{\em nchar}]size of packet in bytes \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_eb3d9cfc5e2893487d7e076ef56693d4}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!udp\_\-checksum@{udp\_\-checksum}}
+\index{udp\_\-checksum@{udp\_\-checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{udp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::udp\_\-checksum (const std::string \& {\em buf}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_eb3d9cfc5e2893487d7e076ef56693d4}
+
+
+calculates udp checksum on pseudo-header 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buf}]packet string \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_25eef0a35fc66b33bed3abd176a5175e}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!udp\_\-checksum@{udp\_\-checksum}}
+\index{udp\_\-checksum@{udp\_\-checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{udp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::udp\_\-checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_25eef0a35fc66b33bed3abd176a5175e}
+
+
+calculates udp checksum on pseudo-header 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buf}]pointer to packet top \item[{\em nchar}]size of packet in bytes \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsocketpp_1_1RawSocket_4d3a1236c4ac42ab029323ae14586ff8}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!data\_\-payload@{data\_\-payload}}
+\index{data\_\-payload@{data\_\-payload}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{data\_\-payload}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf socketpp::RawSocket::data\_\-payload}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_4d3a1236c4ac42ab029323ae14586ff8}
+
+
+\hypertarget{classsocketpp_1_1RawSocket_3e166c1c401c30b5721dc54f93772b36}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!rcvd\_\-data\_\-payload@{rcvd\_\-data\_\-payload}}
+\index{rcvd\_\-data\_\-payload@{rcvd\_\-data\_\-payload}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{rcvd\_\-data\_\-payload}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf socketpp::RawSocket::rcvd\_\-data\_\-payload}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_3e166c1c401c30b5721dc54f93772b36}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{RawSocket_8h}{RawSocket.h}\item 
+\hyperlink{RawSocket_8cpp}{RawSocket.cpp}\end{CompactItemize}

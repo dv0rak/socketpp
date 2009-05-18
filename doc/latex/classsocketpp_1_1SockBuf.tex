@@ -1,0 +1,144 @@
+\hypertarget{classsocketpp_1_1SockBuf}{
+\section{socketpp::SockBuf Class Reference}
+\label{classsocketpp_1_1SockBuf}\index{socketpp::SockBuf@{socketpp::SockBuf}}
+}
+publicly derived from std::streambuf and \hyperlink{classsocketpp_1_1BaseSocket}{BaseSocket}  
+
+
+{\tt \#include $<$SockStream.h$>$}
+
+Inheritance diagram for socketpp::SockBuf::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classsocketpp_1_1SockBuf}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classsocketpp_1_1SockBuf_e02aca0e93d6b6227ba492cdc2690d9a}{SockBuf} ()
+\item 
+\hyperlink{classsocketpp_1_1SockBuf_065ef76cdf18c04857350c643bd620e3}{SockBuf} (const \hyperlink{classsocketpp_1_1Socket}{Socket} \&s)
+\begin{CompactList}\small\item\em calls BaseSocket(s) \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SockBuf_5e8a5860fd67228e5d39ea28f9d67341}{SockBuf} (\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} t, \hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf}{protocol} prot=ipproto\_\-ip)
+\begin{CompactList}\small\item\em calls BaseSocket(t,prot) \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SockBuf_71bbd8cf2bd9dd79b8067b0ef771bf23}{SockBuf} (int sd)
+\begin{CompactList}\small\item\em calls BaseSocket(sd) \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1SockBuf_28f88c6ac0570ee5e9d57e255733b0f9}{close} ()
+\begin{CompactList}\small\item\em closes socket descriptor and flushes output buffer \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SockBuf_ee857faaed622effa453c7b53749ff14}{$\sim$SockBuf} ()
+\begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1SockBuf_28f88c6ac0570ee5e9d57e255733b0f9}{close()} \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Attributes}
+\begin{CompactItemize}
+\item 
+static const int \hyperlink{classsocketpp_1_1SockBuf_2b90c5705f30dd3fda03a6eb13378e15}{BUFSIZE} = BUFSIZ
+\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+virtual int \hyperlink{classsocketpp_1_1SockBuf_5a1f6d2304fe83a8602e07d12032b2c7}{overflow} (int c=EOF)
+\item 
+virtual int \hyperlink{classsocketpp_1_1SockBuf_34ccc364e9f20a25199bea9fdde19bdd}{underflow} ()
+\item 
+virtual int \hyperlink{classsocketpp_1_1SockBuf_33c3d2907102b5b38daca32fb2c12591}{sync} ()
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+publicly derived from std::streambuf and \hyperlink{classsocketpp_1_1BaseSocket}{BaseSocket} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsocketpp_1_1SockBuf_e02aca0e93d6b6227ba492cdc2690d9a}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!SockBuf@{SockBuf}}
+\index{SockBuf@{SockBuf}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{SockBuf}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockBuf::SockBuf ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockBuf_e02aca0e93d6b6227ba492cdc2690d9a}
+
+
+\hypertarget{classsocketpp_1_1SockBuf_065ef76cdf18c04857350c643bd620e3}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!SockBuf@{SockBuf}}
+\index{SockBuf@{SockBuf}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{SockBuf}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockBuf::SockBuf (const {\bf Socket} \& {\em s})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockBuf_065ef76cdf18c04857350c643bd620e3}
+
+
+calls BaseSocket(s) 
+
+\hypertarget{classsocketpp_1_1SockBuf_5e8a5860fd67228e5d39ea28f9d67341}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!SockBuf@{SockBuf}}
+\index{SockBuf@{SockBuf}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{SockBuf}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockBuf::SockBuf ({\bf type} {\em t}, \/  {\bf protocol} {\em prot} = {\tt ipproto\_\-ip})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockBuf_5e8a5860fd67228e5d39ea28f9d67341}
+
+
+calls BaseSocket(t,prot) 
+
+\hypertarget{classsocketpp_1_1SockBuf_71bbd8cf2bd9dd79b8067b0ef771bf23}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!SockBuf@{SockBuf}}
+\index{SockBuf@{SockBuf}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{SockBuf}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockBuf::SockBuf (int {\em sd})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1SockBuf_71bbd8cf2bd9dd79b8067b0ef771bf23}
+
+
+calls BaseSocket(sd) 
+
+\hypertarget{classsocketpp_1_1SockBuf_ee857faaed622effa453c7b53749ff14}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!$\sim$SockBuf@{$\sim$SockBuf}}
+\index{$\sim$SockBuf@{$\sim$SockBuf}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{$\sim$SockBuf}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SockBuf::$\sim$SockBuf ()}}
+\label{classsocketpp_1_1SockBuf_ee857faaed622effa453c7b53749ff14}
+
+
+calls \hyperlink{classsocketpp_1_1SockBuf_28f88c6ac0570ee5e9d57e255733b0f9}{close()} 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1SockBuf_28f88c6ac0570ee5e9d57e255733b0f9}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!close@{close}}
+\index{close@{close}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::SockBuf::close ()\hspace{0.3cm}{\tt  \mbox{[}virtual\mbox{]}}}}
+\label{classsocketpp_1_1SockBuf_28f88c6ac0570ee5e9d57e255733b0f9}
+
+
+closes socket descriptor and flushes output buffer 
+
+
+
+Reimplemented from \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{socketpp::BaseSocket}.\hypertarget{classsocketpp_1_1SockBuf_5a1f6d2304fe83a8602e07d12032b2c7}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!overflow@{overflow}}
+\index{overflow@{overflow}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{overflow}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::SockBuf::overflow (int {\em c} = {\tt EOF})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classsocketpp_1_1SockBuf_5a1f6d2304fe83a8602e07d12032b2c7}
+
+
+\hypertarget{classsocketpp_1_1SockBuf_33c3d2907102b5b38daca32fb2c12591}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!sync@{sync}}
+\index{sync@{sync}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::SockBuf::sync ()\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classsocketpp_1_1SockBuf_33c3d2907102b5b38daca32fb2c12591}
+
+
+\hypertarget{classsocketpp_1_1SockBuf_34ccc364e9f20a25199bea9fdde19bdd}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!underflow@{underflow}}
+\index{underflow@{underflow}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{underflow}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::SockBuf::underflow ()\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classsocketpp_1_1SockBuf_34ccc364e9f20a25199bea9fdde19bdd}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsocketpp_1_1SockBuf_2b90c5705f30dd3fda03a6eb13378e15}{
+\index{socketpp::SockBuf@{socketpp::SockBuf}!BUFSIZE@{BUFSIZE}}
+\index{BUFSIZE@{BUFSIZE}!socketpp::SockBuf@{socketpp::SockBuf}}
+\subsubsection[{BUFSIZE}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf socketpp::SockBuf::BUFSIZE} = BUFSIZ\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1SockBuf_2b90c5705f30dd3fda03a6eb13378e15}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{SockStream_8h}{SockStream.h}\item 
+\hyperlink{SockStream_8cpp}{SockStream.cpp}\end{CompactItemize}

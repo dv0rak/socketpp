@@ -1,0 +1,270 @@
+\hypertarget{classsocketpp_1_1IP__RawSocket}{
+\section{socketpp::IP\_\-RawSocket Class Reference}
+\label{classsocketpp_1_1IP__RawSocket}\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}}
+}
+IP raw socket, without transport-based protocol. ONLY SENDING METHODS WORK.  
+
+
+{\tt \#include $<$RawSocket.h$>$}
+
+Inheritance diagram for socketpp::IP\_\-RawSocket::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.8488cm]{classsocketpp_1_1IP__RawSocket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classsocketpp_1_1IP__RawSocket_e523748e7ca5bbcf7b74d804d356630e}{IP\_\-RawSocket} ()
+\begin{CompactList}\small\item\em constructor which calls RawSocket(ipproto\_\-raw) \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1IP__RawSocket_f93c51a7a8284fe9d2b24019b13a5803}{build\_\-IP\_\-header} (const iphdr \&ip)
+\begin{CompactList}\small\item\em builds the internal IP header to send \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1IP__RawSocket_661a0ec3a92e7cd5582e64a3d0ed5e80}{build\_\-IP\_\-header} (\hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} ihl, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} version, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} tos, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} tot\_\-len, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} id, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} frag\_\-off, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} ttl, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} \hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf}{protocol}, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} check, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
+\begin{CompactList}\small\item\em builds the internal IP header to send \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1IP__RawSocket_82c0b2c75d081bc84d8e60bf18199e65}{set\_\-IP\_\-options} (const char $\ast$opt, size\_\-t len)
+\begin{CompactList}\small\item\em sets the IP options field \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1IP__RawSocket_9d88ecec5e362b3cf3d3dbc51d5dd0cd}{set\_\-IP\_\-options} (const std::string \&opt)
+\begin{CompactList}\small\item\em sets the IP options field \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}{adjust\_\-IP\_\-csum} ()
+\begin{CompactList}\small\item\em sets IP checksum field \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}{adjust\_\-IP\_\-tot\_\-len} ()
+\begin{CompactList}\small\item\em sets IP \char`\"{}total length\char`\"{} field \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1IP__RawSocket_d84d5e193a15baf421c64011a9c27359}{adjust\_\-IP\_\-ihl} ()
+\begin{CompactList}\small\item\em sets IP \char`\"{}header length\char`\"{} field \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all} ()
+\begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}{adjust\_\-IP\_\-csum()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}{adjust\_\-IP\_\-tot\_\-len()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_d84d5e193a15baf421c64011a9c27359}{adjust\_\-IP\_\-ihl()} \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1IP__RawSocket_e477f483d5a8baa76c60399d0809d043}{get\_\-IP\_\-header} (iphdr \&ip)
+\begin{CompactList}\small\item\em gets received IP header \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1IP__RawSocket_686fcc72997b0843b2ece0c4d8a5735d}{get\_\-IP\_\-options} (char $\ast$opt, size\_\-t len)
+\begin{CompactList}\small\item\em gets received IP options \item\end{CompactList}\item 
+size\_\-t \hyperlink{classsocketpp_1_1IP__RawSocket_c9bec0c1db60871bb1cb5560b97e02ed}{get\_\-IP\_\-options} (std::string \&opt)
+\begin{CompactList}\small\item\em gets received IP options \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+virtual void \hyperlink{classsocketpp_1_1IP__RawSocket_6863cc399c543073e9aa3615c3f50940}{\_\-build\_\-packet} (std::string \&packet)
+\item 
+virtual void \hyperlink{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}{\_\-set\_\-fields} (const std::string \&packet)
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+iphdr \hyperlink{classsocketpp_1_1IP__RawSocket_a8ddf1b2172c1e6f4b50d18c825978dc}{IP\_\-h}
+\item 
+iphdr \hyperlink{classsocketpp_1_1IP__RawSocket_005f2299268c452f0e1689d070fa0cab}{rcvd\_\-IP\_\-h}
+\item 
+std::string \hyperlink{classsocketpp_1_1IP__RawSocket_05761cfc5307ac731cb05fdc0f500469}{IP\_\-opt}
+\item 
+std::string \hyperlink{classsocketpp_1_1IP__RawSocket_0457fe2b23f01b7304e2bf1441fc7300}{rcvd\_\-IP\_\-opt}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+IP raw socket, without transport-based protocol. ONLY SENDING METHODS WORK. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsocketpp_1_1IP__RawSocket_e523748e7ca5bbcf7b74d804d356630e}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!IP\_\-RawSocket@{IP\_\-RawSocket}}
+\index{IP\_\-RawSocket@{IP\_\-RawSocket}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{IP\_\-RawSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::IP\_\-RawSocket::IP\_\-RawSocket ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1IP__RawSocket_e523748e7ca5bbcf7b74d804d356630e}
+
+
+constructor which calls RawSocket(ipproto\_\-raw) 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1IP__RawSocket_6863cc399c543073e9aa3615c3f50940}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!\_\-build\_\-packet@{\_\-build\_\-packet}}
+\index{\_\-build\_\-packet@{\_\-build\_\-packet}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{\_\-build\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::\_\-build\_\-packet (std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classsocketpp_1_1IP__RawSocket_6863cc399c543073e9aa3615c3f50940}
+
+
+
+
+Implements \hyperlink{classsocketpp_1_1RawSocket_eb0a3f716c0fc46efa4123acf0fe1e66}{socketpp::RawSocket}.
+
+Reimplemented in \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_49a62078d6febf7a11b9350de1e23903}{socketpp::ICMP\_\-IP\_\-RawSocket}, \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_16035f1b701b898f0e4de44a9ac8bbb3}{socketpp::UDP\_\-IP\_\-RawSocket}, and \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_281508237add8a3c530bb0be0b6a1e7b}{socketpp::TCP\_\-IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!\_\-set\_\-fields@{\_\-set\_\-fields}}
+\index{\_\-set\_\-fields@{\_\-set\_\-fields}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{\_\-set\_\-fields}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::\_\-set\_\-fields (const std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}
+
+
+
+
+Implements \hyperlink{classsocketpp_1_1RawSocket_45e6b041703cb8ae0f93dd19766865d5}{socketpp::RawSocket}.
+
+Reimplemented in \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_6d2f188d46030afa13f9c3971d43d518}{socketpp::ICMP\_\-IP\_\-RawSocket}, \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_40fde867fa138b495f660864023a3eb1}{socketpp::UDP\_\-IP\_\-RawSocket}, and \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_f8f606ce33835813cc5c3a530e181432}{socketpp::TCP\_\-IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!adjust\_\-IP\_\-all@{adjust\_\-IP\_\-all}}
+\index{adjust\_\-IP\_\-all@{adjust\_\-IP\_\-all}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{adjust\_\-IP\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::adjust\_\-IP\_\-all ()}}
+\label{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}
+
+
+calls \hyperlink{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}{adjust\_\-IP\_\-csum()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}{adjust\_\-IP\_\-tot\_\-len()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_d84d5e193a15baf421c64011a9c27359}{adjust\_\-IP\_\-ihl()} 
+
+\hypertarget{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!adjust\_\-IP\_\-csum@{adjust\_\-IP\_\-csum}}
+\index{adjust\_\-IP\_\-csum@{adjust\_\-IP\_\-csum}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{adjust\_\-IP\_\-csum}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::adjust\_\-IP\_\-csum ()}}
+\label{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}
+
+
+sets IP checksum field 
+
+\hypertarget{classsocketpp_1_1IP__RawSocket_d84d5e193a15baf421c64011a9c27359}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!adjust\_\-IP\_\-ihl@{adjust\_\-IP\_\-ihl}}
+\index{adjust\_\-IP\_\-ihl@{adjust\_\-IP\_\-ihl}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{adjust\_\-IP\_\-ihl}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::adjust\_\-IP\_\-ihl ()}}
+\label{classsocketpp_1_1IP__RawSocket_d84d5e193a15baf421c64011a9c27359}
+
+
+sets IP \char`\"{}header length\char`\"{} field 
+
+\hypertarget{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!adjust\_\-IP\_\-tot\_\-len@{adjust\_\-IP\_\-tot\_\-len}}
+\index{adjust\_\-IP\_\-tot\_\-len@{adjust\_\-IP\_\-tot\_\-len}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{adjust\_\-IP\_\-tot\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::adjust\_\-IP\_\-tot\_\-len ()}}
+\label{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}
+
+
+sets IP \char`\"{}total length\char`\"{} field 
+
+\hypertarget{classsocketpp_1_1IP__RawSocket_661a0ec3a92e7cd5582e64a3d0ed5e80}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!build\_\-IP\_\-header@{build\_\-IP\_\-header}}
+\index{build\_\-IP\_\-header@{build\_\-IP\_\-header}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{build\_\-IP\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::build\_\-IP\_\-header ({\bf \_\-u8} {\em ihl}, \/  {\bf \_\-u8} {\em version}, \/  {\bf \_\-u8} {\em tos}, \/  {\bf \_\-u16} {\em tot\_\-len}, \/  {\bf \_\-u16} {\em id}, \/  {\bf \_\-u16} {\em frag\_\-off}, \/  {\bf \_\-u8} {\em ttl}, \/  {\bf \_\-u8} {\em protocol}, \/  {\bf \_\-u16} {\em check}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})}}
+\label{classsocketpp_1_1IP__RawSocket_661a0ec3a92e7cd5582e64a3d0ed5e80}
+
+
+builds the internal IP header to send 
+
+\hypertarget{classsocketpp_1_1IP__RawSocket_f93c51a7a8284fe9d2b24019b13a5803}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!build\_\-IP\_\-header@{build\_\-IP\_\-header}}
+\index{build\_\-IP\_\-header@{build\_\-IP\_\-header}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{build\_\-IP\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::build\_\-IP\_\-header (const iphdr \& {\em ip})}}
+\label{classsocketpp_1_1IP__RawSocket_f93c51a7a8284fe9d2b24019b13a5803}
+
+
+builds the internal IP header to send 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]IP header \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1IP__RawSocket_e477f483d5a8baa76c60399d0809d043}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!get\_\-IP\_\-header@{get\_\-IP\_\-header}}
+\index{get\_\-IP\_\-header@{get\_\-IP\_\-header}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{get\_\-IP\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::get\_\-IP\_\-header (iphdr \& {\em ip})}}
+\label{classsocketpp_1_1IP__RawSocket_e477f483d5a8baa76c60399d0809d043}
+
+
+gets received IP header 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]ip header to fill \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1IP__RawSocket_c9bec0c1db60871bb1cb5560b97e02ed}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!get\_\-IP\_\-options@{get\_\-IP\_\-options}}
+\index{get\_\-IP\_\-options@{get\_\-IP\_\-options}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{get\_\-IP\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::IP\_\-RawSocket::get\_\-IP\_\-options (std::string \& {\em opt})}}
+\label{classsocketpp_1_1IP__RawSocket_c9bec0c1db60871bb1cb5560b97e02ed}
+
+
+gets received IP options 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em opt}]string to fill \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bytes written \end{Desc}
+\hypertarget{classsocketpp_1_1IP__RawSocket_686fcc72997b0843b2ece0c4d8a5735d}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!get\_\-IP\_\-options@{get\_\-IP\_\-options}}
+\index{get\_\-IP\_\-options@{get\_\-IP\_\-options}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{get\_\-IP\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::IP\_\-RawSocket::get\_\-IP\_\-options (char $\ast$ {\em opt}, \/  size\_\-t {\em len})}}
+\label{classsocketpp_1_1IP__RawSocket_686fcc72997b0843b2ece0c4d8a5735d}
+
+
+gets received IP options 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em opt}]pointer to buffer to fill \item[{\em len}]max number of bytes to write \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]bytes written \end{Desc}
+\hypertarget{classsocketpp_1_1IP__RawSocket_9d88ecec5e362b3cf3d3dbc51d5dd0cd}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!set\_\-IP\_\-options@{set\_\-IP\_\-options}}
+\index{set\_\-IP\_\-options@{set\_\-IP\_\-options}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{set\_\-IP\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::set\_\-IP\_\-options (const std::string \& {\em opt})}}
+\label{classsocketpp_1_1IP__RawSocket_9d88ecec5e362b3cf3d3dbc51d5dd0cd}
+
+
+sets the IP options field 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em opt}]option string \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1IP__RawSocket_82c0b2c75d081bc84d8e60bf18199e65}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!set\_\-IP\_\-options@{set\_\-IP\_\-options}}
+\index{set\_\-IP\_\-options@{set\_\-IP\_\-options}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{set\_\-IP\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::IP\_\-RawSocket::set\_\-IP\_\-options (const char $\ast$ {\em opt}, \/  size\_\-t {\em len})}}
+\label{classsocketpp_1_1IP__RawSocket_82c0b2c75d081bc84d8e60bf18199e65}
+
+
+sets the IP options field 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em opt}]pointer to option field \item[{\em len}]option length \end{description}
+\end{Desc}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsocketpp_1_1IP__RawSocket_a8ddf1b2172c1e6f4b50d18c825978dc}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!IP\_\-h@{IP\_\-h}}
+\index{IP\_\-h@{IP\_\-h}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{IP\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}iphdr {\bf socketpp::IP\_\-RawSocket::IP\_\-h}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1IP__RawSocket_a8ddf1b2172c1e6f4b50d18c825978dc}
+
+
+\hypertarget{classsocketpp_1_1IP__RawSocket_05761cfc5307ac731cb05fdc0f500469}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!IP\_\-opt@{IP\_\-opt}}
+\index{IP\_\-opt@{IP\_\-opt}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{IP\_\-opt}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf socketpp::IP\_\-RawSocket::IP\_\-opt}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1IP__RawSocket_05761cfc5307ac731cb05fdc0f500469}
+
+
+\hypertarget{classsocketpp_1_1IP__RawSocket_005f2299268c452f0e1689d070fa0cab}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!rcvd\_\-IP\_\-h@{rcvd\_\-IP\_\-h}}
+\index{rcvd\_\-IP\_\-h@{rcvd\_\-IP\_\-h}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{rcvd\_\-IP\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}iphdr {\bf socketpp::IP\_\-RawSocket::rcvd\_\-IP\_\-h}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1IP__RawSocket_005f2299268c452f0e1689d070fa0cab}
+
+
+\hypertarget{classsocketpp_1_1IP__RawSocket_0457fe2b23f01b7304e2bf1441fc7300}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!rcvd\_\-IP\_\-opt@{rcvd\_\-IP\_\-opt}}
+\index{rcvd\_\-IP\_\-opt@{rcvd\_\-IP\_\-opt}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{rcvd\_\-IP\_\-opt}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf socketpp::IP\_\-RawSocket::rcvd\_\-IP\_\-opt}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1IP__RawSocket_0457fe2b23f01b7304e2bf1441fc7300}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+\hyperlink{RawSocket_8h}{RawSocket.h}\item 
+\hyperlink{RawSocket_8cpp}{RawSocket.cpp}\end{CompactItemize}
