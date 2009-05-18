@@ -19,5 +19,5 @@ Full documentation:
 To use the library:
         Include the <socket++.h> header and compile with -lsocketpp
 
-by Lorenzo Vitale, copyleft 2009
+by dvorak, copyleft 2009
 Released under GNU GPL licence 3
