@@ -2,14 +2,13 @@
 \section{socketpp::h\_\-error Class Reference}
 \label{classsocketpp_1_1h__error}\index{socketpp::h\_\-error@{socketpp::h\_\-error}}
 }
+address-related exception class  
+
+
 {\tt \#include $<$SockException.h$>$}
 
-Inheritance diagram for socketpp::h\_\-error::\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2cm]{classsocketpp_1_1h__error}
-\end{center}
-\end{figure}
+Inherits std::exception.
+
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
@@ -17,11 +16,16 @@ Inheritance diagram for socketpp::h\_\-error::\begin{figure}[H]
 \item 
 \hyperlink{classsocketpp_1_1h__error_67e7b6bcd23ebdd79a5fdcf1f01070fe}{h\_\-error} (const std::string \&meth, int err, const std::string \&func=\char`\"{}\char`\"{})  throw ()
 \item 
+virtual const char $\ast$ \hyperlink{classsocketpp_1_1h__error_055c1a5b55b5d02fe81fd74cb8b900d2}{what} () const   throw ()
+\begin{CompactList}\small\item\em returns complete \hyperlink{classsocketpp_1_1error}{error} string \item\end{CompactList}\item 
 int \hyperlink{classsocketpp_1_1h__error_b2aabd50ea2f3189b09bc749a875e38f}{get\_\-h\_\-errno} ()
 \item 
 \hyperlink{classsocketpp_1_1h__error_56261f751b9080d0a67f282e7ab2974b}{$\sim$h\_\-error} ()  throw ()
 \end{CompactItemize}
 
+
+\subsection{Detailed Description}
+address-related exception class 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classsocketpp_1_1h__error_c15a1c6216114250241349fdfcdeb98a}{
@@ -31,6 +35,11 @@ int \hyperlink{classsocketpp_1_1h__error_b2aabd50ea2f3189b09bc749a875e38f}{get\_
 \label{classsocketpp_1_1h__error_c15a1c6216114250241349fdfcdeb98a}
 
 
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em meth}]method which threw exception \item[{\em err}]\hyperlink{classsocketpp_1_1error}{error} description string \item[{\em func}]C function which returned \hyperlink{classsocketpp_1_1error}{error} \end{description}
+\end{Desc}
 \hypertarget{classsocketpp_1_1h__error_67e7b6bcd23ebdd79a5fdcf1f01070fe}{
 \index{socketpp::h\_\-error@{socketpp::h\_\-error}!h\_\-error@{h\_\-error}}
 \index{h\_\-error@{h\_\-error}!socketpp::h_error@{socketpp::h\_\-error}}
@@ -38,6 +47,11 @@ int \hyperlink{classsocketpp_1_1h__error_b2aabd50ea2f3189b09bc749a875e38f}{get\_
 \label{classsocketpp_1_1h__error_67e7b6bcd23ebdd79a5fdcf1f01070fe}
 
 
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em meth}]method which threw exception \item[{\em err}]h\_\-errno code \item[{\em func}]C function which returned \hyperlink{classsocketpp_1_1error}{error} \end{description}
+\end{Desc}
 \hypertarget{classsocketpp_1_1h__error_56261f751b9080d0a67f282e7ab2974b}{
 \index{socketpp::h\_\-error@{socketpp::h\_\-error}!$\sim$h\_\-error@{$\sim$h\_\-error}}
 \index{$\sim$h\_\-error@{$\sim$h\_\-error}!socketpp::h_error@{socketpp::h\_\-error}}
@@ -54,6 +68,15 @@ int \hyperlink{classsocketpp_1_1h__error_b2aabd50ea2f3189b09bc749a875e38f}{get\_
 \subsubsection[{get\_\-h\_\-errno}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::h\_\-error::get\_\-h\_\-errno ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
 \label{classsocketpp_1_1h__error_b2aabd50ea2f3189b09bc749a875e38f}
 
+
+\hypertarget{classsocketpp_1_1h__error_055c1a5b55b5d02fe81fd74cb8b900d2}{
+\index{socketpp::h\_\-error@{socketpp::h\_\-error}!what@{what}}
+\index{what@{what}!socketpp::h_error@{socketpp::h\_\-error}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ socketpp::h\_\-error::what () const  throw ()\hspace{0.3cm}{\tt  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classsocketpp_1_1h__error_055c1a5b55b5d02fe81fd74cb8b900d2}
+
+
+returns complete \hyperlink{classsocketpp_1_1error}{error} string 
 
 
 

@@ -25,17 +25,13 @@
   </div>
 </div>
 <div class="contents">
-<h1>socketpp::timeout Class Reference</h1><!-- doxytag: class="socketpp::timeout" --><!-- doxytag: inherits="socketpp::base_error" --><code>#include &lt;<a class="el" href="SockException_8h-source.html">SockException.h</a>&gt;</code>
+<h1>socketpp::timeout Class Reference</h1><!-- doxytag: class="socketpp::timeout" --><!-- doxytag: inherits="std::exception" -->timeout-related exception class  
+<a href="#_details">More...</a>
 <p>
-<div class="dynheader">
-Inheritance diagram for socketpp::timeout:</div>
-<div class="dynsection">
-
-<p><center><img src="classsocketpp_1_1timeout.png" usemap="#socketpp::timeout_map" border="0" alt=""></center>
-<map name="socketpp::timeout_map">
-<area href="classsocketpp_1_1base__error.html" alt="socketpp::base_error" shape="rect" coords="0,0,131,24">
-</map>
-</div>
+<code>#include &lt;<a class="el" href="SockException_8h-source.html">SockException.h</a>&gt;</code>
+<p>
+Inherits std::exception.
+<p>
 
 <p>
 <a href="classsocketpp_1_1timeout-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
@@ -43,10 +39,14 @@ Inheritance diagram for socketpp::timeout:</div>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1timeout.html#e93bd15dc9a3209c582782770b909049">timeout</a> (const std::string &amp;meth, const std::string &amp;err, const std::string &amp;func=&quot;&quot;)  throw ()</td></tr>
 
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1timeout.html#4ec44590b052339b206a94afbcba6ffb">what</a> () const   throw ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns complete <a class="el" href="classsocketpp_1_1error.html" title="socket-related exception class">error</a> string  <a href="#4ec44590b052339b206a94afbcba6ffb"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1timeout.html#8593bc6e69d1f62e41332e4b3809b3e7">~timeout</a> ()  throw ()</td></tr>
 
 </table>
-<hr><h2>Constructor &amp; Destructor Documentation</h2>
+<hr><a name="_details"></a><h2>Detailed Description</h2>
+timeout-related exception class <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="e93bd15dc9a3209c582782770b909049"></a><!-- doxytag: member="socketpp::timeout::timeout" ref="e93bd15dc9a3209c582782770b909049" args="(const std::string &amp;meth, const std::string &amp;err, const std::string &amp;func=&quot;&quot;)" -->
 <div class="memitem">
 <div class="memproto">
@@ -79,6 +79,13 @@ Inheritance diagram for socketpp::timeout:</div>
 <div class="memdoc">
 
 <p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>meth</em>&nbsp;</td><td>method which threw exception </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>err</em>&nbsp;</td><td><a class="el" href="classsocketpp_1_1error.html" title="socket-related exception class">error</a> description string </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>C function which returned <a class="el" href="classsocketpp_1_1error.html" title="socket-related exception class">error</a> </td></tr>
+  </table>
+</dl>
 
 </div>
 </div><p>
@@ -101,10 +108,32 @@ Inheritance diagram for socketpp::timeout:</div>
 
 </div>
 </div><p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="4ec44590b052339b206a94afbcba6ffb"></a><!-- doxytag: member="socketpp::timeout::what" ref="4ec44590b052339b206a94afbcba6ffb" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* socketpp::timeout::what           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const  throw ()<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+returns complete <a class="el" href="classsocketpp_1_1error.html" title="socket-related exception class">error</a> string 
+<p>
+
+</div>
+</div><p>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="SockException_8h-source.html">SockException.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 15:09:43 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 20:05:43 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

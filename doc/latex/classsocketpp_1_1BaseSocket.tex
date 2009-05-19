@@ -20,6 +20,8 @@ void \hyperlink{classsocketpp_1_1BaseSocket_2060dc1b648f83f8bf5ae3d9ecfcd619}{op
 \begin{CompactList}\small\item\em opens socket descriptor \item\end{CompactList}\item 
 virtual void \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{close} ()
 \begin{CompactList}\small\item\em closes socket descriptor \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1BaseSocket_4cffcd5cae4ef51e953495837fade4c3}{setBlocking} (bool yes)
+\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}{getsockopt} (\hyperlink{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5}{level} lev, \hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc4}{option} opt, T \&optval)
 \begin{CompactList}\small\item\em gets options set on socket descriptor. Wrapper for \hyperlink{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}{getsockopt()} \item\end{CompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{setsockopt} (\hyperlink{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5}{level} lev, \hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc4}{option} opt, const T \&optval)
@@ -70,10 +72,6 @@ enum \hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}{\_
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
-void \hyperlink{classsocketpp_1_1BaseSocket_4d49273453cf67218a89065bba9088c4}{\_\-setBlocking} (bool)
-\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_c4063c52772810a38922b56c81e4b4d2}{\_\-select} (\hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}{\_\-select\_\-mode})
-\item 
 \hyperlink{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}{BaseSocket} ()
 \begin{CompactList}\small\item\em simply instantiates the class without setting the internal socket descriptor \item\end{CompactList}\item 
 \hyperlink{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}{BaseSocket} (const \hyperlink{classsocketpp_1_1BaseSocket}{BaseSocket} \&s)
@@ -82,6 +80,8 @@ int \hyperlink{classsocketpp_1_1BaseSocket_c4063c52772810a38922b56c81e4b4d2}{\_\
 \begin{CompactList}\small\item\em constructor which opens the socket descriptor calling socket(AF\_\-INET, t, prot) \item\end{CompactList}\item 
 \hyperlink{classsocketpp_1_1BaseSocket_f7e18d6700868abb2b476e797506eafb}{BaseSocket} (int fd)
 \begin{CompactList}\small\item\em constructor which uses the given socket descriptor \item\end{CompactList}\item 
+int \hyperlink{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}{\_\-select} (\hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}{\_\-select\_\-mode} m)
+\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_bf4e15b88271e34e606b9b2a5b384b5b}{send} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_08b3e29d019575293fa134c6d91d6cbb}{recv} (char buf\mbox{[}$\,$\mbox{]}, size\_\-t size)
@@ -223,18 +223,11 @@ constructor which uses the given socket descriptor
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classsocketpp_1_1BaseSocket_c4063c52772810a38922b56c81e4b4d2}{
+\hypertarget{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-select@{\_\-select}}
 \index{\_\-select@{\_\-select}!socketpp::BaseSocket@{socketpp::BaseSocket}}
 \subsubsection[{\_\-select}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::\_\-select ({\bf \_\-select\_\-mode} {\em m})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_c4063c52772810a38922b56c81e4b4d2}
-
-
-\hypertarget{classsocketpp_1_1BaseSocket_4d49273453cf67218a89065bba9088c4}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-setBlocking@{\_\-setBlocking}}
-\index{\_\-setBlocking@{\_\-setBlocking}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{\_\-setBlocking}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::BaseSocket::\_\-setBlocking (bool {\em yes})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_4d49273453cf67218a89065bba9088c4}
+\label{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}
 
 
 \hypertarget{classsocketpp_1_1BaseSocket_aab800bcb5ee48cd4410ae2b9ed83e23}{
@@ -810,6 +803,13 @@ sends data over socket
 \end{Desc}
 \begin{Desc}
 \item[Returns:]number of bytes sent \end{Desc}
+\hypertarget{classsocketpp_1_1BaseSocket_4cffcd5cae4ef51e953495837fade4c3}{
+\index{socketpp::BaseSocket@{socketpp::BaseSocket}!setBlocking@{setBlocking}}
+\index{setBlocking@{setBlocking}!socketpp::BaseSocket@{socketpp::BaseSocket}}
+\subsubsection[{setBlocking}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::BaseSocket::setBlocking (bool {\em yes})}}
+\label{classsocketpp_1_1BaseSocket_4cffcd5cae4ef51e953495837fade4c3}
+
+
 \hypertarget{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!setsockopt@{setsockopt}}
 \index{setsockopt@{setsockopt}!socketpp::BaseSocket@{socketpp::BaseSocket}}

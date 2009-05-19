@@ -63,6 +63,8 @@ Inheritance diagram for socketpp::BaseSocket:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#f067195056bb6b5a65c4bc1d2ac7da72">close</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">closes socket descriptor  <a href="#f067195056bb6b5a65c4bc1d2ac7da72"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#4cffcd5cae4ef51e953495837fade4c3">setBlocking</a> (bool yes)</td></tr>
+
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;typename T &gt; </td></tr>
 <tr><td class="memTemplItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#c845c3a037f0f400fd50dfb58706b6e4">getsockopt</a> (<a class="el" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">level</a> lev, <a class="el" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4">option</a> opt, T &amp;optval)</td></tr>
 
@@ -97,7 +99,7 @@ Inheritance diagram for socketpp::BaseSocket:</div>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket to local given address  <a href="#aab800bcb5ee48cd4410ae2b9ed83e23"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#0804d148470fd742cda495d3533b25c6">settimeout</a> (double time)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> is cancelled.  <a href="#0804d148470fd742cda495d3533b25c6"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> is cancelled.  <a href="#0804d148470fd742cda495d3533b25c6"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#483c6186ae60d0c399983e14f55af600">remoteAddr</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns remote address to which socket is connected  <a href="#483c6186ae60d0c399983e14f55af600"></a><br></td></tr>
@@ -133,10 +135,6 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
  }</td></tr>
 
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#4d49273453cf67218a89065bba9088c4">_setBlocking</a> (bool)</td></tr>
-
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#c4063c52772810a38922b56c81e4b4d2">_select</a> (<a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">_select_mode</a>)</td></tr>
-
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2">BaseSocket</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">simply instantiates the class without setting the internal socket descriptor  <a href="#3eb81ecbf94ce83afa6b2f60206c77f2"></a><br></td></tr>
@@ -149,6 +147,8 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#f7e18d6700868abb2b476e797506eafb">BaseSocket</a> (int fd)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">constructor which uses the given socket descriptor  <a href="#f7e18d6700868abb2b476e797506eafb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#9c925091102c9371be9990fedd605f1c">_select</a> (<a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">_select_mode</a> m)</td></tr>
+
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#bf4e15b88271e34e606b9b2a5b384b5b">send</a> (const char buf[], size_t size)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends data over socket  <a href="#bf4e15b88271e34e606b9b2a5b384b5b"></a><br></td></tr>
@@ -374,7 +374,7 @@ constructor which uses the given socket descriptor
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="c4063c52772810a38922b56c81e4b4d2"></a><!-- doxytag: member="socketpp::BaseSocket::_select" ref="c4063c52772810a38922b56c81e4b4d2" args="(_select_mode)" -->
+<a class="anchor" name="9c925091102c9371be9990fedd605f1c"></a><!-- doxytag: member="socketpp::BaseSocket::_select" ref="9c925091102c9371be9990fedd605f1c" args="(_select_mode m)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -383,26 +383,6 @@ constructor which uses the given socket descriptor
           <td>(</td>
           <td class="paramtype"><a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">_select_mode</a>&nbsp;</td>
           <td class="paramname"> <em>m</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="4d49273453cf67218a89065bba9088c4"></a><!-- doxytag: member="socketpp::BaseSocket::_setBlocking" ref="4d49273453cf67218a89065bba9088c4" args="(bool)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void socketpp::BaseSocket::_setBlocking           </td>
-          <td>(</td>
-          <td class="paramtype">bool&nbsp;</td>
-          <td class="paramname"> <em>yes</em>          </td>
           <td>&nbsp;)&nbsp;</td>
           <td><code> [protected]</code></td>
         </tr>
@@ -1973,6 +1953,26 @@ sends data over socket
 
 </div>
 </div><p>
+<a class="anchor" name="4cffcd5cae4ef51e953495837fade4c3"></a><!-- doxytag: member="socketpp::BaseSocket::setBlocking" ref="4cffcd5cae4ef51e953495837fade4c3" args="(bool yes)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void socketpp::BaseSocket::setBlocking           </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>yes</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
 <a class="anchor" name="3f1f168e4953c046bb1159941da2fa30"></a><!-- doxytag: member="socketpp::BaseSocket::setsockopt" ref="3f1f168e4953c046bb1159941da2fa30" args="(level lev, option opt, const T &amp;optval)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2037,11 +2037,11 @@ sets options set on socket descriptor. Wrapper for <a class="el" href="classsock
 <div class="memdoc">
 
 <p>
-sets <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> is cancelled. 
+sets <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> is cancelled. 
 <p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>time</em>&nbsp;</td><td><a class="el" href="classsocketpp_1_1timeout.html">timeout</a> in seconds </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>time</em>&nbsp;</td><td><a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> in seconds </td></tr>
   </table>
 </dl>
 
@@ -2096,7 +2096,7 @@ sets <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> on the follo
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="BaseSocket_8h-source.html">BaseSocket.h</a><li><a class="el" href="BaseSocket_8cpp.html">BaseSocket.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 15:09:40 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 20:05:41 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

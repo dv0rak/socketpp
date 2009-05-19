@@ -87,7 +87,7 @@
 <a name="l00066"></a>00066     std::string <a class="code" href="classftplib_1_1FTP.html#bd6e018a5cc17b1c8007064830823c71">quit</a>();
 <a name="l00067"></a>00067     <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#4f36be9f23721435f19a7e5b1d702718">close</a>();
 <a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="classftplib_1_1FTP.html#5e1c861ff05a0e2ecc0d49d81ba73c5a">00069</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#5e1c861ff05a0e2ecc0d49d81ba73c5a">settimeout</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sec, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> usec=0) { _sock.<a class="code" href="classsocketpp_1_1BaseSocket.html#0804d148470fd742cda495d3533b25c6" title="sets timeout on the following IO operations. If time is 0 timeout is cancelled.">settimeout</a>(sec,usec); }
+<a name="l00069"></a><a class="code" href="classftplib_1_1FTP.html#a6603cda3b7c44c48c6a2b8d688d3bb7">00069</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#a6603cda3b7c44c48c6a2b8d688d3bb7">settimeout</a>(<span class="keywordtype">double</span> time) { _sock.<a class="code" href="classsocketpp_1_1BaseSocket.html#0804d148470fd742cda495d3533b25c6" title="sets timeout on the following IO operations. If time is 0 timeout is cancelled.">settimeout</a>(time); }
 <a name="l00070"></a>00070 
 <a name="l00071"></a>00071 <span class="keyword">private</span>:
 <a name="l00072"></a>00072     <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it aims to be a simple C-socket wrapper">socketpp::Socket</a> _sock;
@@ -102,7 +102,7 @@
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 15:09:38 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 20:05:39 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
