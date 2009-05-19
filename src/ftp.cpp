@@ -2,7 +2,7 @@
 
 namespace ftplib {
     
-FTP::FTP(const std::string &host, const std::string &user, const std::string &passwd)
+FTP::FTP(const std::string &host, const std::string &user, const std::string &passwd, double timeout)
 {
     _pasv = true;
     _sock.open(socketpp::sock_stream);
@@ -13,6 +13,28 @@ FTP::FTP(const std::string &host, const std::string &user, const std::string &pa
             login(user, passwd);
         }
     }
+    settimeout(timeout);
+}
+
+std::string FTP::remove(const std::string &fname)
+{
+    return sendcmd("DELE "+fname);
+}
+
+std::string FTP::rmd(const std::string &dirname)
+{
+    return sendcmd("RMD "+dirname);
+}
+
+std::string FTP::mkd(const std::string &dirname)
+{
+    return sendcmd("MKD "+dirname);
+}
+
+std::string FTP::rename(const std::string &from, const std::string &to)
+{
+    sendcmd("RNFR "+from);
+    return sendcmd("RNTO "+to);
 }
 
 std::string FTP::connect(const std::string &host, socketpp::port_t port)
@@ -120,6 +142,11 @@ std::string FTP::storlines(const std::string &cmd, std::istream &is)
     s.send(buf.substr(0,buf.size()-2));
     s.close();
     return _readAnswer();
+}
+
+std::string FTP::dir(const std::string& path, std::ostream &os)
+{
+    return retrlines("LIST " + path, os);
 }
 
 socketpp::Socket& FTP::transfercmd(const std::string &cmd)

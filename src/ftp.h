@@ -43,7 +43,7 @@ public:
 ///@brief This class tries to imitate the ftplib.FTP python class, with a few differences. Before I write the whole documentation try to adapt yourself to these differences intuitively. See the python documentation.
 class FTP {
 public:
-    FTP(const std::string &host="", const std::string &user="", const std::string &passwd="");
+    FTP(const std::string &host="", const std::string &user="", const std::string &passwd="", double timeout=0.0);
 
     std::string connect(const std::string &host, socketpp::port_t port=21);
     std::string login(const std::string &user="anonymous", const std::string &passwd="");
@@ -57,8 +57,15 @@ public:
 
     std::vector<std::string> nlst(const std::string &path=".");
 
+    std::string remove(const std::string &fname);
+    std::string rmd(const std::string &dirname);
+    std::string mkd(const std::string &dirname);
+    std::string rename(const std::string &from, const std::string &to);
+
     std::string cwd(const std::string &path);
     std::string pwd();
+
+    std::string dir(const std::string& path=".", std::ostream &os = std::cout);
 
     socketpp::Socket& transfercmd(const std::string &cmd);
     void set_pasv(bool p);

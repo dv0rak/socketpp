@@ -1,5 +1,5 @@
 /**
- *  This program creates in every subdirectories of a given path of a given ftp space
+ *  This program creates in every subdirectory of a given path of a given ftp space
  *  a index.html file which lists all the existing files in the directory
  */
 
