@@ -39,4 +39,4 @@ uninstall:
 	       $(LIBDIR)/libsocketpp.a $(LIBDIR)/libsocketpp.so.0
 
 clean:
-	\rm -f *.o *.so *~
+	rm -f *.o *.so *~
