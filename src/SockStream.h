@@ -57,7 +57,7 @@ public:
 };
 
 ///@brief SockStream manipulator which writes "\r\n"
-inline std::ostream &crlf (std::ostream &s)
+std::ostream &crlf (std::ostream &s)
 {
     return s << "\r\n";
 }

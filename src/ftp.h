@@ -1,8 +1,9 @@
 #ifndef __FTP_H
 #define __FTP_H 1
 
-#include "socket++.h"
+#include "Socket.h"
 #include <stdlib.h>
+#include <iostream>
 #include <vector>
 #include <sstream>
 
