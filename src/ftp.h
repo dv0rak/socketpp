@@ -66,7 +66,7 @@ public:
     std::string quit();
     void close();
 
-    inline void settimeout(unsigned int sec, unsigned int usec=0) { _sock.settimeout(sec,usec); }
+    inline void settimeout(double time) { _sock.settimeout(time); }
 
 private:
     socketpp::Socket _sock;

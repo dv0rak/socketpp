@@ -18,6 +18,8 @@ public:
     ///@brief	closes socket descriptor
     virtual void close();
 
+    void setBlocking(bool yes);
+
     ///@brief 	gets options set on socket descriptor. Wrapper for getsockopt()
     ///@param   lev	getsockopt() level
     ///@param   opt	getsockopt() option type
@@ -126,11 +128,15 @@ public:
     virtual ~BaseSocket();
 
 protected:
-    int    _sd;
+    int _sd;
     AddrHandler _h;
     double _timeout;
 
-    void _setBlocking(bool);
+    enum _select_mode {
+        read,
+        write,
+        err
+    };
 
     ///@brief	simply instantiates the class without setting the internal socket descriptor 
     BaseSocket();
@@ -144,6 +150,8 @@ protected:
     ///@param 	fd	file descriptor
     BaseSocket(int fd);
 
+    int _select(_select_mode m);
+    
     ///@brief	sends data over socket
     ///@param	buf	data buffer
     ///@param   size	size of data in bytes

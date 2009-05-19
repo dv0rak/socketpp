@@ -11,12 +11,11 @@ bool ping(const string& addr)
     sock.build_ICMP_header(ICMP_ECHO, 0, 0, 1, 1);
     sock.adjust_ICMP_csum();
 
+    sock.settimeout(1.0);
     sock.send_packet();
 
-    sock.settimeout(1);
-
     try { sock.read_packet(BUFSIZ); }
-    catch (SockException &e) { return false; }
+    catch (timeout &e) { return false; }
  
     return true;
 }
@@ -34,12 +33,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    try {
-        if(ping(argv[1])) cout<< "Host's up"<< endl;
-        else cout<< "Host seems down"<< endl;
-    } catch(SockException &e) {
-        cerr<< e.what() <<endl;
-        return -1;
-    }
+    if(ping(argv[1])) cout<< "Host's up"<< endl;
+    else cout<< "Host seems down"<< endl;
     return 0;
 }

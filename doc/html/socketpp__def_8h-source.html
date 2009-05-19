@@ -61,32 +61,33 @@
 <a name="l00039"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ef3c9ddad8c80879ccd993f0cbf2ddaa">00039</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ef3c9ddad8c80879ccd993f0cbf2ddaa">so_reuseaddr</a>= SO_REUSEADDR,
 <a name="l00040"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc49396ae8f83e53dfde8b5d07f2e0668a3">00040</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc49396ae8f83e53dfde8b5d07f2e0668a3">so_broadcast</a>= SO_BROADCAST,
 <a name="l00041"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc45358c0a824b24bb17b03805a8fb60a52">00041</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc45358c0a824b24bb17b03805a8fb60a52">so_sndtimeo</a> = SO_SNDTIMEO,
-<a name="l00042"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ecd98d0c015681e55d1877cf27011440">00042</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ecd98d0c015681e55d1877cf27011440">so_rcvtimeo</a> = SO_RCVTIMEO
-<a name="l00043"></a>00043 };      
-<a name="l00044"></a><a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">00044</a> <span class="keyword">enum</span> <a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">level</a> {
-<a name="l00045"></a><a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5d7ddf065e140601e3ad93d72e6c787ab">00045</a>     <a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5d7ddf065e140601e3ad93d72e6c787ab">sol_ip</a>    = SOL_IP,
-<a name="l00046"></a><a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb568097d5b8690a9619c42192ee5da5252">00046</a>     <a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb568097d5b8690a9619c42192ee5da5252">sol_socket</a>= SOL_SOCKET 
-<a name="l00047"></a>00047 };
-<a name="l00048"></a>00048 
-<a name="l00049"></a><a class="code" href="structsocketpp_1_1icmphdr.html">00049</a> <span class="keyword">struct </span><a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a> {
-<a name="l00050"></a><a class="code" href="structsocketpp_1_1icmphdr.html#f73226605c96acf2bc9ae861d45adf52">00050</a>     <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a>  <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a>;
-<a name="l00051"></a><a class="code" href="structsocketpp_1_1icmphdr.html#0c7d190da0918ead6cf93e3947fcc7f9">00051</a>     <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a>  <a class="code" href="structsocketpp_1_1icmphdr.html#0c7d190da0918ead6cf93e3947fcc7f9">code</a>;
-<a name="l00052"></a><a class="code" href="structsocketpp_1_1icmphdr.html#253e897a729f05ce8a79eb085674940c">00052</a>     <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="structsocketpp_1_1icmphdr.html#253e897a729f05ce8a79eb085674940c">check</a>;
-<a name="l00053"></a><a class="code" href="structsocketpp_1_1icmphdr.html#a149822bbb52234fb048c83c9bed9189">00053</a>     <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="structsocketpp_1_1icmphdr.html#a149822bbb52234fb048c83c9bed9189">id</a>;
-<a name="l00054"></a><a class="code" href="structsocketpp_1_1icmphdr.html#e696676883b273ad81a70ccff1549ce8">00054</a>     <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="structsocketpp_1_1icmphdr.html#e696676883b273ad81a70ccff1549ce8">sequence</a>;
-<a name="l00055"></a>00055 };
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="namespacesocketpp.html#1beda002d2e23bf757355444fd9279e2">00057</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#1beda002d2e23bf757355444fd9279e2">IPSIZE</a>         = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>iphdr);
-<a name="l00058"></a><a class="code" href="namespacesocketpp.html#34c3bb51b882d2ae59d483d1e8faeebd">00058</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#34c3bb51b882d2ae59d483d1e8faeebd">TCPSIZE</a>        = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>tcphdr);
-<a name="l00059"></a><a class="code" href="namespacesocketpp.html#1c4f449aef7a6c706b546343c4d16dd3">00059</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#1c4f449aef7a6c706b546343c4d16dd3">UDPSIZE</a>        = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>udphdr);
-<a name="l00060"></a><a class="code" href="namespacesocketpp.html#fa361b148e87f58b86a95abc48e281fb">00060</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#fa361b148e87f58b86a95abc48e281fb">ICMPSIZE</a>       = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a>);
-<a name="l00061"></a><a class="code" href="namespacesocketpp.html#11f9a39ced6614326ba993c3245d8912">00061</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#11f9a39ced6614326ba993c3245d8912">MAX_PACKET_SIZE</a>= 65535;
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 };
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 <span class="preprocessor">#endif</span>
+<a name="l00042"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ecd98d0c015681e55d1877cf27011440">00042</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ecd98d0c015681e55d1877cf27011440">so_rcvtimeo</a> = SO_RCVTIMEO,
+<a name="l00043"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4896e502dbf03b162df4949bc5326dbf3">00043</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4896e502dbf03b162df4949bc5326dbf3">so_error</a>    = SO_ERROR
+<a name="l00044"></a>00044 };      
+<a name="l00045"></a><a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">00045</a> <span class="keyword">enum</span> <a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">level</a> {
+<a name="l00046"></a><a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5d7ddf065e140601e3ad93d72e6c787ab">00046</a>     <a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5d7ddf065e140601e3ad93d72e6c787ab">sol_ip</a>    = SOL_IP,
+<a name="l00047"></a><a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb568097d5b8690a9619c42192ee5da5252">00047</a>     <a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb568097d5b8690a9619c42192ee5da5252">sol_socket</a>= SOL_SOCKET 
+<a name="l00048"></a>00048 };
+<a name="l00049"></a>00049 
+<a name="l00050"></a><a class="code" href="structsocketpp_1_1icmphdr.html">00050</a> <span class="keyword">struct </span><a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a> {
+<a name="l00051"></a><a class="code" href="structsocketpp_1_1icmphdr.html#f73226605c96acf2bc9ae861d45adf52">00051</a>     <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a>  <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a>;
+<a name="l00052"></a><a class="code" href="structsocketpp_1_1icmphdr.html#0c7d190da0918ead6cf93e3947fcc7f9">00052</a>     <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a>  <a class="code" href="structsocketpp_1_1icmphdr.html#0c7d190da0918ead6cf93e3947fcc7f9">code</a>;
+<a name="l00053"></a><a class="code" href="structsocketpp_1_1icmphdr.html#253e897a729f05ce8a79eb085674940c">00053</a>     <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="structsocketpp_1_1icmphdr.html#253e897a729f05ce8a79eb085674940c">check</a>;
+<a name="l00054"></a><a class="code" href="structsocketpp_1_1icmphdr.html#a149822bbb52234fb048c83c9bed9189">00054</a>     <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="structsocketpp_1_1icmphdr.html#a149822bbb52234fb048c83c9bed9189">id</a>;
+<a name="l00055"></a><a class="code" href="structsocketpp_1_1icmphdr.html#e696676883b273ad81a70ccff1549ce8">00055</a>     <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="structsocketpp_1_1icmphdr.html#e696676883b273ad81a70ccff1549ce8">sequence</a>;
+<a name="l00056"></a>00056 };
+<a name="l00057"></a>00057 
+<a name="l00058"></a><a class="code" href="namespacesocketpp.html#1beda002d2e23bf757355444fd9279e2">00058</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#1beda002d2e23bf757355444fd9279e2">IPSIZE</a>         = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>iphdr);
+<a name="l00059"></a><a class="code" href="namespacesocketpp.html#34c3bb51b882d2ae59d483d1e8faeebd">00059</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#34c3bb51b882d2ae59d483d1e8faeebd">TCPSIZE</a>        = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>tcphdr);
+<a name="l00060"></a><a class="code" href="namespacesocketpp.html#1c4f449aef7a6c706b546343c4d16dd3">00060</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#1c4f449aef7a6c706b546343c4d16dd3">UDPSIZE</a>        = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>udphdr);
+<a name="l00061"></a><a class="code" href="namespacesocketpp.html#fa361b148e87f58b86a95abc48e281fb">00061</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#fa361b148e87f58b86a95abc48e281fb">ICMPSIZE</a>       = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a>);
+<a name="l00062"></a><a class="code" href="namespacesocketpp.html#11f9a39ced6614326ba993c3245d8912">00062</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#11f9a39ced6614326ba993c3245d8912">MAX_PACKET_SIZE</a>= 65535;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 };
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 13:47:39 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 15:09:38 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

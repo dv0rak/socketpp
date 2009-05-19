@@ -60,10 +60,19 @@ std::map$<$ std::string, std::string $>$ \hyperlink{classsocketpp_1_1BaseSocket_
 \begin{CompactList}\small\item\em returns internal DNS cache \item\end{CompactList}\item 
 virtual \hyperlink{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{$\sim$BaseSocket} ()
 \begin{CompactList}\small\item\em desctuctor which calls \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{close()} \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Types}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}{\_\-select\_\-mode} \{ \hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6}{read}, 
+\hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685}{write}, 
+\hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4}{err}
+ \}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
 void \hyperlink{classsocketpp_1_1BaseSocket_4d49273453cf67218a89065bba9088c4}{\_\-setBlocking} (bool)
+\item 
+int \hyperlink{classsocketpp_1_1BaseSocket_c4063c52772810a38922b56c81e4b4d2}{\_\-select} (\hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}{\_\-select\_\-mode})
 \item 
 \hyperlink{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}{BaseSocket} ()
 \begin{CompactList}\small\item\em simply instantiates the class without setting the internal socket descriptor \item\end{CompactList}\item 
@@ -127,6 +136,34 @@ double \hyperlink{classsocketpp_1_1BaseSocket_418af5a1fe752cef38e4c6679780224c}{
 \subsection{Detailed Description}
 Abstract base class. 
 
+\subsection{Member Enumeration Documentation}
+\hypertarget{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}{
+\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-select\_\-mode@{\_\-select\_\-mode}}
+\index{\_\-select\_\-mode@{\_\-select\_\-mode}!socketpp::BaseSocket@{socketpp::BaseSocket}}
+\subsubsection[{\_\-select\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf socketpp::BaseSocket::\_\-select\_\-mode}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}
+
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{read@{read}!socketpp::BaseSocket@{socketpp::BaseSocket}}\index{socketpp::BaseSocket@{socketpp::BaseSocket}!read@{read}}\item[{\em 
+\hypertarget{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6}{
+read}
+\label{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6}
+}]\index{write@{write}!socketpp::BaseSocket@{socketpp::BaseSocket}}\index{socketpp::BaseSocket@{socketpp::BaseSocket}!write@{write}}\item[{\em 
+\hypertarget{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685}{
+write}
+\label{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685}
+}]\index{err@{err}!socketpp::BaseSocket@{socketpp::BaseSocket}}\index{socketpp::BaseSocket@{socketpp::BaseSocket}!err@{err}}\item[{\em 
+\hypertarget{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4}{
+err}
+\label{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4}
+}]\end{description}
+\end{Desc}
+
+
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!$\sim$BaseSocket@{$\sim$BaseSocket}}
@@ -186,6 +223,13 @@ constructor which uses the given socket descriptor
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1BaseSocket_c4063c52772810a38922b56c81e4b4d2}{
+\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-select@{\_\-select}}
+\index{\_\-select@{\_\-select}!socketpp::BaseSocket@{socketpp::BaseSocket}}
+\subsubsection[{\_\-select}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::\_\-select ({\bf \_\-select\_\-mode} {\em m})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1BaseSocket_c4063c52772810a38922b56c81e4b4d2}
+
+
 \hypertarget{classsocketpp_1_1BaseSocket_4d49273453cf67218a89065bba9088c4}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-setBlocking@{\_\-setBlocking}}
 \index{\_\-setBlocking@{\_\-setBlocking}!socketpp::BaseSocket@{socketpp::BaseSocket}}

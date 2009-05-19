@@ -9,16 +9,17 @@
 
 namespace socketpp {
 
-///@brief	base exception class
-class base_error : public std::exception {
-protected:
+///@brief	socket-related exception class
+class error : public std::exception {
+private:
     std::string msg;
     int code;
-    
+
+public:
     ///@param	meth 	method which threw exception
     ///@param	err	error description string
     ///@param	func	C function which returned error
-    base_error(const std::string& meth, const std::string& err, const std::string& func="") throw()
+    error(const std::string& meth, const std::string& err, const std::string& func="") throw()
     {
         msg = meth + "(): " + err;
         if(func != "") {
@@ -30,78 +31,81 @@ protected:
     ///@param	meth 	method which threw exception
     ///@param	err	errno code
     ///@param	func	C function which returned error
-    base_error(const std::string& meth, int err, const std::string& func="") throw()
+    error(const std::string& meth, int err, const std::string& func="") throw()
     {
-        msg = meth + "(): " + _strerror(err);
+        msg = meth + "(): " + ::strerror(err);
         if(func != "") {
             msg += " [C "+func+"()]";
         }
         code = err;
     }
 
-    virtual std::string _strerror(int err)
-    {
-        return "";
-    }
-
-public:
     ///@brief	returns complete error string
     virtual const char * what() const throw() { return msg.c_str(); }
 
-    ~base_error() throw() {}
-};
-
-
-class h_error : public base_error {
-public:
-    h_error(const std::string& meth, const std::string& err, const std::string& func="") throw() 
-        : base_error(meth, err, func) {}
-    
-    h_error(const std::string& meth, int err, const std::string& func="") throw()
-        : base_error(meth, err, func) {}
-
-    int get_h_errno()
-    {
-        return code;
-    }
-    
-    ~h_error() throw() {}
-
-private:
-    std::string _strerror(int err)
-    {
-        return ::hstrerror(err);
-    }
-};
-
-
-class error : public base_error {
-public:
-    error(const std::string& meth, const std::string& err, const std::string& func="") throw() 
-        : base_error(meth, err, func) {}
-    
-    error(const std::string& meth, int err, const std::string& func="") throw()
-        : base_error(meth, err, func) {}
-
-    int get_errno()
-    {
-        return code;
-    }
+    inline int get_errno() { return code; }
     
     ~error() throw() {}
-
-private:
-    std::string _strerror(int err)
-    {
-        return ::strerror(err);
-    }
 };
 
+///@brief	address-related exception class
+class h_error : public std::exception {
+private:
+    std::string msg;
+    int code;
 
-class timeout : public base_error {
 public:
-    timeout(const std::string& meth, const std::string& err, const std::string& func="") throw() 
-        : base_error(meth, err, func) {}
+    ///@param	meth 	method which threw exception
+    ///@param	err	error description string
+    ///@param	func	C function which returned error
+    h_error(const std::string& meth, const std::string& err, const std::string& func="") throw()
+    {
+        msg = meth + "(): " + err;
+        if(func != "") {
+            msg += " [C "+func+"()]";
+        }
+        code = 0;
+    }
+    
+    ///@param	meth 	method which threw exception
+    ///@param	err	h_errno code
+    ///@param	func	C function which returned error
+    h_error(const std::string& meth, int err, const std::string& func="") throw()
+    {
+        msg = meth + "(): " + ::hstrerror(err);
+        if(func != "") {
+            msg += " [C "+func+"()]";
+        }
+        code = err;
+    }
+    
+    ///@brief	returns complete error string
+    virtual const char * what() const throw() { return msg.c_str(); }
+    
+    inline int get_h_errno() { return code; }
+
+    ~h_error() throw() {}
+};
+
+///@brief	timeout-related exception class
+class timeout : public std::exception {
+private:
+    std::string msg;
+
+public:
+    ///@param	meth 	method which threw exception
+    ///@param	err	error description string
+    ///@param	func	C function which returned error
+    timeout(const std::string& meth, const std::string& err, const std::string& func="") throw()
+    {
+        msg = meth + "(): " + err;
+        if(func != "") {
+            msg += " [C "+func+"()]";
+        }
+    }
+    
+    ///@brief	returns complete error string
+    virtual const char * what() const throw() { return msg.c_str(); }
     
     ~timeout() throw() {}
 };

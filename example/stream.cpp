@@ -8,8 +8,9 @@ using namespace std;
 int main()
 {
     SockStream ss = SockStream(sock_stream);
-    ss->connect("www.google.it","http");
-
+   // ss->connect("www.google.it", "http");
+    ss->connect("localhost", 12345);
+ss->settimeout(1);
     ss<< "GET / HTTP/1.1"<<crlf;
     ss<< "Host: www.google.it"<<crlf;
     ss<< "Connection: close"<<crlf<<crlf<<flush;

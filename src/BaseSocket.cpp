@@ -2,14 +2,14 @@
 
 namespace socketpp {
 
-void BaseSocket::_setBlocking(bool yes)
+void BaseSocket::setBlocking(bool yes)
 {
     long flags = ::fcntl(_sd, F_GETFL, 0);
     if(flags == -1) {
-        throw error("_setBlocking", errno, "fcntl");
+        throw error("setBlocking", errno, "fcntl");
     }
     if(::fcntl(_sd, F_SETFL, (yes? flags&~O_NONBLOCK : flags|O_NONBLOCK)) == -1) {
-        throw error("_setBlocking", errno, "fcntl");
+        throw error("setBlocking", errno, "fcntl");
     }
 }
 
@@ -26,6 +26,7 @@ BaseSocket::BaseSocket()
 
 BaseSocket::BaseSocket(type t, protocol prot)
 {
+    _timeout = 0.0;
     open(t,prot);
 }
 
@@ -52,8 +53,48 @@ int BaseSocket::connect(in_addr_t addr, port_t port)
 {
     int ret;
     struct sockaddr_in remote=__initaddr(htonl(addr),htons(port));
-    if((ret=::connect(_sd,(struct sockaddr*)&remote,sizeof(remote))) < 0) {
-        throw error("connect",errno,"connect");
+
+    if(_timeout == 0.0)  {
+        if((ret=::connect(_sd,(struct sockaddr*)&remote,sizeof(remote))) < 0) {
+            throw error("connect",errno,"connect");
+        }
+    } else {
+        setBlocking(false);
+        ret = ::connect(_sd,(struct sockaddr*)&remote,sizeof(remote));
+        if(ret < 0) {
+            if(errno == EINPROGRESS) {
+                ret = _select(write);
+                if(ret < 0) throw error("connect",errno,"connect");
+                if(ret == 0) throw timeout("connect","timeout expired","connect");
+            } else {
+                throw error("connect",errno,"connect");
+            }
+        }
+        setBlocking(true);
+    }
+    return ret;
+}
+
+int BaseSocket::_select(_select_mode m)
+{
+    int ret;
+    fd_set set; 
+    FD_ZERO(&set);
+    FD_SET(_sd, &set);
+
+    struct timeval tv;
+    tv.tv_sec = int(_timeout); 
+    tv.tv_usec = int((_timeout*1000) - double(tv.tv_sec*1000));
+
+    if     (m == read)  ret = ::select(_sd+1, &set, NULL, NULL, &tv);
+    else if(m == write) ret = ::select(_sd+1, NULL, &set, NULL, &tv);
+    else                ret = ::select(_sd+1, NULL, NULL, &set, &tv);
+
+    if(ret < 0) {
+        throw error("_select",errno,"select");
+    } else if(ret > 0) {
+        getsockopt(sol_socket, so_error, errno); 
+        if(errno) return -1;
     }
     return ret;
 }
@@ -162,10 +203,14 @@ int BaseSocket::bind(in_addr_t addr, const std::string& serv, const char *prot)
 
 size_t BaseSocket::send(const char buf[], size_t size)
 {
-    int n, ret=0;
+    int ret = 0, n;
     while(size > 0) {
+        if(_timeout!=0.0 && _select(write)==0) 
+            throw timeout("send","timeout expired");
+
         if((n=::write(_sd,buf+ret,size)) < 0)
             throw error("send",errno,"write");
+        
         size -= n;
         ret += n;
     }
@@ -180,8 +225,13 @@ size_t BaseSocket::send(const std::string &buf)
 size_t BaseSocket::recv(char buf[], size_t size)
 {
     int n;
+    
+    if(_timeout!=0.0 && _select(read)==0) 
+        throw timeout("recv","timeout expired");
+
     if((n=::read(_sd,buf,size)) < 0)
         throw error("recv",errno,"read");
+
     return n;
 }
 
@@ -199,6 +249,9 @@ size_t BaseSocket::sendto(const char buf[], size_t size, in_addr_t addr, port_t 
     int n, ret=0;
     struct sockaddr_in remote=__initaddr(htonl(addr),htons(port));
     while(size > 0) {
+        if(_timeout!=0.0 && _select(write)==0) 
+            throw timeout("sendto","timeout expired");
+
         if((n=::sendto(_sd,buf+ret,size,0,(struct sockaddr*)&remote,sizeof(remote))) < 0)
             throw error("sendto",errno,"sendto");
         size -= n;
@@ -253,6 +306,10 @@ size_t BaseSocket::recvfrom(char buf[], size_t size, in_addr_t& addr, port_t& po
     int n;
     struct sockaddr_in remote;
     size_t slen=sizeof(remote);
+
+    if(_timeout!=0.0 && _select(read)==0) 
+        throw timeout("recvfrom","timeout expired");
+
     if((n=::recvfrom(_sd,buf,size,0,(struct sockaddr*)&remote,&slen)) < 0) {
         throw error("recvfrom",errno,"recvfrom");
     }

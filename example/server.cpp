@@ -5,12 +5,12 @@ using namespace socketpp;
 
 void client(Socket &s,void *)
 {
-   SockStream ss(s);
+    SockStream ss(s);
     try {
         ss<<"HELLO " <<ss->remoteAddr() <<crlf;
         ss->close();
-    } catch (SockException &e) {
-        cerr<<e.what()<<endl;
+    } catch (error &e) {
+        cerr<< e.what()<<endl;
     }
 }
 

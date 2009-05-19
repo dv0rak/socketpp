@@ -126,8 +126,16 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2e066addfaa6f5648e68b3e6b0a15e79">~BaseSocket</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">desctuctor which calls <a class="el" href="classsocketpp_1_1BaseSocket.html#f067195056bb6b5a65c4bc1d2ac7da72" title="closes socket descriptor">close()</a>  <a href="#2e066addfaa6f5648e68b3e6b0a15e79"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Protected Types</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">_select_mode</a> { <a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6">read</a>, 
+<a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685">write</a>, 
+<a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4">err</a>
+ }</td></tr>
+
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#4d49273453cf67218a89065bba9088c4">_setBlocking</a> (bool)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#c4063c52772810a38922b56c81e4b4d2">_select</a> (<a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">_select_mode</a>)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2">BaseSocket</a> ()</td></tr>
 
@@ -210,7 +218,33 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-Abstract base class. <hr><h2>Constructor &amp; Destructor Documentation</h2>
+Abstract base class. <hr><h2>Member Enumeration Documentation</h2>
+<a class="anchor" name="21492d478c5aa2ff8a1ad258ccf58062"></a><!-- doxytag: member="socketpp::BaseSocket::_select_mode" ref="21492d478c5aa2ff8a1ad258ccf58062" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">socketpp::BaseSocket::_select_mode</a><code> [protected]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<dl compact><dt><b>Enumerator: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6"></a><!-- doxytag: member="read" ref="21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6" args="" -->read</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685"></a><!-- doxytag: member="write" ref="21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685" args="" -->write</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4"></a><!-- doxytag: member="err" ref="21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4" args="" -->err</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>
+
+</div>
+</div><p>
+<hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="2e066addfaa6f5648e68b3e6b0a15e79"></a><!-- doxytag: member="socketpp::BaseSocket::~BaseSocket" ref="2e066addfaa6f5648e68b3e6b0a15e79" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -340,6 +374,26 @@ constructor which uses the given socket descriptor
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="c4063c52772810a38922b56c81e4b4d2"></a><!-- doxytag: member="socketpp::BaseSocket::_select" ref="c4063c52772810a38922b56c81e4b4d2" args="(_select_mode)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int socketpp::BaseSocket::_select           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">_select_mode</a>&nbsp;</td>
+          <td class="paramname"> <em>m</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
 <a class="anchor" name="4d49273453cf67218a89065bba9088c4"></a><!-- doxytag: member="socketpp::BaseSocket::_setBlocking" ref="4d49273453cf67218a89065bba9088c4" args="(bool)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2042,7 +2096,7 @@ sets <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> on the follo
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="BaseSocket_8h-source.html">BaseSocket.h</a><li><a class="el" href="BaseSocket_8cpp.html">BaseSocket.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 13:47:41 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 15:09:40 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

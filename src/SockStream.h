@@ -39,16 +39,16 @@ private:
 ///@brief inherits from std::iostream, it allows the C++ stream approach with sockets
 class SockStream : public std::iostream {
 public:
-    SockStream()	   	    : std::iostream(new SockBuf()) { }
+    SockStream()	   	    : std::iostream(new SockBuf()) { exceptions(badbit); }
     ///@brief	calls std::iostream(&s)
-    SockStream(SockBuf &s)          : std::iostream(&s) { }
+    SockStream(SockBuf &s)          : std::iostream(&s) { exceptions(badbit); }
     ///@brief	calls std::iostream(new SockBuf(s))
-    SockStream(const Socket &s)     : std::iostream(new SockBuf(s)) { }
+    SockStream(const Socket &s)     : std::iostream(new SockBuf(s)) { exceptions(badbit); }
     ///@brief	copy constructor
-    SockStream(const SockStream &s) : std::iostream(s.sockbuf()) { }
+    SockStream(const SockStream &s) : std::iostream(s.sockbuf()) { exceptions(badbit); }
     ///@brief	calls std::iostream(new SockBuf(t,prot))
     SockStream(type t, protocol prot=ipproto_ip) 
-        			    : std::iostream(new SockBuf(t,prot)) { }
+        			    : std::iostream(new SockBuf(t,prot)) { exceptions(badbit); }
  
     ///@brief	returns pointer to internal SockBuf object
     SockBuf* sockbuf() const { return (SockBuf*)rdbuf(); }

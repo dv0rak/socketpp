@@ -39,7 +39,8 @@ enum option {
     so_reuseaddr= SO_REUSEADDR,
     so_broadcast= SO_BROADCAST,
     so_sndtimeo	= SO_SNDTIMEO,
-    so_rcvtimeo	= SO_RCVTIMEO
+    so_rcvtimeo	= SO_RCVTIMEO,
+    so_error	= SO_ERROR
 };	
 enum level {
     sol_ip    = SOL_IP,
