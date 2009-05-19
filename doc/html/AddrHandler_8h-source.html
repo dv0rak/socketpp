@@ -37,8 +37,8 @@
 <a name="l00019"></a>00019     std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#19aebc1e9779dee4e5f06d7b39e18959" title="resolves given name through a DNS lookup">gethostbyname</a>(<span class="keyword">const</span> std::string&amp; name);
 <a name="l00023"></a>00023     std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#2e9b9e6dc7ea4fc4a3500665b3f4062d" title="tries to obtain an hostname from a IP address, through a reverse DNS lookup">gethostbyaddr</a>(<span class="keyword">const</span> std::string&amp; addr);
 <a name="l00024"></a>00024 
-<a name="l00029"></a>00029     <a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> <a class="code" href="classsocketpp_1_1AddrHandler.html#b02210173edbb5691a3e76a5978cfce6" title="obtains port conventionally bound to given service name">getServicePort</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">char</span> *prot=NULL);
-<a name="l00034"></a>00034     <span class="keyword">static</span> std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#9c31dc05f530871b779a52f49adeb6b6" title="obtains service name conventionally bound to given port">getServiceName</a>(<a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port, <span class="keyword">const</span> <span class="keywordtype">char</span> *prot=NULL);
+<a name="l00029"></a>00029     <a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> <a class="code" href="classsocketpp_1_1AddrHandler.html#b4a42f2b0f3842d681ea0cbe6810d6ff" title="obtains port conventionally bound to given service name">getservbyname</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">char</span> *prot=NULL);
+<a name="l00034"></a>00034     <span class="keyword">static</span> std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#f221cac56bf3808494806d335a56bb87" title="obtains service name conventionally bound to given port">getservbyport</a>(<a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port, <span class="keyword">const</span> <span class="keywordtype">char</span> *prot=NULL);
 <a name="l00035"></a>00035 
 <a name="l00039"></a>00039     <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classsocketpp_1_1AddrHandler.html#652e24c273f7905cebf8d04b3cfef74d" title="checks whether given string is in IPv4 dotted decimal format">isIPv4</a>(<span class="keyword">const</span> std::string&amp; str);
 <a name="l00040"></a>00040 
@@ -55,7 +55,7 @@
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun May 17 21:44:24 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 13:47:39 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

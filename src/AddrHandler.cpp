@@ -10,7 +10,7 @@ std::string AddrHandler::gethostbyname(const std::string& name)
     }
     struct hostent *he = ::gethostbyname(name.c_str());
     if(he == NULL) {
-        throw SockException("gethostbyname",::hstrerror(h_errno),"gethostbyname");
+        throw h_error("gethostbyname", h_errno, "gethostbyname");
     }
     std::string addr=inet_ntoa(::ntohl((*(struct in_addr *)he->h_addr).s_addr));
     resolved[name]=addr;
@@ -28,7 +28,7 @@ std::string AddrHandler::gethostbyaddr(const std::string& addr)
     in.s_addr = ::htonl(inet_aton(addr));
     struct hostent *he = ::gethostbyaddr(&in,sizeof in,AF_INET);
     if(he == NULL) {
-        throw SockException("gethostbyaddr",::hstrerror(h_errno),"gethostbyaddr");
+        throw h_error("gethostbyaddr", h_errno, "gethostbyaddr");
     }
     resolved[he->h_name] = addr;
     return he->h_name;
@@ -49,7 +49,7 @@ bool AddrHandler::isIPv4(const std::string& str)
 in_addr_t AddrHandler::inet_aton(const std::string& str)
 {
     if(!isIPv4(str)) {
-        throw SockException("inet_aton","not a IPv4 dotted decimal address");
+        throw h_error("inet_aton", "not a IPv4 dotted decimal address");
     }
     return ::ntohl(::inet_addr(str.c_str()));
 }
@@ -61,17 +61,17 @@ std::string AddrHandler::inet_ntoa(in_addr_t addr)
     return ::inet_ntoa(in);
 }
 
-port_t AddrHandler::getServicePort(const std::string& name, const char *prot)
+port_t AddrHandler::getservbyname(const std::string& name, const char *prot)
 {
     servent *s;
     s = ::getservbyname(name.c_str(),prot);
     if(s == NULL) {
-        throw SockException("getServicePort","an error occurred","getservbyname");
+        throw h_error("getservbyname", "error", "getservbyname");
     }
     return ::ntohs(s->s_port);
 }
 
-std::string AddrHandler::getServiceName(port_t port, const char *prot)
+std::string AddrHandler::getservbyport(port_t port, const char *prot)
 {
     servent *s;
     s = ::getservbyport(::htons(port),prot);

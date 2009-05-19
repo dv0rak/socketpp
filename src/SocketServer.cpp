@@ -36,7 +36,7 @@ Socket& SocketServer::accept()
     socklen_t slen=sizeof(remote);
     int sd = ::accept(_sd,&remote,&slen);
     if(sd < 0) {
-        throw SockException("accept",errno,"accept");
+        throw error("accept",errno,"accept");
     }
     return *(new Socket(sd));
 }
@@ -45,7 +45,7 @@ int SocketServer::listen(int maxconn)
 {
     int ret;
     if((ret=::listen(_sd,maxconn)) < 0) {
-        throw SockException("listen",errno,"listen");
+        throw error("listen",errno,"listen");
     }
     return ret;
 }

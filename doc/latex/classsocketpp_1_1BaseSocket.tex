@@ -40,8 +40,8 @@ int \hyperlink{classsocketpp_1_1BaseSocket_4775f13f8e1cceaaed40106162b2149f}{bin
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
 int \hyperlink{classsocketpp_1_1BaseSocket_aab800bcb5ee48cd4410ae2b9ed83e23}{bind} (in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL)
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1BaseSocket_49718984476b4126889d3a26045b1fdc}{settimeout} (unsigned int sec, unsigned int usec=0)
-\begin{CompactList}\small\item\em calls setsockopt(SO\_\-RCVTIMEO) and setsockopt(SO\_\-SNDTIMEO) to set a timeout on the following input/output operations If sec=0 \&\& usec=0 timeout is eliminated \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1BaseSocket_0804d148470fd742cda495d3533b25c6}{settimeout} (double time)
+\begin{CompactList}\small\item\em sets \hyperlink{classsocketpp_1_1timeout}{timeout} on the following IO operations. If time is 0 \hyperlink{classsocketpp_1_1timeout}{timeout} is cancelled. \item\end{CompactList}\item 
 std::string \hyperlink{classsocketpp_1_1BaseSocket_483c6186ae60d0c399983e14f55af600}{remoteAddr} ()
 \begin{CompactList}\small\item\em returns remote address to which socket is connected \item\end{CompactList}\item 
 std::string \hyperlink{classsocketpp_1_1BaseSocket_0caed2e7d3f0e4db7d4c1aa3aba52caf}{localAddr} ()
@@ -62,6 +62,8 @@ virtual \hyperlink{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}
 \begin{CompactList}\small\item\em desctuctor which calls \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{close()} \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
+\item 
+void \hyperlink{classsocketpp_1_1BaseSocket_4d49273453cf67218a89065bba9088c4}{\_\-setBlocking} (bool)
 \item 
 \hyperlink{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}{BaseSocket} ()
 \begin{CompactList}\small\item\em simply instantiates the class without setting the internal socket descriptor \item\end{CompactList}\item 
@@ -117,6 +119,8 @@ size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_ace82407e13a6eee26aa1f5f642d0cf
 int \hyperlink{classsocketpp_1_1BaseSocket_a5ef6b5fabb3988bced6a23d9631985d}{\_\-sd}
 \item 
 \hyperlink{classsocketpp_1_1AddrHandler}{AddrHandler} \hyperlink{classsocketpp_1_1BaseSocket_1e44e3c6c2ecd89c2aa716cc62528620}{\_\-h}
+\item 
+double \hyperlink{classsocketpp_1_1BaseSocket_418af5a1fe752cef38e4c6679780224c}{\_\-timeout}
 \end{CompactItemize}
 
 
@@ -182,6 +186,13 @@ constructor which uses the given socket descriptor
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1BaseSocket_4d49273453cf67218a89065bba9088c4}{
+\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-setBlocking@{\_\-setBlocking}}
+\index{\_\-setBlocking@{\_\-setBlocking}!socketpp::BaseSocket@{socketpp::BaseSocket}}
+\subsubsection[{\_\-setBlocking}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::BaseSocket::\_\-setBlocking (bool {\em yes})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1BaseSocket_4d49273453cf67218a89065bba9088c4}
+
+
 \hypertarget{classsocketpp_1_1BaseSocket_aab800bcb5ee48cd4410ae2b9ed83e23}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!bind@{bind}}
 \index{bind@{bind}!socketpp::BaseSocket@{socketpp::BaseSocket}}
@@ -771,22 +782,20 @@ sets options set on socket descriptor. Wrapper for \hyperlink{classsocketpp_1_1B
 \end{Desc}
 \begin{Desc}
 \item[Returns:]\hyperlink{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{setsockopt()} return value \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_49718984476b4126889d3a26045b1fdc}{
+\hypertarget{classsocketpp_1_1BaseSocket_0804d148470fd742cda495d3533b25c6}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!settimeout@{settimeout}}
 \index{settimeout@{settimeout}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{settimeout}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::BaseSocket::settimeout (unsigned int {\em sec}, \/  unsigned int {\em usec} = {\tt 0})}}
-\label{classsocketpp_1_1BaseSocket_49718984476b4126889d3a26045b1fdc}
+\subsubsection[{settimeout}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::BaseSocket::settimeout (double {\em time})}}
+\label{classsocketpp_1_1BaseSocket_0804d148470fd742cda495d3533b25c6}
 
 
-calls setsockopt(SO\_\-RCVTIMEO) and setsockopt(SO\_\-SNDTIMEO) to set a timeout on the following input/output operations If sec=0 \&\& usec=0 timeout is eliminated 
+sets \hyperlink{classsocketpp_1_1timeout}{timeout} on the following IO operations. If time is 0 \hyperlink{classsocketpp_1_1timeout}{timeout} is cancelled. 
 
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em sec}]timeout seconds \item[{\em usec}]timeout microseconds \end{description}
+\item[{\em time}]\hyperlink{classsocketpp_1_1timeout}{timeout} in seconds \end{description}
 \end{Desc}
-\begin{Desc}
-\item[Returns:]\hyperlink{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{setsockopt()} return value \end{Desc}
 
 
 \subsection{Member Data Documentation}
@@ -802,6 +811,13 @@ calls setsockopt(SO\_\-RCVTIMEO) and setsockopt(SO\_\-SNDTIMEO) to set a timeout
 \index{\_\-sd@{\_\-sd}!socketpp::BaseSocket@{socketpp::BaseSocket}}
 \subsubsection[{\_\-sd}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf socketpp::BaseSocket::\_\-sd}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_a5ef6b5fabb3988bced6a23d9631985d}
+
+
+\hypertarget{classsocketpp_1_1BaseSocket_418af5a1fe752cef38e4c6679780224c}{
+\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-timeout@{\_\-timeout}}
+\index{\_\-timeout@{\_\-timeout}!socketpp::BaseSocket@{socketpp::BaseSocket}}
+\subsubsection[{\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf socketpp::BaseSocket::\_\-timeout}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1BaseSocket_418af5a1fe752cef38e4c6679780224c}
 
 
 

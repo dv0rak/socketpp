@@ -2,6 +2,8 @@
 #define __BASE_SOCKET_H TRUE
 
 #include "AddrHandler.h"
+#include <fcntl.h>
+#include <sys/select.h>
 #include <string>
 
 namespace socketpp {
@@ -27,7 +29,7 @@ public:
         int ret;
         size_t siz = sizeof(T);
         if((ret=::getsockopt(_sd,lev,opt,&optval,&siz)) < 0)
-            throw SockException("getsockopt",errno,"getsockopt");
+            throw error("getsockopt",errno,"getsockopt");
         return ret;
     }
 
@@ -41,7 +43,7 @@ public:
     {
         int ret;
         if((ret=::setsockopt(_sd,lev,opt,&optval,sizeof(T))) < 0)
-            throw SockException("setsockopt",errno,"setsockopt");
+            throw error("setsockopt",errno,"setsockopt");
         return ret;
     }
 
@@ -91,12 +93,9 @@ public:
     ///@return	bind() return value
     int bind(in_addr_t addr, const std::string& serv, const char *prot=NULL);
 
-    ///@brief calls setsockopt(SO_RCVTIMEO) and setsockopt(SO_SNDTIMEO) to set a timeout on the following input/output operations
-    ///       If sec=0 && usec=0 timeout is eliminated
-    ///@param	sec	timeout seconds
-    ///@param	usec	timeout microseconds
-    ///@return	setsockopt() return value
-    void settimeout(unsigned int sec, unsigned int usec=0);
+    ///@brief sets timeout on the following IO operations. If time is 0 timeout is cancelled.
+    ///@param	time	timeout in seconds
+    void settimeout(double time);
 
     ///@brief returns remote address to which socket is connected
     ///@return IPv4 dotted decimal address
@@ -129,6 +128,9 @@ public:
 protected:
     int    _sd;
     AddrHandler _h;
+    double _timeout;
+
+    void _setBlocking(bool);
 
     ///@brief	simply instantiates the class without setting the internal socket descriptor 
     BaseSocket();

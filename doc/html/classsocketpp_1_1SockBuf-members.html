@@ -26,6 +26,8 @@
 <h1>socketpp::SockBuf Member List</h1>This is the complete list of members for <a class="el" href="classsocketpp_1_1SockBuf.html">socketpp::SockBuf</a>, including all inherited members.<p><table>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#1e44e3c6c2ecd89c2aa716cc62528620">_h</a></td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#a5ef6b5fabb3988bced6a23d9631985d">_sd</a></td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#4d49273453cf67218a89065bba9088c4">_setBlocking</a>(bool)</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#418af5a1fe752cef38e4c6679780224c">_timeout</a></td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2">BaseSocket</a>()</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#0c142db99422572579c91f3e176035c6">BaseSocket</a>(const BaseSocket &amp;s)</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#35c982d7aef2041c100439cf38aa7f4d">BaseSocket</a>(type t, protocol prot=ipproto_ip)</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [protected]</code></td></tr>
@@ -72,7 +74,7 @@
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#c0bbca9725a55a2e6a822536efd31b73">sendto</a>(const char buf[], size_t size, const std::string &amp;addr, const std::string &amp;serv, const char *prot=NULL)</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#5fd9737270ee71d2292e70ed625d63f9">sendto</a>(const std::string &amp;buf, const std::string &amp;addr, const std::string &amp;serv, const char *prot=NULL)</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#3f1f168e4953c046bb1159941da2fa30">setsockopt</a>(level lev, option opt, const T &amp;optval)</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [inline]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#49718984476b4126889d3a26045b1fdc">settimeout</a>(unsigned int sec, unsigned int usec=0)</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#0804d148470fd742cda495d3533b25c6">settimeout</a>(double time)</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1SockBuf.html#e02aca0e93d6b6227ba492cdc2690d9a">SockBuf</a>()</td><td><a class="el" href="classsocketpp_1_1SockBuf.html">socketpp::SockBuf</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1SockBuf.html#065ef76cdf18c04857350c643bd620e3">SockBuf</a>(const Socket &amp;s)</td><td><a class="el" href="classsocketpp_1_1SockBuf.html">socketpp::SockBuf</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1SockBuf.html#5e8a5860fd67228e5d39ea28f9d67341">SockBuf</a>(type t, protocol prot=ipproto_ip)</td><td><a class="el" href="classsocketpp_1_1SockBuf.html">socketpp::SockBuf</a></td><td><code> [inline]</code></td></tr>
@@ -82,7 +84,7 @@
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1BaseSocket.html#2e066addfaa6f5648e68b3e6b0a15e79">~BaseSocket</a>()</td><td><a class="el" href="classsocketpp_1_1BaseSocket.html">socketpp::BaseSocket</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classsocketpp_1_1SockBuf.html#ee857faaed622effa453c7b53749ff14">~SockBuf</a>()</td><td><a class="el" href="classsocketpp_1_1SockBuf.html">socketpp::SockBuf</a></td><td></td></tr>
 </table></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun May 17 21:44:27 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 13:47:44 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

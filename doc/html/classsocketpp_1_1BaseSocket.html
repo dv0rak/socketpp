@@ -95,9 +95,9 @@ Inheritance diagram for socketpp::BaseSocket:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#aab800bcb5ee48cd4410ae2b9ed83e23">bind</a> (in_addr_t addr, const std::string &amp;serv, const char *prot=NULL)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket to local given address  <a href="#aab800bcb5ee48cd4410ae2b9ed83e23"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#49718984476b4126889d3a26045b1fdc">settimeout</a> (unsigned int sec, unsigned int usec=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#0804d148470fd742cda495d3533b25c6">settimeout</a> (double time)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls setsockopt(SO_RCVTIMEO) and setsockopt(SO_SNDTIMEO) to set a timeout on the following input/output operations If sec=0 &amp;&amp; usec=0 timeout is eliminated  <a href="#49718984476b4126889d3a26045b1fdc"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> is cancelled.  <a href="#0804d148470fd742cda495d3533b25c6"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#483c6186ae60d0c399983e14f55af600">remoteAddr</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns remote address to which socket is connected  <a href="#483c6186ae60d0c399983e14f55af600"></a><br></td></tr>
@@ -127,6 +127,8 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">desctuctor which calls <a class="el" href="classsocketpp_1_1BaseSocket.html#f067195056bb6b5a65c4bc1d2ac7da72" title="closes socket descriptor">close()</a>  <a href="#2e066addfaa6f5648e68b3e6b0a15e79"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#4d49273453cf67218a89065bba9088c4">_setBlocking</a> (bool)</td></tr>
+
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2">BaseSocket</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">simply instantiates the class without setting the internal socket descriptor  <a href="#3eb81ecbf94ce83afa6b2f60206c77f2"></a><br></td></tr>
@@ -203,6 +205,8 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#a5ef6b5fabb3988bced6a23d9631985d">_sd</a></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classsocketpp_1_1AddrHandler.html">AddrHandler</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#1e44e3c6c2ecd89c2aa716cc62528620">_h</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#418af5a1fe752cef38e4c6679780224c">_timeout</a></td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
@@ -336,6 +340,26 @@ constructor which uses the given socket descriptor
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="4d49273453cf67218a89065bba9088c4"></a><!-- doxytag: member="socketpp::BaseSocket::_setBlocking" ref="4d49273453cf67218a89065bba9088c4" args="(bool)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void socketpp::BaseSocket::_setBlocking           </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>yes</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
 <a class="anchor" name="aab800bcb5ee48cd4410ae2b9ed83e23"></a><!-- doxytag: member="socketpp::BaseSocket::bind" ref="aab800bcb5ee48cd4410ae2b9ed83e23" args="(in_addr_t addr, const std::string &amp;serv, const char *prot=NULL)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1942,41 +1966,30 @@ sets options set on socket descriptor. Wrapper for <a class="el" href="classsock
 
 </div>
 </div><p>
-<a class="anchor" name="49718984476b4126889d3a26045b1fdc"></a><!-- doxytag: member="socketpp::BaseSocket::settimeout" ref="49718984476b4126889d3a26045b1fdc" args="(unsigned int sec, unsigned int usec=0)" -->
+<a class="anchor" name="0804d148470fd742cda495d3533b25c6"></a><!-- doxytag: member="socketpp::BaseSocket::settimeout" ref="0804d148470fd742cda495d3533b25c6" args="(double time)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void socketpp::BaseSocket::settimeout           </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&nbsp;</td>
-          <td class="paramname"> <em>sec</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>time</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
           <td></td>
-          <td class="paramtype">unsigned int&nbsp;</td>
-          <td class="paramname"> <em>usec</em> = <code>0</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>
-calls setsockopt(SO_RCVTIMEO) and setsockopt(SO_SNDTIMEO) to set a timeout on the following input/output operations If sec=0 &amp;&amp; usec=0 timeout is eliminated 
+sets <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html">timeout</a> is cancelled. 
 <p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>sec</em>&nbsp;</td><td>timeout seconds </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>usec</em>&nbsp;</td><td>timeout microseconds </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>time</em>&nbsp;</td><td><a class="el" href="classsocketpp_1_1timeout.html">timeout</a> in seconds </td></tr>
   </table>
 </dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd><a class="el" href="classsocketpp_1_1BaseSocket.html#3f1f168e4953c046bb1159941da2fa30" title="sets options set on socket descriptor. Wrapper for setsockopt()">setsockopt()</a> return value </dd></dl>
 
 </div>
 </div><p>
@@ -2011,10 +2024,25 @@ calls setsockopt(SO_RCVTIMEO) and setsockopt(SO_SNDTIMEO) to set a timeout on th
 
 </div>
 </div><p>
+<a class="anchor" name="418af5a1fe752cef38e4c6679780224c"></a><!-- doxytag: member="socketpp::BaseSocket::_timeout" ref="418af5a1fe752cef38e4c6679780224c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classsocketpp_1_1BaseSocket.html#418af5a1fe752cef38e4c6679780224c">socketpp::BaseSocket::_timeout</a><code> [protected]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="BaseSocket_8h-source.html">BaseSocket.h</a><li><a class="el" href="BaseSocket_8cpp.html">BaseSocket.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun May 17 21:44:25 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 19 13:47:41 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -26,12 +26,12 @@ public:
     /// @param   name	service name
     /// @param   prot	transport layer protocol
     /// @return  port number
-    port_t getServicePort(const std::string& name, const char *prot=NULL);
+    port_t getservbyname(const std::string& name, const char *prot=NULL);
     /// @brief   obtains service name conventionally bound to given port
     /// @param   port 	port number
     /// @param   prot	transport layer protocol
     /// @return  service name
-    static std::string getServiceName(port_t port, const char *prot=NULL);
+    static std::string getservbyport(port_t port, const char *prot=NULL);
 
     /// @brief   checks whether given string is in IPv4 dotted decimal format 
     /// @param   str 	string to check
