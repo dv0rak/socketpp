@@ -134,22 +134,22 @@ _u16 RawSocket::pseudo_checksum(const void *buf, size_t len, _u32 saddr, _u32 da
     return ~sum;
 }
 
-_u16 RawSocket::tcp_checksum(const void *buf, size_t len, _u32 saddr, _u32 daddr)
+_u16 TCP_RawSocket::tcp_checksum(const void *buf, size_t len, _u32 saddr, _u32 daddr)
 {
     return pseudo_checksum(buf,len,saddr,daddr,IPPROTO_TCP);
 }
 
-_u16 RawSocket::udp_checksum(const void *buf, size_t len, _u32 saddr, _u32 daddr)
+_u16 UDP_RawSocket::udp_checksum(const void *buf, size_t len, _u32 saddr, _u32 daddr)
 {
     return pseudo_checksum(buf,len,saddr,daddr,IPPROTO_UDP);
 }
 
-_u16 RawSocket::tcp_checksum(const std::string &buf, _u32 saddr, _u32 daddr)
+_u16 TCP_RawSocket::tcp_checksum(const std::string &buf, _u32 saddr, _u32 daddr)
 {
     return pseudo_checksum(buf.c_str(),buf.size(),saddr,daddr,IPPROTO_TCP);
 }
 
-_u16 RawSocket::udp_checksum(const std::string &buf, _u32 saddr, _u32 daddr)
+_u16 UDP_RawSocket::udp_checksum(const std::string &buf, _u32 saddr, _u32 daddr)
 {
     return pseudo_checksum(buf.c_str(),buf.size(),saddr,daddr,IPPROTO_UDP);
 }

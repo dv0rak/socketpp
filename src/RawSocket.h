@@ -28,32 +28,6 @@ public:
     /// @param	buf 	packet string
     /// @return	checksum value
     static _u16 checksum(const std::string &buf);
-    /// @brief  calculates tcp checksum on pseudo-header
-    /// @param	buf	pointer to packet top
-    /// @param	nchar	size of packet in bytes
-    /// @param  saddr	IPv4 source address
-    /// @param  daddr	IPv4 destination address
-    /// @return	checksum value
-    static _u16 tcp_checksum(const void *buf, size_t nchar, _u32 saddr, _u32 daddr);
-    /// @brief  calculates tcp checksum on pseudo-header
-    /// @param	buf 	packet string
-    /// @param  saddr	IPv4 source address
-    /// @param  daddr	IPv4 destination address
-    /// @return	checksum value
-    static _u16 tcp_checksum(const std::string &buf, _u32 saddr, _u32 daddr);
-    /// @brief  calculates udp checksum on pseudo-header
-    /// @param	buf	pointer to packet top
-    /// @param	nchar	size of packet in bytes
-    /// @param  saddr	IPv4 source address
-    /// @param  daddr	IPv4 destination address
-    /// @return	checksum value
-    static _u16 udp_checksum(const void *buf, size_t nchar, _u32 saddr, _u32 daddr);
-    /// @brief  calculates udp checksum on pseudo-header
-    /// @param	buf 	packet string
-    /// @param  saddr	IPv4 source address
-    /// @param  daddr	IPv4 destination address
-    /// @return	checksum value
-    static _u16 udp_checksum(const std::string &buf, _u32 saddr, _u32 daddr);
 
     /// @brief	builds the internal data payload to send
     /// @param	data	pointer to data payload buffer
@@ -107,7 +81,6 @@ protected:
     virtual void _build_packet(std::string &packet) = 0;
     virtual void _set_fields(const std::string &packet) = 0;
     
-private:
     static _u16 pseudo_checksum(const void*, size_t, _u32, _u32, _u16);
 };
 
@@ -213,6 +186,20 @@ class UDP_RawSocket : virtual public RawSocket {
 public:
     /// @brief	constructor which calls RawSocket(ipproto_udp)
     UDP_RawSocket() : RawSocket(ipproto_udp) { }
+    
+    /// @brief  calculates udp checksum on pseudo-header
+    /// @param	buf	pointer to packet top
+    /// @param	nchar	size of packet in bytes
+    /// @param  saddr	IPv4 source address
+    /// @param  daddr	IPv4 destination address
+    /// @return	checksum value
+    static _u16 udp_checksum(const void *buf, size_t nchar, _u32 saddr, _u32 daddr);
+    /// @brief  calculates udp checksum on pseudo-header
+    /// @param	buf 	packet string
+    /// @param  saddr	IPv4 source address
+    /// @param  daddr	IPv4 destination address
+    /// @return	checksum value
+    static _u16 udp_checksum(const std::string &buf, _u32 saddr, _u32 daddr);
 
     /// @brief	builds the internal UDP header
     /// @param	source	   source port
@@ -228,6 +215,7 @@ public:
     /// @param  source	   IP source address
     /// @param	dest	   IP destination address
     void adjust_UDP_csum(in_addr_t source, in_addr_t dest);
+    
     /// @brief	sets the internal header "len" field
     void adjust_UDP_len();
     /// @brief	calls adjust_UDP_len() and adjust_UDP_csum(source,dest)
@@ -273,6 +261,20 @@ public:
     /// @brief	constructor which calls RawSocket(ipproto_tcp)
     TCP_RawSocket() : RawSocket(ipproto_tcp) { }
 
+    /// @brief  calculates tcp checksum on pseudo-header
+    /// @param	buf	pointer to packet top
+    /// @param	nchar	size of packet in bytes
+    /// @param  saddr	IPv4 source address
+    /// @param  daddr	IPv4 destination address
+    /// @return	checksum value
+    static _u16 tcp_checksum(const void *buf, size_t nchar, _u32 saddr, _u32 daddr);
+    /// @brief  calculates tcp checksum on pseudo-header
+    /// @param	buf 	packet string
+    /// @param  saddr	IPv4 source address
+    /// @param  daddr	IPv4 destination address
+    /// @return	checksum value
+    static _u16 tcp_checksum(const std::string &buf, _u32 saddr, _u32 daddr);
+    
     /// @brief	builds the internal TCP header
     void build_TCP_header(_u16 source, _u16 dest, _u32 seq, _u32 ack_seq, _u8 res1, _u8 doff,
                           _u8 fin, _u8 syn, _u8 rst, _u8 psh, _u8 ack, _u8 urg, 
@@ -322,7 +324,6 @@ protected:
 
     virtual void _build_packet(std::string &packet);
     virtual void _set_fields(const std::string &packet);
-    
 };
 
 /// @brief	TCP raw socket with IP header handling. 
