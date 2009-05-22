@@ -44,21 +44,18 @@ size\_\-t \hyperlink{classsocketpp_1_1RawSocket_de47c63d60cba25d1ae82f242851610d
 static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_bb78ecebb5bd5ab5be4ee46d786fe5cd}{checksum} (const void $\ast$buf, size\_\-t nchar)
 \begin{CompactList}\small\item\em calculates internet checksum \item\end{CompactList}\item 
 static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_67af2c9f3bc37146b54fc9fb69c0dd8d}{checksum} (const std::string \&buf)
-\begin{CompactList}\small\item\em calculates internet checksum \item\end{CompactList}\item 
-static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_bc807e5fcf41891e21faadd7b44b851a}{tcp\_\-checksum} (const void $\ast$buf, size\_\-t nchar, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
-\begin{CompactList}\small\item\em calculates tcp checksum on pseudo-header \item\end{CompactList}\item 
-static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_01e34dbdba36284d5e96896dc083702b}{tcp\_\-checksum} (const std::string \&buf, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
-\begin{CompactList}\small\item\em calculates tcp checksum on pseudo-header \item\end{CompactList}\item 
-static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_25eef0a35fc66b33bed3abd176a5175e}{udp\_\-checksum} (const void $\ast$buf, size\_\-t nchar, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
-\begin{CompactList}\small\item\em calculates udp checksum on pseudo-header \item\end{CompactList}\item 
-static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_eb3d9cfc5e2893487d7e076ef56693d4}{udp\_\-checksum} (const std::string \&buf, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
-\begin{CompactList}\small\item\em calculates udp checksum on pseudo-header \item\end{CompactList}\end{CompactItemize}
+\begin{CompactList}\small\item\em calculates internet checksum \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
 virtual void \hyperlink{classsocketpp_1_1RawSocket_eb0a3f716c0fc46efa4123acf0fe1e66}{\_\-build\_\-packet} (std::string \&packet)=0
 \item 
 virtual void \hyperlink{classsocketpp_1_1RawSocket_45e6b041703cb8ae0f93dd19766865d5}{\_\-set\_\-fields} (const std::string \&packet)=0
+\end{CompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{CompactItemize}
+\item 
+static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1RawSocket_c9422942a0ed23c9900d26426a96a0ee}{pseudo\_\-checksum} (const void $\ast$, size\_\-t, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32}, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32}, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16})
 \end{CompactItemize}
 \subsection*{Protected Attributes}
 \begin{CompactItemize}
@@ -200,6 +197,13 @@ gets the received data payload
 \end{Desc}
 \begin{Desc}
 \item[Returns:]number of bytes written \end{Desc}
+\hypertarget{classsocketpp_1_1RawSocket_c9422942a0ed23c9900d26426a96a0ee}{
+\index{socketpp::RawSocket@{socketpp::RawSocket}!pseudo\_\-checksum@{pseudo\_\-checksum}}
+\index{pseudo\_\-checksum@{pseudo\_\-checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
+\subsubsection[{pseudo\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::pseudo\_\-checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em len}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr}, \/  {\bf \_\-u16} {\em proto})\hspace{0.3cm}{\tt  \mbox{[}static, protected\mbox{]}}}}
+\label{classsocketpp_1_1RawSocket_c9422942a0ed23c9900d26426a96a0ee}
+
+
 \hypertarget{classsocketpp_1_1RawSocket_ea48bec4596e2afc89adba2ccb13f6c8}{
 \index{socketpp::RawSocket@{socketpp::RawSocket}!read\_\-packet@{read\_\-packet}}
 \index{read\_\-packet@{read\_\-packet}!socketpp::RawSocket@{socketpp::RawSocket}}
@@ -291,70 +295,6 @@ sends the internal built packet
 \end{Desc}
 \begin{Desc}
 \item[Returns:]number of bytes sent \end{Desc}
-\hypertarget{classsocketpp_1_1RawSocket_01e34dbdba36284d5e96896dc083702b}{
-\index{socketpp::RawSocket@{socketpp::RawSocket}!tcp\_\-checksum@{tcp\_\-checksum}}
-\index{tcp\_\-checksum@{tcp\_\-checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
-\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::tcp\_\-checksum (const std::string \& {\em buf}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1RawSocket_01e34dbdba36284d5e96896dc083702b}
-
-
-calculates tcp checksum on pseudo-header 
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em buf}]packet string \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]checksum value \end{Desc}
-\hypertarget{classsocketpp_1_1RawSocket_bc807e5fcf41891e21faadd7b44b851a}{
-\index{socketpp::RawSocket@{socketpp::RawSocket}!tcp\_\-checksum@{tcp\_\-checksum}}
-\index{tcp\_\-checksum@{tcp\_\-checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
-\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::tcp\_\-checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1RawSocket_bc807e5fcf41891e21faadd7b44b851a}
-
-
-calculates tcp checksum on pseudo-header 
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em buf}]pointer to packet top \item[{\em nchar}]size of packet in bytes \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]checksum value \end{Desc}
-\hypertarget{classsocketpp_1_1RawSocket_eb3d9cfc5e2893487d7e076ef56693d4}{
-\index{socketpp::RawSocket@{socketpp::RawSocket}!udp\_\-checksum@{udp\_\-checksum}}
-\index{udp\_\-checksum@{udp\_\-checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
-\subsubsection[{udp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::udp\_\-checksum (const std::string \& {\em buf}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1RawSocket_eb3d9cfc5e2893487d7e076ef56693d4}
-
-
-calculates udp checksum on pseudo-header 
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em buf}]packet string \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]checksum value \end{Desc}
-\hypertarget{classsocketpp_1_1RawSocket_25eef0a35fc66b33bed3abd176a5175e}{
-\index{socketpp::RawSocket@{socketpp::RawSocket}!udp\_\-checksum@{udp\_\-checksum}}
-\index{udp\_\-checksum@{udp\_\-checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
-\subsubsection[{udp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::RawSocket::udp\_\-checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1RawSocket_25eef0a35fc66b33bed3abd176a5175e}
-
-
-calculates udp checksum on pseudo-header 
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em buf}]pointer to packet top \item[{\em nchar}]size of packet in bytes \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]checksum value \end{Desc}
 
 
 \subsection{Member Data Documentation}

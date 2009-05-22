@@ -12,7 +12,7 @@ It includes these main classes:
 - error : socket-related exception class
 - h_error : address-related exception class
 - timeout : timeout-related exception class
-- ftp : This class tries to imitate the ftplib.FTP python class, with a few differences. Before I write the whole documentation try to adapt yourself to these differences intuitively. See the python documentation
+- ftp : This class tries to imitate the ftplib.FTP python class, with a few differences.
 
 
 Full documentation:
