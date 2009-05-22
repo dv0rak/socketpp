@@ -65,6 +65,7 @@ Inheritance diagram for socketpp::BaseSocket:</div>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">closes socket descriptor  <a href="#f067195056bb6b5a65c4bc1d2ac7da72"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#4cffcd5cae4ef51e953495837fade4c3">setBlocking</a> (bool yes)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets/unsets blocking mode  <a href="#4cffcd5cae4ef51e953495837fade4c3"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;typename T &gt; </td></tr>
 <tr><td class="memTemplItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#c845c3a037f0f400fd50dfb58706b6e4">getsockopt</a> (<a class="el" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">level</a> lev, <a class="el" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4">option</a> opt, T &amp;optval)</td></tr>
 
@@ -99,7 +100,7 @@ Inheritance diagram for socketpp::BaseSocket:</div>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket to local given address  <a href="#aab800bcb5ee48cd4410ae2b9ed83e23"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#0804d148470fd742cda495d3533b25c6">settimeout</a> (double time)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> is cancelled.  <a href="#0804d148470fd742cda495d3533b25c6"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets a <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> is cancelled.  <a href="#0804d148470fd742cda495d3533b25c6"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#483c6186ae60d0c399983e14f55af600">remoteAddr</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns remote address to which socket is connected  <a href="#483c6186ae60d0c399983e14f55af600"></a><br></td></tr>
@@ -1970,6 +1971,13 @@ sends data over socket
 <div class="memdoc">
 
 <p>
+sets/unsets blocking mode 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>yes</em>&nbsp;</td><td>sets blocking mode if true, otherwise non-blocking one </td></tr>
+  </table>
+</dl>
 
 </div>
 </div><p>
@@ -2037,7 +2045,7 @@ sets options set on socket descriptor. Wrapper for <a class="el" href="classsock
 <div class="memdoc">
 
 <p>
-sets <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> is cancelled. 
+sets a <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> on the following IO operations. If time is 0 <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> is cancelled. 
 <p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
@@ -2096,7 +2104,7 @@ sets <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related e
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="BaseSocket_8h-source.html">BaseSocket.h</a><li><a class="el" href="BaseSocket_8cpp.html">BaseSocket.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri May 22 21:58:17 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri May 22 22:04:03 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

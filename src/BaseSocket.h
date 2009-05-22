@@ -18,6 +18,8 @@ public:
     ///@brief	closes socket descriptor
     virtual void close();
 
+    ///@brief	sets/unsets blocking mode
+    ///@param	yes	sets blocking mode if true, otherwise non-blocking one
     void setBlocking(bool yes);
 
     ///@brief 	gets options set on socket descriptor. Wrapper for getsockopt()
@@ -95,7 +97,7 @@ public:
     ///@return	bind() return value
     int bind(in_addr_t addr, const std::string& serv, const char *prot=NULL);
 
-    ///@brief sets timeout on the following IO operations. If time is 0 timeout is cancelled.
+    ///@brief sets a timeout on the following IO operations. If time is 0 timeout is cancelled.
     ///@param	time	timeout in seconds
     void settimeout(double time);
 

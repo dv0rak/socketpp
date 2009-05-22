@@ -21,7 +21,7 @@ void \hyperlink{classsocketpp_1_1BaseSocket_2060dc1b648f83f8bf5ae3d9ecfcd619}{op
 virtual void \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{close} ()
 \begin{CompactList}\small\item\em closes socket descriptor \item\end{CompactList}\item 
 void \hyperlink{classsocketpp_1_1BaseSocket_4cffcd5cae4ef51e953495837fade4c3}{setBlocking} (bool yes)
-\item 
+\begin{CompactList}\small\item\em sets/unsets blocking mode \item\end{CompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}{getsockopt} (\hyperlink{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5}{level} lev, \hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc4}{option} opt, T \&optval)
 \begin{CompactList}\small\item\em gets options set on socket descriptor. Wrapper for \hyperlink{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}{getsockopt()} \item\end{CompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\int \hyperlink{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{setsockopt} (\hyperlink{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5}{level} lev, \hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc4}{option} opt, const T \&optval)
@@ -43,7 +43,7 @@ int \hyperlink{classsocketpp_1_1BaseSocket_4775f13f8e1cceaaed40106162b2149f}{bin
 int \hyperlink{classsocketpp_1_1BaseSocket_aab800bcb5ee48cd4410ae2b9ed83e23}{bind} (in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL)
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
 void \hyperlink{classsocketpp_1_1BaseSocket_0804d148470fd742cda495d3533b25c6}{settimeout} (double time)
-\begin{CompactList}\small\item\em sets \hyperlink{classsocketpp_1_1timeout}{timeout} on the following IO operations. If time is 0 \hyperlink{classsocketpp_1_1timeout}{timeout} is cancelled. \item\end{CompactList}\item 
+\begin{CompactList}\small\item\em sets a \hyperlink{classsocketpp_1_1timeout}{timeout} on the following IO operations. If time is 0 \hyperlink{classsocketpp_1_1timeout}{timeout} is cancelled. \item\end{CompactList}\item 
 std::string \hyperlink{classsocketpp_1_1BaseSocket_483c6186ae60d0c399983e14f55af600}{remoteAddr} ()
 \begin{CompactList}\small\item\em returns remote address to which socket is connected \item\end{CompactList}\item 
 std::string \hyperlink{classsocketpp_1_1BaseSocket_0caed2e7d3f0e4db7d4c1aa3aba52caf}{localAddr} ()
@@ -810,6 +810,13 @@ sends data over socket
 \label{classsocketpp_1_1BaseSocket_4cffcd5cae4ef51e953495837fade4c3}
 
 
+sets/unsets blocking mode 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em yes}]sets blocking mode if true, otherwise non-blocking one \end{description}
+\end{Desc}
 \hypertarget{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!setsockopt@{setsockopt}}
 \index{setsockopt@{setsockopt}!socketpp::BaseSocket@{socketpp::BaseSocket}}
@@ -833,7 +840,7 @@ sets options set on socket descriptor. Wrapper for \hyperlink{classsocketpp_1_1B
 \label{classsocketpp_1_1BaseSocket_0804d148470fd742cda495d3533b25c6}
 
 
-sets \hyperlink{classsocketpp_1_1timeout}{timeout} on the following IO operations. If time is 0 \hyperlink{classsocketpp_1_1timeout}{timeout} is cancelled. 
+sets a \hyperlink{classsocketpp_1_1timeout}{timeout} on the following IO operations. If time is 0 \hyperlink{classsocketpp_1_1timeout}{timeout} is cancelled. 
 
 \begin{Desc}
 \item[Parameters:]
