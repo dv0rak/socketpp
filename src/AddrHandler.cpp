@@ -37,12 +37,13 @@ std::string AddrHandler::gethostbyaddr(const std::string& addr)
 bool AddrHandler::isIPv4(const std::string& str)
 
 {
-    char c;
-    int tok[4];
-    if(::sscanf(str.c_str(),"%3d.%3d.%3d.%3d%c",&tok[0],&tok[1],&tok[2],&tok[3],&c) != 4)
-        return false;
-    for(int i=0; i<4; i++)
-        if(tok[i]<0 || tok[i]>255) return false;
+    regex_t re;
+    const char *pattern = "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}"\
+                          "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$";
+ 
+    if(::regcomp(&re, pattern, REG_EXTENDED|REG_NOSUB) != 0) return false; 
+    if(::regexec(&re, str.c_str(), (size_t)0, NULL, 0) != 0) return false;
+    ::regfree(&re);
     return true;
 }
 

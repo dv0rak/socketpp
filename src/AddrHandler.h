@@ -7,6 +7,7 @@
 #include <netdb.h>
 #include <map>
 #include <string>
+#include <regex.h>
 
 namespace socketpp {
 
