@@ -50,7 +50,7 @@ bool AddrHandler::isIPv4(const std::string& str)
 in_addr_t AddrHandler::inet_aton(const std::string& str)
 {
     if(!isIPv4(str)) {
-        throw h_error("inet_aton", "not a IPv4 dotted decimal address");
+        throw h_error("inet_aton", "`"+ str+ "' not a IPv4 dotted decimal address");
     }
     return ::ntohl(::inet_addr(str.c_str()));
 }
