@@ -19,7 +19,7 @@ public:
     /// @return  IP address
     std::string gethostbyname(const std::string& name);
     /// @brief   tries to obtain an hostname from a IP address, through a reverse DNS lookup
-    /// @param   addr	IP address in dotted decimal format
+    /// @param   addr	IP address
     /// @return  hostname
     std::string gethostbyaddr(const std::string& addr);
 
@@ -34,15 +34,15 @@ public:
     /// @return  service name
     static std::string getservbyport(port_t port, const char *prot=NULL);
 
-    /// @brief   checks whether given string is in IPv4 dotted decimal format 
+    /// @brief   checks whether given string is in IPv4 format 
     /// @param   str 	string to check
     /// @return  true or false
     static bool isIPv4(const std::string& str);
 
-    /// @brief   conversion from IPv4 dotted decimal format to numerical one
-    /// @param   str	IPv4 dotted decimal string
+    /// @brief   conversion from IPv4 string format to numerical one
+    /// @param   str	IPv4 string
     /// @return  numerical address
-    in_addr_t inet_aton(const std::string& str);
+    static in_addr_t inet_aton(const std::string& str);
     /// @brief   conversion from IPv4 numerical format to dotted decimal one
     /// @param   addr	numerical address
     /// @return  IPv4 dotted decimal string

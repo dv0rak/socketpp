@@ -37,22 +37,18 @@ std::string AddrHandler::gethostbyaddr(const std::string& addr)
 bool AddrHandler::isIPv4(const std::string& str)
 
 {
-    regex_t re;
-    const char *pattern = "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}"\
-                          "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$";
- 
-    if(::regcomp(&re, pattern, REG_EXTENDED|REG_NOSUB) != 0) return false; 
-    if(::regexec(&re, str.c_str(), (size_t)0, NULL, 0) != 0) return false;
-    ::regfree(&re);
+    try { inet_aton(str); }
+    catch(h_error &h) { return false; }
     return true;
 }
 
 in_addr_t AddrHandler::inet_aton(const std::string& str)
 {
-    if(!isIPv4(str)) {
-        throw h_error("inet_aton", "`"+ str+ "' not a IPv4 dotted decimal address");
+    in_addr_t addr;
+    if(::inet_pton(AF_INET, str.c_str(), &addr) == 0) {
+        throw h_error("inet_aton", "`"+ str+ "' not a IPv4 address");
     }
-    return ::ntohl(::inet_addr(str.c_str()));
+    return ::ntohl(addr);
 }
 
 std::string AddrHandler::inet_ntoa(in_addr_t addr)
