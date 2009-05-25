@@ -21,11 +21,16 @@ Inheritance diagram for socketpp::ICMP\_\-IP\_\-RawSocket::\begin{figure}[H]
 \label{classsocketpp_1_1ICMP__IP__RawSocket_c94fd53fce785a8b9ac5e53c8b1fb694}
 
 \begin{CompactList}\small\item\em constructor which calls RawSocket(ipproto\_\-udp) and setsockopt(ip\_\-hdrincl) \item\end{CompactList}\item 
+\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_93c4cd4bb7a9afb65dd3e170cb93896e}{
+void \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_93c4cd4bb7a9afb65dd3e170cb93896e}{adjust\_\-IP\_\-proto} ()}
+\label{classsocketpp_1_1ICMP__IP__RawSocket_93c4cd4bb7a9afb65dd3e170cb93896e}
+
+\begin{CompactList}\small\item\em sets \char`\"{}protocol\char`\"{} field of the IP header to IPPROTO\_\-ICMP \item\end{CompactList}\item 
 \hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_c3f54f7a266586af46e4bfa4494f90d6}{
 void \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_c3f54f7a266586af46e4bfa4494f90d6}{adjust\_\-ICMP\_\-IP\_\-all} ()}
 \label{classsocketpp_1_1ICMP__IP__RawSocket_c3f54f7a266586af46e4bfa4494f90d6}
 
-\begin{CompactList}\small\item\em calls adjust\_\-ICMP\_\-all() and \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all()} \item\end{CompactList}\end{CompactItemize}
+\begin{CompactList}\small\item\em calls adjust\_\-ICMP\_\-all() \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all()} \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 

@@ -16,7 +16,6 @@ int main()
     icmp.build_data_payload("1");
 
     iphdr ip_h;
-    ip_h.protocol   = ipproto_icmp;
     ip_h.version 	= 4;
     ip_h.frag_off   = 0;
     ip_h.ttl	= 64;

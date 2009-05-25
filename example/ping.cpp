@@ -28,11 +28,6 @@ int main(int argc, char *argv[])
         cerr<< argv[0]<< " <host>"<< endl;
         return -1;
     }
-    if(geteuid()) {
-        cerr<< "Must be root"<< endl;
-        return -1;
-    }
-
     if(ping(argv[1])) cout<< "Host's up"<< endl;
     else cout<< "Host seems down"<< endl;
     return 0;

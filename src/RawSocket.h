@@ -111,7 +111,7 @@ public:
     void adjust_IP_tot_len();
     /// @brief	sets IP "header length" field
     void adjust_IP_ihl();
-    /// @brief	calls adjust_IP_csum() && adjust_IP_tot_len() && adjust_IP_ihl()
+    /// @brief	calls adjust_IP_proto() && adjust_IP_tot_len() && adjust_IP_ihl() && adjust_IP_csum()
     void adjust_IP_all();
     
     /// @brief  gets received IP header
@@ -137,6 +137,8 @@ protected:
     virtual void _build_packet(std::string &packet);
     virtual void _set_fields(const std::string &packet);
 
+    ///@brief	virtual function which does nothing
+    virtual void adjust_IP_proto() { }
 };
 
 /// @brief	ICMP raw socket without IP header handling
@@ -173,7 +175,9 @@ public:
     /// @brief	  constructor which calls RawSocket(ipproto_udp) and setsockopt(ip_hdrincl)
     ICMP_IP_RawSocket();
 
-    /// @brief	calls adjust_ICMP_all() and adjust_IP_all()
+    /// @brief	   sets "protocol" field of the IP header to IPPROTO_ICMP
+    void adjust_IP_proto();
+    /// @brief	calls adjust_ICMP_all() && adjust_IP_all()
     void adjust_ICMP_IP_all();
 
 protected:
@@ -242,6 +246,8 @@ public:
     /// @brief	constructor which calls RawSocket(ipproto_udp) and setsockopt(ip_hdrincl)
     UDP_IP_RawSocket();
 
+    /// @brief	   sets "protocol" field of the IP header to IPPROTO_UDP
+    void adjust_IP_proto();
     /// @brief	   sets UDP checksum, using source and dest IP addresses token by IP header
     void adjust_UDP_csum();
     /// @brief	   calls adjust_UDP_len() && adjust_UDP_csum()
@@ -332,6 +338,8 @@ public:
     /// @brief	constructor which calls RawSocket(ipproto_tcp) and setsockopt(ip_hdrincl)
     TCP_IP_RawSocket();
 
+    /// @brief	   sets "protocol" field of the IP header to IPPROTO_TCP
+    void adjust_IP_proto();
     /// @brief	   sets TCP checksum, using source and dest IP addresses token by IP header
     void adjust_TCP_csum();
     /// @brief	   calls adjust_TCP_doff() && adjust_TCP_csum()

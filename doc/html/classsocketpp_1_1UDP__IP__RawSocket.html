@@ -52,6 +52,10 @@ Inheritance diagram for socketpp::UDP_IP_RawSocket:</div>
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1UDP__IP__RawSocket.html#90e90d941b64d234c231ca543fe8745a">UDP_IP_RawSocket</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">constructor which calls RawSocket(ipproto_udp) and setsockopt(ip_hdrincl) <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="55164dda01fba51c6a2f261caa96780f"></a><!-- doxytag: member="socketpp::UDP_IP_RawSocket::adjust_IP_proto" ref="55164dda01fba51c6a2f261caa96780f" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1UDP__IP__RawSocket.html#55164dda01fba51c6a2f261caa96780f">adjust_IP_proto</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets "protocol" field of the IP header to IPPROTO_UDP <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="6c2f6c375cec90f64fd093af37369d6a"></a><!-- doxytag: member="socketpp::UDP_IP_RawSocket::adjust_UDP_csum" ref="6c2f6c375cec90f64fd093af37369d6a" args="()" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1UDP__IP__RawSocket.html#6c2f6c375cec90f64fd093af37369d6a">adjust_UDP_csum</a> ()</td></tr>
 
@@ -63,7 +67,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="1a0f6360760f94f5c1569adde67d6d1b"></a><!-- doxytag: member="socketpp::UDP_IP_RawSocket::adjust_UDP_IP_all" ref="1a0f6360760f94f5c1569adde67d6d1b" args="()" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1UDP__IP__RawSocket.html#1a0f6360760f94f5c1569adde67d6d1b">adjust_UDP_IP_all</a> ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls <a class="el" href="classsocketpp_1_1UDP__IP__RawSocket.html#94bec31d8c856ccdafa083c74b8b7e58" title="calls adjust_UDP_len() &amp;&amp; adjust_UDP_csum()">adjust_UDP_all()</a> and <a class="el" href="classsocketpp_1_1IP__RawSocket.html#45e60510233daaa2f279d3a4706fdce5" title="calls adjust_IP_csum() &amp;&amp; adjust_IP_tot_len() &amp;&amp; adjust_IP_ihl()">adjust_IP_all()</a> <br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls <a class="el" href="classsocketpp_1_1UDP__IP__RawSocket.html#94bec31d8c856ccdafa083c74b8b7e58" title="calls adjust_UDP_len() &amp;&amp; adjust_UDP_csum()">adjust_UDP_all()</a> and <a class="el" href="classsocketpp_1_1IP__RawSocket.html#45e60510233daaa2f279d3a4706fdce5" title="calls adjust_IP_proto() &amp;&amp; adjust_IP_tot_len() &amp;&amp; adjust_IP_ihl()...">adjust_IP_all()</a> <br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="16035f1b701b898f0e4de44a9ac8bbb3"></a><!-- doxytag: member="socketpp::UDP_IP_RawSocket::_build_packet" ref="16035f1b701b898f0e4de44a9ac8bbb3" args="(std::string &amp;packet)" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet)</td></tr>
@@ -76,7 +80,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (cons
 UDP raw socket with IP header handling. <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 13:26:54 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 21:38:06 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -217,6 +217,7 @@ void IP_RawSocket::adjust_IP_tot_len()
 
 void IP_RawSocket::adjust_IP_all()
 {
+    adjust_IP_proto();
     adjust_IP_ihl();
     adjust_IP_tot_len();
     adjust_IP_csum();
@@ -322,6 +323,11 @@ void ICMP_IP_RawSocket::adjust_ICMP_IP_all()
     adjust_IP_all();
 }
 
+void ICMP_IP_RawSocket::adjust_IP_proto()
+{
+    IP_h.protocol = IPPROTO_ICMP;
+}
+
 void ICMP_IP_RawSocket::_build_packet(std::string &packet)
 {
     packet.assign((char *)&IP_h, IPSIZE);
@@ -414,6 +420,11 @@ void UDP_IP_RawSocket::adjust_UDP_IP_all()
 {
     adjust_UDP_all();
     adjust_IP_all();
+}
+
+void UDP_IP_RawSocket::adjust_IP_proto()
+{
+    IP_h.protocol = IPPROTO_UDP;
 }
 
 void UDP_IP_RawSocket::_build_packet(std::string &packet)
@@ -569,6 +580,11 @@ void TCP_IP_RawSocket::adjust_TCP_all()
 {
     adjust_TCP_doff();
     adjust_TCP_csum();
+}
+
+void TCP_IP_RawSocket::adjust_IP_proto()
+{
+    IP_h.protocol = IPPROTO_TCP;
 }
 
 void TCP_IP_RawSocket::adjust_TCP_IP_all()

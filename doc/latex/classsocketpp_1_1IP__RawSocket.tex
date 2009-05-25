@@ -51,7 +51,7 @@ void \hyperlink{classsocketpp_1_1IP__RawSocket_d84d5e193a15baf421c64011a9c27359}
 void \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all} ()}
 \label{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}
 
-\begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}{adjust\_\-IP\_\-csum()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}{adjust\_\-IP\_\-tot\_\-len()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_d84d5e193a15baf421c64011a9c27359}{adjust\_\-IP\_\-ihl()} \item\end{CompactList}\item 
+\begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1IP__RawSocket_9da491fc93102503788425402d8fd477}{adjust\_\-IP\_\-proto()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}{adjust\_\-IP\_\-tot\_\-len()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_d84d5e193a15baf421c64011a9c27359}{adjust\_\-IP\_\-ihl()} \&\& \hyperlink{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}{adjust\_\-IP\_\-csum()} \item\end{CompactList}\item 
 void \hyperlink{classsocketpp_1_1IP__RawSocket_e477f483d5a8baa76c60399d0809d043}{get\_\-IP\_\-header} (iphdr \&ip)
 \begin{CompactList}\small\item\em gets received IP header \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1IP__RawSocket_686fcc72997b0843b2ece0c4d8a5735d}{get\_\-IP\_\-options} (char $\ast$opt, size\_\-t len)
@@ -70,7 +70,12 @@ virtual void \textbf{\_\-build\_\-packet} (std::string \&packet)}
 virtual void \textbf{\_\-set\_\-fields} (const std::string \&packet)}
 \label{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}
 
-\end{CompactItemize}
+\item 
+\hypertarget{classsocketpp_1_1IP__RawSocket_9da491fc93102503788425402d8fd477}{
+virtual void \hyperlink{classsocketpp_1_1IP__RawSocket_9da491fc93102503788425402d8fd477}{adjust\_\-IP\_\-proto} ()}
+\label{classsocketpp_1_1IP__RawSocket_9da491fc93102503788425402d8fd477}
+
+\begin{CompactList}\small\item\em virtual function which does nothing \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Attributes}
 \begin{CompactItemize}
 \item 

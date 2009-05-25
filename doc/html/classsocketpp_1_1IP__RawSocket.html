@@ -79,7 +79,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="45e60510233daaa2f279d3a4706fdce5"></a><!-- doxytag: member="socketpp::IP_RawSocket::adjust_IP_all" ref="45e60510233daaa2f279d3a4706fdce5" args="()" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#45e60510233daaa2f279d3a4706fdce5">adjust_IP_all</a> ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls <a class="el" href="classsocketpp_1_1IP__RawSocket.html#187bab79c6a8bae17b400a132063a9d1" title="sets IP checksum field">adjust_IP_csum()</a> &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#32d2c08139fb43abb92679bdabecf778" title="sets IP &quot;total length&quot; field">adjust_IP_tot_len()</a> &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#d84d5e193a15baf421c64011a9c27359" title="sets IP &quot;header length&quot; field">adjust_IP_ihl()</a> <br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls <a class="el" href="classsocketpp_1_1IP__RawSocket.html#9da491fc93102503788425402d8fd477" title="virtual function which does nothing">adjust_IP_proto()</a> &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#32d2c08139fb43abb92679bdabecf778" title="sets IP &quot;total length&quot; field">adjust_IP_tot_len()</a> &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#d84d5e193a15baf421c64011a9c27359" title="sets IP &quot;header length&quot; field">adjust_IP_ihl()</a> &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#187bab79c6a8bae17b400a132063a9d1" title="sets IP checksum field">adjust_IP_csum()</a> <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#e477f483d5a8baa76c60399d0809d043">get_IP_header</a> (iphdr &amp;ip)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets received IP header  <a href="#e477f483d5a8baa76c60399d0809d043"></a><br></td></tr>
@@ -96,6 +96,10 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c39832f1ad83184cd5ba94c4c967f465"></a><!-- doxytag: member="socketpp::IP_RawSocket::_set_fields" ref="c39832f1ad83184cd5ba94c4c967f465" args="(const std::string &amp;packet)" -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (const std::string &amp;packet)</td></tr>
 
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="9da491fc93102503788425402d8fd477"></a><!-- doxytag: member="socketpp::IP_RawSocket::adjust_IP_proto" ref="9da491fc93102503788425402d8fd477" args="()" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#9da491fc93102503788425402d8fd477">adjust_IP_proto</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">virtual function which does nothing <br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a8ddf1b2172c1e6f4b50d18c825978dc"></a><!-- doxytag: member="socketpp::IP_RawSocket::IP_h" ref="a8ddf1b2172c1e6f4b50d18c825978dc" args="" -->
 iphdr&nbsp;</td><td class="memItemRight" valign="bottom"><b>IP_h</b></td></tr>
@@ -299,7 +303,7 @@ sets the IP options field
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 13:26:53 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 21:38:06 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
