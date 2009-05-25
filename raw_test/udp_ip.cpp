@@ -14,9 +14,8 @@ int main()
     udp.build_data_payload("1");
 
     iphdr ip_h;
-    ip_h.protocol   = ipproto_udp;
-    ip_h.version 	= 4;
-    ip_h.frag_off   = 0;
+    memset(&ip_h, 0, sizeof ip_h);
+    ip_h.version = 4;
     ip_h.ttl	= 64;
     ip_h.saddr 	= inaddr_loopback;
     ip_h.daddr	= inaddr_loopback;

@@ -16,8 +16,8 @@ int main()
     icmp.build_data_payload("1");
 
     iphdr ip_h;
-    ip_h.version 	= 4;
-    ip_h.frag_off   = 0;
+    memset(&ip_h, 0, sizeof ip_h);
+    ip_h.version = 4;
     ip_h.ttl	= 64;
     ip_h.saddr 	= get_iface_ip(IFACE);
     ip_h.daddr	= addr.inet_aton(addr.gethostbyname("www.google.it"));
