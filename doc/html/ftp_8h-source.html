@@ -28,88 +28,90 @@
 <a name="l00006"></a>00006 <span class="preprocessor">#include &lt;iostream&gt;</span>
 <a name="l00007"></a>00007 <span class="preprocessor">#include &lt;vector&gt;</span>
 <a name="l00008"></a>00008 <span class="preprocessor">#include &lt;sstream&gt;</span>
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="keyword">namespace </span>ftplib {
-<a name="l00011"></a>00011 
-<a name="l00012"></a><a class="code" href="classftplib_1_1error.html">00012</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1error.html">error</a> : <span class="keyword">public</span> std::exception {
-<a name="l00013"></a>00013 <span class="keyword">public</span>:
-<a name="l00014"></a><a class="code" href="classftplib_1_1error.html#0205a5c32e446c5d7c792c708220b1a7">00014</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classftplib_1_1error.html#0205a5c32e446c5d7c792c708220b1a7">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> <a class="code" href="classftplib_1_1error.html#a7a7c753067df4b1c6ee4aefa2139f79">_msg</a>.c_str(); }
-<a name="l00015"></a><a class="code" href="classftplib_1_1error.html#833d787900e419f2bd6dc28dee5d4834">00015</a>     <a class="code" href="classftplib_1_1error.html#833d787900e419f2bd6dc28dee5d4834">~error</a>() throw() {}
-<a name="l00016"></a>00016 <span class="keyword">protected</span>:
-<a name="l00017"></a><a class="code" href="classftplib_1_1error.html#a7a7c753067df4b1c6ee4aefa2139f79">00017</a>     std::string <a class="code" href="classftplib_1_1error.html#a7a7c753067df4b1c6ee4aefa2139f79">_msg</a>;
-<a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">00019</a>     <a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">error</a>(<span class="keyword">const</span> std::string&amp; msg) <span class="keywordflow">throw</span>() { <a class="code" href="classftplib_1_1error.html#a7a7c753067df4b1c6ee4aefa2139f79">_msg</a> = msg; }
-<a name="l00020"></a>00020 };
-<a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="classftplib_1_1error__temp.html">00022</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1error__temp.html">error_temp</a> : <span class="keyword">public</span> <a class="code" href="classftplib_1_1error.html">error</a> {
-<a name="l00023"></a>00023 <span class="keyword">public</span>:
-<a name="l00024"></a><a class="code" href="classftplib_1_1error__temp.html#6c8a81fc949ee5591a85d5efeb492ea2">00024</a>     <a class="code" href="classftplib_1_1error__temp.html#6c8a81fc949ee5591a85d5efeb492ea2">error_temp</a>(<span class="keywordtype">int</span> code, <span class="keyword">const</span> std::string &amp;msg) <span class="keywordflow">throw</span>() : <a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">error</a>(msg) { _code = code; }
-<a name="l00025"></a><a class="code" href="classftplib_1_1error__temp.html#eb3e3828117a6c872688e9ec508e9b68">00025</a>     <a class="code" href="classftplib_1_1error__temp.html#eb3e3828117a6c872688e9ec508e9b68">~error_temp</a>() throw() {}
-<a name="l00026"></a>00026 <span class="keyword">private</span>:
-<a name="l00027"></a>00027     <span class="keywordtype">int</span> _code;
-<a name="l00028"></a>00028 };
-<a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="classftplib_1_1error__perm.html">00030</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1error__perm.html">error_perm</a> : <span class="keyword">public</span> <a class="code" href="classftplib_1_1error.html">error</a> {
-<a name="l00031"></a>00031 <span class="keyword">public</span>:
-<a name="l00032"></a><a class="code" href="classftplib_1_1error__perm.html#f39cb3638a78e6967e56d1f7e7346bfb">00032</a>     <a class="code" href="classftplib_1_1error__perm.html#f39cb3638a78e6967e56d1f7e7346bfb">error_perm</a>(<span class="keywordtype">int</span> code, <span class="keyword">const</span> std::string &amp;msg) <span class="keywordflow">throw</span>() : <a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">error</a>(msg) { _code = code; }
-<a name="l00033"></a><a class="code" href="classftplib_1_1error__perm.html#2d105a24ed475f01ed72bf1ce8f53fe8">00033</a>     <a class="code" href="classftplib_1_1error__perm.html#2d105a24ed475f01ed72bf1ce8f53fe8">~error_perm</a>() throw() {}
-<a name="l00034"></a>00034 <span class="keyword">private</span>:
-<a name="l00035"></a>00035     <span class="keywordtype">int</span> _code;
-<a name="l00036"></a>00036 };
-<a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="classftplib_1_1error__proto.html">00038</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1error__proto.html">error_proto</a> : <span class="keyword">public</span> <a class="code" href="classftplib_1_1error.html">error</a> {
-<a name="l00039"></a>00039 <span class="keyword">public</span>:
-<a name="l00040"></a><a class="code" href="classftplib_1_1error__proto.html#4d9a71a8162f838cb1cdd2997f64819b">00040</a>     <a class="code" href="classftplib_1_1error__proto.html#4d9a71a8162f838cb1cdd2997f64819b">error_proto</a>(<span class="keyword">const</span> std::string &amp;msg) <span class="keywordflow">throw</span>() : <a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">error</a>(msg) {}
-<a name="l00041"></a><a class="code" href="classftplib_1_1error__proto.html#3f80b3d7cb39a1725f917ae3383c75df">00041</a>     <a class="code" href="classftplib_1_1error__proto.html#3f80b3d7cb39a1725f917ae3383c75df">~error_proto</a>() throw() {}
-<a name="l00042"></a>00042 };
-<a name="l00043"></a>00043 
-<a name="l00045"></a><a class="code" href="classftplib_1_1FTP.html">00045</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1FTP.html" title="This class tries to imitate the ftplib.FTP python class, with a few differences.">FTP</a> {
-<a name="l00046"></a>00046 <span class="keyword">public</span>:
-<a name="l00052"></a>00052     <a class="code" href="classftplib_1_1FTP.html#178979abdc58593abdb31a882f370803" title="constructor">FTP</a>(<span class="keyword">const</span> std::string &amp;host=<span class="stringliteral">""</span>, <span class="keyword">const</span> std::string &amp;user=<span class="stringliteral">""</span>, <span class="keyword">const</span> std::string &amp;passwd=<span class="stringliteral">""</span>, <span class="keywordtype">double</span> timeout=0.0);
-<a name="l00053"></a>00053 
-<a name="l00058"></a>00058     std::string <a class="code" href="classftplib_1_1FTP.html#fbd3444a33e5dd055474c9a0d6aabba5" title="connects to given FTP server">connect</a>(<span class="keyword">const</span> std::string &amp;host, <a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">socketpp::port_t</a> port=21);
-<a name="l00063"></a>00063     std::string <a class="code" href="classftplib_1_1FTP.html#dc39751d00808d35183fb19c483b3589" title="carries out the FTP login">login</a>(<span class="keyword">const</span> std::string &amp;user=<span class="stringliteral">"anonymous"</span>, <span class="keyword">const</span> std::string &amp;passwd=<span class="stringliteral">""</span>);
-<a name="l00067"></a>00067     std::string <a class="code" href="classftplib_1_1FTP.html#5a876d670107df4b5924238450440eee" title="sends raw command and returns server response">sendcmd</a>(<span class="keyword">const</span> std::string &amp;cmd);
-<a name="l00072"></a>00072     std::string <a class="code" href="classftplib_1_1FTP.html#b04e374d4835e124959cee085df3fa4e" title="Retrieve a file or directory listing in ASCII transfer mode.">retrlines</a>(<span class="keyword">const</span> std::string &amp;cmd, std::ostream &amp;os=std::cout);
-<a name="l00077"></a>00077     std::string <a class="code" href="classftplib_1_1FTP.html#ad060fdb45fec7ccd5949e475df96982" title="Retrieve a file in binary transfer mode.">retrbinary</a>(<span class="keyword">const</span> std::string &amp;cmd, std::ostream &amp;os);
-<a name="l00078"></a>00078 
-<a name="l00083"></a>00083     std::string <a class="code" href="classftplib_1_1FTP.html#37c828c7d98c7da3fe3b936526118416" title="Stor a file in binary transfer mode.">storbinary</a>(<span class="keyword">const</span> std::string &amp;cmd, std::istream &amp;is);
-<a name="l00088"></a>00088     std::string <a class="code" href="classftplib_1_1FTP.html#956c5fa0546d7a6a2db0b4dee28f6868" title="Stor a file in ASCII transfer mode.">storlines</a>(<span class="keyword">const</span> std::string &amp;cmd, std::istream &amp;is);
-<a name="l00089"></a>00089 
-<a name="l00093"></a>00093     std::vector&lt;std::string&gt; <a class="code" href="classftplib_1_1FTP.html#a793fa113ee6fc82e3db3b7ed769ff3f" title="obtains a std::vector containing existing file names in the passed path, through...">nlst</a>(<span class="keyword">const</span> std::string &amp;path=<span class="stringliteral">"."</span>);
-<a name="l00094"></a>00094 
-<a name="l00098"></a>00098     std::string <span class="keyword">remove</span>(<span class="keyword">const</span> std::string &amp;fname);
-<a name="l00102"></a>00102     std::string <a class="code" href="classftplib_1_1FTP.html#2a96ea655350a479cdf5f34254fd4ac8" title="remove a direcotry from the server">rmd</a>(<span class="keyword">const</span> std::string &amp;dirname);
-<a name="l00106"></a>00106     std::string <a class="code" href="classftplib_1_1FTP.html#05c4b118a0e278e70c79c1c42484f669" title="creates a new directory on the server">mkd</a>(<span class="keyword">const</span> std::string &amp;dirname);
-<a name="l00111"></a>00111     std::string <a class="code" href="classftplib_1_1FTP.html#0adece922028464ff064da24b539798d" title="renames a file on the server">rename</a>(<span class="keyword">const</span> std::string &amp;from, <span class="keyword">const</span> std::string &amp;to);
-<a name="l00115"></a>00115     std::string <a class="code" href="classftplib_1_1FTP.html#7cd3c7fc71ae0c7dbdfcee88417d2685" title="changes working directory">cwd</a>(<span class="keyword">const</span> std::string &amp;path);
-<a name="l00116"></a>00116  
-<a name="l00119"></a>00119     std::string <a class="code" href="classftplib_1_1FTP.html#7c01c7b062848c7fc1d3caf95758b109" title="returns current working directory">pwd</a>();
-<a name="l00120"></a>00120 
-<a name="l00125"></a>00125     std::string <a class="code" href="classftplib_1_1FTP.html#42749c4425e33349f605ec0a8b389731" title="lists all the files in the directory, through the LIST command param path directory...">dir</a>(<span class="keyword">const</span> std::string&amp; path=<span class="stringliteral">"."</span>, std::ostream &amp;os = std::cout);
-<a name="l00126"></a>00126 
-<a name="l00130"></a>00130     <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it aims to be a simple C-socket wrapper">socketpp::Socket</a>&amp; <a class="code" href="classftplib_1_1FTP.html#c949b3cd7b92534705ff041bb43d989b" title="initiate a transfer over the data connection, using PASV or PORT mode depending on...">transfercmd</a>(<span class="keyword">const</span> std::string &amp;cmd);
-<a name="l00133"></a>00133     <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#e35230239f093f01fb295ccb007de1b2" title="sets either PORT or PASV mode">set_pasv</a>(<span class="keywordtype">bool</span> p);
-<a name="l00134"></a>00134 
-<a name="l00137"></a>00137     std::string <a class="code" href="classftplib_1_1FTP.html#bd6e018a5cc17b1c8007064830823c71" title="sends the &amp;#39;QUIT&amp;#39; command and closes socket">quit</a>();
-<a name="l00139"></a>00139     <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#4f36be9f23721435f19a7e5b1d702718" title="closes socket">close</a>();
-<a name="l00140"></a>00140 
-<a name="l00143"></a><a class="code" href="classftplib_1_1FTP.html#a6603cda3b7c44c48c6a2b8d688d3bb7">00143</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#a6603cda3b7c44c48c6a2b8d688d3bb7" title="sets timeout on all IO socket operations">settimeout</a>(<span class="keywordtype">double</span> time) { _sock.<a class="code" href="classsocketpp_1_1BaseSocket.html#0804d148470fd742cda495d3533b25c6" title="sets a timeout on the following IO operations. If time is 0 timeout is cancelled...">settimeout</a>(time); }
-<a name="l00144"></a>00144 
-<a name="l00145"></a>00145 <span class="keyword">private</span>:
-<a name="l00146"></a>00146     <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it aims to be a simple C-socket wrapper">socketpp::Socket</a> _sock;
-<a name="l00147"></a>00147     <span class="keywordtype">bool</span> _pasv;
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149     std::string _readAnswer();
-<a name="l00150"></a>00150     std::string _getLine(std::string&amp;);
-<a name="l00151"></a>00151     <span class="keywordtype">void</span> _getAddress(<span class="keyword">const</span> std::string&amp;, std::string&amp;, <a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">socketpp::port_t</a>&amp;);
-<a name="l00152"></a>00152 };
-<a name="l00153"></a>00153 
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;regex.h&gt;</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="keyword">namespace </span>ftplib {
+<a name="l00012"></a>00012 
+<a name="l00013"></a><a class="code" href="classftplib_1_1error.html">00013</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1error.html">error</a> : <span class="keyword">public</span> std::exception {
+<a name="l00014"></a>00014 <span class="keyword">public</span>:
+<a name="l00015"></a><a class="code" href="classftplib_1_1error.html#0205a5c32e446c5d7c792c708220b1a7">00015</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classftplib_1_1error.html#0205a5c32e446c5d7c792c708220b1a7">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> <a class="code" href="classftplib_1_1error.html#a7a7c753067df4b1c6ee4aefa2139f79">_msg</a>.c_str(); }
+<a name="l00016"></a><a class="code" href="classftplib_1_1error.html#833d787900e419f2bd6dc28dee5d4834">00016</a>     <a class="code" href="classftplib_1_1error.html#833d787900e419f2bd6dc28dee5d4834">~error</a>() throw() {}
+<a name="l00017"></a>00017 <span class="keyword">protected</span>:
+<a name="l00018"></a><a class="code" href="classftplib_1_1error.html#a7a7c753067df4b1c6ee4aefa2139f79">00018</a>     std::string <a class="code" href="classftplib_1_1error.html#a7a7c753067df4b1c6ee4aefa2139f79">_msg</a>;
+<a name="l00019"></a>00019 
+<a name="l00020"></a><a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">00020</a>     <a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">error</a>(<span class="keyword">const</span> std::string&amp; msg) <span class="keywordflow">throw</span>() { <a class="code" href="classftplib_1_1error.html#a7a7c753067df4b1c6ee4aefa2139f79">_msg</a> = msg; }
+<a name="l00021"></a>00021 };
+<a name="l00022"></a>00022 
+<a name="l00023"></a><a class="code" href="classftplib_1_1error__temp.html">00023</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1error__temp.html">error_temp</a> : <span class="keyword">public</span> <a class="code" href="classftplib_1_1error.html">error</a> {
+<a name="l00024"></a>00024 <span class="keyword">public</span>:
+<a name="l00025"></a><a class="code" href="classftplib_1_1error__temp.html#6c8a81fc949ee5591a85d5efeb492ea2">00025</a>     <a class="code" href="classftplib_1_1error__temp.html#6c8a81fc949ee5591a85d5efeb492ea2">error_temp</a>(<span class="keywordtype">int</span> code, <span class="keyword">const</span> std::string &amp;msg) <span class="keywordflow">throw</span>() : <a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">error</a>(msg) { _code = code; }
+<a name="l00026"></a><a class="code" href="classftplib_1_1error__temp.html#eb3e3828117a6c872688e9ec508e9b68">00026</a>     <a class="code" href="classftplib_1_1error__temp.html#eb3e3828117a6c872688e9ec508e9b68">~error_temp</a>() throw() {}
+<a name="l00027"></a>00027 <span class="keyword">private</span>:
+<a name="l00028"></a>00028     <span class="keywordtype">int</span> _code;
+<a name="l00029"></a>00029 };
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="classftplib_1_1error__perm.html">00031</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1error__perm.html">error_perm</a> : <span class="keyword">public</span> <a class="code" href="classftplib_1_1error.html">error</a> {
+<a name="l00032"></a>00032 <span class="keyword">public</span>:
+<a name="l00033"></a><a class="code" href="classftplib_1_1error__perm.html#f39cb3638a78e6967e56d1f7e7346bfb">00033</a>     <a class="code" href="classftplib_1_1error__perm.html#f39cb3638a78e6967e56d1f7e7346bfb">error_perm</a>(<span class="keywordtype">int</span> code, <span class="keyword">const</span> std::string &amp;msg) <span class="keywordflow">throw</span>() : <a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">error</a>(msg) { _code = code; }
+<a name="l00034"></a><a class="code" href="classftplib_1_1error__perm.html#2d105a24ed475f01ed72bf1ce8f53fe8">00034</a>     <a class="code" href="classftplib_1_1error__perm.html#2d105a24ed475f01ed72bf1ce8f53fe8">~error_perm</a>() throw() {}
+<a name="l00035"></a>00035 <span class="keyword">private</span>:
+<a name="l00036"></a>00036     <span class="keywordtype">int</span> _code;
+<a name="l00037"></a>00037 };
+<a name="l00038"></a>00038 
+<a name="l00039"></a><a class="code" href="classftplib_1_1error__proto.html">00039</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1error__proto.html">error_proto</a> : <span class="keyword">public</span> <a class="code" href="classftplib_1_1error.html">error</a> {
+<a name="l00040"></a>00040 <span class="keyword">public</span>:
+<a name="l00041"></a><a class="code" href="classftplib_1_1error__proto.html#4d9a71a8162f838cb1cdd2997f64819b">00041</a>     <a class="code" href="classftplib_1_1error__proto.html#4d9a71a8162f838cb1cdd2997f64819b">error_proto</a>(<span class="keyword">const</span> std::string &amp;msg) <span class="keywordflow">throw</span>() : <a class="code" href="classftplib_1_1error.html#27f41492c41876849d85237668cf53b6">error</a>(msg) {}
+<a name="l00042"></a><a class="code" href="classftplib_1_1error__proto.html#3f80b3d7cb39a1725f917ae3383c75df">00042</a>     <a class="code" href="classftplib_1_1error__proto.html#3f80b3d7cb39a1725f917ae3383c75df">~error_proto</a>() throw() {}
+<a name="l00043"></a>00043 };
+<a name="l00044"></a>00044 
+<a name="l00046"></a><a class="code" href="classftplib_1_1FTP.html">00046</a> <span class="keyword">class </span><a class="code" href="classftplib_1_1FTP.html" title="This class tries to imitate the ftplib.FTP python class, with a few differences.">FTP</a> {
+<a name="l00047"></a>00047 <span class="keyword">public</span>:
+<a name="l00053"></a>00053     <a class="code" href="classftplib_1_1FTP.html#178979abdc58593abdb31a882f370803" title="constructor">FTP</a>(<span class="keyword">const</span> std::string &amp;host=<span class="stringliteral">""</span>, <span class="keyword">const</span> std::string &amp;user=<span class="stringliteral">""</span>, <span class="keyword">const</span> std::string &amp;passwd=<span class="stringliteral">""</span>, <span class="keywordtype">double</span> timeout=0.0);
+<a name="l00054"></a>00054 
+<a name="l00059"></a>00059     std::string <a class="code" href="classftplib_1_1FTP.html#fbd3444a33e5dd055474c9a0d6aabba5" title="connects to given FTP server">connect</a>(<span class="keyword">const</span> std::string &amp;host, <a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">socketpp::port_t</a> port=21);
+<a name="l00064"></a>00064     std::string <a class="code" href="classftplib_1_1FTP.html#dc39751d00808d35183fb19c483b3589" title="carries out the FTP login">login</a>(<span class="keyword">const</span> std::string &amp;user=<span class="stringliteral">"anonymous"</span>, <span class="keyword">const</span> std::string &amp;passwd=<span class="stringliteral">""</span>);
+<a name="l00068"></a>00068     std::string <a class="code" href="classftplib_1_1FTP.html#5a876d670107df4b5924238450440eee" title="sends raw command and returns server response">sendcmd</a>(<span class="keyword">const</span> std::string &amp;cmd);
+<a name="l00073"></a>00073     std::string <a class="code" href="classftplib_1_1FTP.html#b04e374d4835e124959cee085df3fa4e" title="Retrieve a file or directory listing in ASCII transfer mode.">retrlines</a>(<span class="keyword">const</span> std::string &amp;cmd, std::ostream &amp;os=std::cout);
+<a name="l00078"></a>00078     std::string <a class="code" href="classftplib_1_1FTP.html#ad060fdb45fec7ccd5949e475df96982" title="Retrieve a file in binary transfer mode.">retrbinary</a>(<span class="keyword">const</span> std::string &amp;cmd, std::ostream &amp;os);
+<a name="l00079"></a>00079 
+<a name="l00084"></a>00084     std::string <a class="code" href="classftplib_1_1FTP.html#37c828c7d98c7da3fe3b936526118416" title="Stor a file in binary transfer mode.">storbinary</a>(<span class="keyword">const</span> std::string &amp;cmd, std::istream &amp;is);
+<a name="l00089"></a>00089     std::string <a class="code" href="classftplib_1_1FTP.html#956c5fa0546d7a6a2db0b4dee28f6868" title="Stor a file in ASCII transfer mode.">storlines</a>(<span class="keyword">const</span> std::string &amp;cmd, std::istream &amp;is);
+<a name="l00090"></a>00090 
+<a name="l00094"></a>00094     std::vector&lt;std::string&gt; <a class="code" href="classftplib_1_1FTP.html#a793fa113ee6fc82e3db3b7ed769ff3f" title="obtains a std::vector containing existing file names in the passed path, through...">nlst</a>(<span class="keyword">const</span> std::string &amp;path=<span class="stringliteral">"."</span>);
+<a name="l00095"></a>00095 
+<a name="l00099"></a>00099     std::string <span class="keyword">remove</span>(<span class="keyword">const</span> std::string &amp;fname);
+<a name="l00103"></a>00103     std::string <a class="code" href="classftplib_1_1FTP.html#2a96ea655350a479cdf5f34254fd4ac8" title="remove a direcotry from the server">rmd</a>(<span class="keyword">const</span> std::string &amp;dirname);
+<a name="l00107"></a>00107     std::string <a class="code" href="classftplib_1_1FTP.html#05c4b118a0e278e70c79c1c42484f669" title="creates a new directory on the server">mkd</a>(<span class="keyword">const</span> std::string &amp;dirname);
+<a name="l00112"></a>00112     std::string <a class="code" href="classftplib_1_1FTP.html#0adece922028464ff064da24b539798d" title="renames a file on the server">rename</a>(<span class="keyword">const</span> std::string &amp;from, <span class="keyword">const</span> std::string &amp;to);
+<a name="l00116"></a>00116     std::string <a class="code" href="classftplib_1_1FTP.html#7cd3c7fc71ae0c7dbdfcee88417d2685" title="changes working directory">cwd</a>(<span class="keyword">const</span> std::string &amp;path);
+<a name="l00117"></a>00117  
+<a name="l00120"></a>00120     std::string <a class="code" href="classftplib_1_1FTP.html#7c01c7b062848c7fc1d3caf95758b109" title="returns current working directory">pwd</a>();
+<a name="l00121"></a>00121 
+<a name="l00126"></a>00126     std::string <a class="code" href="classftplib_1_1FTP.html#42749c4425e33349f605ec0a8b389731" title="lists all the files in the directory, through the LIST command param path directory...">dir</a>(<span class="keyword">const</span> std::string&amp; path=<span class="stringliteral">"."</span>, std::ostream &amp;os = std::cout);
+<a name="l00127"></a>00127 
+<a name="l00131"></a>00131     <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it aims to be a simple C-socket wrapper">socketpp::Socket</a>&amp; <a class="code" href="classftplib_1_1FTP.html#c949b3cd7b92534705ff041bb43d989b" title="initiate a transfer over the data connection, using PASV or PORT mode depending on...">transfercmd</a>(<span class="keyword">const</span> std::string &amp;cmd);
+<a name="l00134"></a>00134     <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#e35230239f093f01fb295ccb007de1b2" title="sets either PORT or PASV mode">set_pasv</a>(<span class="keywordtype">bool</span> p) <span class="keywordflow">throw</span>();
+<a name="l00135"></a>00135 
+<a name="l00138"></a>00138     std::string <a class="code" href="classftplib_1_1FTP.html#bd6e018a5cc17b1c8007064830823c71" title="sends the &amp;#39;QUIT&amp;#39; command and closes socket">quit</a>();
+<a name="l00140"></a>00140     <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#4f36be9f23721435f19a7e5b1d702718" title="closes socket">close</a>();
+<a name="l00141"></a>00141 
+<a name="l00144"></a><a class="code" href="classftplib_1_1FTP.html#a6603cda3b7c44c48c6a2b8d688d3bb7">00144</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#a6603cda3b7c44c48c6a2b8d688d3bb7" title="sets timeout on all IO socket operations">settimeout</a>(<span class="keywordtype">double</span> time) { _sock.<a class="code" href="classsocketpp_1_1BaseSocket.html#0804d148470fd742cda495d3533b25c6" title="sets a timeout on the following IO operations. If time is 0 timeout is cancelled...">settimeout</a>(time); }
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146 <span class="keyword">private</span>:
+<a name="l00147"></a>00147     <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it aims to be a simple C-socket wrapper">socketpp::Socket</a> _sock;
+<a name="l00148"></a>00148     <span class="keywordtype">bool</span> _pasv;
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150     std::string _readAnswer();
+<a name="l00151"></a>00151     std::string _getLine(std::string&amp;) throw();
+<a name="l00152"></a>00152     <span class="keywordtype">void</span> _getAddress(const std::<span class="keywordtype">string</span>&amp;, std::<span class="keywordtype">string</span>&amp;, socketpp::<a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&amp;);
+<a name="l00153"></a>00153     <span class="keywordtype">int</span> _regex(const std::<span class="keywordtype">string</span> &amp;, const std::<span class="keywordtype">string</span> &amp;, <span class="keywordtype">int</span>, std::vector&lt;std::<span class="keywordtype">string</span>&gt; &amp;) throw();
 <a name="l00154"></a>00154 };
 <a name="l00155"></a>00155 
-<a name="l00156"></a>00156 <span class="preprocessor">#endif</span>
+<a name="l00156"></a>00156 };
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat May 23 15:28:42 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:45 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -41,12 +41,6 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#2e9b9e6dc7ea4fc4a3500665b3f4062d">gethostbyaddr</a> (const std::string &amp;addr)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">tries to obtain an hostname from a IP address, through a reverse DNS lookup  <a href="#2e9b9e6dc7ea4fc4a3500665b3f4062d"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#b4a42f2b0f3842d681ea0cbe6810d6ff">getservbyname</a> (const std::string &amp;name, const char *prot=NULL)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">obtains port conventionally bound to given service name  <a href="#b4a42f2b0f3842d681ea0cbe6810d6ff"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">in_addr_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#e2eda37cd4c20059c557e4e65c829cf8">inet_aton</a> (const std::string &amp;str)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">conversion from IPv4 dotted decimal format to numerical one  <a href="#e2eda37cd4c20059c557e4e65c829cf8"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::map&lt; std::string, <br class="typebreak">
 std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#4e10f2291b27d7db2a2860502721f960">getDnsCache</a> ()</td></tr>
 
@@ -55,13 +49,19 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">cleans internal DNS cache  <a href="#89a2929af6c042fd7e16661303dfabcb"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#f221cac56bf3808494806d335a56bb87">getservbyport</a> (<a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port, const char *prot=NULL)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#b4a42f2b0f3842d681ea0cbe6810d6ff">getservbyname</a> (const std::string &amp;name, const char *prot=NULL)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">obtains port conventionally bound to given service name  <a href="#b4a42f2b0f3842d681ea0cbe6810d6ff"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#f221cac56bf3808494806d335a56bb87">getservbyport</a> (<a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port, const char *prot=NULL)  throw ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">obtains service name conventionally bound to given port  <a href="#f221cac56bf3808494806d335a56bb87"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#652e24c273f7905cebf8d04b3cfef74d">isIPv4</a> (const std::string &amp;str)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#652e24c273f7905cebf8d04b3cfef74d">isIPv4</a> (const std::string &amp;str)  throw ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">checks whether given string is in IPv4 dotted decimal format  <a href="#652e24c273f7905cebf8d04b3cfef74d"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#a4377d84c8ea976aeada2b2eb0ac248d">inet_ntoa</a> (in_addr_t addr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">checks whether given string is in IPv4 format  <a href="#652e24c273f7905cebf8d04b3cfef74d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static in_addr_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#e2eda37cd4c20059c557e4e65c829cf8">inet_aton</a> (const std::string &amp;str)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">conversion from IPv4 string format to numerical one  <a href="#e2eda37cd4c20059c557e4e65c829cf8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#a4377d84c8ea976aeada2b2eb0ac248d">inet_ntoa</a> (in_addr_t addr)  throw ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">conversion from IPv4 numerical format to dotted decimal one  <a href="#a4377d84c8ea976aeada2b2eb0ac248d"></a><br></td></tr>
 </table>
@@ -131,7 +131,7 @@ tries to obtain an hostname from a IP address, through a reverse DNS lookup
 <p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>addr</em>&nbsp;</td><td>IP address in dotted decimal format </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>addr</em>&nbsp;</td><td>IP address </td></tr>
   </table>
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>hostname </dd></dl>
@@ -185,7 +185,7 @@ resolves given name through a DNS lookup
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td></td>
+          <td></td><td></td><td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -223,7 +223,7 @@ obtains port conventionally bound to given service name
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [static]</code></td>
+          <td></td><td></td><td>  throw ()<code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -238,7 +238,7 @@ obtains service name conventionally bound to given port
     <tr><td valign="top"></td><td valign="top"><em>prot</em>&nbsp;</td><td>transport layer protocol </td></tr>
   </table>
 </dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>service name </dd></dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>service name, empty string if failed </dd></dl>
 
 </div>
 </div><p>
@@ -252,18 +252,18 @@ obtains service name conventionally bound to given port
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>str</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td></td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>
-conversion from IPv4 dotted decimal format to numerical one 
+conversion from IPv4 string format to numerical one 
 <p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>str</em>&nbsp;</td><td>IPv4 dotted decimal string </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>str</em>&nbsp;</td><td>IPv4 string </td></tr>
   </table>
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>numerical address </dd></dl>
@@ -280,7 +280,7 @@ conversion from IPv4 dotted decimal format to numerical one
           <td class="paramtype">in_addr_t&nbsp;</td>
           <td class="paramname"> <em>addr</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [static]</code></td>
+          <td>  throw ()<code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -308,14 +308,14 @@ conversion from IPv4 numerical format to dotted decimal one
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>str</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [static]</code></td>
+          <td>  throw ()<code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>
-checks whether given string is in IPv4 dotted decimal format 
+checks whether given string is in IPv4 format 
 <p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
@@ -329,7 +329,7 @@ checks whether given string is in IPv4 dotted decimal format
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="AddrHandler_8h-source.html">AddrHandler.h</a><li><a class="el" href="AddrHandler_8cpp.html">AddrHandler.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat May 23 15:28:44 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:47 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

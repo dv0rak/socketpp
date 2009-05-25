@@ -76,8 +76,13 @@ std::string FTP::cwd(const std::string &path)
 std::string FTP::pwd()
 {
     std::string resp = sendcmd("PWD");
-    int a = resp.find("\"");
-    return resp.substr(a+1, resp.rfind("\"")-a-1);
+    std::string pattern = "\"(.*)\"";
+    std::vector<std::string> dir(2);
+    
+    if(_regex(resp, pattern, 2, dir) < 0) {
+        throw error_proto("Unexpected reply to PWD command :\n" +resp);
+    }
+    return dir[1];
 }
 
 std::string FTP::retrlines(const std::string &cmd, std::ostream &os)
@@ -165,7 +170,7 @@ socketpp::Socket& FTP::transfercmd(const std::string &cmd)
     return *s;
 }
         
-void FTP::set_pasv(bool p)
+void FTP::set_pasv(bool p) throw()
 {
     _pasv = p;
 }
@@ -195,7 +200,7 @@ std::string FTP::_readAnswer()
     return msg;
 }
 
-std::string FTP::_getLine(std::string& msg)
+std::string FTP::_getLine(std::string& msg) throw()
 {
     int n = msg.find("\r\n");
     std::string ret = msg.substr(0, n);
@@ -203,14 +208,36 @@ std::string FTP::_getLine(std::string& msg)
     return ret;
 }
 
+int FTP::_regex(const std::string &str, const std::string &pattern, int nmatch, std::vector<std::string> &pmatch) throw()
+{
+    regex_t re;
+    regmatch_t *_pmatch = new regmatch_t[nmatch];   
+ 
+    if(::regcomp(&re, pattern.c_str(), REG_EXTENDED) != 0) return -1;
+    if(::regexec(&re, str.c_str(), nmatch, _pmatch, 0) != 0) return -1;
+    
+    for(int i=0; i<nmatch; i++) {
+        pmatch[i] = str.substr(_pmatch[i].rm_so, _pmatch[i].rm_eo - _pmatch[i].rm_so);
+    }
+    delete[] _pmatch;
+    return 0;
+} 
+
 void FTP::_getAddress(const std::string& resp, std::string& ip, socketpp::port_t& port)
 {
-    std::string buf = resp.substr(resp.find('(')+1,resp.find(')'));
-    int n = buf.find(','); ip += buf.substr(0,n) + '.'; buf.erase(0,n+1);
-    n = buf.find(','); ip += buf.substr(0,n) + '.'; buf.erase(0,n+1);
-    n = buf.find(','); ip += buf.substr(0,n) + '.'; buf.erase(0,n+1);
-    n = buf.find(','); ip += buf.substr(0,n); buf.erase(0,n+1);
-    n = buf.find(','); port = (atoi(buf.substr(0,n).c_str())<<8) + atoi(buf.substr(n+1).c_str());
+    std::vector<std::string> tok(7);
+    std::string pattern = "\\(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])," \
+                          "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])," \
+                          "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])," \
+                          "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])," \
+                          "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])," \
+                          "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\)";
+    
+    if(_regex(resp, pattern, 7, tok) < 0) {
+        throw error_proto("Unexpected reply to PASV command :\n" +resp);
+    }
+    ip = tok[1] +"."+ tok[2]+"."+tok[3]+"."+tok[4];
+    port = (atoi(tok[5].c_str()) <<8) + atoi(tok[6].c_str());
 }
 
 };

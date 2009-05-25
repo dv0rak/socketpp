@@ -7,7 +7,6 @@
 #include <netdb.h>
 #include <map>
 #include <string>
-#include <regex.h>
 
 namespace socketpp {
 
@@ -27,17 +26,17 @@ public:
     /// @param   name	service name
     /// @param   prot	transport layer protocol
     /// @return  port number
-    port_t getservbyname(const std::string& name, const char *prot=NULL);
+    static port_t getservbyname(const std::string& name, const char *prot=NULL);
     /// @brief   obtains service name conventionally bound to given port
     /// @param   port 	port number
     /// @param   prot	transport layer protocol
-    /// @return  service name
-    static std::string getservbyport(port_t port, const char *prot=NULL);
+    /// @return  service name, empty string if failed
+    static std::string getservbyport(port_t port, const char *prot=NULL) throw();
 
     /// @brief   checks whether given string is in IPv4 format 
     /// @param   str 	string to check
     /// @return  true or false
-    static bool isIPv4(const std::string& str);
+    static bool isIPv4(const std::string& str) throw();
 
     /// @brief   conversion from IPv4 string format to numerical one
     /// @param   str	IPv4 string
@@ -46,7 +45,7 @@ public:
     /// @brief   conversion from IPv4 numerical format to dotted decimal one
     /// @param   addr	numerical address
     /// @return  IPv4 dotted decimal string
-    static std::string inet_ntoa(in_addr_t addr);
+    static std::string inet_ntoa(in_addr_t addr) throw();
 
     /// @brief   returns internal DNS cache
     /// @return  internal DNS cache

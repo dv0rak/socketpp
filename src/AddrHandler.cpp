@@ -34,7 +34,7 @@ std::string AddrHandler::gethostbyaddr(const std::string& addr)
     return he->h_name;
 }
 
-bool AddrHandler::isIPv4(const std::string& str)
+bool AddrHandler::isIPv4(const std::string& str) throw()
 
 {
     try { inet_aton(str); }
@@ -51,7 +51,7 @@ in_addr_t AddrHandler::inet_aton(const std::string& str)
     return ::ntohl(addr);
 }
 
-std::string AddrHandler::inet_ntoa(in_addr_t addr)
+std::string AddrHandler::inet_ntoa(in_addr_t addr) throw()
 {
     struct in_addr in;
     in.s_addr = ::htonl(addr);
@@ -68,7 +68,7 @@ port_t AddrHandler::getservbyname(const std::string& name, const char *prot)
     return ::ntohs(s->s_port);
 }
 
-std::string AddrHandler::getservbyport(port_t port, const char *prot)
+std::string AddrHandler::getservbyport(port_t port, const char *prot) throw()
 {
     servent *s;
     s = ::getservbyport(::htons(port),prot);

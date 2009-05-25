@@ -86,7 +86,7 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classsocketpp_1_1Socket.html">socketpp::Socket</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#c949b3cd7b92534705ff041bb43d989b">transfercmd</a> (const std::string &amp;cmd)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">initiate a transfer over the data connection, using PASV or PORT mode depending on previous calls to <a class="el" href="classftplib_1_1FTP.html#e35230239f093f01fb295ccb007de1b2" title="sets either PORT or PASV mode">set_pasv()</a> (default is PASV), and then send given command  <a href="#c949b3cd7b92534705ff041bb43d989b"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#e35230239f093f01fb295ccb007de1b2">set_pasv</a> (bool p)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#e35230239f093f01fb295ccb007de1b2">set_pasv</a> (bool p)  throw ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets either PORT or PASV mode  <a href="#e35230239f093f01fb295ccb007de1b2"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#bd6e018a5cc17b1c8007064830823c71">quit</a> ()</td></tr>
@@ -618,7 +618,7 @@ sends raw command and returns server response
           <td class="paramtype">bool&nbsp;</td>
           <td class="paramname"> <em>p</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td></td>
+          <td>  throw ()</td>
         </tr>
       </table>
 </div>
@@ -769,7 +769,7 @@ initiate a transfer over the data connection, using PASV or PORT mode depending 
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="ftp_8h-source.html">ftp.h</a><li><a class="el" href="ftp_8cpp.html">ftp.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat May 23 15:28:44 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:47 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

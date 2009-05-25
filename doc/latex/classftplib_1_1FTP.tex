@@ -44,7 +44,7 @@ std::string \hyperlink{classftplib_1_1FTP_42749c4425e33349f605ec0a8b389731}{dir}
 \begin{CompactList}\small\item\em lists all the files in the directory, through the LIST command param path directory to list, \char`\"{}.\char`\"{} if empty param os std::ostream on which output is written, std::cout if empty \item\end{CompactList}\item 
 \hyperlink{classsocketpp_1_1Socket}{socketpp::Socket} \& \hyperlink{classftplib_1_1FTP_c949b3cd7b92534705ff041bb43d989b}{transfercmd} (const std::string \&cmd)
 \begin{CompactList}\small\item\em initiate a transfer over the data connection, using PASV or PORT mode depending on previous calls to \hyperlink{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{set\_\-pasv()} (default is PASV), and then send given command \item\end{CompactList}\item 
-void \hyperlink{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{set\_\-pasv} (bool p)
+void \hyperlink{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{set\_\-pasv} (bool p)  throw ()
 \begin{CompactList}\small\item\em sets either PORT or PASV mode \item\end{CompactList}\item 
 std::string \hyperlink{classftplib_1_1FTP_bd6e018a5cc17b1c8007064830823c71}{quit} ()
 \begin{CompactList}\small\item\em sends the 'QUIT' command and closes socket \item\end{CompactList}\item 
@@ -296,7 +296,7 @@ sends raw command and returns server response
 \hypertarget{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{
 \index{ftplib::FTP@{ftplib::FTP}!set\_\-pasv@{set\_\-pasv}}
 \index{set\_\-pasv@{set\_\-pasv}!ftplib::FTP@{ftplib::FTP}}
-\subsubsection[{set\_\-pasv}]{\setlength{\rightskip}{0pt plus 5cm}void ftplib::FTP::set\_\-pasv (bool {\em p})}}
+\subsubsection[{set\_\-pasv}]{\setlength{\rightskip}{0pt plus 5cm}void ftplib::FTP::set\_\-pasv (bool {\em p})  throw ()}}
 \label{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}
 
 

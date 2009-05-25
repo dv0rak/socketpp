@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <regex.h>
 
 namespace ftplib {
 
@@ -130,7 +131,7 @@ public:
     socketpp::Socket& transfercmd(const std::string &cmd);
     ///@brief	sets either PORT or PASV mode
     ///@param	p	if true PASV, otherwise PORT
-    void set_pasv(bool p);
+    void set_pasv(bool p) throw();
 
     ///@brief	sends the 'QUIT' command and closes socket
     ///@return	FTP reply
@@ -147,8 +148,9 @@ private:
     bool _pasv;
 
     std::string _readAnswer();
-    std::string _getLine(std::string&);
+    std::string _getLine(std::string&) throw();
     void _getAddress(const std::string&, std::string&, socketpp::port_t&);
+    int _regex(const std::string &, const std::string &, int, std::vector<std::string> &) throw();
 };
 
 };

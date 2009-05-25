@@ -29,34 +29,33 @@
 <a name="l00007"></a>00007 <span class="preprocessor">#include &lt;netdb.h&gt;</span>
 <a name="l00008"></a>00008 <span class="preprocessor">#include &lt;map&gt;</span>
 <a name="l00009"></a>00009 <span class="preprocessor">#include &lt;string&gt;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;regex.h&gt;</span>
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">namespace </span>socketpp {
-<a name="l00013"></a>00013 
-<a name="l00015"></a><a class="code" href="classsocketpp_1_1AddrHandler.html">00015</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1AddrHandler.html" title="Class which deals with several things, like dns resolving or address format conversion...">AddrHandler</a> {
-<a name="l00016"></a>00016 <span class="keyword">public</span>:
-<a name="l00020"></a>00020     std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#19aebc1e9779dee4e5f06d7b39e18959" title="resolves given name through a DNS lookup">gethostbyname</a>(<span class="keyword">const</span> std::string&amp; name);
-<a name="l00024"></a>00024     std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#2e9b9e6dc7ea4fc4a3500665b3f4062d" title="tries to obtain an hostname from a IP address, through a reverse DNS lookup">gethostbyaddr</a>(<span class="keyword">const</span> std::string&amp; addr);
-<a name="l00025"></a>00025 
-<a name="l00030"></a>00030     <a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> <a class="code" href="classsocketpp_1_1AddrHandler.html#b4a42f2b0f3842d681ea0cbe6810d6ff" title="obtains port conventionally bound to given service name">getservbyname</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">char</span> *prot=NULL);
-<a name="l00035"></a>00035     <span class="keyword">static</span> std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#f221cac56bf3808494806d335a56bb87" title="obtains service name conventionally bound to given port">getservbyport</a>(<a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port, <span class="keyword">const</span> <span class="keywordtype">char</span> *prot=NULL);
-<a name="l00036"></a>00036 
-<a name="l00040"></a>00040     <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classsocketpp_1_1AddrHandler.html#652e24c273f7905cebf8d04b3cfef74d" title="checks whether given string is in IPv4 dotted decimal format">isIPv4</a>(<span class="keyword">const</span> std::string&amp; str);
-<a name="l00041"></a>00041 
-<a name="l00045"></a>00045     in_addr_t <a class="code" href="classsocketpp_1_1AddrHandler.html#e2eda37cd4c20059c557e4e65c829cf8" title="conversion from IPv4 dotted decimal format to numerical one">inet_aton</a>(<span class="keyword">const</span> std::string&amp; str);
-<a name="l00049"></a>00049     <span class="keyword">static</span> std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#a4377d84c8ea976aeada2b2eb0ac248d" title="conversion from IPv4 numerical format to dotted decimal one">inet_ntoa</a>(in_addr_t addr);
-<a name="l00050"></a>00050 
-<a name="l00053"></a><a class="code" href="classsocketpp_1_1AddrHandler.html#4e10f2291b27d7db2a2860502721f960">00053</a>     <span class="keyword">inline</span> std::map&lt;std::string,std::string&gt; <a class="code" href="classsocketpp_1_1AddrHandler.html#4e10f2291b27d7db2a2860502721f960" title="returns internal DNS cache">getDnsCache</a>() { <span class="keywordflow">return</span> resolved; }
-<a name="l00055"></a><a class="code" href="classsocketpp_1_1AddrHandler.html#89a2929af6c042fd7e16661303dfabcb">00055</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1AddrHandler.html#89a2929af6c042fd7e16661303dfabcb" title="cleans internal DNS cache">cleanDnsCache</a>() { resolved.clear(); }
-<a name="l00056"></a>00056 <span class="keyword">private</span>:
-<a name="l00057"></a>00057     std::map&lt;std::string, std::string&gt; resolved;
-<a name="l00058"></a>00058 
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="keyword">namespace </span>socketpp {
+<a name="l00012"></a>00012 
+<a name="l00014"></a><a class="code" href="classsocketpp_1_1AddrHandler.html">00014</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1AddrHandler.html" title="Class which deals with several things, like dns resolving or address format conversion...">AddrHandler</a> {
+<a name="l00015"></a>00015 <span class="keyword">public</span>:
+<a name="l00019"></a>00019     std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#19aebc1e9779dee4e5f06d7b39e18959" title="resolves given name through a DNS lookup">gethostbyname</a>(<span class="keyword">const</span> std::string&amp; name);
+<a name="l00023"></a>00023     std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#2e9b9e6dc7ea4fc4a3500665b3f4062d" title="tries to obtain an hostname from a IP address, through a reverse DNS lookup">gethostbyaddr</a>(<span class="keyword">const</span> std::string&amp; addr);
+<a name="l00024"></a>00024 
+<a name="l00029"></a>00029     <span class="keyword">static</span> <a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> <a class="code" href="classsocketpp_1_1AddrHandler.html#b4a42f2b0f3842d681ea0cbe6810d6ff" title="obtains port conventionally bound to given service name">getservbyname</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <span class="keywordtype">char</span> *prot=NULL);
+<a name="l00034"></a>00034     <span class="keyword">static</span> std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#f221cac56bf3808494806d335a56bb87" title="obtains service name conventionally bound to given port">getservbyport</a>(<a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port, <span class="keyword">const</span> <span class="keywordtype">char</span> *prot=NULL) <span class="keywordflow">throw</span>();
+<a name="l00035"></a>00035 
+<a name="l00039"></a>00039     <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classsocketpp_1_1AddrHandler.html#652e24c273f7905cebf8d04b3cfef74d" title="checks whether given string is in IPv4 format">isIPv4</a>(<span class="keyword">const</span> std::string&amp; str) <span class="keywordflow">throw</span>();
+<a name="l00040"></a>00040 
+<a name="l00044"></a>00044     <span class="keyword">static</span> in_addr_t <a class="code" href="classsocketpp_1_1AddrHandler.html#e2eda37cd4c20059c557e4e65c829cf8" title="conversion from IPv4 string format to numerical one">inet_aton</a>(<span class="keyword">const</span> std::string&amp; str);
+<a name="l00048"></a>00048     <span class="keyword">static</span> std::string <a class="code" href="classsocketpp_1_1AddrHandler.html#a4377d84c8ea976aeada2b2eb0ac248d" title="conversion from IPv4 numerical format to dotted decimal one">inet_ntoa</a>(in_addr_t addr) <span class="keywordflow">throw</span>();
+<a name="l00049"></a>00049 
+<a name="l00052"></a><a class="code" href="classsocketpp_1_1AddrHandler.html#4e10f2291b27d7db2a2860502721f960">00052</a>     <span class="keyword">inline</span> std::map&lt;std::string,std::string&gt; <a class="code" href="classsocketpp_1_1AddrHandler.html#4e10f2291b27d7db2a2860502721f960" title="returns internal DNS cache">getDnsCache</a>() { <span class="keywordflow">return</span> resolved; }
+<a name="l00054"></a><a class="code" href="classsocketpp_1_1AddrHandler.html#89a2929af6c042fd7e16661303dfabcb">00054</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1AddrHandler.html#89a2929af6c042fd7e16661303dfabcb" title="cleans internal DNS cache">cleanDnsCache</a>() { resolved.clear(); }
+<a name="l00055"></a>00055 <span class="keyword">private</span>:
+<a name="l00056"></a>00056     std::map&lt;std::string, std::string&gt; resolved;
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 };
 <a name="l00059"></a>00059 };
-<a name="l00060"></a>00060 };
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="preprocessor">#endif</span>
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat May 23 15:28:42 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:45 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
