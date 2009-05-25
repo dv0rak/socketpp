@@ -9,7 +9,6 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -17,26 +16,25 @@
   <div class="tabs">
     <ul>
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-<h1>RawSocket.h</h1><a href="RawSocket_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __RAWSOCKET_H</span>
-<a name="l00002"></a><a class="code" href="RawSocket_8h.html#9ab52aac33f34909d97fe871094830a7">00002</a> <span class="preprocessor"></span><span class="preprocessor">#define __RAWSOCKET_H 1</span>
+<h1>RawSocket.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __RAWSOCKET_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define __RAWSOCKET_H 1</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include "<a class="code" href="Socket_8h.html">Socket.h</a>"</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include "Socket.h"</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;sys/ioctl.h&gt;</span>
 <a name="l00006"></a>00006 <span class="preprocessor">#include &lt;net/if.h&gt;</span>
 <a name="l00007"></a>00007 
 <a name="l00008"></a>00008 <span class="keyword">namespace </span>socketpp {
 <a name="l00009"></a>00009 
-<a name="l00013"></a>00013 in_addr_t <a class="code" href="namespacesocketpp.html#e04237b3f443ecc14051f52a59450692" title="gets IP address bound to specified interface">get_iface_ip</a>(<span class="keyword">const</span> std::string &amp;name);
+<a name="l00013"></a>00013 in_addr_t get_iface_ip(<span class="keyword">const</span> std::string &amp;name);
 <a name="l00014"></a>00014 
 <a name="l00016"></a><a class="code" href="classsocketpp_1_1RawSocket.html">00016</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a> : <span class="keyword">public</span> <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a> {
 <a name="l00017"></a>00017 <span class="keyword">public</span>:
-<a name="l00020"></a><a class="code" href="classsocketpp_1_1RawSocket.html#1a77e11388869bc70457efb75cd40b82">00020</a>     <a class="code" href="classsocketpp_1_1RawSocket.html#1a77e11388869bc70457efb75cd40b82" title="constructor which calls BaseSocket(sock_raw, prot)">RawSocket</a>(<a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">protocol</a> prot) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(<a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d7b7c5341d5909dbbfcaa3fe1c04c949d">sock_raw</a>, prot) { }
+<a name="l00020"></a><a class="code" href="classsocketpp_1_1RawSocket.html#1a77e11388869bc70457efb75cd40b82">00020</a>     <a class="code" href="classsocketpp_1_1RawSocket.html#1a77e11388869bc70457efb75cd40b82" title="constructor which calls BaseSocket(sock_raw, prot)">RawSocket</a>(protocol prot) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(sock_raw, prot) { }
 <a name="l00021"></a>00021 
-<a name="l00026"></a>00026     <span class="keyword">static</span> <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="classsocketpp_1_1RawSocket.html#bb78ecebb5bd5ab5be4ee46d786fe5cd" title="calculates internet checksum">checksum</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *buf, <span class="keywordtype">size_t</span> nchar);
-<a name="l00030"></a>00030     <span class="keyword">static</span> <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="classsocketpp_1_1RawSocket.html#bb78ecebb5bd5ab5be4ee46d786fe5cd" title="calculates internet checksum">checksum</a>(<span class="keyword">const</span> std::string &amp;buf);
+<a name="l00026"></a>00026     <span class="keyword">static</span> _u16 <a class="code" href="classsocketpp_1_1RawSocket.html#bb78ecebb5bd5ab5be4ee46d786fe5cd" title="calculates internet checksum">checksum</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *buf, <span class="keywordtype">size_t</span> nchar);
+<a name="l00030"></a>00030     <span class="keyword">static</span> _u16 <a class="code" href="classsocketpp_1_1RawSocket.html#bb78ecebb5bd5ab5be4ee46d786fe5cd" title="calculates internet checksum">checksum</a>(<span class="keyword">const</span> std::string &amp;buf);
 <a name="l00031"></a>00031 
 <a name="l00035"></a>00035     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1RawSocket.html#99ea2415525269d24ba088a58d62abdd" title="builds the internal data payload to send">build_data_payload</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, <span class="keywordtype">size_t</span> len);
 <a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1RawSocket.html#99ea2415525269d24ba088a58d62abdd" title="builds the internal data payload to send">build_data_payload</a>(<span class="keyword">const</span> std::string &amp;buf);
@@ -53,22 +51,22 @@
 <a name="l00075"></a>00075     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1RawSocket.html#bd9631abfa5165ad4ed9e2a31640d1f0" title="gets the received data payload">get_data_payload</a>(std::string &amp;data);
 <a name="l00076"></a>00076 
 <a name="l00077"></a>00077 <span class="keyword">protected</span>:
-<a name="l00078"></a><a class="code" href="classsocketpp_1_1RawSocket.html#4d3a1236c4ac42ab029323ae14586ff8">00078</a>     std::string <a class="code" href="classsocketpp_1_1RawSocket.html#4d3a1236c4ac42ab029323ae14586ff8">data_payload</a>;
-<a name="l00079"></a><a class="code" href="classsocketpp_1_1RawSocket.html#3e166c1c401c30b5721dc54f93772b36">00079</a>     std::string <a class="code" href="classsocketpp_1_1RawSocket.html#3e166c1c401c30b5721dc54f93772b36">rcvd_data_payload</a>;
+<a name="l00078"></a>00078     std::string data_payload;
+<a name="l00079"></a>00079     std::string rcvd_data_payload;
 <a name="l00080"></a>00080 
-<a name="l00081"></a>00081     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1RawSocket.html#eb0a3f716c0fc46efa4123acf0fe1e66">_build_packet</a>(std::string &amp;packet) = 0;
-<a name="l00082"></a>00082     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1RawSocket.html#45e6b041703cb8ae0f93dd19766865d5">_set_fields</a>(<span class="keyword">const</span> std::string &amp;packet) = 0;
+<a name="l00081"></a>00081     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _build_packet(std::string &amp;packet) = 0;
+<a name="l00082"></a>00082     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _set_fields(<span class="keyword">const</span> std::string &amp;packet) = 0;
 <a name="l00083"></a>00083     
-<a name="l00084"></a>00084     <span class="keyword">static</span> <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="classsocketpp_1_1RawSocket.html#c9422942a0ed23c9900d26426a96a0ee">pseudo_checksum</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>*, <span class="keywordtype">size_t</span>, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a>, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a>, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a>);
+<a name="l00084"></a>00084     <span class="keyword">static</span> _u16 pseudo_checksum(<span class="keyword">const</span> <span class="keywordtype">void</span>*, <span class="keywordtype">size_t</span>, _u32, _u32, _u16);
 <a name="l00085"></a>00085 };
 <a name="l00086"></a>00086 
 <a name="l00088"></a><a class="code" href="classsocketpp_1_1IP__RawSocket.html">00088</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1IP__RawSocket.html" title="IP raw socket, without transport-based protocol. ONLY SENDING METHODS WORK.">IP_RawSocket</a> : <span class="keyword">virtual</span> <span class="keyword">public</span> <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a> {
 <a name="l00089"></a>00089 <span class="keyword">public</span>:
-<a name="l00091"></a><a class="code" href="classsocketpp_1_1IP__RawSocket.html#e523748e7ca5bbcf7b74d804d356630e">00091</a>     <a class="code" href="classsocketpp_1_1IP__RawSocket.html#e523748e7ca5bbcf7b74d804d356630e" title="constructor which calls RawSocket(ipproto_raw)">IP_RawSocket</a>() : <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a>(<a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf23bb252119b970b87c8705d2d3f304a3">ipproto_raw</a>) { }
+<a name="l00091"></a><a class="code" href="classsocketpp_1_1IP__RawSocket.html#e523748e7ca5bbcf7b74d804d356630e">00091</a>     <a class="code" href="classsocketpp_1_1IP__RawSocket.html#e523748e7ca5bbcf7b74d804d356630e" title="constructor which calls RawSocket(ipproto_raw)">IP_RawSocket</a>() : <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a>(ipproto_raw) { }
 <a name="l00092"></a>00092 
 <a name="l00095"></a>00095     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1IP__RawSocket.html#f93c51a7a8284fe9d2b24019b13a5803" title="builds the internal IP header to send">build_IP_header</a>(<span class="keyword">const</span> iphdr &amp;ip);
-<a name="l00097"></a>00097     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1IP__RawSocket.html#f93c51a7a8284fe9d2b24019b13a5803" title="builds the internal IP header to send">build_IP_header</a>(<a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> ihl, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> version, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> tos, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> tot_len, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <span class="keywordtype">id</span>, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> frag_off,
-<a name="l00098"></a>00098                          <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> ttl, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> <a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">protocol</a>, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> check, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> saddr, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> daddr);
+<a name="l00097"></a>00097     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1IP__RawSocket.html#f93c51a7a8284fe9d2b24019b13a5803" title="builds the internal IP header to send">build_IP_header</a>(_u8 ihl, _u8 version, _u8 tos, _u16 tot_len, _u16 <span class="keywordtype">id</span>, _u16 frag_off,
+<a name="l00098"></a>00098                          _u8 ttl, _u8 protocol, _u16 check, _u32 saddr, _u32 daddr);
 <a name="l00099"></a>00099 
 <a name="l00103"></a>00103     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1IP__RawSocket.html#82c0b2c75d081bc84d8e60bf18199e65" title="sets the IP options field">set_IP_options</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *opt, <span class="keywordtype">size_t</span> len);
 <a name="l00106"></a>00106     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1IP__RawSocket.html#82c0b2c75d081bc84d8e60bf18199e65" title="sets the IP options field">set_IP_options</a>(<span class="keyword">const</span> std::string&amp; opt);
@@ -84,33 +82,33 @@
 <a name="l00129"></a>00129     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1IP__RawSocket.html#686fcc72997b0843b2ece0c4d8a5735d" title="gets received IP options">get_IP_options</a>(std::string &amp;opt);
 <a name="l00130"></a>00130 
 <a name="l00131"></a>00131 <span class="keyword">protected</span>:
-<a name="l00132"></a><a class="code" href="classsocketpp_1_1IP__RawSocket.html#a8ddf1b2172c1e6f4b50d18c825978dc">00132</a>     iphdr <a class="code" href="classsocketpp_1_1IP__RawSocket.html#a8ddf1b2172c1e6f4b50d18c825978dc">IP_h</a>;
-<a name="l00133"></a><a class="code" href="classsocketpp_1_1IP__RawSocket.html#005f2299268c452f0e1689d070fa0cab">00133</a>     iphdr <a class="code" href="classsocketpp_1_1IP__RawSocket.html#005f2299268c452f0e1689d070fa0cab">rcvd_IP_h</a>;
-<a name="l00134"></a><a class="code" href="classsocketpp_1_1IP__RawSocket.html#05761cfc5307ac731cb05fdc0f500469">00134</a>     std::string <a class="code" href="classsocketpp_1_1IP__RawSocket.html#05761cfc5307ac731cb05fdc0f500469">IP_opt</a>;
-<a name="l00135"></a><a class="code" href="classsocketpp_1_1IP__RawSocket.html#0457fe2b23f01b7304e2bf1441fc7300">00135</a>     std::string <a class="code" href="classsocketpp_1_1IP__RawSocket.html#0457fe2b23f01b7304e2bf1441fc7300">rcvd_IP_opt</a>;
+<a name="l00132"></a>00132     iphdr IP_h;
+<a name="l00133"></a>00133     iphdr rcvd_IP_h;
+<a name="l00134"></a>00134     std::string IP_opt;
+<a name="l00135"></a>00135     std::string rcvd_IP_opt;
 <a name="l00136"></a>00136     
-<a name="l00137"></a>00137     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1IP__RawSocket.html#6863cc399c543073e9aa3615c3f50940">_build_packet</a>(std::string &amp;packet);
-<a name="l00138"></a>00138     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1IP__RawSocket.html#c39832f1ad83184cd5ba94c4c967f465">_set_fields</a>(<span class="keyword">const</span> std::string &amp;packet);
+<a name="l00137"></a>00137     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _build_packet(std::string &amp;packet);
+<a name="l00138"></a>00138     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _set_fields(<span class="keyword">const</span> std::string &amp;packet);
 <a name="l00139"></a>00139 
 <a name="l00140"></a>00140 };
 <a name="l00141"></a>00141 
 <a name="l00143"></a><a class="code" href="classsocketpp_1_1ICMP__RawSocket.html">00143</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1ICMP__RawSocket.html" title="ICMP raw socket without IP header handling.">ICMP_RawSocket</a> : <span class="keyword">virtual</span> <span class="keyword">public</span> <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a> {
 <a name="l00144"></a>00144 <span class="keyword">public</span>:
-<a name="l00146"></a><a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#bed3b5ca33a0f7b4be42a9e6167266c0">00146</a>     <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#bed3b5ca33a0f7b4be42a9e6167266c0" title="constructor which calls RawSocket(ipproto_icmp)">ICMP_RawSocket</a>() : <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a>(<a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cfdb0258c0c773db97d6c9eac3f9485219">ipproto_icmp</a>) { }
+<a name="l00146"></a><a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#bed3b5ca33a0f7b4be42a9e6167266c0">00146</a>     <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#bed3b5ca33a0f7b4be42a9e6167266c0" title="constructor which calls RawSocket(ipproto_icmp)">ICMP_RawSocket</a>() : <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a>(ipproto_icmp) { }
 <a name="l00147"></a>00147 
-<a name="l00150"></a>00150     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#7d8d54d4771f4012246835819421fbeb" title="builds the internal ICMP header to send">build_ICMP_header</a>(<span class="keyword">const</span> <a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a> &amp;icmp);
-<a name="l00152"></a>00152     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#7d8d54d4771f4012246835819421fbeb" title="builds the internal ICMP header to send">build_ICMP_header</a>(<a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a>, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> code, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> check, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <span class="keywordtype">id</span>, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> sequence);
+<a name="l00150"></a>00150     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#7d8d54d4771f4012246835819421fbeb" title="builds the internal ICMP header to send">build_ICMP_header</a>(<span class="keyword">const</span> icmphdr &amp;icmp);
+<a name="l00152"></a>00152     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#7d8d54d4771f4012246835819421fbeb" title="builds the internal ICMP header to send">build_ICMP_header</a>(_u8 type, _u8 code, _u16 check, _u16 <span class="keywordtype">id</span>, _u16 sequence);
 <a name="l00153"></a>00153 
 <a name="l00155"></a>00155     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#ab00bba6ed9fe98ca771fc3310983c97" title="sets the internal ICMP header checksum">adjust_ICMP_csum</a>();
 <a name="l00156"></a>00156 
-<a name="l00159"></a>00159     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#9b0ed9bb87d2895f2302db13b7ca5f06" title="gets the received ICMP header">get_ICMP_header</a>(<a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a> &amp;icmp);
+<a name="l00159"></a>00159     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#9b0ed9bb87d2895f2302db13b7ca5f06" title="gets the received ICMP header">get_ICMP_header</a>(icmphdr &amp;icmp);
 <a name="l00160"></a>00160 
 <a name="l00161"></a>00161 <span class="keyword">protected</span>:
-<a name="l00162"></a><a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#31f1ab3a8beaf8d4cb5b192e644e3f33">00162</a>     <a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#31f1ab3a8beaf8d4cb5b192e644e3f33">ICMP_h</a>;
-<a name="l00163"></a><a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#1304716643ef2274b8c1c195359110c6">00163</a>     <a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#1304716643ef2274b8c1c195359110c6">rcvd_ICMP_h</a>;
+<a name="l00162"></a>00162     icmphdr ICMP_h;
+<a name="l00163"></a>00163     icmphdr rcvd_ICMP_h;
 <a name="l00164"></a>00164 
-<a name="l00165"></a>00165     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#d8aa8d45c57eb77ab99ee84f1c5dd7da">_build_packet</a>(std::string &amp;packet);
-<a name="l00166"></a>00166     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__RawSocket.html#e183b11c080f5d74dbc386ec53e7feb5">_set_fields</a>(<span class="keyword">const</span> std::string &amp;packet);
+<a name="l00165"></a>00165     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _build_packet(std::string &amp;packet);
+<a name="l00166"></a>00166     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _set_fields(<span class="keyword">const</span> std::string &amp;packet);
 <a name="l00167"></a>00167     
 <a name="l00168"></a>00168 };
 <a name="l00169"></a>00169 
@@ -121,18 +119,18 @@
 <a name="l00177"></a>00177     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__IP__RawSocket.html#c3f54f7a266586af46e4bfa4494f90d6" title="calls adjust_ICMP_all() and adjust_IP_all()">adjust_ICMP_IP_all</a>();
 <a name="l00178"></a>00178 
 <a name="l00179"></a>00179 <span class="keyword">protected</span>:
-<a name="l00180"></a>00180     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__IP__RawSocket.html#49a62078d6febf7a11b9350de1e23903">_build_packet</a>(std::string &amp;packet);
-<a name="l00181"></a>00181     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1ICMP__IP__RawSocket.html#6d2f188d46030afa13f9c3971d43d518">_set_fields</a>(<span class="keyword">const</span> std::string &amp;packet);
+<a name="l00180"></a>00180     <span class="keywordtype">void</span> _build_packet(std::string &amp;packet);
+<a name="l00181"></a>00181     <span class="keywordtype">void</span> _set_fields(<span class="keyword">const</span> std::string &amp;packet);
 <a name="l00182"></a>00182 };
 <a name="l00183"></a>00183 
 <a name="l00185"></a><a class="code" href="classsocketpp_1_1UDP__RawSocket.html">00185</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1UDP__RawSocket.html" title="UDP raw socket without IP header handling.">UDP_RawSocket</a> : <span class="keyword">virtual</span> <span class="keyword">public</span> <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a> {
 <a name="l00186"></a>00186 <span class="keyword">public</span>:
-<a name="l00188"></a><a class="code" href="classsocketpp_1_1UDP__RawSocket.html#508aba470eee4010ca16007823c91650">00188</a>     <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#508aba470eee4010ca16007823c91650" title="constructor which calls RawSocket(ipproto_udp)">UDP_RawSocket</a>() : <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a>(<a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cfc2d1745e811f3d9addde50aad5e8ac9f">ipproto_udp</a>) { }
+<a name="l00188"></a><a class="code" href="classsocketpp_1_1UDP__RawSocket.html#508aba470eee4010ca16007823c91650">00188</a>     <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#508aba470eee4010ca16007823c91650" title="constructor which calls RawSocket(ipproto_udp)">UDP_RawSocket</a>() : <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a>(ipproto_udp) { }
 <a name="l00189"></a>00189     
-<a name="l00196"></a>00196     <span class="keyword">static</span> <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#fdc782d0436fd9c6d24520034d445063" title="calculates udp checksum on pseudo-header">udp_checksum</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *buf, <span class="keywordtype">size_t</span> nchar, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> saddr, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> daddr);
-<a name="l00202"></a>00202     <span class="keyword">static</span> <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#fdc782d0436fd9c6d24520034d445063" title="calculates udp checksum on pseudo-header">udp_checksum</a>(<span class="keyword">const</span> std::string &amp;buf, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> saddr, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> daddr);
+<a name="l00196"></a>00196     <span class="keyword">static</span> _u16 <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#fdc782d0436fd9c6d24520034d445063" title="calculates udp checksum on pseudo-header">udp_checksum</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *buf, <span class="keywordtype">size_t</span> nchar, _u32 saddr, _u32 daddr);
+<a name="l00202"></a>00202     <span class="keyword">static</span> _u16 <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#fdc782d0436fd9c6d24520034d445063" title="calculates udp checksum on pseudo-header">udp_checksum</a>(<span class="keyword">const</span> std::string &amp;buf, _u32 saddr, _u32 daddr);
 <a name="l00203"></a>00203 
-<a name="l00209"></a>00209     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#f107901141295d21929008e281aac00f" title="builds the internal UDP header">build_UDP_header</a>(<a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> source, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> dest, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> len, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> check);
+<a name="l00209"></a>00209     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#f107901141295d21929008e281aac00f" title="builds the internal UDP header">build_UDP_header</a>(_u16 source, _u16 dest, _u16 len, _u16 check);
 <a name="l00212"></a>00212     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#f107901141295d21929008e281aac00f" title="builds the internal UDP header">build_UDP_header</a>(<span class="keyword">const</span> udphdr &amp;udp);
 <a name="l00213"></a>00213 
 <a name="l00217"></a>00217     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#8d96a58ee9d39e2c014aa81ded23727a" title="sets the internal UDP pseudo-header checksum">adjust_UDP_csum</a>(in_addr_t source, in_addr_t dest);
@@ -143,11 +141,11 @@
 <a name="l00228"></a>00228     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#597a30fc537dce06c85663add29defdc" title="gets the received UDP header">get_UDP_header</a>(udphdr &amp;udp);
 <a name="l00229"></a>00229 
 <a name="l00230"></a>00230 <span class="keyword">protected</span>:
-<a name="l00231"></a><a class="code" href="classsocketpp_1_1UDP__RawSocket.html#fbdcc519279aec772f575237ca25f783">00231</a>     udphdr <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#fbdcc519279aec772f575237ca25f783">UDP_h</a>;
-<a name="l00232"></a><a class="code" href="classsocketpp_1_1UDP__RawSocket.html#9b21e1b520434f7b07d5afcc35ceb76c">00232</a>     udphdr <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#9b21e1b520434f7b07d5afcc35ceb76c">rcvd_UDP_h</a>;
+<a name="l00231"></a>00231     udphdr UDP_h;
+<a name="l00232"></a>00232     udphdr rcvd_UDP_h;
 <a name="l00233"></a>00233 
-<a name="l00234"></a>00234     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#fe8cc7391c23dcf011f285b1605cad6b">_build_packet</a>(std::string &amp;packet);
-<a name="l00235"></a>00235     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__RawSocket.html#a2dd7ab190a6730f9272eced4e648b50">_set_fields</a>(<span class="keyword">const</span> std::string &amp;packet);
+<a name="l00234"></a>00234     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _build_packet(std::string &amp;packet);
+<a name="l00235"></a>00235     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _set_fields(<span class="keyword">const</span> std::string &amp;packet);
 <a name="l00236"></a>00236     
 <a name="l00237"></a>00237 };
 <a name="l00238"></a>00238 
@@ -160,21 +158,21 @@
 <a name="l00250"></a>00250     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__IP__RawSocket.html#1a0f6360760f94f5c1569adde67d6d1b" title="calls adjust_UDP_all() and adjust_IP_all()">adjust_UDP_IP_all</a>();
 <a name="l00251"></a>00251 
 <a name="l00252"></a>00252 <span class="keyword">protected</span>:
-<a name="l00253"></a>00253     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__IP__RawSocket.html#16035f1b701b898f0e4de44a9ac8bbb3">_build_packet</a>(std::string &amp;packet);
-<a name="l00254"></a>00254     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1UDP__IP__RawSocket.html#40fde867fa138b495f660864023a3eb1">_set_fields</a>(<span class="keyword">const</span> std::string &amp;packet);
+<a name="l00253"></a>00253     <span class="keywordtype">void</span> _build_packet(std::string &amp;packet);
+<a name="l00254"></a>00254     <span class="keywordtype">void</span> _set_fields(<span class="keyword">const</span> std::string &amp;packet);
 <a name="l00255"></a>00255     
 <a name="l00256"></a>00256 };
 <a name="l00257"></a>00257 
 <a name="l00259"></a><a class="code" href="classsocketpp_1_1TCP__RawSocket.html">00259</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1TCP__RawSocket.html" title="TCP raw socket without IP header handling.">TCP_RawSocket</a> : <span class="keyword">virtual</span> <span class="keyword">public</span> <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a> {
 <a name="l00260"></a>00260 <span class="keyword">public</span>:
-<a name="l00262"></a><a class="code" href="classsocketpp_1_1TCP__RawSocket.html#f0b76c8fdc293bb5e22914b247b1e7b8">00262</a>     <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#f0b76c8fdc293bb5e22914b247b1e7b8" title="constructor which calls RawSocket(ipproto_tcp)">TCP_RawSocket</a>() : <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a>(<a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf94f358c113043dc156bb95873844546d">ipproto_tcp</a>) { }
+<a name="l00262"></a><a class="code" href="classsocketpp_1_1TCP__RawSocket.html#f0b76c8fdc293bb5e22914b247b1e7b8">00262</a>     <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#f0b76c8fdc293bb5e22914b247b1e7b8" title="constructor which calls RawSocket(ipproto_tcp)">TCP_RawSocket</a>() : <a class="code" href="classsocketpp_1_1RawSocket.html" title="abstract base raw socket class. This class and all its derived classes don&amp;#39;t...">RawSocket</a>(ipproto_tcp) { }
 <a name="l00263"></a>00263 
-<a name="l00270"></a>00270     <span class="keyword">static</span> <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#d0b16fff831e7e756a127cc47de4b9aa" title="calculates tcp checksum on pseudo-header">tcp_checksum</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *buf, <span class="keywordtype">size_t</span> nchar, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> saddr, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> daddr);
-<a name="l00276"></a>00276     <span class="keyword">static</span> <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#d0b16fff831e7e756a127cc47de4b9aa" title="calculates tcp checksum on pseudo-header">tcp_checksum</a>(<span class="keyword">const</span> std::string &amp;buf, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> saddr, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> daddr);
+<a name="l00270"></a>00270     <span class="keyword">static</span> _u16 <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#d0b16fff831e7e756a127cc47de4b9aa" title="calculates tcp checksum on pseudo-header">tcp_checksum</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *buf, <span class="keywordtype">size_t</span> nchar, _u32 saddr, _u32 daddr);
+<a name="l00276"></a>00276     <span class="keyword">static</span> _u16 <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#d0b16fff831e7e756a127cc47de4b9aa" title="calculates tcp checksum on pseudo-header">tcp_checksum</a>(<span class="keyword">const</span> std::string &amp;buf, _u32 saddr, _u32 daddr);
 <a name="l00277"></a>00277     
-<a name="l00279"></a>00279     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#443f8b89224427ae95d22b9b305a4990" title="builds the internal TCP header">build_TCP_header</a>(<a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> source, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> dest, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> seq, <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a> ack_seq, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> res1, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> doff,
-<a name="l00280"></a>00280                           <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> fin, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> syn, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> rst, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> psh, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> ack, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> urg, 
-<a name="l00281"></a>00281                           <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> ece, <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a> cwr, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> window, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> check, <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> urg_ptr);
+<a name="l00279"></a>00279     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#443f8b89224427ae95d22b9b305a4990" title="builds the internal TCP header">build_TCP_header</a>(_u16 source, _u16 dest, _u32 seq, _u32 ack_seq, _u8 res1, _u8 doff,
+<a name="l00280"></a>00280                           _u8 fin, _u8 syn, _u8 rst, _u8 psh, _u8 ack, _u8 urg, 
+<a name="l00281"></a>00281                           _u8 ece, _u8 cwr, _u16 window, _u16 check, _u16 urg_ptr);
 <a name="l00284"></a>00284     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#443f8b89224427ae95d22b9b305a4990" title="builds the internal TCP header">build_TCP_header</a>(<span class="keyword">const</span> tcphdr &amp;tcp);
 <a name="l00285"></a>00285     
 <a name="l00289"></a>00289     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#c38e057fc6ece02026e71b7ee872533f" title="sets the TCP options field">set_TCP_options</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *opt, <span class="keywordtype">size_t</span> len);
@@ -190,13 +188,13 @@
 <a name="l00317"></a>00317     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#75e954caea8187c5077821cd449199e7" title="gets received TCP options">get_TCP_options</a>(std::string &amp;opt);
 <a name="l00318"></a>00318 
 <a name="l00319"></a>00319 <span class="keyword">protected</span>:
-<a name="l00320"></a><a class="code" href="classsocketpp_1_1TCP__RawSocket.html#d1980411bd147dd67f6d9d9578414c17">00320</a>     tcphdr <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#d1980411bd147dd67f6d9d9578414c17">TCP_h</a>;
-<a name="l00321"></a><a class="code" href="classsocketpp_1_1TCP__RawSocket.html#12b2d2f00d02c377301fc10e1209a8b8">00321</a>     tcphdr <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#12b2d2f00d02c377301fc10e1209a8b8">rcvd_TCP_h</a>;
-<a name="l00322"></a><a class="code" href="classsocketpp_1_1TCP__RawSocket.html#380529364d9488faf998543d433d8fe6">00322</a>     std::string <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#380529364d9488faf998543d433d8fe6">TCP_opt</a>;
-<a name="l00323"></a><a class="code" href="classsocketpp_1_1TCP__RawSocket.html#b7bddcb31a7a310bcf61fcc474ded465">00323</a>     std::string <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#b7bddcb31a7a310bcf61fcc474ded465">rcvd_TCP_opt</a>;
+<a name="l00320"></a>00320     tcphdr TCP_h;
+<a name="l00321"></a>00321     tcphdr rcvd_TCP_h;
+<a name="l00322"></a>00322     std::string TCP_opt;
+<a name="l00323"></a>00323     std::string rcvd_TCP_opt;
 <a name="l00324"></a>00324 
-<a name="l00325"></a>00325     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#d89a39d4bc91a76d0cb50da5cdd10fbc">_build_packet</a>(std::string &amp;packet);
-<a name="l00326"></a>00326     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html#6976a4726503eef03a8d446afdbaddbe">_set_fields</a>(<span class="keyword">const</span> std::string &amp;packet);
+<a name="l00325"></a>00325     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _build_packet(std::string &amp;packet);
+<a name="l00326"></a>00326     <span class="keyword">virtual</span> <span class="keywordtype">void</span> _set_fields(<span class="keyword">const</span> std::string &amp;packet);
 <a name="l00327"></a>00327 };
 <a name="l00328"></a>00328 
 <a name="l00330"></a><a class="code" href="classsocketpp_1_1TCP__IP__RawSocket.html">00330</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1TCP__IP__RawSocket.html" title="TCP raw socket with IP header handling.">TCP_IP_RawSocket</a> : <span class="keyword">public</span> <a class="code" href="classsocketpp_1_1TCP__RawSocket.html" title="TCP raw socket without IP header handling.">TCP_RawSocket</a>, <span class="keyword">public</span> <a class="code" href="classsocketpp_1_1IP__RawSocket.html" title="IP raw socket, without transport-based protocol. ONLY SENDING METHODS WORK.">IP_RawSocket</a> {
@@ -208,15 +206,15 @@
 <a name="l00340"></a>00340     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1TCP__IP__RawSocket.html#dd3b21314f1768962bf399291f406768" title="calls adjust_TCP_all() &amp;amp;&amp;amp; adjust_IP_all()">adjust_TCP_IP_all</a>();
 <a name="l00341"></a>00341 
 <a name="l00342"></a>00342 <span class="keyword">protected</span>:
-<a name="l00343"></a>00343     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1TCP__IP__RawSocket.html#281508237add8a3c530bb0be0b6a1e7b">_build_packet</a>(std::string &amp;packet);
-<a name="l00344"></a>00344     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1TCP__IP__RawSocket.html#f8f606ce33835813cc5c3a530e181432">_set_fields</a>(<span class="keyword">const</span> std::string &amp;packet);
+<a name="l00343"></a>00343     <span class="keywordtype">void</span> _build_packet(std::string &amp;packet);
+<a name="l00344"></a>00344     <span class="keywordtype">void</span> _set_fields(<span class="keyword">const</span> std::string &amp;packet);
 <a name="l00345"></a>00345 };
 <a name="l00346"></a>00346 
 <a name="l00347"></a>00347 };
 <a name="l00348"></a>00348 
 <a name="l00349"></a>00349 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:45 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 13:26:52 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

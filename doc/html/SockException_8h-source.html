@@ -9,7 +9,6 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -17,11 +16,10 @@
   <div class="tabs">
     <ul>
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-<h1>SockException.h</h1><a href="SockException_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __SOCK_EXCEPTION_H</span>
-<a name="l00002"></a><a class="code" href="SockException_8h.html#ef782886fa36811cc576fa192e3d6d5c">00002</a> <span class="preprocessor"></span><span class="preprocessor">#define __SOCK_EXCEPTION_H 1</span>
+<h1>SockException.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __SOCK_EXCEPTION_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define __SOCK_EXCEPTION_H 1</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;exception&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;cerrno&gt;</span>
@@ -57,9 +55,9 @@
 <a name="l00042"></a>00042 
 <a name="l00044"></a><a class="code" href="classsocketpp_1_1error.html#4b03541ebad2b9d0b73222cd505ea50f">00044</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsocketpp_1_1error.html#4b03541ebad2b9d0b73222cd505ea50f" title="returns complete error string">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> msg.c_str(); }
 <a name="l00045"></a>00045 
-<a name="l00046"></a><a class="code" href="classsocketpp_1_1error.html#e1d23816909f2663b5553d232110442b">00046</a>     <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classsocketpp_1_1error.html#e1d23816909f2663b5553d232110442b">get_errno</a>() { <span class="keywordflow">return</span> code; }
+<a name="l00046"></a>00046     <span class="keyword">inline</span> <span class="keywordtype">int</span> get_errno() { <span class="keywordflow">return</span> code; }
 <a name="l00047"></a>00047     
-<a name="l00048"></a><a class="code" href="classsocketpp_1_1error.html#f41562a951322078eff6f56268f2f257">00048</a>     <a class="code" href="classsocketpp_1_1error.html#f41562a951322078eff6f56268f2f257">~error</a>() throw() {}
+<a name="l00048"></a>00048     ~<a class="code" href="classsocketpp_1_1error.html#614fef9f326d7bb212771eb20a046290">error</a>() throw() {}
 <a name="l00049"></a>00049 };
 <a name="l00050"></a>00050 
 <a name="l00052"></a><a class="code" href="classsocketpp_1_1h__error.html">00052</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1h__error.html" title="address-related exception class">h_error</a> : <span class="keyword">public</span> std::exception {
@@ -88,9 +86,9 @@
 <a name="l00081"></a>00081     
 <a name="l00083"></a><a class="code" href="classsocketpp_1_1h__error.html#055c1a5b55b5d02fe81fd74cb8b900d2">00083</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsocketpp_1_1h__error.html#055c1a5b55b5d02fe81fd74cb8b900d2" title="returns complete error string">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> msg.c_str(); }
 <a name="l00084"></a>00084     
-<a name="l00085"></a><a class="code" href="classsocketpp_1_1h__error.html#b2aabd50ea2f3189b09bc749a875e38f">00085</a>     <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classsocketpp_1_1h__error.html#b2aabd50ea2f3189b09bc749a875e38f">get_h_errno</a>() { <span class="keywordflow">return</span> code; }
+<a name="l00085"></a>00085     <span class="keyword">inline</span> <span class="keywordtype">int</span> get_h_errno() { <span class="keywordflow">return</span> code; }
 <a name="l00086"></a>00086 
-<a name="l00087"></a><a class="code" href="classsocketpp_1_1h__error.html#56261f751b9080d0a67f282e7ab2974b">00087</a>     <a class="code" href="classsocketpp_1_1h__error.html#56261f751b9080d0a67f282e7ab2974b">~h_error</a>() throw() {}
+<a name="l00087"></a>00087     ~<a class="code" href="classsocketpp_1_1h__error.html#c15a1c6216114250241349fdfcdeb98a">h_error</a>() throw() {}
 <a name="l00088"></a>00088 };
 <a name="l00089"></a>00089 
 <a name="l00091"></a><a class="code" href="classsocketpp_1_1timeout.html">00091</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> : <span class="keyword">public</span> std::exception {
@@ -108,13 +106,13 @@
 <a name="l00106"></a>00106     
 <a name="l00108"></a><a class="code" href="classsocketpp_1_1timeout.html#4ec44590b052339b206a94afbcba6ffb">00108</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsocketpp_1_1timeout.html#4ec44590b052339b206a94afbcba6ffb" title="returns complete error string">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> msg.c_str(); }
 <a name="l00109"></a>00109     
-<a name="l00110"></a><a class="code" href="classsocketpp_1_1timeout.html#8593bc6e69d1f62e41332e4b3809b3e7">00110</a>     <a class="code" href="classsocketpp_1_1timeout.html#8593bc6e69d1f62e41332e4b3809b3e7">~timeout</a>() throw() {}
+<a name="l00110"></a>00110     ~<a class="code" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a>() throw() {}
 <a name="l00111"></a>00111 };
 <a name="l00112"></a>00112 
 <a name="l00113"></a>00113 };
 <a name="l00114"></a>00114 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:45 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 13:26:52 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -9,7 +9,6 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -21,7 +20,7 @@
       <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespaceftplib.html">ftplib</a>::<a class="el" href="classftplib_1_1FTP.html">FTP</a>
+  <div class="navpath"><b>ftplib</b>::<a class="el" href="classftplib_1_1FTP.html">FTP</a>
   </div>
 </div>
 <div class="contents">
@@ -38,7 +37,7 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#178979abdc58593abdb31a882f370803">FTP</a> (const std::string &amp;host=&quot;&quot;, const std::string &amp;user=&quot;&quot;, const std::string &amp;passwd=&quot;&quot;, double timeout=0.0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">constructor  <a href="#178979abdc58593abdb31a882f370803"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#fbd3444a33e5dd055474c9a0d6aabba5">connect</a> (const std::string &amp;host, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">socketpp::port_t</a> port=21)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#fbd3444a33e5dd055474c9a0d6aabba5">connect</a> (const std::string &amp;host, socketpp::port_t port=21)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">connects to given <a class="el" href="classftplib_1_1FTP.html" title="This class tries to imitate the ftplib.FTP python class, with a few differences.">FTP</a> server  <a href="#fbd3444a33e5dd055474c9a0d6aabba5"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#dc39751d00808d35183fb19c483b3589">login</a> (const std::string &amp;user=&quot;anonymous&quot;, const std::string &amp;passwd=&quot;&quot;)</td></tr>
@@ -92,9 +91,10 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#bd6e018a5cc17b1c8007064830823c71">quit</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends the 'QUIT' command and closes socket  <a href="#bd6e018a5cc17b1c8007064830823c71"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#4f36be9f23721435f19a7e5b1d702718">close</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4f36be9f23721435f19a7e5b1d702718"></a><!-- doxytag: member="ftplib::FTP::close" ref="4f36be9f23721435f19a7e5b1d702718" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#4f36be9f23721435f19a7e5b1d702718">close</a> ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">closes socket  <a href="#4f36be9f23721435f19a7e5b1d702718"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">closes socket <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#a6603cda3b7c44c48c6a2b8d688d3bb7">settimeout</a> (double time)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets timeout on all IO socket operations  <a href="#a6603cda3b7c44c48c6a2b8d688d3bb7"></a><br></td></tr>
@@ -153,27 +153,6 @@ constructor
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="4f36be9f23721435f19a7e5b1d702718"></a><!-- doxytag: member="ftplib::FTP::close" ref="4f36be9f23721435f19a7e5b1d702718" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ftplib::FTP::close           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-closes socket 
-<p>
-
-</div>
-</div><p>
 <a class="anchor" name="fbd3444a33e5dd055474c9a0d6aabba5"></a><!-- doxytag: member="ftplib::FTP::connect" ref="fbd3444a33e5dd055474c9a0d6aabba5" args="(const std::string &amp;host, socketpp::port_t port=21)" -->
 <div class="memitem">
 <div class="memproto">
@@ -187,7 +166,7 @@ closes socket
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">socketpp::port_t</a>&nbsp;</td>
+          <td class="paramtype">socketpp::port_t&nbsp;</td>
           <td class="paramname"> <em>port</em> = <code>21</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -767,9 +746,9 @@ initiate a transfer over the data connection, using PASV or PORT mode depending 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="ftp_8h-source.html">ftp.h</a><li><a class="el" href="ftp_8cpp.html">ftp.cpp</a></ul>
+<li><a class="el" href="ftp_8h-source.html">ftp.h</a><li>ftp.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:47 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 13:26:52 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

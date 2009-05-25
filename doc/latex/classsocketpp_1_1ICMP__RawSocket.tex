@@ -16,92 +16,61 @@ Inheritance diagram for socketpp::ICMP\_\-RawSocket::\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hyperlink{classsocketpp_1_1ICMP__RawSocket_bed3b5ca33a0f7b4be42a9e6167266c0}{ICMP\_\-RawSocket} ()
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_bed3b5ca33a0f7b4be42a9e6167266c0}{
+\hyperlink{classsocketpp_1_1ICMP__RawSocket_bed3b5ca33a0f7b4be42a9e6167266c0}{ICMP\_\-RawSocket} ()}
+\label{classsocketpp_1_1ICMP__RawSocket_bed3b5ca33a0f7b4be42a9e6167266c0}
+
 \begin{CompactList}\small\item\em constructor which calls RawSocket(ipproto\_\-icmp) \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1ICMP__RawSocket_7d8d54d4771f4012246835819421fbeb}{build\_\-ICMP\_\-header} (const \hyperlink{structsocketpp_1_1icmphdr}{icmphdr} \&icmp)
+void \hyperlink{classsocketpp_1_1ICMP__RawSocket_7d8d54d4771f4012246835819421fbeb}{build\_\-ICMP\_\-header} (const icmphdr \&icmp)
 \begin{CompactList}\small\item\em builds the internal ICMP header to send \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1ICMP__RawSocket_d97b59bf0442ecd08b3660cafd2a5a3f}{build\_\-ICMP\_\-header} (\hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} \hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type}, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} code, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} check, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} id, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} sequence)
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_d97b59bf0442ecd08b3660cafd2a5a3f}{
+void \hyperlink{classsocketpp_1_1ICMP__RawSocket_d97b59bf0442ecd08b3660cafd2a5a3f}{build\_\-ICMP\_\-header} (\_\-u8 type, \_\-u8 code, \_\-u16 check, \_\-u16 id, \_\-u16 sequence)}
+\label{classsocketpp_1_1ICMP__RawSocket_d97b59bf0442ecd08b3660cafd2a5a3f}
+
 \begin{CompactList}\small\item\em builds the internal ICMP header to send \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1ICMP__RawSocket_ab00bba6ed9fe98ca771fc3310983c97}{adjust\_\-ICMP\_\-csum} ()
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_ab00bba6ed9fe98ca771fc3310983c97}{
+void \hyperlink{classsocketpp_1_1ICMP__RawSocket_ab00bba6ed9fe98ca771fc3310983c97}{adjust\_\-ICMP\_\-csum} ()}
+\label{classsocketpp_1_1ICMP__RawSocket_ab00bba6ed9fe98ca771fc3310983c97}
+
 \begin{CompactList}\small\item\em sets the internal ICMP header checksum \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1ICMP__RawSocket_9b0ed9bb87d2895f2302db13b7ca5f06}{get\_\-ICMP\_\-header} (\hyperlink{structsocketpp_1_1icmphdr}{icmphdr} \&icmp)
+void \hyperlink{classsocketpp_1_1ICMP__RawSocket_9b0ed9bb87d2895f2302db13b7ca5f06}{get\_\-ICMP\_\-header} (icmphdr \&icmp)
 \begin{CompactList}\small\item\em gets the received ICMP header \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
-virtual void \hyperlink{classsocketpp_1_1ICMP__RawSocket_d8aa8d45c57eb77ab99ee84f1c5dd7da}{\_\-build\_\-packet} (std::string \&packet)
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_d8aa8d45c57eb77ab99ee84f1c5dd7da}{
+virtual void \textbf{\_\-build\_\-packet} (std::string \&packet)}
+\label{classsocketpp_1_1ICMP__RawSocket_d8aa8d45c57eb77ab99ee84f1c5dd7da}
+
 \item 
-virtual void \hyperlink{classsocketpp_1_1ICMP__RawSocket_e183b11c080f5d74dbc386ec53e7feb5}{\_\-set\_\-fields} (const std::string \&packet)
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_e183b11c080f5d74dbc386ec53e7feb5}{
+virtual void \textbf{\_\-set\_\-fields} (const std::string \&packet)}
+\label{classsocketpp_1_1ICMP__RawSocket_e183b11c080f5d74dbc386ec53e7feb5}
+
 \end{CompactItemize}
 \subsection*{Protected Attributes}
 \begin{CompactItemize}
 \item 
-\hyperlink{structsocketpp_1_1icmphdr}{icmphdr} \hyperlink{classsocketpp_1_1ICMP__RawSocket_31f1ab3a8beaf8d4cb5b192e644e3f33}{ICMP\_\-h}
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_31f1ab3a8beaf8d4cb5b192e644e3f33}{
+icmphdr \textbf{ICMP\_\-h}}
+\label{classsocketpp_1_1ICMP__RawSocket_31f1ab3a8beaf8d4cb5b192e644e3f33}
+
 \item 
-\hyperlink{structsocketpp_1_1icmphdr}{icmphdr} \hyperlink{classsocketpp_1_1ICMP__RawSocket_1304716643ef2274b8c1c195359110c6}{rcvd\_\-ICMP\_\-h}
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_1304716643ef2274b8c1c195359110c6}{
+icmphdr \textbf{rcvd\_\-ICMP\_\-h}}
+\label{classsocketpp_1_1ICMP__RawSocket_1304716643ef2274b8c1c195359110c6}
+
 \end{CompactItemize}
 
 
 \subsection{Detailed Description}
 ICMP raw socket without IP header handling. 
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{classsocketpp_1_1ICMP__RawSocket_bed3b5ca33a0f7b4be42a9e6167266c0}{
-\index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!ICMP\_\-RawSocket@{ICMP\_\-RawSocket}}
-\index{ICMP\_\-RawSocket@{ICMP\_\-RawSocket}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
-\subsubsection[{ICMP\_\-RawSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::ICMP\_\-RawSocket::ICMP\_\-RawSocket ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1ICMP__RawSocket_bed3b5ca33a0f7b4be42a9e6167266c0}
-
-
-constructor which calls RawSocket(ipproto\_\-icmp) 
-
-
-
 \subsection{Member Function Documentation}
-\hypertarget{classsocketpp_1_1ICMP__RawSocket_d8aa8d45c57eb77ab99ee84f1c5dd7da}{
-\index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!\_\-build\_\-packet@{\_\-build\_\-packet}}
-\index{\_\-build\_\-packet@{\_\-build\_\-packet}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
-\subsubsection[{\_\-build\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-RawSocket::\_\-build\_\-packet (std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classsocketpp_1_1ICMP__RawSocket_d8aa8d45c57eb77ab99ee84f1c5dd7da}
-
-
-
-
-Implements \hyperlink{classsocketpp_1_1RawSocket_eb0a3f716c0fc46efa4123acf0fe1e66}{socketpp::RawSocket}.
-
-Reimplemented in \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_49a62078d6febf7a11b9350de1e23903}{socketpp::ICMP\_\-IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1ICMP__RawSocket_e183b11c080f5d74dbc386ec53e7feb5}{
-\index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!\_\-set\_\-fields@{\_\-set\_\-fields}}
-\index{\_\-set\_\-fields@{\_\-set\_\-fields}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
-\subsubsection[{\_\-set\_\-fields}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-RawSocket::\_\-set\_\-fields (const std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classsocketpp_1_1ICMP__RawSocket_e183b11c080f5d74dbc386ec53e7feb5}
-
-
-
-
-Implements \hyperlink{classsocketpp_1_1RawSocket_45e6b041703cb8ae0f93dd19766865d5}{socketpp::RawSocket}.
-
-Reimplemented in \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_6d2f188d46030afa13f9c3971d43d518}{socketpp::ICMP\_\-IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1ICMP__RawSocket_ab00bba6ed9fe98ca771fc3310983c97}{
-\index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!adjust\_\-ICMP\_\-csum@{adjust\_\-ICMP\_\-csum}}
-\index{adjust\_\-ICMP\_\-csum@{adjust\_\-ICMP\_\-csum}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
-\subsubsection[{adjust\_\-ICMP\_\-csum}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-RawSocket::adjust\_\-ICMP\_\-csum ()}}
-\label{classsocketpp_1_1ICMP__RawSocket_ab00bba6ed9fe98ca771fc3310983c97}
-
-
-sets the internal ICMP header checksum 
-
-\hypertarget{classsocketpp_1_1ICMP__RawSocket_d97b59bf0442ecd08b3660cafd2a5a3f}{
-\index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!build\_\-ICMP\_\-header@{build\_\-ICMP\_\-header}}
-\index{build\_\-ICMP\_\-header@{build\_\-ICMP\_\-header}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
-\subsubsection[{build\_\-ICMP\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-RawSocket::build\_\-ICMP\_\-header ({\bf \_\-u8} {\em type}, \/  {\bf \_\-u8} {\em code}, \/  {\bf \_\-u16} {\em check}, \/  {\bf \_\-u16} {\em id}, \/  {\bf \_\-u16} {\em sequence})}}
-\label{classsocketpp_1_1ICMP__RawSocket_d97b59bf0442ecd08b3660cafd2a5a3f}
-
-
-builds the internal ICMP header to send 
-
 \hypertarget{classsocketpp_1_1ICMP__RawSocket_7d8d54d4771f4012246835819421fbeb}{
 \index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!build\_\-ICMP\_\-header@{build\_\-ICMP\_\-header}}
 \index{build\_\-ICMP\_\-header@{build\_\-ICMP\_\-header}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
-\subsubsection[{build\_\-ICMP\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-RawSocket::build\_\-ICMP\_\-header (const {\bf icmphdr} \& {\em icmp})}}
+\subsubsection[{build\_\-ICMP\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-RawSocket::build\_\-ICMP\_\-header (const icmphdr \& {\em icmp})}}
 \label{classsocketpp_1_1ICMP__RawSocket_7d8d54d4771f4012246835819421fbeb}
 
 
@@ -115,7 +84,7 @@ builds the internal ICMP header to send
 \hypertarget{classsocketpp_1_1ICMP__RawSocket_9b0ed9bb87d2895f2302db13b7ca5f06}{
 \index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!get\_\-ICMP\_\-header@{get\_\-ICMP\_\-header}}
 \index{get\_\-ICMP\_\-header@{get\_\-ICMP\_\-header}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
-\subsubsection[{get\_\-ICMP\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-RawSocket::get\_\-ICMP\_\-header ({\bf icmphdr} \& {\em icmp})}}
+\subsubsection[{get\_\-ICMP\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::ICMP\_\-RawSocket::get\_\-ICMP\_\-header (icmphdr \& {\em icmp})}}
 \label{classsocketpp_1_1ICMP__RawSocket_9b0ed9bb87d2895f2302db13b7ca5f06}
 
 
@@ -128,24 +97,7 @@ gets the received ICMP header
 \end{Desc}
 
 
-\subsection{Member Data Documentation}
-\hypertarget{classsocketpp_1_1ICMP__RawSocket_31f1ab3a8beaf8d4cb5b192e644e3f33}{
-\index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!ICMP\_\-h@{ICMP\_\-h}}
-\index{ICMP\_\-h@{ICMP\_\-h}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
-\subsubsection[{ICMP\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}{\bf icmphdr} {\bf socketpp::ICMP\_\-RawSocket::ICMP\_\-h}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1ICMP__RawSocket_31f1ab3a8beaf8d4cb5b192e644e3f33}
-
-
-\hypertarget{classsocketpp_1_1ICMP__RawSocket_1304716643ef2274b8c1c195359110c6}{
-\index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!rcvd\_\-ICMP\_\-h@{rcvd\_\-ICMP\_\-h}}
-\index{rcvd\_\-ICMP\_\-h@{rcvd\_\-ICMP\_\-h}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
-\subsubsection[{rcvd\_\-ICMP\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}{\bf icmphdr} {\bf socketpp::ICMP\_\-RawSocket::rcvd\_\-ICMP\_\-h}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1ICMP__RawSocket_1304716643ef2274b8c1c195359110c6}
-
-
-
-
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 
-\hyperlink{RawSocket_8h}{RawSocket.h}\item 
-\hyperlink{RawSocket_8cpp}{RawSocket.cpp}\end{CompactItemize}
+RawSocket.h\item 
+RawSocket.cpp\end{CompactItemize}

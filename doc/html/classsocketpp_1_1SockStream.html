@@ -9,7 +9,6 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -21,7 +20,7 @@
       <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesocketpp.html">socketpp</a>::<a class="el" href="classsocketpp_1_1SockStream.html">SockStream</a>
+  <div class="navpath"><b>socketpp</b>::<a class="el" href="classsocketpp_1_1SockStream.html">SockStream</a>
   </div>
 </div>
 <div class="contents">
@@ -35,192 +34,36 @@
 <a href="classsocketpp_1_1SockStream-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#562a217e536c888c569fde2c9031c94d">SockStream</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="11fbfc7bda45c178c6e09ac6d67512fd"></a><!-- doxytag: member="socketpp::SockStream::SockStream" ref="11fbfc7bda45c178c6e09ac6d67512fd" args="(SockBuf &amp;s)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#11fbfc7bda45c178c6e09ac6d67512fd">SockStream</a> (<a class="el" href="classsocketpp_1_1SockBuf.html">SockBuf</a> &amp;s)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#11fbfc7bda45c178c6e09ac6d67512fd">SockStream</a> (<a class="el" href="classsocketpp_1_1SockBuf.html">SockBuf</a> &amp;s)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls std::iostream(&amp;s) <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="704f4e77af424bd0638e736653e2d1b3"></a><!-- doxytag: member="socketpp::SockStream::SockStream" ref="704f4e77af424bd0638e736653e2d1b3" args="(const Socket &amp;s)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#704f4e77af424bd0638e736653e2d1b3">SockStream</a> (const <a class="el" href="classsocketpp_1_1Socket.html">Socket</a> &amp;s)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls std::iostream(&amp;s)  <a href="#11fbfc7bda45c178c6e09ac6d67512fd"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#704f4e77af424bd0638e736653e2d1b3">SockStream</a> (const <a class="el" href="classsocketpp_1_1Socket.html">Socket</a> &amp;s)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls std::iostream(new SockBuf(s)) <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="0310cdd1f212beec6b686d0a549f1788"></a><!-- doxytag: member="socketpp::SockStream::SockStream" ref="0310cdd1f212beec6b686d0a549f1788" args="(const SockStream &amp;s)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#0310cdd1f212beec6b686d0a549f1788">SockStream</a> (const <a class="el" href="classsocketpp_1_1SockStream.html">SockStream</a> &amp;s)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls std::iostream(new SockBuf(s))  <a href="#704f4e77af424bd0638e736653e2d1b3"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#0310cdd1f212beec6b686d0a549f1788">SockStream</a> (const <a class="el" href="classsocketpp_1_1SockStream.html">SockStream</a> &amp;s)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">copy constructor <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4baa8d20dd73480832c7dd9cbad15f75"></a><!-- doxytag: member="socketpp::SockStream::SockStream" ref="4baa8d20dd73480832c7dd9cbad15f75" args="(type t, protocol prot=ipproto_ip)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#4baa8d20dd73480832c7dd9cbad15f75">SockStream</a> (type t, protocol prot=ipproto_ip)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">copy constructor  <a href="#0310cdd1f212beec6b686d0a549f1788"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#4baa8d20dd73480832c7dd9cbad15f75">SockStream</a> (<a class="el" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a> t, <a class="el" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">protocol</a> prot=ipproto_ip)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls std::iostream(new SockBuf(t,prot)) <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4b14a0ce8d640deb5f5bd64807c7b68d"></a><!-- doxytag: member="socketpp::SockStream::sockbuf" ref="4b14a0ce8d640deb5f5bd64807c7b68d" args="() const " -->
+<a class="el" href="classsocketpp_1_1SockBuf.html">SockBuf</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#4b14a0ce8d640deb5f5bd64807c7b68d">sockbuf</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls std::iostream(new SockBuf(t,prot))  <a href="#4baa8d20dd73480832c7dd9cbad15f75"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classsocketpp_1_1SockBuf.html">SockBuf</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#4b14a0ce8d640deb5f5bd64807c7b68d">sockbuf</a> () const </td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns pointer to internal <a class="el" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a> object <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c5509fd039943c07c4506e42c75605e3"></a><!-- doxytag: member="socketpp::SockStream::operator&#45;&gt;" ref="c5509fd039943c07c4506e42c75605e3" args="()" -->
+<a class="el" href="classsocketpp_1_1SockBuf.html">SockBuf</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#c5509fd039943c07c4506e42c75605e3">operator-&gt;</a> ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns pointer to internal <a class="el" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a> object  <a href="#4b14a0ce8d640deb5f5bd64807c7b68d"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classsocketpp_1_1SockBuf.html">SockBuf</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SockStream.html#c5509fd039943c07c4506e42c75605e3">operator-&gt;</a> ()</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">operates on internal <a class="el" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a> object  <a href="#c5509fd039943c07c4506e42c75605e3"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">operates on internal <a class="el" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a> object <br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-inherits from std::iostream, it allows the C++ stream approach with sockets <hr><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" name="562a217e536c888c569fde2c9031c94d"></a><!-- doxytag: member="socketpp::SockStream::SockStream" ref="562a217e536c888c569fde2c9031c94d" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">socketpp::SockStream::SockStream           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="11fbfc7bda45c178c6e09ac6d67512fd"></a><!-- doxytag: member="socketpp::SockStream::SockStream" ref="11fbfc7bda45c178c6e09ac6d67512fd" args="(SockBuf &amp;s)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">socketpp::SockStream::SockStream           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classsocketpp_1_1SockBuf.html">SockBuf</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>s</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-calls std::iostream(&amp;s) 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="704f4e77af424bd0638e736653e2d1b3"></a><!-- doxytag: member="socketpp::SockStream::SockStream" ref="704f4e77af424bd0638e736653e2d1b3" args="(const Socket &amp;s)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">socketpp::SockStream::SockStream           </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classsocketpp_1_1Socket.html">Socket</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>s</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-calls std::iostream(new SockBuf(s)) 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="0310cdd1f212beec6b686d0a549f1788"></a><!-- doxytag: member="socketpp::SockStream::SockStream" ref="0310cdd1f212beec6b686d0a549f1788" args="(const SockStream &amp;s)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">socketpp::SockStream::SockStream           </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classsocketpp_1_1SockStream.html">SockStream</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>s</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-copy constructor 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="4baa8d20dd73480832c7dd9cbad15f75"></a><!-- doxytag: member="socketpp::SockStream::SockStream" ref="4baa8d20dd73480832c7dd9cbad15f75" args="(type t, protocol prot=ipproto_ip)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">socketpp::SockStream::SockStream           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a>&nbsp;</td>
-          <td class="paramname"> <em>t</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">protocol</a>&nbsp;</td>
-          <td class="paramname"> <em>prot</em> = <code>ipproto_ip</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-calls std::iostream(new SockBuf(t,prot)) 
-<p>
-
-</div>
-</div><p>
-<hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="c5509fd039943c07c4506e42c75605e3"></a><!-- doxytag: member="socketpp::SockStream::operator&#45;&gt;" ref="c5509fd039943c07c4506e42c75605e3" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsocketpp_1_1SockBuf.html">SockBuf</a>* socketpp::SockStream::operator-&gt;           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-operates on internal <a class="el" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a> object 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="4b14a0ce8d640deb5f5bd64807c7b68d"></a><!-- doxytag: member="socketpp::SockStream::sockbuf" ref="4b14a0ce8d640deb5f5bd64807c7b68d" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsocketpp_1_1SockBuf.html">SockBuf</a>* socketpp::SockStream::sockbuf           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td> const<code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-returns pointer to internal <a class="el" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a> object 
-<p>
-
-</div>
-</div><p>
-<hr>The documentation for this class was generated from the following file:<ul>
+inherits from std::iostream, it allows the C++ stream approach with sockets <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="SockStream_8h-source.html">SockStream.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:49 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 13:26:55 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

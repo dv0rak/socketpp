@@ -12,7 +12,7 @@ This class tries to imitate the \hyperlink{classftplib_1_1FTP}{ftplib.FTP} pytho
 \item 
 \hyperlink{classftplib_1_1FTP_178979abdc58593abdb31a882f370803}{FTP} (const std::string \&host=\char`\"{}\char`\"{}, const std::string \&user=\char`\"{}\char`\"{}, const std::string \&passwd=\char`\"{}\char`\"{}, double timeout=0.0)
 \begin{CompactList}\small\item\em constructor \item\end{CompactList}\item 
-std::string \hyperlink{classftplib_1_1FTP_fbd3444a33e5dd055474c9a0d6aabba5}{connect} (const std::string \&host, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{socketpp::port\_\-t} port=21)
+std::string \hyperlink{classftplib_1_1FTP_fbd3444a33e5dd055474c9a0d6aabba5}{connect} (const std::string \&host, socketpp::port\_\-t port=21)
 \begin{CompactList}\small\item\em connects to given \hyperlink{classftplib_1_1FTP}{FTP} server \item\end{CompactList}\item 
 std::string \hyperlink{classftplib_1_1FTP_dc39751d00808d35183fb19c483b3589}{login} (const std::string \&user=\char`\"{}anonymous\char`\"{}, const std::string \&passwd=\char`\"{}\char`\"{})
 \begin{CompactList}\small\item\em carries out the \hyperlink{classftplib_1_1FTP}{FTP} login \item\end{CompactList}\item 
@@ -48,7 +48,10 @@ void \hyperlink{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{set\_\-pasv
 \begin{CompactList}\small\item\em sets either PORT or PASV mode \item\end{CompactList}\item 
 std::string \hyperlink{classftplib_1_1FTP_bd6e018a5cc17b1c8007064830823c71}{quit} ()
 \begin{CompactList}\small\item\em sends the 'QUIT' command and closes socket \item\end{CompactList}\item 
-void \hyperlink{classftplib_1_1FTP_4f36be9f23721435f19a7e5b1d702718}{close} ()
+\hypertarget{classftplib_1_1FTP_4f36be9f23721435f19a7e5b1d702718}{
+void \hyperlink{classftplib_1_1FTP_4f36be9f23721435f19a7e5b1d702718}{close} ()}
+\label{classftplib_1_1FTP_4f36be9f23721435f19a7e5b1d702718}
+
 \begin{CompactList}\small\item\em closes socket \item\end{CompactList}\item 
 void \hyperlink{classftplib_1_1FTP_a6603cda3b7c44c48c6a2b8d688d3bb7}{settimeout} (double time)
 \begin{CompactList}\small\item\em sets timeout on all IO socket operations \item\end{CompactList}\end{CompactItemize}
@@ -75,19 +78,10 @@ constructor
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classftplib_1_1FTP_4f36be9f23721435f19a7e5b1d702718}{
-\index{ftplib::FTP@{ftplib::FTP}!close@{close}}
-\index{close@{close}!ftplib::FTP@{ftplib::FTP}}
-\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void ftplib::FTP::close ()}}
-\label{classftplib_1_1FTP_4f36be9f23721435f19a7e5b1d702718}
-
-
-closes socket 
-
 \hypertarget{classftplib_1_1FTP_fbd3444a33e5dd055474c9a0d6aabba5}{
 \index{ftplib::FTP@{ftplib::FTP}!connect@{connect}}
 \index{connect@{connect}!ftplib::FTP@{ftplib::FTP}}
-\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::connect (const std::string \& {\em host}, \/  {\bf socketpp::port\_\-t} {\em port} = {\tt 21})}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}std::string ftplib::FTP::connect (const std::string \& {\em host}, \/  socketpp::port\_\-t {\em port} = {\tt 21})}}
 \label{classftplib_1_1FTP_fbd3444a33e5dd055474c9a0d6aabba5}
 
 
@@ -373,5 +367,5 @@ initiate a transfer over the data connection, using PASV or PORT mode depending 
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 
-\hyperlink{ftp_8h}{ftp.h}\item 
-\hyperlink{ftp_8cpp}{ftp.cpp}\end{CompactItemize}
+ftp.h\item 
+ftp.cpp\end{CompactItemize}

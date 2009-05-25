@@ -9,7 +9,6 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -17,11 +16,10 @@
   <div class="tabs">
     <ul>
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-<h1>socketpp_def.h</h1><a href="socketpp__def_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __SOCKETPP_DEF_H</span>
-<a name="l00002"></a><a class="code" href="socketpp__def_8h.html#8cc2409a2ddafdf0ad4b11f2f653be43">00002</a> <span class="preprocessor"></span><span class="preprocessor">#define __SOCKETPP_DEF_H 1</span>
+<h1>socketpp_def.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __SOCKETPP_DEF_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define __SOCKETPP_DEF_H 1</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;sys/socket.h&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;netinet/in.h&gt;</span>
@@ -32,62 +30,62 @@
 <a name="l00010"></a>00010 
 <a name="l00011"></a>00011 <span class="keyword">namespace </span>socketpp {
 <a name="l00012"></a>00012 
-<a name="l00013"></a><a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">00013</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a>;
-<a name="l00014"></a><a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">00014</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a>;
-<a name="l00015"></a><a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">00015</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="namespacesocketpp.html#d9c3b2ad093bb5814af59760e0a2192a">_u32</a>;
-<a name="l00016"></a><a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">00016</a> <span class="keyword">typedef</span> <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>;
+<a name="l00013"></a>00013 <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> _u8;
+<a name="l00014"></a>00014 <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> _u16;
+<a name="l00015"></a>00015 <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> _u32;
+<a name="l00016"></a>00016 <span class="keyword">typedef</span> _u16 port_t;
 <a name="l00017"></a>00017 
-<a name="l00018"></a><a class="code" href="namespacesocketpp.html#5200e43bde971e8003068a622cba2f58">00018</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#5200e43bde971e8003068a622cba2f58">inaddr_any</a>      = INADDR_ANY;
-<a name="l00019"></a><a class="code" href="namespacesocketpp.html#733551c5151802fc12691a868a366a5f">00019</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#733551c5151802fc12691a868a366a5f">inaddr_broadcast</a>= INADDR_BROADCAST;
-<a name="l00020"></a><a class="code" href="namespacesocketpp.html#8a9e04cf907ec163f43cf6c3bf9e213c">00020</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#8a9e04cf907ec163f43cf6c3bf9e213c">inaddr_loopback</a> = INADDR_LOOPBACK;
-<a name="l00021"></a><a class="code" href="namespacesocketpp.html#26bb72049a9cf272f6c116b0a2187c0b">00021</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#26bb72049a9cf272f6c116b0a2187c0b">inaddr_none</a>     = INADDR_NONE;
+<a name="l00018"></a>00018 <span class="keyword">const</span> <span class="keywordtype">int</span> inaddr_any      = INADDR_ANY;
+<a name="l00019"></a>00019 <span class="keyword">const</span> <span class="keywordtype">int</span> inaddr_broadcast= INADDR_BROADCAST;
+<a name="l00020"></a>00020 <span class="keyword">const</span> <span class="keywordtype">int</span> inaddr_loopback = INADDR_LOOPBACK;
+<a name="l00021"></a>00021 <span class="keyword">const</span> <span class="keywordtype">int</span> inaddr_none     = INADDR_NONE;
 <a name="l00022"></a>00022 
-<a name="l00023"></a><a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">00023</a> <span class="keyword">enum</span> <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a> {
-<a name="l00024"></a><a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52de143592455509a8551e0fa943d772b4b">00024</a>     <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52de143592455509a8551e0fa943d772b4b">sock_stream</a> = SOCK_STREAM,
-<a name="l00025"></a><a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52df52f36418990c9bbf4e7949e1f9ff0ee">00025</a>     <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52df52f36418990c9bbf4e7949e1f9ff0ee">sock_dgram</a>  = SOCK_DGRAM,
-<a name="l00026"></a><a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d7b7c5341d5909dbbfcaa3fe1c04c949d">00026</a>     <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d7b7c5341d5909dbbfcaa3fe1c04c949d">sock_raw</a>    = SOCK_RAW,
-<a name="l00027"></a><a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52da9b74c88a8baf194644eb089ae6457f4">00027</a>     <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52da9b74c88a8baf194644eb089ae6457f4">sock_rdm</a>    = SOCK_RDM,
-<a name="l00028"></a><a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d0ae85ce0e589a95e5f14d6cdeecbbd45">00028</a>     <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d0ae85ce0e589a95e5f14d6cdeecbbd45">sock_seqpacket</a>  = SOCK_SEQPACKET
+<a name="l00023"></a>00023 <span class="keyword">enum</span> type {
+<a name="l00024"></a>00024     sock_stream = SOCK_STREAM,
+<a name="l00025"></a>00025     sock_dgram  = SOCK_DGRAM,
+<a name="l00026"></a>00026     sock_raw    = SOCK_RAW,
+<a name="l00027"></a>00027     sock_rdm    = SOCK_RDM,
+<a name="l00028"></a>00028     sock_seqpacket  = SOCK_SEQPACKET
 <a name="l00029"></a>00029 };
-<a name="l00030"></a><a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">00030</a> <span class="keyword">enum</span> <a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">protocol</a> {
-<a name="l00031"></a><a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cfd8acf62568228b356df343026beade8e">00031</a>     <a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cfd8acf62568228b356df343026beade8e">ipproto_ip</a>  = IPPROTO_IP,
-<a name="l00032"></a><a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf94f358c113043dc156bb95873844546d">00032</a>     <a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf94f358c113043dc156bb95873844546d">ipproto_tcp</a> = IPPROTO_TCP,
-<a name="l00033"></a><a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cfc2d1745e811f3d9addde50aad5e8ac9f">00033</a>     <a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cfc2d1745e811f3d9addde50aad5e8ac9f">ipproto_udp</a> = IPPROTO_UDP,
-<a name="l00034"></a><a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf23bb252119b970b87c8705d2d3f304a3">00034</a>     <a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf23bb252119b970b87c8705d2d3f304a3">ipproto_raw</a> = IPPROTO_RAW,
-<a name="l00035"></a><a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cfdb0258c0c773db97d6c9eac3f9485219">00035</a>     <a class="code" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cfdb0258c0c773db97d6c9eac3f9485219">ipproto_icmp</a>= IPPROTO_ICMP
+<a name="l00030"></a>00030 <span class="keyword">enum</span> protocol {
+<a name="l00031"></a>00031     ipproto_ip  = IPPROTO_IP,
+<a name="l00032"></a>00032     ipproto_tcp = IPPROTO_TCP,
+<a name="l00033"></a>00033     ipproto_udp = IPPROTO_UDP,
+<a name="l00034"></a>00034     ipproto_raw = IPPROTO_RAW,
+<a name="l00035"></a>00035     ipproto_icmp= IPPROTO_ICMP
 <a name="l00036"></a>00036 };
-<a name="l00037"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4">00037</a> <span class="keyword">enum</span> <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4">option</a> {
-<a name="l00038"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc470df783608fa9cb2b9cb450fb7027a65">00038</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc470df783608fa9cb2b9cb450fb7027a65">ip_hdrincl</a>  = IP_HDRINCL,
-<a name="l00039"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ef3c9ddad8c80879ccd993f0cbf2ddaa">00039</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ef3c9ddad8c80879ccd993f0cbf2ddaa">so_reuseaddr</a>= SO_REUSEADDR,
-<a name="l00040"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc49396ae8f83e53dfde8b5d07f2e0668a3">00040</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc49396ae8f83e53dfde8b5d07f2e0668a3">so_broadcast</a>= SO_BROADCAST,
-<a name="l00041"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc45358c0a824b24bb17b03805a8fb60a52">00041</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc45358c0a824b24bb17b03805a8fb60a52">so_sndtimeo</a> = SO_SNDTIMEO,
-<a name="l00042"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ecd98d0c015681e55d1877cf27011440">00042</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4ecd98d0c015681e55d1877cf27011440">so_rcvtimeo</a> = SO_RCVTIMEO,
-<a name="l00043"></a><a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4896e502dbf03b162df4949bc5326dbf3">00043</a>     <a class="code" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4896e502dbf03b162df4949bc5326dbf3">so_error</a>    = SO_ERROR
+<a name="l00037"></a>00037 <span class="keyword">enum</span> option {
+<a name="l00038"></a>00038     ip_hdrincl  = IP_HDRINCL,
+<a name="l00039"></a>00039     so_reuseaddr= SO_REUSEADDR,
+<a name="l00040"></a>00040     so_broadcast= SO_BROADCAST,
+<a name="l00041"></a>00041     so_sndtimeo = SO_SNDTIMEO,
+<a name="l00042"></a>00042     so_rcvtimeo = SO_RCVTIMEO,
+<a name="l00043"></a>00043     so_error    = SO_ERROR
 <a name="l00044"></a>00044 };      
-<a name="l00045"></a><a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">00045</a> <span class="keyword">enum</span> <a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">level</a> {
-<a name="l00046"></a><a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5d7ddf065e140601e3ad93d72e6c787ab">00046</a>     <a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5d7ddf065e140601e3ad93d72e6c787ab">sol_ip</a>    = SOL_IP,
-<a name="l00047"></a><a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb568097d5b8690a9619c42192ee5da5252">00047</a>     <a class="code" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb568097d5b8690a9619c42192ee5da5252">sol_socket</a>= SOL_SOCKET 
+<a name="l00045"></a>00045 <span class="keyword">enum</span> level {
+<a name="l00046"></a>00046     sol_ip    = SOL_IP,
+<a name="l00047"></a>00047     sol_socket= SOL_SOCKET 
 <a name="l00048"></a>00048 };
 <a name="l00049"></a>00049 
-<a name="l00050"></a><a class="code" href="structsocketpp_1_1icmphdr.html">00050</a> <span class="keyword">struct </span><a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a> {
-<a name="l00051"></a><a class="code" href="structsocketpp_1_1icmphdr.html#f73226605c96acf2bc9ae861d45adf52">00051</a>     <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a>  <a class="code" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a>;
-<a name="l00052"></a><a class="code" href="structsocketpp_1_1icmphdr.html#0c7d190da0918ead6cf93e3947fcc7f9">00052</a>     <a class="code" href="namespacesocketpp.html#1398da7d8125cdb32e89041e5b0adb96">_u8</a>  <a class="code" href="structsocketpp_1_1icmphdr.html#0c7d190da0918ead6cf93e3947fcc7f9">code</a>;
-<a name="l00053"></a><a class="code" href="structsocketpp_1_1icmphdr.html#253e897a729f05ce8a79eb085674940c">00053</a>     <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="structsocketpp_1_1icmphdr.html#253e897a729f05ce8a79eb085674940c">check</a>;
-<a name="l00054"></a><a class="code" href="structsocketpp_1_1icmphdr.html#a149822bbb52234fb048c83c9bed9189">00054</a>     <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="structsocketpp_1_1icmphdr.html#a149822bbb52234fb048c83c9bed9189">id</a>;
-<a name="l00055"></a><a class="code" href="structsocketpp_1_1icmphdr.html#e696676883b273ad81a70ccff1549ce8">00055</a>     <a class="code" href="namespacesocketpp.html#0d48e817f00cbb84d07faec41ee4b169">_u16</a> <a class="code" href="structsocketpp_1_1icmphdr.html#e696676883b273ad81a70ccff1549ce8">sequence</a>;
+<a name="l00050"></a>00050 <span class="keyword">struct </span>icmphdr {
+<a name="l00051"></a>00051     _u8  type;
+<a name="l00052"></a>00052     _u8  code;
+<a name="l00053"></a>00053     _u16 check;
+<a name="l00054"></a>00054     _u16 id;
+<a name="l00055"></a>00055     _u16 sequence;
 <a name="l00056"></a>00056 };
 <a name="l00057"></a>00057 
-<a name="l00058"></a><a class="code" href="namespacesocketpp.html#1beda002d2e23bf757355444fd9279e2">00058</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#1beda002d2e23bf757355444fd9279e2">IPSIZE</a>         = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>iphdr);
-<a name="l00059"></a><a class="code" href="namespacesocketpp.html#34c3bb51b882d2ae59d483d1e8faeebd">00059</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#34c3bb51b882d2ae59d483d1e8faeebd">TCPSIZE</a>        = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>tcphdr);
-<a name="l00060"></a><a class="code" href="namespacesocketpp.html#1c4f449aef7a6c706b546343c4d16dd3">00060</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#1c4f449aef7a6c706b546343c4d16dd3">UDPSIZE</a>        = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>udphdr);
-<a name="l00061"></a><a class="code" href="namespacesocketpp.html#fa361b148e87f58b86a95abc48e281fb">00061</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#fa361b148e87f58b86a95abc48e281fb">ICMPSIZE</a>       = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structsocketpp_1_1icmphdr.html">icmphdr</a>);
-<a name="l00062"></a><a class="code" href="namespacesocketpp.html#11f9a39ced6614326ba993c3245d8912">00062</a> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespacesocketpp.html#11f9a39ced6614326ba993c3245d8912">MAX_PACKET_SIZE</a>= 65535;
+<a name="l00058"></a>00058 <span class="keyword">const</span> <span class="keywordtype">int</span> IPSIZE         = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>iphdr);
+<a name="l00059"></a>00059 <span class="keyword">const</span> <span class="keywordtype">int</span> TCPSIZE        = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>tcphdr);
+<a name="l00060"></a>00060 <span class="keyword">const</span> <span class="keywordtype">int</span> UDPSIZE        = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>udphdr);
+<a name="l00061"></a>00061 <span class="keyword">const</span> <span class="keywordtype">int</span> ICMPSIZE       = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>icmphdr);
+<a name="l00062"></a>00062 <span class="keyword">const</span> <span class="keywordtype">int</span> MAX_PACKET_SIZE= 65535;
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064 };
 <a name="l00065"></a>00065 
 <a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:45 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 13:26:52 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

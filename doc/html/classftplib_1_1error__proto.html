@@ -9,7 +9,6 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -21,75 +20,34 @@
       <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespaceftplib.html">ftplib</a>::<a class="el" href="classftplib_1_1error__proto.html">error_proto</a>
+  <div class="navpath"><b>ftplib</b>::<a class="el" href="classftplib_1_1error__proto.html">error_proto</a>
   </div>
 </div>
 <div class="contents">
-<h1>ftplib::error_proto Class Reference</h1><!-- doxytag: class="ftplib::error_proto" --><!-- doxytag: inherits="ftplib::error" --><code>#include &lt;<a class="el" href="ftp_8h-source.html">ftp.h</a>&gt;</code>
+<h1>ftplib::error_proto Class Reference</h1><!-- doxytag: class="ftplib::error_proto" --><!-- doxytag: inherits="std::exception" -->exception thrown when a unexpected reply from the server is received  
+<a href="#_details">More...</a>
 <p>
-<div class="dynheader">
-Inheritance diagram for ftplib::error_proto:</div>
-<div class="dynsection">
-
-<p><center><img src="classftplib_1_1error__proto.png" usemap="#ftplib::error_proto_map" border="0" alt=""></center>
-<map name="ftplib::error_proto_map">
-<area href="classftplib_1_1error.html" alt="ftplib::error" shape="rect" coords="0,0,110,24">
-</map>
-</div>
+<code>#include &lt;<a class="el" href="ftp_8h-source.html">ftp.h</a>&gt;</code>
+<p>
+Inherits std::exception.
+<p>
 
 <p>
 <a href="classftplib_1_1error__proto-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1error__proto.html#4d9a71a8162f838cb1cdd2997f64819b">error_proto</a> (const std::string &amp;msg)  throw ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4d9a71a8162f838cb1cdd2997f64819b"></a><!-- doxytag: member="ftplib::error_proto::error_proto" ref="4d9a71a8162f838cb1cdd2997f64819b" args="(const std::string &amp;msg)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>error_proto</b> (const std::string &amp;msg)  throw ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1error__proto.html#3f80b3d7cb39a1725f917ae3383c75df">~error_proto</a> ()  throw ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="67fb850475bc3becb1959822d0d6f470"></a><!-- doxytag: member="ftplib::error_proto::what" ref="67fb850475bc3becb1959822d0d6f470" args="() const " -->
+virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><b>what</b> () const   throw ()</td></tr>
 
 </table>
-<hr><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" name="4d9a71a8162f838cb1cdd2997f64819b"></a><!-- doxytag: member="ftplib::error_proto::error_proto" ref="4d9a71a8162f838cb1cdd2997f64819b" args="(const std::string &amp;msg)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ftplib::error_proto::error_proto           </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&nbsp;</td>
-          <td class="paramname"> <em>msg</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td>  throw ()<code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="3f80b3d7cb39a1725f917ae3383c75df"></a><!-- doxytag: member="ftplib::error_proto::~error_proto" ref="3f80b3d7cb39a1725f917ae3383c75df" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ftplib::error_proto::~error_proto           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td>  throw ()<code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-</div>
-</div><p>
-<hr>The documentation for this class was generated from the following file:<ul>
+<hr><a name="_details"></a><h2>Detailed Description</h2>
+exception thrown when a unexpected reply from the server is received <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="ftp_8h-source.html">ftp.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:47 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 13:26:52 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

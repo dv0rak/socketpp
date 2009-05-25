@@ -16,9 +16,15 @@ Inheritance diagram for socketpp::TCP\_\-RawSocket::\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hyperlink{classsocketpp_1_1TCP__RawSocket_f0b76c8fdc293bb5e22914b247b1e7b8}{TCP\_\-RawSocket} ()
+\hypertarget{classsocketpp_1_1TCP__RawSocket_f0b76c8fdc293bb5e22914b247b1e7b8}{
+\hyperlink{classsocketpp_1_1TCP__RawSocket_f0b76c8fdc293bb5e22914b247b1e7b8}{TCP\_\-RawSocket} ()}
+\label{classsocketpp_1_1TCP__RawSocket_f0b76c8fdc293bb5e22914b247b1e7b8}
+
 \begin{CompactList}\small\item\em constructor which calls RawSocket(ipproto\_\-tcp) \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1TCP__RawSocket_443f8b89224427ae95d22b9b305a4990}{build\_\-TCP\_\-header} (\hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} source, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} dest, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} seq, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} ack\_\-seq, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} res1, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} doff, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} fin, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} syn, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} rst, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} psh, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} ack, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} urg, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} ece, \hyperlink{namespacesocketpp_1398da7d8125cdb32e89041e5b0adb96}{\_\-u8} cwr, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} window, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} check, \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} urg\_\-ptr)
+\hypertarget{classsocketpp_1_1TCP__RawSocket_443f8b89224427ae95d22b9b305a4990}{
+void \hyperlink{classsocketpp_1_1TCP__RawSocket_443f8b89224427ae95d22b9b305a4990}{build\_\-TCP\_\-header} (\_\-u16 source, \_\-u16 dest, \_\-u32 seq, \_\-u32 ack\_\-seq, \_\-u8 res1, \_\-u8 doff, \_\-u8 fin, \_\-u8 syn, \_\-u8 rst, \_\-u8 psh, \_\-u8 ack, \_\-u8 urg, \_\-u8 ece, \_\-u8 cwr, \_\-u16 window, \_\-u16 check, \_\-u16 urg\_\-ptr)}
+\label{classsocketpp_1_1TCP__RawSocket_443f8b89224427ae95d22b9b305a4990}
+
 \begin{CompactList}\small\item\em builds the internal TCP header \item\end{CompactList}\item 
 void \hyperlink{classsocketpp_1_1TCP__RawSocket_8c35edfc4d8c2fbccf0fe13485dd2ef1}{build\_\-TCP\_\-header} (const tcphdr \&tcp)
 \begin{CompactList}\small\item\em builds the internal TCP header \item\end{CompactList}\item 
@@ -28,7 +34,10 @@ void \hyperlink{classsocketpp_1_1TCP__RawSocket_7bc9043e86c6f328cb99d98c4bfca05a
 \begin{CompactList}\small\item\em sets the TCP options field \item\end{CompactList}\item 
 void \hyperlink{classsocketpp_1_1TCP__RawSocket_c1a2ef8b2661bb0f3ca3fa6a636b25fd}{adjust\_\-TCP\_\-csum} (in\_\-addr\_\-t source, in\_\-addr\_\-t dest)
 \begin{CompactList}\small\item\em sets the internal TCP pseudo-header checksum \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1TCP__RawSocket_029eb8bfbf19531253edf046775d9f5f}{adjust\_\-TCP\_\-doff} ()
+\hypertarget{classsocketpp_1_1TCP__RawSocket_029eb8bfbf19531253edf046775d9f5f}{
+void \hyperlink{classsocketpp_1_1TCP__RawSocket_029eb8bfbf19531253edf046775d9f5f}{adjust\_\-TCP\_\-doff} ()}
+\label{classsocketpp_1_1TCP__RawSocket_029eb8bfbf19531253edf046775d9f5f}
+
 \begin{CompactList}\small\item\em sets the internal header \char`\"{}doff\char`\"{} field \item\end{CompactList}\item 
 void \hyperlink{classsocketpp_1_1TCP__RawSocket_0a1017145ae76253dfca51cbd672fae7}{adjust\_\-TCP\_\-all} (in\_\-addr\_\-t source, in\_\-addr\_\-t dest)
 \begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1TCP__RawSocket_029eb8bfbf19531253edf046775d9f5f}{adjust\_\-TCP\_\-doff()} \&\& adjust\_\-TCP\_\-csum(source,dest) \item\end{CompactList}\item 
@@ -41,69 +50,53 @@ size\_\-t \hyperlink{classsocketpp_1_1TCP__RawSocket_67ab79f764a710067590427cb35
 \subsection*{Static Public Member Functions}
 \begin{CompactItemize}
 \item 
-static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1TCP__RawSocket_d0b16fff831e7e756a127cc47de4b9aa}{tcp\_\-checksum} (const void $\ast$buf, size\_\-t nchar, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
+static \_\-u16 \hyperlink{classsocketpp_1_1TCP__RawSocket_d0b16fff831e7e756a127cc47de4b9aa}{tcp\_\-checksum} (const void $\ast$buf, size\_\-t nchar, \_\-u32 saddr, \_\-u32 daddr)
 \begin{CompactList}\small\item\em calculates tcp checksum on pseudo-header \item\end{CompactList}\item 
-static \hyperlink{namespacesocketpp_0d48e817f00cbb84d07faec41ee4b169}{\_\-u16} \hyperlink{classsocketpp_1_1TCP__RawSocket_59a27cc258c1007b2f7e68428fd50f80}{tcp\_\-checksum} (const std::string \&buf, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} saddr, \hyperlink{namespacesocketpp_d9c3b2ad093bb5814af59760e0a2192a}{\_\-u32} daddr)
+static \_\-u16 \hyperlink{classsocketpp_1_1TCP__RawSocket_59a27cc258c1007b2f7e68428fd50f80}{tcp\_\-checksum} (const std::string \&buf, \_\-u32 saddr, \_\-u32 daddr)
 \begin{CompactList}\small\item\em calculates tcp checksum on pseudo-header \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
-virtual void \hyperlink{classsocketpp_1_1TCP__RawSocket_d89a39d4bc91a76d0cb50da5cdd10fbc}{\_\-build\_\-packet} (std::string \&packet)
+\hypertarget{classsocketpp_1_1TCP__RawSocket_d89a39d4bc91a76d0cb50da5cdd10fbc}{
+virtual void \textbf{\_\-build\_\-packet} (std::string \&packet)}
+\label{classsocketpp_1_1TCP__RawSocket_d89a39d4bc91a76d0cb50da5cdd10fbc}
+
 \item 
-virtual void \hyperlink{classsocketpp_1_1TCP__RawSocket_6976a4726503eef03a8d446afdbaddbe}{\_\-set\_\-fields} (const std::string \&packet)
+\hypertarget{classsocketpp_1_1TCP__RawSocket_6976a4726503eef03a8d446afdbaddbe}{
+virtual void \textbf{\_\-set\_\-fields} (const std::string \&packet)}
+\label{classsocketpp_1_1TCP__RawSocket_6976a4726503eef03a8d446afdbaddbe}
+
 \end{CompactItemize}
 \subsection*{Protected Attributes}
 \begin{CompactItemize}
 \item 
-tcphdr \hyperlink{classsocketpp_1_1TCP__RawSocket_d1980411bd147dd67f6d9d9578414c17}{TCP\_\-h}
+\hypertarget{classsocketpp_1_1TCP__RawSocket_d1980411bd147dd67f6d9d9578414c17}{
+tcphdr \textbf{TCP\_\-h}}
+\label{classsocketpp_1_1TCP__RawSocket_d1980411bd147dd67f6d9d9578414c17}
+
 \item 
-tcphdr \hyperlink{classsocketpp_1_1TCP__RawSocket_12b2d2f00d02c377301fc10e1209a8b8}{rcvd\_\-TCP\_\-h}
+\hypertarget{classsocketpp_1_1TCP__RawSocket_12b2d2f00d02c377301fc10e1209a8b8}{
+tcphdr \textbf{rcvd\_\-TCP\_\-h}}
+\label{classsocketpp_1_1TCP__RawSocket_12b2d2f00d02c377301fc10e1209a8b8}
+
 \item 
-std::string \hyperlink{classsocketpp_1_1TCP__RawSocket_380529364d9488faf998543d433d8fe6}{TCP\_\-opt}
+\hypertarget{classsocketpp_1_1TCP__RawSocket_380529364d9488faf998543d433d8fe6}{
+std::string \textbf{TCP\_\-opt}}
+\label{classsocketpp_1_1TCP__RawSocket_380529364d9488faf998543d433d8fe6}
+
 \item 
-std::string \hyperlink{classsocketpp_1_1TCP__RawSocket_b7bddcb31a7a310bcf61fcc474ded465}{rcvd\_\-TCP\_\-opt}
+\hypertarget{classsocketpp_1_1TCP__RawSocket_b7bddcb31a7a310bcf61fcc474ded465}{
+std::string \textbf{rcvd\_\-TCP\_\-opt}}
+\label{classsocketpp_1_1TCP__RawSocket_b7bddcb31a7a310bcf61fcc474ded465}
+
 \end{CompactItemize}
 
 
 \subsection{Detailed Description}
 TCP raw socket without IP header handling. 
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{classsocketpp_1_1TCP__RawSocket_f0b76c8fdc293bb5e22914b247b1e7b8}{
-\index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!TCP\_\-RawSocket@{TCP\_\-RawSocket}}
-\index{TCP\_\-RawSocket@{TCP\_\-RawSocket}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{TCP\_\-RawSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::TCP\_\-RawSocket::TCP\_\-RawSocket ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1TCP__RawSocket_f0b76c8fdc293bb5e22914b247b1e7b8}
-
-
-constructor which calls RawSocket(ipproto\_\-tcp) 
-
-
-
 \subsection{Member Function Documentation}
-\hypertarget{classsocketpp_1_1TCP__RawSocket_d89a39d4bc91a76d0cb50da5cdd10fbc}{
-\index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!\_\-build\_\-packet@{\_\-build\_\-packet}}
-\index{\_\-build\_\-packet@{\_\-build\_\-packet}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{\_\-build\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-RawSocket::\_\-build\_\-packet (std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classsocketpp_1_1TCP__RawSocket_d89a39d4bc91a76d0cb50da5cdd10fbc}
-
-
-
-
-Implements \hyperlink{classsocketpp_1_1RawSocket_eb0a3f716c0fc46efa4123acf0fe1e66}{socketpp::RawSocket}.
-
-Reimplemented in \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_281508237add8a3c530bb0be0b6a1e7b}{socketpp::TCP\_\-IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1TCP__RawSocket_6976a4726503eef03a8d446afdbaddbe}{
-\index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!\_\-set\_\-fields@{\_\-set\_\-fields}}
-\index{\_\-set\_\-fields@{\_\-set\_\-fields}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{\_\-set\_\-fields}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-RawSocket::\_\-set\_\-fields (const std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classsocketpp_1_1TCP__RawSocket_6976a4726503eef03a8d446afdbaddbe}
-
-
-
-
-Implements \hyperlink{classsocketpp_1_1RawSocket_45e6b041703cb8ae0f93dd19766865d5}{socketpp::RawSocket}.
-
-Reimplemented in \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_f8f606ce33835813cc5c3a530e181432}{socketpp::TCP\_\-IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1TCP__RawSocket_0a1017145ae76253dfca51cbd672fae7}{
+\hypertarget{classsocketpp_1_1TCP__RawSocket_0a1017145ae76253dfca51cbd672fae7}{
 \index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!adjust\_\-TCP\_\-all@{adjust\_\-TCP\_\-all}}
 \index{adjust\_\-TCP\_\-all@{adjust\_\-TCP\_\-all}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
 \subsubsection[{adjust\_\-TCP\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-RawSocket::adjust\_\-TCP\_\-all (in\_\-addr\_\-t {\em source}, \/  in\_\-addr\_\-t {\em dest})}}
@@ -131,15 +124,6 @@ sets the internal TCP pseudo-header checksum
 \begin{description}
 \item[{\em source}]IP source address \item[{\em dest}]IP destination address \end{description}
 \end{Desc}
-\hypertarget{classsocketpp_1_1TCP__RawSocket_029eb8bfbf19531253edf046775d9f5f}{
-\index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!adjust\_\-TCP\_\-doff@{adjust\_\-TCP\_\-doff}}
-\index{adjust\_\-TCP\_\-doff@{adjust\_\-TCP\_\-doff}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{adjust\_\-TCP\_\-doff}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-RawSocket::adjust\_\-TCP\_\-doff ()}}
-\label{classsocketpp_1_1TCP__RawSocket_029eb8bfbf19531253edf046775d9f5f}
-
-
-sets the internal header \char`\"{}doff\char`\"{} field 
-
 \hypertarget{classsocketpp_1_1TCP__RawSocket_8c35edfc4d8c2fbccf0fe13485dd2ef1}{
 \index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!build\_\-TCP\_\-header@{build\_\-TCP\_\-header}}
 \index{build\_\-TCP\_\-header@{build\_\-TCP\_\-header}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
@@ -154,15 +138,6 @@ builds the internal TCP header
 \begin{description}
 \item[{\em tcp}]TCP header \end{description}
 \end{Desc}
-\hypertarget{classsocketpp_1_1TCP__RawSocket_443f8b89224427ae95d22b9b305a4990}{
-\index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!build\_\-TCP\_\-header@{build\_\-TCP\_\-header}}
-\index{build\_\-TCP\_\-header@{build\_\-TCP\_\-header}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{build\_\-TCP\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::TCP\_\-RawSocket::build\_\-TCP\_\-header ({\bf \_\-u16} {\em source}, \/  {\bf \_\-u16} {\em dest}, \/  {\bf \_\-u32} {\em seq}, \/  {\bf \_\-u32} {\em ack\_\-seq}, \/  {\bf \_\-u8} {\em res1}, \/  {\bf \_\-u8} {\em doff}, \/  {\bf \_\-u8} {\em fin}, \/  {\bf \_\-u8} {\em syn}, \/  {\bf \_\-u8} {\em rst}, \/  {\bf \_\-u8} {\em psh}, \/  {\bf \_\-u8} {\em ack}, \/  {\bf \_\-u8} {\em urg}, \/  {\bf \_\-u8} {\em ece}, \/  {\bf \_\-u8} {\em cwr}, \/  {\bf \_\-u16} {\em window}, \/  {\bf \_\-u16} {\em check}, \/  {\bf \_\-u16} {\em urg\_\-ptr})}}
-\label{classsocketpp_1_1TCP__RawSocket_443f8b89224427ae95d22b9b305a4990}
-
-
-builds the internal TCP header 
-
 \hypertarget{classsocketpp_1_1TCP__RawSocket_d7e8b2a67c856e11f0e6cfff5f8b8705}{
 \index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!get\_\-TCP\_\-header@{get\_\-TCP\_\-header}}
 \index{get\_\-TCP\_\-header@{get\_\-TCP\_\-header}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
@@ -235,7 +210,7 @@ sets the TCP options field
 \hypertarget{classsocketpp_1_1TCP__RawSocket_59a27cc258c1007b2f7e68428fd50f80}{
 \index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!tcp\_\-checksum@{tcp\_\-checksum}}
 \index{tcp\_\-checksum@{tcp\_\-checksum}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::TCP\_\-RawSocket::tcp\_\-checksum (const std::string \& {\em buf}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::TCP\_\-RawSocket::tcp\_\-checksum (const std::string \& {\em buf}, \/  \_\-u32 {\em saddr}, \/  \_\-u32 {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
 \label{classsocketpp_1_1TCP__RawSocket_59a27cc258c1007b2f7e68428fd50f80}
 
 
@@ -251,7 +226,7 @@ calculates tcp checksum on pseudo-header
 \hypertarget{classsocketpp_1_1TCP__RawSocket_d0b16fff831e7e756a127cc47de4b9aa}{
 \index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!tcp\_\-checksum@{tcp\_\-checksum}}
 \index{tcp\_\-checksum@{tcp\_\-checksum}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \_\-u16} socketpp::TCP\_\-RawSocket::tcp\_\-checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar}, \/  {\bf \_\-u32} {\em saddr}, \/  {\bf \_\-u32} {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::TCP\_\-RawSocket::tcp\_\-checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar}, \/  \_\-u32 {\em saddr}, \/  \_\-u32 {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
 \label{classsocketpp_1_1TCP__RawSocket_d0b16fff831e7e756a127cc47de4b9aa}
 
 
@@ -266,38 +241,7 @@ calculates tcp checksum on pseudo-header
 \item[Returns:]checksum value \end{Desc}
 
 
-\subsection{Member Data Documentation}
-\hypertarget{classsocketpp_1_1TCP__RawSocket_12b2d2f00d02c377301fc10e1209a8b8}{
-\index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!rcvd\_\-TCP\_\-h@{rcvd\_\-TCP\_\-h}}
-\index{rcvd\_\-TCP\_\-h@{rcvd\_\-TCP\_\-h}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{rcvd\_\-TCP\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}tcphdr {\bf socketpp::TCP\_\-RawSocket::rcvd\_\-TCP\_\-h}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1TCP__RawSocket_12b2d2f00d02c377301fc10e1209a8b8}
-
-
-\hypertarget{classsocketpp_1_1TCP__RawSocket_b7bddcb31a7a310bcf61fcc474ded465}{
-\index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!rcvd\_\-TCP\_\-opt@{rcvd\_\-TCP\_\-opt}}
-\index{rcvd\_\-TCP\_\-opt@{rcvd\_\-TCP\_\-opt}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{rcvd\_\-TCP\_\-opt}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf socketpp::TCP\_\-RawSocket::rcvd\_\-TCP\_\-opt}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1TCP__RawSocket_b7bddcb31a7a310bcf61fcc474ded465}
-
-
-\hypertarget{classsocketpp_1_1TCP__RawSocket_d1980411bd147dd67f6d9d9578414c17}{
-\index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!TCP\_\-h@{TCP\_\-h}}
-\index{TCP\_\-h@{TCP\_\-h}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{TCP\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}tcphdr {\bf socketpp::TCP\_\-RawSocket::TCP\_\-h}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1TCP__RawSocket_d1980411bd147dd67f6d9d9578414c17}
-
-
-\hypertarget{classsocketpp_1_1TCP__RawSocket_380529364d9488faf998543d433d8fe6}{
-\index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!TCP\_\-opt@{TCP\_\-opt}}
-\index{TCP\_\-opt@{TCP\_\-opt}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{TCP\_\-opt}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf socketpp::TCP\_\-RawSocket::TCP\_\-opt}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1TCP__RawSocket_380529364d9488faf998543d433d8fe6}
-
-
-
-
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 
-\hyperlink{RawSocket_8h}{RawSocket.h}\item 
-\hyperlink{RawSocket_8cpp}{RawSocket.cpp}\end{CompactItemize}
+RawSocket.h\item 
+RawSocket.cpp\end{CompactItemize}

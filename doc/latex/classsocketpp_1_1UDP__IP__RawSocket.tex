@@ -16,87 +16,45 @@ Inheritance diagram for socketpp::UDP\_\-IP\_\-RawSocket::\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hyperlink{classsocketpp_1_1UDP__IP__RawSocket_90e90d941b64d234c231ca543fe8745a}{UDP\_\-IP\_\-RawSocket} ()
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_90e90d941b64d234c231ca543fe8745a}{
+\hyperlink{classsocketpp_1_1UDP__IP__RawSocket_90e90d941b64d234c231ca543fe8745a}{UDP\_\-IP\_\-RawSocket} ()}
+\label{classsocketpp_1_1UDP__IP__RawSocket_90e90d941b64d234c231ca543fe8745a}
+
 \begin{CompactList}\small\item\em constructor which calls RawSocket(ipproto\_\-udp) and setsockopt(ip\_\-hdrincl) \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}{adjust\_\-UDP\_\-csum} ()
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}{
+void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}{adjust\_\-UDP\_\-csum} ()}
+\label{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}
+
 \begin{CompactList}\small\item\em sets UDP checksum, using source and dest IP addresses token by IP header \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_94bec31d8c856ccdafa083c74b8b7e58}{adjust\_\-UDP\_\-all} ()
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_94bec31d8c856ccdafa083c74b8b7e58}{
+void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_94bec31d8c856ccdafa083c74b8b7e58}{adjust\_\-UDP\_\-all} ()}
+\label{classsocketpp_1_1UDP__IP__RawSocket_94bec31d8c856ccdafa083c74b8b7e58}
+
 \begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1UDP__RawSocket_1caa413cfe4f72d8c0aeccdcb10469b5}{adjust\_\-UDP\_\-len()} \&\& \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}{adjust\_\-UDP\_\-csum()} \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_1a0f6360760f94f5c1569adde67d6d1b}{adjust\_\-UDP\_\-IP\_\-all} ()
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_1a0f6360760f94f5c1569adde67d6d1b}{
+void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_1a0f6360760f94f5c1569adde67d6d1b}{adjust\_\-UDP\_\-IP\_\-all} ()}
+\label{classsocketpp_1_1UDP__IP__RawSocket_1a0f6360760f94f5c1569adde67d6d1b}
+
 \begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_94bec31d8c856ccdafa083c74b8b7e58}{adjust\_\-UDP\_\-all()} and \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all()} \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
-void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_16035f1b701b898f0e4de44a9ac8bbb3}{\_\-build\_\-packet} (std::string \&packet)
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_16035f1b701b898f0e4de44a9ac8bbb3}{
+void \textbf{\_\-build\_\-packet} (std::string \&packet)}
+\label{classsocketpp_1_1UDP__IP__RawSocket_16035f1b701b898f0e4de44a9ac8bbb3}
+
 \item 
-void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_40fde867fa138b495f660864023a3eb1}{\_\-set\_\-fields} (const std::string \&packet)
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_40fde867fa138b495f660864023a3eb1}{
+void \textbf{\_\-set\_\-fields} (const std::string \&packet)}
+\label{classsocketpp_1_1UDP__IP__RawSocket_40fde867fa138b495f660864023a3eb1}
+
 \end{CompactItemize}
 
 
 \subsection{Detailed Description}
 UDP raw socket with IP header handling. 
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_90e90d941b64d234c231ca543fe8745a}{
-\index{socketpp::UDP\_\-IP\_\-RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}!UDP\_\-IP\_\-RawSocket@{UDP\_\-IP\_\-RawSocket}}
-\index{UDP\_\-IP\_\-RawSocket@{UDP\_\-IP\_\-RawSocket}!socketpp::UDP_IP_RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}}
-\subsubsection[{UDP\_\-IP\_\-RawSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::UDP\_\-IP\_\-RawSocket::UDP\_\-IP\_\-RawSocket ()}}
-\label{classsocketpp_1_1UDP__IP__RawSocket_90e90d941b64d234c231ca543fe8745a}
-
-
-constructor which calls RawSocket(ipproto\_\-udp) and setsockopt(ip\_\-hdrincl) 
-
-
-
-\subsection{Member Function Documentation}
-\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_16035f1b701b898f0e4de44a9ac8bbb3}{
-\index{socketpp::UDP\_\-IP\_\-RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}!\_\-build\_\-packet@{\_\-build\_\-packet}}
-\index{\_\-build\_\-packet@{\_\-build\_\-packet}!socketpp::UDP_IP_RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}}
-\subsubsection[{\_\-build\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::UDP\_\-IP\_\-RawSocket::\_\-build\_\-packet (std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classsocketpp_1_1UDP__IP__RawSocket_16035f1b701b898f0e4de44a9ac8bbb3}
-
-
-
-
-Reimplemented from \hyperlink{classsocketpp_1_1IP__RawSocket_6863cc399c543073e9aa3615c3f50940}{socketpp::IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_40fde867fa138b495f660864023a3eb1}{
-\index{socketpp::UDP\_\-IP\_\-RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}!\_\-set\_\-fields@{\_\-set\_\-fields}}
-\index{\_\-set\_\-fields@{\_\-set\_\-fields}!socketpp::UDP_IP_RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}}
-\subsubsection[{\_\-set\_\-fields}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::UDP\_\-IP\_\-RawSocket::\_\-set\_\-fields (const std::string \& {\em packet})\hspace{0.3cm}{\tt  \mbox{[}protected, virtual\mbox{]}}}}
-\label{classsocketpp_1_1UDP__IP__RawSocket_40fde867fa138b495f660864023a3eb1}
-
-
-
-
-Reimplemented from \hyperlink{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}{socketpp::IP\_\-RawSocket}.\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_94bec31d8c856ccdafa083c74b8b7e58}{
-\index{socketpp::UDP\_\-IP\_\-RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}!adjust\_\-UDP\_\-all@{adjust\_\-UDP\_\-all}}
-\index{adjust\_\-UDP\_\-all@{adjust\_\-UDP\_\-all}!socketpp::UDP_IP_RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}}
-\subsubsection[{adjust\_\-UDP\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::UDP\_\-IP\_\-RawSocket::adjust\_\-UDP\_\-all ()}}
-\label{classsocketpp_1_1UDP__IP__RawSocket_94bec31d8c856ccdafa083c74b8b7e58}
-
-
-calls \hyperlink{classsocketpp_1_1UDP__RawSocket_1caa413cfe4f72d8c0aeccdcb10469b5}{adjust\_\-UDP\_\-len()} \&\& \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}{adjust\_\-UDP\_\-csum()} 
-
-\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}{
-\index{socketpp::UDP\_\-IP\_\-RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}!adjust\_\-UDP\_\-csum@{adjust\_\-UDP\_\-csum}}
-\index{adjust\_\-UDP\_\-csum@{adjust\_\-UDP\_\-csum}!socketpp::UDP_IP_RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}}
-\subsubsection[{adjust\_\-UDP\_\-csum}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::UDP\_\-IP\_\-RawSocket::adjust\_\-UDP\_\-csum ()}}
-\label{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}
-
-
-sets UDP checksum, using source and dest IP addresses token by IP header 
-
-\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_1a0f6360760f94f5c1569adde67d6d1b}{
-\index{socketpp::UDP\_\-IP\_\-RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}!adjust\_\-UDP\_\-IP\_\-all@{adjust\_\-UDP\_\-IP\_\-all}}
-\index{adjust\_\-UDP\_\-IP\_\-all@{adjust\_\-UDP\_\-IP\_\-all}!socketpp::UDP_IP_RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}}
-\subsubsection[{adjust\_\-UDP\_\-IP\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::UDP\_\-IP\_\-RawSocket::adjust\_\-UDP\_\-IP\_\-all ()}}
-\label{classsocketpp_1_1UDP__IP__RawSocket_1a0f6360760f94f5c1569adde67d6d1b}
-
-
-calls \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_94bec31d8c856ccdafa083c74b8b7e58}{adjust\_\-UDP\_\-all()} and \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all()} 
-
-
-
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 
-\hyperlink{RawSocket_8h}{RawSocket.h}\item 
-\hyperlink{RawSocket_8cpp}{RawSocket.cpp}\end{CompactItemize}
+RawSocket.h\item 
+RawSocket.cpp\end{CompactItemize}

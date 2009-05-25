@@ -16,27 +16,30 @@ Inheritance diagram for socketpp::BaseSocket::\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-void \hyperlink{classsocketpp_1_1BaseSocket_2060dc1b648f83f8bf5ae3d9ecfcd619}{open} (\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} t, \hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf}{protocol} prot=ipproto\_\-ip)
+void \hyperlink{classsocketpp_1_1BaseSocket_2060dc1b648f83f8bf5ae3d9ecfcd619}{open} (type t, protocol prot=ipproto\_\-ip)
 \begin{CompactList}\small\item\em opens socket descriptor \item\end{CompactList}\item 
-virtual void \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{close} ()
+\hypertarget{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{
+virtual void \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{close} ()}
+\label{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}
+
 \begin{CompactList}\small\item\em closes socket descriptor \item\end{CompactList}\item 
 void \hyperlink{classsocketpp_1_1BaseSocket_4cffcd5cae4ef51e953495837fade4c3}{setBlocking} (bool yes)
 \begin{CompactList}\small\item\em sets/unsets blocking mode \item\end{CompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\int \hyperlink{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}{getsockopt} (\hyperlink{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5}{level} lev, \hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc4}{option} opt, T \&optval)
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}{getsockopt} (level lev, option opt, T \&optval)
 \begin{CompactList}\small\item\em gets options set on socket descriptor. Wrapper for \hyperlink{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}{getsockopt()} \item\end{CompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\int \hyperlink{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{setsockopt} (\hyperlink{namespacesocketpp_4dbb83d08769b55fc6e283b73ae11bb5}{level} lev, \hyperlink{namespacesocketpp_ea335944de1f6b81489c90507884cfc4}{option} opt, const T \&optval)
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{setsockopt} (level lev, option opt, const T \&optval)
 \begin{CompactList}\small\item\em sets options set on socket descriptor. Wrapper for \hyperlink{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{setsockopt()} \item\end{CompactList}\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_769710192256606aaec1a776468d75fa}{connect} (const std::string \&addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port=0)
+int \hyperlink{classsocketpp_1_1BaseSocket_769710192256606aaec1a776468d75fa}{connect} (const std::string \&addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em connects socket to remote address \item\end{CompactList}\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_2bdd6d459e6f9cf2f71636b01787b250}{connect} (in\_\-addr\_\-t addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port=0)
+int \hyperlink{classsocketpp_1_1BaseSocket_2bdd6d459e6f9cf2f71636b01787b250}{connect} (in\_\-addr\_\-t addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em connects socket to remote address \item\end{CompactList}\item 
 int \hyperlink{classsocketpp_1_1BaseSocket_eb0f4c84546c22fd9023169701d8fae8}{connect} (const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL)
 \begin{CompactList}\small\item\em connects socket to remote address \item\end{CompactList}\item 
 int \hyperlink{classsocketpp_1_1BaseSocket_83666b030a93368675a842a992e0c2af}{connect} (in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL)
 \begin{CompactList}\small\item\em connects socket to remote address \item\end{CompactList}\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_78c2a8e6a5c7dfbc708c9cd637e88e51}{bind} (const std::string \&addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port=0)
+int \hyperlink{classsocketpp_1_1BaseSocket_78c2a8e6a5c7dfbc708c9cd637e88e51}{bind} (const std::string \&addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_d3df73f534900d40f9dff26171ec93b5}{bind} (in\_\-addr\_\-t addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port=0)
+int \hyperlink{classsocketpp_1_1BaseSocket_d3df73f534900d40f9dff26171ec93b5}{bind} (in\_\-addr\_\-t addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
 int \hyperlink{classsocketpp_1_1BaseSocket_4775f13f8e1cceaaed40106162b2149f}{bind} (const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL)
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
@@ -48,39 +51,57 @@ std::string \hyperlink{classsocketpp_1_1BaseSocket_483c6186ae60d0c399983e14f55af
 \begin{CompactList}\small\item\em returns remote address to which socket is connected \item\end{CompactList}\item 
 std::string \hyperlink{classsocketpp_1_1BaseSocket_0caed2e7d3f0e4db7d4c1aa3aba52caf}{localAddr} ()
 \begin{CompactList}\small\item\em returns local address to which socket is bound \item\end{CompactList}\item 
-\hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} \hyperlink{classsocketpp_1_1BaseSocket_d4a2c0e4932436ef61f911514385d16c}{localPort} ()
+port\_\-t \hyperlink{classsocketpp_1_1BaseSocket_d4a2c0e4932436ef61f911514385d16c}{localPort} ()
 \begin{CompactList}\small\item\em returns local port to which socket is bound \item\end{CompactList}\item 
-\hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} \hyperlink{classsocketpp_1_1BaseSocket_039db642444d2111f2f58ebe032c5f5f}{remotePort} ()
+port\_\-t \hyperlink{classsocketpp_1_1BaseSocket_039db642444d2111f2f58ebe032c5f5f}{remotePort} ()
 \begin{CompactList}\small\item\em returns remote port bound to which socket is connected \item\end{CompactList}\item 
 int \hyperlink{classsocketpp_1_1BaseSocket_c96db07cc917926d895d89cf73734ea1}{fileno} () const 
 \begin{CompactList}\small\item\em returns socket descriptor number \item\end{CompactList}\item 
-\hyperlink{classsocketpp_1_1BaseSocket_fa397f810462fe61238dbbf2d9c42c90}{operator int} () const 
+\hypertarget{classsocketpp_1_1BaseSocket_fa397f810462fe61238dbbf2d9c42c90}{
+\hyperlink{classsocketpp_1_1BaseSocket_fa397f810462fe61238dbbf2d9c42c90}{operator int} () const }
+\label{classsocketpp_1_1BaseSocket_fa397f810462fe61238dbbf2d9c42c90}
+
 \begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1BaseSocket_c96db07cc917926d895d89cf73734ea1}{fileno()} \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}{cleanDnsCache} ()
+\hypertarget{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}{
+void \hyperlink{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}{cleanDnsCache} ()}
+\label{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}
+
 \begin{CompactList}\small\item\em cleans internal DNS cache \item\end{CompactList}\item 
 std::map$<$ std::string, std::string $>$ \hyperlink{classsocketpp_1_1BaseSocket_52bf8df48bf4da48eff4adc690caa211}{getDnsCache} ()
 \begin{CompactList}\small\item\em returns internal DNS cache \item\end{CompactList}\item 
-virtual \hyperlink{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{$\sim$BaseSocket} ()
+\hypertarget{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{
+virtual \hyperlink{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{$\sim$BaseSocket} ()}
+\label{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}
+
 \begin{CompactList}\small\item\em desctuctor which calls \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{close()} \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Types}
 \begin{CompactItemize}
 \item 
-enum \hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}{\_\-select\_\-mode} \{ \hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6}{read}, 
-\hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685}{write}, 
-\hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4}{err}
+enum \textbf{\_\-select\_\-mode} \{ \textbf{read}, 
+\textbf{write}, 
+\textbf{err}
  \}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
-\hyperlink{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}{BaseSocket} ()
+\hypertarget{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}{
+\hyperlink{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}{BaseSocket} ()}
+\label{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}
+
 \begin{CompactList}\small\item\em simply instantiates the class without setting the internal socket descriptor \item\end{CompactList}\item 
-\hyperlink{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}{BaseSocket} (const \hyperlink{classsocketpp_1_1BaseSocket}{BaseSocket} \&s)
+\hypertarget{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}{
+\hyperlink{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}{BaseSocket} (const \hyperlink{classsocketpp_1_1BaseSocket}{BaseSocket} \&s)}
+\label{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}
+
 \begin{CompactList}\small\item\em copy constructor \item\end{CompactList}\item 
-\hyperlink{classsocketpp_1_1BaseSocket_35c982d7aef2041c100439cf38aa7f4d}{BaseSocket} (\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} t, \hyperlink{namespacesocketpp_2969678def1c6c8cb4102802ca82e2cf}{protocol} prot=ipproto\_\-ip)
+\hyperlink{classsocketpp_1_1BaseSocket_35c982d7aef2041c100439cf38aa7f4d}{BaseSocket} (type t, protocol prot=ipproto\_\-ip)
 \begin{CompactList}\small\item\em constructor which opens the socket descriptor calling socket(AF\_\-INET, t, prot) \item\end{CompactList}\item 
 \hyperlink{classsocketpp_1_1BaseSocket_f7e18d6700868abb2b476e797506eafb}{BaseSocket} (int fd)
 \begin{CompactList}\small\item\em constructor which uses the given socket descriptor \item\end{CompactList}\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}{\_\-select} (\hyperlink{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}{\_\-select\_\-mode} m)
+\hypertarget{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}{
+int \textbf{\_\-select} (\_\-select\_\-mode m)}
+\label{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}
+
 \item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_bf4e15b88271e34e606b9b2a5b384b5b}{send} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
@@ -90,13 +111,13 @@ size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_fb896f016a243ddbb661acc7b05826b
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_25fc62d259f6d12f1b1a5001a7512897}{recv} (std::string \&buf, size\_\-t size)
 \begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_33ef257bb6eb0f23ae0680df57738f3a}{sendto} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, in\_\-addr\_\-t addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port=0)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_33ef257bb6eb0f23ae0680df57738f3a}{sendto} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, in\_\-addr\_\-t addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_d12e08b6f67a95a3181403c70f306f88}{sendto} (const std::string \&buf, in\_\-addr\_\-t addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port=0)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_d12e08b6f67a95a3181403c70f306f88}{sendto} (const std::string \&buf, in\_\-addr\_\-t addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_2b591cefe9fd8ac9f46ed7fbdd8caa82}{sendto} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, const std::string \&addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port=0)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_2b591cefe9fd8ac9f46ed7fbdd8caa82}{sendto} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, const std::string \&addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_8f98eff253e52ccf3463a0379a10caf2}{sendto} (const std::string \&buf, const std::string \&addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port=0)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_8f98eff253e52ccf3463a0379a10caf2}{sendto} (const std::string \&buf, const std::string \&addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_0154d562be27c8b2aa074d5f6bb8ab03}{sendto} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
@@ -106,13 +127,13 @@ size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_c0bbca9725a55a2e6a822536efd31b7
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_5fd9737270ee71d2292e70ed625d63f9}{sendto} (const std::string \&buf, const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_11ebe50d7ae76c21ef55d38cb87cc700}{recvfrom} (char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, in\_\-addr\_\-t \&addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} \&port)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_11ebe50d7ae76c21ef55d38cb87cc700}{recvfrom} (char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, in\_\-addr\_\-t \&addr, port\_\-t \&port)
 \begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_d2656c57d84c4ff032cd3d9ad4608bfa}{recvfrom} (std::string \&buf, size\_\-t size, in\_\-addr\_\-t \&addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} \&port)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_d2656c57d84c4ff032cd3d9ad4608bfa}{recvfrom} (std::string \&buf, size\_\-t size, in\_\-addr\_\-t \&addr, port\_\-t \&port)
 \begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_205fc515468a3df01258f7ebd6fdf38c}{recvfrom} (char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, std::string \&addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} \&port)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_205fc515468a3df01258f7ebd6fdf38c}{recvfrom} (char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, std::string \&addr, port\_\-t \&port)
 \begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_259bb054a2abf0ffadf3c75bce4892b0}{recvfrom} (std::string \&buf, size\_\-t size, std::string \&addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} \&port)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_259bb054a2abf0ffadf3c75bce4892b0}{recvfrom} (std::string \&buf, size\_\-t size, std::string \&addr, port\_\-t \&port)
 \begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_ed28eb7e4a5abee65143bcdf162673f4}{recvfrom} (char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, in\_\-addr\_\-t \&addr)
 \begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\item 
@@ -125,77 +146,31 @@ size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_ace82407e13a6eee26aa1f5f642d0cf
 \subsection*{Protected Attributes}
 \begin{CompactItemize}
 \item 
-int \hyperlink{classsocketpp_1_1BaseSocket_a5ef6b5fabb3988bced6a23d9631985d}{\_\-sd}
+\hypertarget{classsocketpp_1_1BaseSocket_a5ef6b5fabb3988bced6a23d9631985d}{
+int \textbf{\_\-sd}}
+\label{classsocketpp_1_1BaseSocket_a5ef6b5fabb3988bced6a23d9631985d}
+
 \item 
-\hyperlink{classsocketpp_1_1AddrHandler}{AddrHandler} \hyperlink{classsocketpp_1_1BaseSocket_1e44e3c6c2ecd89c2aa716cc62528620}{\_\-h}
+\hypertarget{classsocketpp_1_1BaseSocket_1e44e3c6c2ecd89c2aa716cc62528620}{
+\hyperlink{classsocketpp_1_1AddrHandler}{AddrHandler} \textbf{\_\-h}}
+\label{classsocketpp_1_1BaseSocket_1e44e3c6c2ecd89c2aa716cc62528620}
+
 \item 
-double \hyperlink{classsocketpp_1_1BaseSocket_418af5a1fe752cef38e4c6679780224c}{\_\-timeout}
+\hypertarget{classsocketpp_1_1BaseSocket_418af5a1fe752cef38e4c6679780224c}{
+double \textbf{\_\-timeout}}
+\label{classsocketpp_1_1BaseSocket_418af5a1fe752cef38e4c6679780224c}
+
 \end{CompactItemize}
 
 
 \subsection{Detailed Description}
 Abstract base class. 
 
-\subsection{Member Enumeration Documentation}
-\hypertarget{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-select\_\-mode@{\_\-select\_\-mode}}
-\index{\_\-select\_\-mode@{\_\-select\_\-mode}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{\_\-select\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf socketpp::BaseSocket::\_\-select\_\-mode}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062}
-
-
-\begin{Desc}
-\item[Enumerator: ]\par
-\begin{description}
-\index{read@{read}!socketpp::BaseSocket@{socketpp::BaseSocket}}\index{socketpp::BaseSocket@{socketpp::BaseSocket}!read@{read}}\item[{\em 
-\hypertarget{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6}{
-read}
-\label{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6}
-}]\index{write@{write}!socketpp::BaseSocket@{socketpp::BaseSocket}}\index{socketpp::BaseSocket@{socketpp::BaseSocket}!write@{write}}\item[{\em 
-\hypertarget{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685}{
-write}
-\label{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685}
-}]\index{err@{err}!socketpp::BaseSocket@{socketpp::BaseSocket}}\index{socketpp::BaseSocket@{socketpp::BaseSocket}!err@{err}}\item[{\em 
-\hypertarget{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4}{
-err}
-\label{classsocketpp_1_1BaseSocket_21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4}
-}]\end{description}
-\end{Desc}
-
-
-
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!$\sim$BaseSocket@{$\sim$BaseSocket}}
-\index{$\sim$BaseSocket@{$\sim$BaseSocket}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{$\sim$BaseSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::BaseSocket::$\sim$BaseSocket ()\hspace{0.3cm}{\tt  \mbox{[}virtual\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}
-
-
-desctuctor which calls \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{close()} 
-
-\hypertarget{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!BaseSocket@{BaseSocket}}
-\index{BaseSocket@{BaseSocket}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{BaseSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::BaseSocket::BaseSocket ()\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}
-
-
-simply instantiates the class without setting the internal socket descriptor 
-
-\hypertarget{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!BaseSocket@{BaseSocket}}
-\index{BaseSocket@{BaseSocket}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{BaseSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::BaseSocket::BaseSocket (const {\bf BaseSocket} \& {\em s})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}
-
-
-copy constructor 
-
 \hypertarget{classsocketpp_1_1BaseSocket_35c982d7aef2041c100439cf38aa7f4d}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!BaseSocket@{BaseSocket}}
 \index{BaseSocket@{BaseSocket}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{BaseSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::BaseSocket::BaseSocket ({\bf type} {\em t}, \/  {\bf protocol} {\em prot} = {\tt ipproto\_\-ip})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{BaseSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::BaseSocket::BaseSocket (type {\em t}, \/  protocol {\em prot} = {\tt ipproto\_\-ip})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_35c982d7aef2041c100439cf38aa7f4d}
 
 
@@ -223,13 +198,6 @@ constructor which uses the given socket descriptor
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-select@{\_\-select}}
-\index{\_\-select@{\_\-select}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{\_\-select}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::\_\-select ({\bf \_\-select\_\-mode} {\em m})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}
-
-
 \hypertarget{classsocketpp_1_1BaseSocket_aab800bcb5ee48cd4410ae2b9ed83e23}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!bind@{bind}}
 \index{bind@{bind}!socketpp::BaseSocket@{socketpp::BaseSocket}}
@@ -265,7 +233,7 @@ binds socket to local given address
 \hypertarget{classsocketpp_1_1BaseSocket_d3df73f534900d40f9dff26171ec93b5}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!bind@{bind}}
 \index{bind@{bind}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::bind (in\_\-addr\_\-t {\em addr}, \/  {\bf port\_\-t} {\em port} = {\tt 0})}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::bind (in\_\-addr\_\-t {\em addr}, \/  port\_\-t {\em port} = {\tt 0})}}
 \label{classsocketpp_1_1BaseSocket_d3df73f534900d40f9dff26171ec93b5}
 
 
@@ -281,7 +249,7 @@ binds socket to local given address
 \hypertarget{classsocketpp_1_1BaseSocket_78c2a8e6a5c7dfbc708c9cd637e88e51}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!bind@{bind}}
 \index{bind@{bind}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::bind (const std::string \& {\em addr}, \/  {\bf port\_\-t} {\em port} = {\tt 0})}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::bind (const std::string \& {\em addr}, \/  port\_\-t {\em port} = {\tt 0})}}
 \label{classsocketpp_1_1BaseSocket_78c2a8e6a5c7dfbc708c9cd637e88e51}
 
 
@@ -294,27 +262,7 @@ binds socket to local given address
 \end{Desc}
 \begin{Desc}
 \item[Returns:]\hyperlink{classsocketpp_1_1BaseSocket_78c2a8e6a5c7dfbc708c9cd637e88e51}{bind()} return value \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!cleanDnsCache@{cleanDnsCache}}
-\index{cleanDnsCache@{cleanDnsCache}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{cleanDnsCache}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::BaseSocket::cleanDnsCache ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}
-
-
-cleans internal DNS cache 
-
-\hypertarget{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!close@{close}}
-\index{close@{close}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::BaseSocket::close ()\hspace{0.3cm}{\tt  \mbox{[}virtual\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}
-
-
-closes socket descriptor 
-
-
-
-Reimplemented in \hyperlink{classsocketpp_1_1SockBuf_28f88c6ac0570ee5e9d57e255733b0f9}{socketpp::SockBuf}.\hypertarget{classsocketpp_1_1BaseSocket_83666b030a93368675a842a992e0c2af}{
+\hypertarget{classsocketpp_1_1BaseSocket_83666b030a93368675a842a992e0c2af}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!connect@{connect}}
 \index{connect@{connect}!socketpp::BaseSocket@{socketpp::BaseSocket}}
 \subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::connect (in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL})}}
@@ -349,7 +297,7 @@ connects socket to remote address
 \hypertarget{classsocketpp_1_1BaseSocket_2bdd6d459e6f9cf2f71636b01787b250}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!connect@{connect}}
 \index{connect@{connect}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::connect (in\_\-addr\_\-t {\em addr}, \/  {\bf port\_\-t} {\em port} = {\tt 0})}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::connect (in\_\-addr\_\-t {\em addr}, \/  port\_\-t {\em port} = {\tt 0})}}
 \label{classsocketpp_1_1BaseSocket_2bdd6d459e6f9cf2f71636b01787b250}
 
 
@@ -365,7 +313,7 @@ connects socket to remote address
 \hypertarget{classsocketpp_1_1BaseSocket_769710192256606aaec1a776468d75fa}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!connect@{connect}}
 \index{connect@{connect}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::connect (const std::string \& {\em addr}, \/  {\bf port\_\-t} {\em port} = {\tt 0})}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::connect (const std::string \& {\em addr}, \/  port\_\-t {\em port} = {\tt 0})}}
 \label{classsocketpp_1_1BaseSocket_769710192256606aaec1a776468d75fa}
 
 
@@ -403,7 +351,7 @@ returns internal DNS cache
 \hypertarget{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!getsockopt@{getsockopt}}
 \index{getsockopt@{getsockopt}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{getsockopt}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int socketpp::BaseSocket::getsockopt ({\bf level} {\em lev}, \/  {\bf option} {\em opt}, \/  T \& {\em optval})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\subsubsection[{getsockopt}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int socketpp::BaseSocket::getsockopt (level {\em lev}, \/  option {\em opt}, \/  T \& {\em optval})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}
 
 
@@ -430,7 +378,7 @@ returns local address to which socket is bound
 \hypertarget{classsocketpp_1_1BaseSocket_d4a2c0e4932436ef61f911514385d16c}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!localPort@{localPort}}
 \index{localPort@{localPort}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{localPort}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\_\-t} socketpp::BaseSocket::localPort ()}}
+\subsubsection[{localPort}]{\setlength{\rightskip}{0pt plus 5cm}port\_\-t socketpp::BaseSocket::localPort ()}}
 \label{classsocketpp_1_1BaseSocket_d4a2c0e4932436ef61f911514385d16c}
 
 
@@ -441,7 +389,7 @@ returns local port to which socket is bound
 \hypertarget{classsocketpp_1_1BaseSocket_2060dc1b648f83f8bf5ae3d9ecfcd619}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!open@{open}}
 \index{open@{open}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::BaseSocket::open ({\bf type} {\em t}, \/  {\bf protocol} {\em prot} = {\tt ipproto\_\-ip})}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::BaseSocket::open (type {\em t}, \/  protocol {\em prot} = {\tt ipproto\_\-ip})}}
 \label{classsocketpp_1_1BaseSocket_2060dc1b648f83f8bf5ae3d9ecfcd619}
 
 
@@ -452,15 +400,6 @@ opens socket descriptor
 \begin{description}
 \item[{\em t}]socket type \item[{\em prot}]socket protocol \end{description}
 \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_fa397f810462fe61238dbbf2d9c42c90}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!operator int@{operator int}}
-\index{operator int@{operator int}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{operator int}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::BaseSocket::operator int () const\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_fa397f810462fe61238dbbf2d9c42c90}
-
-
-calls \hyperlink{classsocketpp_1_1BaseSocket_c96db07cc917926d895d89cf73734ea1}{fileno()} 
-
 \hypertarget{classsocketpp_1_1BaseSocket_25fc62d259f6d12f1b1a5001a7512897}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!recv@{recv}}
 \index{recv@{recv}!socketpp::BaseSocket@{socketpp::BaseSocket}}
@@ -560,7 +499,7 @@ reads data on socket
 \hypertarget{classsocketpp_1_1BaseSocket_259bb054a2abf0ffadf3c75bce4892b0}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!recvfrom@{recvfrom}}
 \index{recvfrom@{recvfrom}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{recvfrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::recvfrom (std::string \& {\em buf}, \/  size\_\-t {\em size}, \/  std::string \& {\em addr}, \/  {\bf port\_\-t} \& {\em port})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{recvfrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::recvfrom (std::string \& {\em buf}, \/  size\_\-t {\em size}, \/  std::string \& {\em addr}, \/  port\_\-t \& {\em port})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_259bb054a2abf0ffadf3c75bce4892b0}
 
 
@@ -576,7 +515,7 @@ reads data on socket
 \hypertarget{classsocketpp_1_1BaseSocket_205fc515468a3df01258f7ebd6fdf38c}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!recvfrom@{recvfrom}}
 \index{recvfrom@{recvfrom}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{recvfrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::recvfrom (char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  std::string \& {\em addr}, \/  {\bf port\_\-t} \& {\em port})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{recvfrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::recvfrom (char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  std::string \& {\em addr}, \/  port\_\-t \& {\em port})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_205fc515468a3df01258f7ebd6fdf38c}
 
 
@@ -592,7 +531,7 @@ reads data on socket
 \hypertarget{classsocketpp_1_1BaseSocket_d2656c57d84c4ff032cd3d9ad4608bfa}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!recvfrom@{recvfrom}}
 \index{recvfrom@{recvfrom}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{recvfrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::recvfrom (std::string \& {\em buf}, \/  size\_\-t {\em size}, \/  in\_\-addr\_\-t \& {\em addr}, \/  {\bf port\_\-t} \& {\em port})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{recvfrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::recvfrom (std::string \& {\em buf}, \/  size\_\-t {\em size}, \/  in\_\-addr\_\-t \& {\em addr}, \/  port\_\-t \& {\em port})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_d2656c57d84c4ff032cd3d9ad4608bfa}
 
 
@@ -608,7 +547,7 @@ reads data on socket
 \hypertarget{classsocketpp_1_1BaseSocket_11ebe50d7ae76c21ef55d38cb87cc700}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!recvfrom@{recvfrom}}
 \index{recvfrom@{recvfrom}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{recvfrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::recvfrom (char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  in\_\-addr\_\-t \& {\em addr}, \/  {\bf port\_\-t} \& {\em port})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{recvfrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::recvfrom (char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  in\_\-addr\_\-t \& {\em addr}, \/  port\_\-t \& {\em port})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_11ebe50d7ae76c21ef55d38cb87cc700}
 
 
@@ -635,7 +574,7 @@ returns remote address to which socket is connected
 \hypertarget{classsocketpp_1_1BaseSocket_039db642444d2111f2f58ebe032c5f5f}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!remotePort@{remotePort}}
 \index{remotePort@{remotePort}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{remotePort}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\_\-t} socketpp::BaseSocket::remotePort ()}}
+\subsubsection[{remotePort}]{\setlength{\rightskip}{0pt plus 5cm}port\_\-t socketpp::BaseSocket::remotePort ()}}
 \label{classsocketpp_1_1BaseSocket_039db642444d2111f2f58ebe032c5f5f}
 
 
@@ -742,7 +681,7 @@ sends data over socket
 \hypertarget{classsocketpp_1_1BaseSocket_8f98eff253e52ccf3463a0379a10caf2}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!sendto@{sendto}}
 \index{sendto@{sendto}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const std::string \& {\em buf}, \/  const std::string \& {\em addr}, \/  {\bf port\_\-t} {\em port} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const std::string \& {\em buf}, \/  const std::string \& {\em addr}, \/  port\_\-t {\em port} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_8f98eff253e52ccf3463a0379a10caf2}
 
 
@@ -758,7 +697,7 @@ sends data over socket
 \hypertarget{classsocketpp_1_1BaseSocket_2b591cefe9fd8ac9f46ed7fbdd8caa82}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!sendto@{sendto}}
 \index{sendto@{sendto}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  const std::string \& {\em addr}, \/  {\bf port\_\-t} {\em port} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  const std::string \& {\em addr}, \/  port\_\-t {\em port} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_2b591cefe9fd8ac9f46ed7fbdd8caa82}
 
 
@@ -774,7 +713,7 @@ sends data over socket
 \hypertarget{classsocketpp_1_1BaseSocket_d12e08b6f67a95a3181403c70f306f88}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!sendto@{sendto}}
 \index{sendto@{sendto}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const std::string \& {\em buf}, \/  in\_\-addr\_\-t {\em addr}, \/  {\bf port\_\-t} {\em port} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const std::string \& {\em buf}, \/  in\_\-addr\_\-t {\em addr}, \/  port\_\-t {\em port} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_d12e08b6f67a95a3181403c70f306f88}
 
 
@@ -790,7 +729,7 @@ sends data over socket
 \hypertarget{classsocketpp_1_1BaseSocket_33ef257bb6eb0f23ae0680df57738f3a}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!sendto@{sendto}}
 \index{sendto@{sendto}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  in\_\-addr\_\-t {\em addr}, \/  {\bf port\_\-t} {\em port} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  in\_\-addr\_\-t {\em addr}, \/  port\_\-t {\em port} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_33ef257bb6eb0f23ae0680df57738f3a}
 
 
@@ -820,7 +759,7 @@ sets/unsets blocking mode
 \hypertarget{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!setsockopt@{setsockopt}}
 \index{setsockopt@{setsockopt}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{setsockopt}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int socketpp::BaseSocket::setsockopt ({\bf level} {\em lev}, \/  {\bf option} {\em opt}, \/  const T \& {\em optval})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\subsubsection[{setsockopt}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int socketpp::BaseSocket::setsockopt (level {\em lev}, \/  option {\em opt}, \/  const T \& {\em optval})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_3f1f168e4953c046bb1159941da2fa30}
 
 
@@ -849,31 +788,7 @@ sets a \hyperlink{classsocketpp_1_1timeout}{timeout} on the following IO operati
 \end{Desc}
 
 
-\subsection{Member Data Documentation}
-\hypertarget{classsocketpp_1_1BaseSocket_1e44e3c6c2ecd89c2aa716cc62528620}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-h@{\_\-h}}
-\index{\_\-h@{\_\-h}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AddrHandler} {\bf socketpp::BaseSocket::\_\-h}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_1e44e3c6c2ecd89c2aa716cc62528620}
-
-
-\hypertarget{classsocketpp_1_1BaseSocket_a5ef6b5fabb3988bced6a23d9631985d}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-sd@{\_\-sd}}
-\index{\_\-sd@{\_\-sd}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{\_\-sd}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf socketpp::BaseSocket::\_\-sd}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_a5ef6b5fabb3988bced6a23d9631985d}
-
-
-\hypertarget{classsocketpp_1_1BaseSocket_418af5a1fe752cef38e4c6679780224c}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!\_\-timeout@{\_\-timeout}}
-\index{\_\-timeout@{\_\-timeout}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf socketpp::BaseSocket::\_\-timeout}\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_418af5a1fe752cef38e4c6679780224c}
-
-
-
-
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 
-\hyperlink{BaseSocket_8h}{BaseSocket.h}\item 
-\hyperlink{BaseSocket_8cpp}{BaseSocket.cpp}\end{CompactItemize}
+BaseSocket.h\item 
+BaseSocket.cpp\end{CompactItemize}

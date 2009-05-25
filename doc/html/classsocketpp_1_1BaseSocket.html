@@ -9,7 +9,6 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -21,7 +20,7 @@
       <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="namespacesocketpp.html">socketpp</a>::<a class="el" href="classsocketpp_1_1BaseSocket.html">BaseSocket</a>
+  <div class="navpath"><b>socketpp</b>::<a class="el" href="classsocketpp_1_1BaseSocket.html">BaseSocket</a>
   </div>
 </div>
 <div class="contents">
@@ -57,27 +56,28 @@ Inheritance diagram for socketpp::BaseSocket:</div>
 <a href="classsocketpp_1_1BaseSocket-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2060dc1b648f83f8bf5ae3d9ecfcd619">open</a> (<a class="el" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a> t, <a class="el" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">protocol</a> prot=ipproto_ip)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2060dc1b648f83f8bf5ae3d9ecfcd619">open</a> (type t, protocol prot=ipproto_ip)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">opens socket descriptor  <a href="#2060dc1b648f83f8bf5ae3d9ecfcd619"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#f067195056bb6b5a65c4bc1d2ac7da72">close</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f067195056bb6b5a65c4bc1d2ac7da72"></a><!-- doxytag: member="socketpp::BaseSocket::close" ref="f067195056bb6b5a65c4bc1d2ac7da72" args="()" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#f067195056bb6b5a65c4bc1d2ac7da72">close</a> ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">closes socket descriptor  <a href="#f067195056bb6b5a65c4bc1d2ac7da72"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">closes socket descriptor <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#4cffcd5cae4ef51e953495837fade4c3">setBlocking</a> (bool yes)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets/unsets blocking mode  <a href="#4cffcd5cae4ef51e953495837fade4c3"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;typename T &gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#c845c3a037f0f400fd50dfb58706b6e4">getsockopt</a> (<a class="el" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">level</a> lev, <a class="el" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4">option</a> opt, T &amp;optval)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#c845c3a037f0f400fd50dfb58706b6e4">getsockopt</a> (level lev, option opt, T &amp;optval)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets options set on socket descriptor. Wrapper for <a class="el" href="classsocketpp_1_1BaseSocket.html#c845c3a037f0f400fd50dfb58706b6e4" title="gets options set on socket descriptor. Wrapper for getsockopt()">getsockopt()</a>  <a href="#c845c3a037f0f400fd50dfb58706b6e4"></a><br></td></tr>
 <tr><td class="memTemplParams" nowrap colspan="2">template&lt;typename T &gt; </td></tr>
-<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#3f1f168e4953c046bb1159941da2fa30">setsockopt</a> (<a class="el" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">level</a> lev, <a class="el" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4">option</a> opt, const T &amp;optval)</td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#3f1f168e4953c046bb1159941da2fa30">setsockopt</a> (level lev, option opt, const T &amp;optval)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets options set on socket descriptor. Wrapper for <a class="el" href="classsocketpp_1_1BaseSocket.html#3f1f168e4953c046bb1159941da2fa30" title="sets options set on socket descriptor. Wrapper for setsockopt()">setsockopt()</a>  <a href="#3f1f168e4953c046bb1159941da2fa30"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#769710192256606aaec1a776468d75fa">connect</a> (const std::string &amp;addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#769710192256606aaec1a776468d75fa">connect</a> (const std::string &amp;addr, port_t port=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">connects socket to remote address  <a href="#769710192256606aaec1a776468d75fa"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2bdd6d459e6f9cf2f71636b01787b250">connect</a> (in_addr_t addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2bdd6d459e6f9cf2f71636b01787b250">connect</a> (in_addr_t addr, port_t port=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">connects socket to remote address  <a href="#2bdd6d459e6f9cf2f71636b01787b250"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#eb0f4c84546c22fd9023169701d8fae8">connect</a> (const std::string &amp;addr, const std::string &amp;serv, const char *prot=NULL)</td></tr>
@@ -86,10 +86,10 @@ Inheritance diagram for socketpp::BaseSocket:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#83666b030a93368675a842a992e0c2af">connect</a> (in_addr_t addr, const std::string &amp;serv, const char *prot=NULL)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">connects socket to remote address  <a href="#83666b030a93368675a842a992e0c2af"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#78c2a8e6a5c7dfbc708c9cd637e88e51">bind</a> (const std::string &amp;addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#78c2a8e6a5c7dfbc708c9cd637e88e51">bind</a> (const std::string &amp;addr, port_t port=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket to local given address  <a href="#78c2a8e6a5c7dfbc708c9cd637e88e51"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#d3df73f534900d40f9dff26171ec93b5">bind</a> (in_addr_t addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#d3df73f534900d40f9dff26171ec93b5">bind</a> (in_addr_t addr, port_t port=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket to local given address  <a href="#d3df73f534900d40f9dff26171ec93b5"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#4775f13f8e1cceaaed40106162b2149f">bind</a> (const std::string &amp;addr, const std::string &amp;serv, const char *prot=NULL)</td></tr>
@@ -107,48 +107,54 @@ Inheritance diagram for socketpp::BaseSocket:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#0caed2e7d3f0e4db7d4c1aa3aba52caf">localAddr</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns local address to which socket is bound  <a href="#0caed2e7d3f0e4db7d4c1aa3aba52caf"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#d4a2c0e4932436ef61f911514385d16c">localPort</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">port_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#d4a2c0e4932436ef61f911514385d16c">localPort</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns local port to which socket is bound  <a href="#d4a2c0e4932436ef61f911514385d16c"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#039db642444d2111f2f58ebe032c5f5f">remotePort</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">port_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#039db642444d2111f2f58ebe032c5f5f">remotePort</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns remote port bound to which socket is connected  <a href="#039db642444d2111f2f58ebe032c5f5f"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1">fileno</a> () const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns socket descriptor number  <a href="#c96db07cc917926d895d89cf73734ea1"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90">operator int</a> () const </td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="fa397f810462fe61238dbbf2d9c42c90"></a><!-- doxytag: member="socketpp::BaseSocket::operator int" ref="fa397f810462fe61238dbbf2d9c42c90" args="() const " -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90">operator int</a> () const </td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls <a class="el" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno()</a>  <a href="#fa397f810462fe61238dbbf2d9c42c90"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da">cleanDnsCache</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls <a class="el" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno()</a> <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f3a4c01a7bf911460296a873ce0913da"></a><!-- doxytag: member="socketpp::BaseSocket::cleanDnsCache" ref="f3a4c01a7bf911460296a873ce0913da" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da">cleanDnsCache</a> ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">cleans internal DNS cache  <a href="#f3a4c01a7bf911460296a873ce0913da"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">cleans internal DNS cache <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::map&lt; std::string, <br class="typebreak">
 std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#52bf8df48bf4da48eff4adc690caa211">getDnsCache</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns internal DNS cache  <a href="#52bf8df48bf4da48eff4adc690caa211"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2e066addfaa6f5648e68b3e6b0a15e79">~BaseSocket</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="2e066addfaa6f5648e68b3e6b0a15e79"></a><!-- doxytag: member="socketpp::BaseSocket::~BaseSocket" ref="2e066addfaa6f5648e68b3e6b0a15e79" args="()" -->
+virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2e066addfaa6f5648e68b3e6b0a15e79">~BaseSocket</a> ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">desctuctor which calls <a class="el" href="classsocketpp_1_1BaseSocket.html#f067195056bb6b5a65c4bc1d2ac7da72" title="closes socket descriptor">close()</a>  <a href="#2e066addfaa6f5648e68b3e6b0a15e79"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">desctuctor which calls <a class="el" href="classsocketpp_1_1BaseSocket.html#f067195056bb6b5a65c4bc1d2ac7da72" title="closes socket descriptor">close()</a> <br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Types</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">_select_mode</a> { <a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6">read</a>, 
-<a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685">write</a>, 
-<a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4">err</a>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><b>_select_mode</b> { <b>read</b>, 
+<b>write</b>, 
+<b>err</b>
  }</td></tr>
 
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2">BaseSocket</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="3eb81ecbf94ce83afa6b2f60206c77f2"></a><!-- doxytag: member="socketpp::BaseSocket::BaseSocket" ref="3eb81ecbf94ce83afa6b2f60206c77f2" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2">BaseSocket</a> ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">simply instantiates the class without setting the internal socket descriptor  <a href="#3eb81ecbf94ce83afa6b2f60206c77f2"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#0c142db99422572579c91f3e176035c6">BaseSocket</a> (const <a class="el" href="classsocketpp_1_1BaseSocket.html">BaseSocket</a> &amp;s)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">simply instantiates the class without setting the internal socket descriptor <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="0c142db99422572579c91f3e176035c6"></a><!-- doxytag: member="socketpp::BaseSocket::BaseSocket" ref="0c142db99422572579c91f3e176035c6" args="(const BaseSocket &amp;s)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#0c142db99422572579c91f3e176035c6">BaseSocket</a> (const <a class="el" href="classsocketpp_1_1BaseSocket.html">BaseSocket</a> &amp;s)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">copy constructor  <a href="#0c142db99422572579c91f3e176035c6"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#35c982d7aef2041c100439cf38aa7f4d">BaseSocket</a> (<a class="el" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a> t, <a class="el" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">protocol</a> prot=ipproto_ip)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">copy constructor <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#35c982d7aef2041c100439cf38aa7f4d">BaseSocket</a> (type t, protocol prot=ipproto_ip)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">constructor which opens the socket descriptor calling socket(AF_INET, t, prot)  <a href="#35c982d7aef2041c100439cf38aa7f4d"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#f7e18d6700868abb2b476e797506eafb">BaseSocket</a> (int fd)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">constructor which uses the given socket descriptor  <a href="#f7e18d6700868abb2b476e797506eafb"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#9c925091102c9371be9990fedd605f1c">_select</a> (<a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">_select_mode</a> m)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="9c925091102c9371be9990fedd605f1c"></a><!-- doxytag: member="socketpp::BaseSocket::_select" ref="9c925091102c9371be9990fedd605f1c" args="(_select_mode m)" -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><b>_select</b> (_select_mode m)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#bf4e15b88271e34e606b9b2a5b384b5b">send</a> (const char buf[], size_t size)</td></tr>
 
@@ -162,16 +168,16 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#25fc62d259f6d12f1b1a5001a7512897">recv</a> (std::string &amp;buf, size_t size)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">reads data on socket  <a href="#25fc62d259f6d12f1b1a5001a7512897"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#33ef257bb6eb0f23ae0680df57738f3a">sendto</a> (const char buf[], size_t size, in_addr_t addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#33ef257bb6eb0f23ae0680df57738f3a">sendto</a> (const char buf[], size_t size, in_addr_t addr, port_t port=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends data over socket  <a href="#33ef257bb6eb0f23ae0680df57738f3a"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#d12e08b6f67a95a3181403c70f306f88">sendto</a> (const std::string &amp;buf, in_addr_t addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#d12e08b6f67a95a3181403c70f306f88">sendto</a> (const std::string &amp;buf, in_addr_t addr, port_t port=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends data over socket  <a href="#d12e08b6f67a95a3181403c70f306f88"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2b591cefe9fd8ac9f46ed7fbdd8caa82">sendto</a> (const char buf[], size_t size, const std::string &amp;addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2b591cefe9fd8ac9f46ed7fbdd8caa82">sendto</a> (const char buf[], size_t size, const std::string &amp;addr, port_t port=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends data over socket  <a href="#2b591cefe9fd8ac9f46ed7fbdd8caa82"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#8f98eff253e52ccf3463a0379a10caf2">sendto</a> (const std::string &amp;buf, const std::string &amp;addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> port=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#8f98eff253e52ccf3463a0379a10caf2">sendto</a> (const std::string &amp;buf, const std::string &amp;addr, port_t port=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends data over socket  <a href="#8f98eff253e52ccf3463a0379a10caf2"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#0154d562be27c8b2aa074d5f6bb8ab03">sendto</a> (const char buf[], size_t size, in_addr_t addr, const std::string &amp;serv, const char *prot=NULL)</td></tr>
@@ -186,16 +192,16 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#5fd9737270ee71d2292e70ed625d63f9">sendto</a> (const std::string &amp;buf, const std::string &amp;addr, const std::string &amp;serv, const char *prot=NULL)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends data over socket  <a href="#5fd9737270ee71d2292e70ed625d63f9"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#11ebe50d7ae76c21ef55d38cb87cc700">recvfrom</a> (char buf[], size_t size, in_addr_t &amp;addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> &amp;port)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#11ebe50d7ae76c21ef55d38cb87cc700">recvfrom</a> (char buf[], size_t size, in_addr_t &amp;addr, port_t &amp;port)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">reads data on socket  <a href="#11ebe50d7ae76c21ef55d38cb87cc700"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#d2656c57d84c4ff032cd3d9ad4608bfa">recvfrom</a> (std::string &amp;buf, size_t size, in_addr_t &amp;addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> &amp;port)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#d2656c57d84c4ff032cd3d9ad4608bfa">recvfrom</a> (std::string &amp;buf, size_t size, in_addr_t &amp;addr, port_t &amp;port)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">reads data on socket  <a href="#d2656c57d84c4ff032cd3d9ad4608bfa"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#205fc515468a3df01258f7ebd6fdf38c">recvfrom</a> (char buf[], size_t size, std::string &amp;addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> &amp;port)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#205fc515468a3df01258f7ebd6fdf38c">recvfrom</a> (char buf[], size_t size, std::string &amp;addr, port_t &amp;port)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">reads data on socket  <a href="#205fc515468a3df01258f7ebd6fdf38c"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#259bb054a2abf0ffadf3c75bce4892b0">recvfrom</a> (std::string &amp;buf, size_t size, std::string &amp;addr, <a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> &amp;port)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#259bb054a2abf0ffadf3c75bce4892b0">recvfrom</a> (std::string &amp;buf, size_t size, std::string &amp;addr, port_t &amp;port)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">reads data on socket  <a href="#259bb054a2abf0ffadf3c75bce4892b0"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#ed28eb7e4a5abee65143bcdf162673f4">recvfrom</a> (char buf[], size_t size, in_addr_t &amp;addr)</td></tr>
@@ -211,105 +217,18 @@ std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">reads data on socket  <a href="#ace82407e13a6eee26aa1f5f642d0cfc"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#a5ef6b5fabb3988bced6a23d9631985d">_sd</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a5ef6b5fabb3988bced6a23d9631985d"></a><!-- doxytag: member="socketpp::BaseSocket::_sd" ref="a5ef6b5fabb3988bced6a23d9631985d" args="" -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><b>_sd</b></td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classsocketpp_1_1AddrHandler.html">AddrHandler</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#1e44e3c6c2ecd89c2aa716cc62528620">_h</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="1e44e3c6c2ecd89c2aa716cc62528620"></a><!-- doxytag: member="socketpp::BaseSocket::_h" ref="1e44e3c6c2ecd89c2aa716cc62528620" args="" -->
+<a class="el" href="classsocketpp_1_1AddrHandler.html">AddrHandler</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>_h</b></td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#418af5a1fe752cef38e4c6679780224c">_timeout</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="418af5a1fe752cef38e4c6679780224c"></a><!-- doxytag: member="socketpp::BaseSocket::_timeout" ref="418af5a1fe752cef38e4c6679780224c" args="" -->
+double&nbsp;</td><td class="memItemRight" valign="bottom"><b>_timeout</b></td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-Abstract base class. <hr><h2>Member Enumeration Documentation</h2>
-<a class="anchor" name="21492d478c5aa2ff8a1ad258ccf58062"></a><!-- doxytag: member="socketpp::BaseSocket::_select_mode" ref="21492d478c5aa2ff8a1ad258ccf58062" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">socketpp::BaseSocket::_select_mode</a><code> [protected]</code>          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-<dl compact><dt><b>Enumerator: </b></dt><dd>
-<table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" name="21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6"></a><!-- doxytag: member="read" ref="21492d478c5aa2ff8a1ad258ccf580624782d25091b1ee2cda4f94b131593ce6" args="" -->read</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" name="21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685"></a><!-- doxytag: member="write" ref="21492d478c5aa2ff8a1ad258ccf58062a19a7e61ac1d2a5dcb0efb4f71795685" args="" -->write</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" name="21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4"></a><!-- doxytag: member="err" ref="21492d478c5aa2ff8a1ad258ccf58062401c7b14b3583749a9a5234ff43cb1c4" args="" -->err</em>&nbsp;</td><td>
-</td></tr>
-</table>
-</dl>
-
-</div>
-</div><p>
-<hr><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" name="2e066addfaa6f5648e68b3e6b0a15e79"></a><!-- doxytag: member="socketpp::BaseSocket::~BaseSocket" ref="2e066addfaa6f5648e68b3e6b0a15e79" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">socketpp::BaseSocket::~BaseSocket           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-desctuctor which calls <a class="el" href="classsocketpp_1_1BaseSocket.html#f067195056bb6b5a65c4bc1d2ac7da72" title="closes socket descriptor">close()</a> 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="3eb81ecbf94ce83afa6b2f60206c77f2"></a><!-- doxytag: member="socketpp::BaseSocket::BaseSocket" ref="3eb81ecbf94ce83afa6b2f60206c77f2" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">socketpp::BaseSocket::BaseSocket           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-simply instantiates the class without setting the internal socket descriptor 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="0c142db99422572579c91f3e176035c6"></a><!-- doxytag: member="socketpp::BaseSocket::BaseSocket" ref="0c142db99422572579c91f3e176035c6" args="(const BaseSocket &amp;s)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">socketpp::BaseSocket::BaseSocket           </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classsocketpp_1_1BaseSocket.html">BaseSocket</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>s</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-copy constructor 
-<p>
-
-</div>
-</div><p>
+Abstract base class. <hr><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" name="35c982d7aef2041c100439cf38aa7f4d"></a><!-- doxytag: member="socketpp::BaseSocket::BaseSocket" ref="35c982d7aef2041c100439cf38aa7f4d" args="(type t, protocol prot=ipproto_ip)" -->
 <div class="memitem">
 <div class="memproto">
@@ -317,13 +236,13 @@ copy constructor
         <tr>
           <td class="memname">socketpp::BaseSocket::BaseSocket           </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a>&nbsp;</td>
+          <td class="paramtype">type&nbsp;</td>
           <td class="paramname"> <em>t</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">protocol</a>&nbsp;</td>
+          <td class="paramtype">protocol&nbsp;</td>
           <td class="paramname"> <em>prot</em> = <code>ipproto_ip</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -375,26 +294,6 @@ constructor which uses the given socket descriptor
 </div>
 </div><p>
 <hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="9c925091102c9371be9990fedd605f1c"></a><!-- doxytag: member="socketpp::BaseSocket::_select" ref="9c925091102c9371be9990fedd605f1c" args="(_select_mode m)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int socketpp::BaseSocket::_select           </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classsocketpp_1_1BaseSocket.html#21492d478c5aa2ff8a1ad258ccf58062">_select_mode</a>&nbsp;</td>
-          <td class="paramname"> <em>m</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-</div>
-</div><p>
 <a class="anchor" name="aab800bcb5ee48cd4410ae2b9ed83e23"></a><!-- doxytag: member="socketpp::BaseSocket::bind" ref="aab800bcb5ee48cd4410ae2b9ed83e23" args="(in_addr_t addr, const std::string &amp;serv, const char *prot=NULL)" -->
 <div class="memitem">
 <div class="memproto">
@@ -498,7 +397,7 @@ binds socket to local given address
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td>
+          <td class="paramtype">port_t&nbsp;</td>
           <td class="paramname"> <em>port</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -536,7 +435,7 @@ binds socket to local given address
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td>
+          <td class="paramtype">port_t&nbsp;</td>
           <td class="paramname"> <em>port</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -558,50 +457,6 @@ binds socket to local given address
   </table>
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd><a class="el" href="classsocketpp_1_1BaseSocket.html#78c2a8e6a5c7dfbc708c9cd637e88e51" title="binds socket to local given address">bind()</a> return value </dd></dl>
-
-</div>
-</div><p>
-<a class="anchor" name="f3a4c01a7bf911460296a873ce0913da"></a><!-- doxytag: member="socketpp::BaseSocket::cleanDnsCache" ref="f3a4c01a7bf911460296a873ce0913da" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void socketpp::BaseSocket::cleanDnsCache           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-cleans internal DNS cache 
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="f067195056bb6b5a65c4bc1d2ac7da72"></a><!-- doxytag: member="socketpp::BaseSocket::close" ref="f067195056bb6b5a65c4bc1d2ac7da72" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void socketpp::BaseSocket::close           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-closes socket descriptor 
-<p>
-
-<p>Reimplemented in <a class="el" href="classsocketpp_1_1SockBuf.html#28f88c6ac0570ee5e9d57e255733b0f9">socketpp::SockBuf</a>.</p>
 
 </div>
 </div><p>
@@ -708,7 +563,7 @@ connects socket to remote address
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td>
+          <td class="paramtype">port_t&nbsp;</td>
           <td class="paramname"> <em>port</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -746,7 +601,7 @@ connects socket to remote address
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td>
+          <td class="paramtype">port_t&nbsp;</td>
           <td class="paramname"> <em>port</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -824,13 +679,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">int socketpp::BaseSocket::getsockopt           </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">level</a>&nbsp;</td>
+          <td class="paramtype">level&nbsp;</td>
           <td class="paramname"> <em>lev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4">option</a>&nbsp;</td>
+          <td class="paramtype">option&nbsp;</td>
           <td class="paramname"> <em>opt</em>, </td>
         </tr>
         <tr>
@@ -889,7 +744,7 @@ returns local address to which socket is bound
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> socketpp::BaseSocket::localPort           </td>
+          <td class="memname">port_t socketpp::BaseSocket::localPort           </td>
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
@@ -913,13 +768,13 @@ returns local port to which socket is bound
         <tr>
           <td class="memname">void socketpp::BaseSocket::open           </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#635f4c3b3f85aba331587404d59ae52d">type</a>&nbsp;</td>
+          <td class="paramtype">type&nbsp;</td>
           <td class="paramname"> <em>t</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#2969678def1c6c8cb4102802ca82e2cf">protocol</a>&nbsp;</td>
+          <td class="paramtype">protocol&nbsp;</td>
           <td class="paramname"> <em>prot</em> = <code>ipproto_ip</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -940,27 +795,6 @@ opens socket descriptor
     <tr><td valign="top"></td><td valign="top"><em>prot</em>&nbsp;</td><td>socket protocol </td></tr>
   </table>
 </dl>
-
-</div>
-</div><p>
-<a class="anchor" name="fa397f810462fe61238dbbf2d9c42c90"></a><!-- doxytag: member="socketpp::BaseSocket::operator int" ref="fa397f810462fe61238dbbf2d9c42c90" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">socketpp::BaseSocket::operator int           </td>
-          <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td> const<code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-calls <a class="el" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno()</a> 
-<p>
 
 </div>
 </div><p>
@@ -1245,7 +1079,7 @@ reads data on socket
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> &amp;&nbsp;</td>
+          <td class="paramtype">port_t &amp;&nbsp;</td>
           <td class="paramname"> <em>port</em></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -1297,7 +1131,7 @@ reads data on socket
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> &amp;&nbsp;</td>
+          <td class="paramtype">port_t &amp;&nbsp;</td>
           <td class="paramname"> <em>port</em></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -1349,7 +1183,7 @@ reads data on socket
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> &amp;&nbsp;</td>
+          <td class="paramtype">port_t &amp;&nbsp;</td>
           <td class="paramname"> <em>port</em></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -1401,7 +1235,7 @@ reads data on socket
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> &amp;&nbsp;</td>
+          <td class="paramtype">port_t &amp;&nbsp;</td>
           <td class="paramname"> <em>port</em></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -1455,7 +1289,7 @@ returns remote address to which socket is connected
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a> socketpp::BaseSocket::remotePort           </td>
+          <td class="memname">port_t socketpp::BaseSocket::remotePort           </td>
           <td>(</td>
           <td class="paramname">          </td>
           <td>&nbsp;)&nbsp;</td>
@@ -1779,7 +1613,7 @@ sends data over socket
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td>
+          <td class="paramtype">port_t&nbsp;</td>
           <td class="paramname"> <em>port</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -1830,7 +1664,7 @@ sends data over socket
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td>
+          <td class="paramtype">port_t&nbsp;</td>
           <td class="paramname"> <em>port</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -1876,7 +1710,7 @@ sends data over socket
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td>
+          <td class="paramtype">port_t&nbsp;</td>
           <td class="paramname"> <em>port</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -1927,7 +1761,7 @@ sends data over socket
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#5517ef80f249b891a2ba64b95fc1e723">port_t</a>&nbsp;</td>
+          <td class="paramtype">port_t&nbsp;</td>
           <td class="paramname"> <em>port</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -1990,13 +1824,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">int socketpp::BaseSocket::setsockopt           </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#4dbb83d08769b55fc6e283b73ae11bb5">level</a>&nbsp;</td>
+          <td class="paramtype">level&nbsp;</td>
           <td class="paramname"> <em>lev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacesocketpp.html#ea335944de1f6b81489c90507884cfc4">option</a>&nbsp;</td>
+          <td class="paramtype">option&nbsp;</td>
           <td class="paramname"> <em>opt</em>, </td>
         </tr>
         <tr>
@@ -2055,56 +1889,10 @@ sets a <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related
 
 </div>
 </div><p>
-<hr><h2>Member Data Documentation</h2>
-<a class="anchor" name="1e44e3c6c2ecd89c2aa716cc62528620"></a><!-- doxytag: member="socketpp::BaseSocket::_h" ref="1e44e3c6c2ecd89c2aa716cc62528620" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsocketpp_1_1AddrHandler.html">AddrHandler</a> <a class="el" href="classsocketpp_1_1BaseSocket.html#1e44e3c6c2ecd89c2aa716cc62528620">socketpp::BaseSocket::_h</a><code> [protected]</code>          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="a5ef6b5fabb3988bced6a23d9631985d"></a><!-- doxytag: member="socketpp::BaseSocket::_sd" ref="a5ef6b5fabb3988bced6a23d9631985d" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classsocketpp_1_1BaseSocket.html#a5ef6b5fabb3988bced6a23d9631985d">socketpp::BaseSocket::_sd</a><code> [protected]</code>          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-</div>
-</div><p>
-<a class="anchor" name="418af5a1fe752cef38e4c6679780224c"></a><!-- doxytag: member="socketpp::BaseSocket::_timeout" ref="418af5a1fe752cef38e4c6679780224c" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="classsocketpp_1_1BaseSocket.html#418af5a1fe752cef38e4c6679780224c">socketpp::BaseSocket::_timeout</a><code> [protected]</code>          </td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-
-</div>
-</div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="BaseSocket_8h-source.html">BaseSocket.h</a><li><a class="el" href="BaseSocket_8cpp.html">BaseSocket.cpp</a></ul>
+<li><a class="el" href="BaseSocket_8h-source.html">BaseSocket.h</a><li>BaseSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 11:11:47 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 13:26:52 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

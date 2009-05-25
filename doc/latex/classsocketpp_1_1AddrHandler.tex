@@ -16,14 +16,17 @@ std::string \hyperlink{classsocketpp_1_1AddrHandler_2e9b9e6dc7ea4fc4a3500665b3f4
 \begin{CompactList}\small\item\em tries to obtain an hostname from a IP address, through a reverse DNS lookup \item\end{CompactList}\item 
 std::map$<$ std::string, std::string $>$ \hyperlink{classsocketpp_1_1AddrHandler_4e10f2291b27d7db2a2860502721f960}{getDnsCache} ()
 \begin{CompactList}\small\item\em returns internal DNS cache \item\end{CompactList}\item 
-void \hyperlink{classsocketpp_1_1AddrHandler_89a2929af6c042fd7e16661303dfabcb}{cleanDnsCache} ()
+\hypertarget{classsocketpp_1_1AddrHandler_89a2929af6c042fd7e16661303dfabcb}{
+void \hyperlink{classsocketpp_1_1AddrHandler_89a2929af6c042fd7e16661303dfabcb}{cleanDnsCache} ()}
+\label{classsocketpp_1_1AddrHandler_89a2929af6c042fd7e16661303dfabcb}
+
 \begin{CompactList}\small\item\em cleans internal DNS cache \item\end{CompactList}\end{CompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{CompactItemize}
 \item 
-static \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} \hyperlink{classsocketpp_1_1AddrHandler_b4a42f2b0f3842d681ea0cbe6810d6ff}{getservbyname} (const std::string \&name, const char $\ast$prot=NULL)
+static port\_\-t \hyperlink{classsocketpp_1_1AddrHandler_b4a42f2b0f3842d681ea0cbe6810d6ff}{getservbyname} (const std::string \&name, const char $\ast$prot=NULL)
 \begin{CompactList}\small\item\em obtains port conventionally bound to given service name \item\end{CompactList}\item 
-static std::string \hyperlink{classsocketpp_1_1AddrHandler_f221cac56bf3808494806d335a56bb87}{getservbyport} (\hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port, const char $\ast$prot=NULL)  throw ()
+static std::string \hyperlink{classsocketpp_1_1AddrHandler_f221cac56bf3808494806d335a56bb87}{getservbyport} (port\_\-t port, const char $\ast$prot=NULL)  throw ()
 \begin{CompactList}\small\item\em obtains service name conventionally bound to given port \item\end{CompactList}\item 
 static bool \hyperlink{classsocketpp_1_1AddrHandler_652e24c273f7905cebf8d04b3cfef74d}{isIPv4} (const std::string \&str)  throw ()
 \begin{CompactList}\small\item\em checks whether given string is in IPv4 format \item\end{CompactList}\item 
@@ -37,15 +40,6 @@ static std::string \hyperlink{classsocketpp_1_1AddrHandler_a4377d84c8ea976aeada2
 Class which deals with several things, like dns resolving or address format conversion. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classsocketpp_1_1AddrHandler_89a2929af6c042fd7e16661303dfabcb}{
-\index{socketpp::AddrHandler@{socketpp::AddrHandler}!cleanDnsCache@{cleanDnsCache}}
-\index{cleanDnsCache@{cleanDnsCache}!socketpp::AddrHandler@{socketpp::AddrHandler}}
-\subsubsection[{cleanDnsCache}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::AddrHandler::cleanDnsCache ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1AddrHandler_89a2929af6c042fd7e16661303dfabcb}
-
-
-cleans internal DNS cache 
-
 \hypertarget{classsocketpp_1_1AddrHandler_4e10f2291b27d7db2a2860502721f960}{
 \index{socketpp::AddrHandler@{socketpp::AddrHandler}!getDnsCache@{getDnsCache}}
 \index{getDnsCache@{getDnsCache}!socketpp::AddrHandler@{socketpp::AddrHandler}}
@@ -92,7 +86,7 @@ resolves given name through a DNS lookup
 \hypertarget{classsocketpp_1_1AddrHandler_b4a42f2b0f3842d681ea0cbe6810d6ff}{
 \index{socketpp::AddrHandler@{socketpp::AddrHandler}!getservbyname@{getservbyname}}
 \index{getservbyname@{getservbyname}!socketpp::AddrHandler@{socketpp::AddrHandler}}
-\subsubsection[{getservbyname}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\_\-t} socketpp::AddrHandler::getservbyname (const std::string \& {\em name}, \/  const char $\ast$ {\em prot} = {\tt NULL})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\subsubsection[{getservbyname}]{\setlength{\rightskip}{0pt plus 5cm}port\_\-t socketpp::AddrHandler::getservbyname (const std::string \& {\em name}, \/  const char $\ast$ {\em prot} = {\tt NULL})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
 \label{classsocketpp_1_1AddrHandler_b4a42f2b0f3842d681ea0cbe6810d6ff}
 
 
@@ -108,7 +102,7 @@ obtains port conventionally bound to given service name
 \hypertarget{classsocketpp_1_1AddrHandler_f221cac56bf3808494806d335a56bb87}{
 \index{socketpp::AddrHandler@{socketpp::AddrHandler}!getservbyport@{getservbyport}}
 \index{getservbyport@{getservbyport}!socketpp::AddrHandler@{socketpp::AddrHandler}}
-\subsubsection[{getservbyport}]{\setlength{\rightskip}{0pt plus 5cm}std::string socketpp::AddrHandler::getservbyport ({\bf port\_\-t} {\em port}, \/  const char $\ast$ {\em prot} = {\tt NULL})  throw ()\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\subsubsection[{getservbyport}]{\setlength{\rightskip}{0pt plus 5cm}std::string socketpp::AddrHandler::getservbyport (port\_\-t {\em port}, \/  const char $\ast$ {\em prot} = {\tt NULL})  throw ()\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
 \label{classsocketpp_1_1AddrHandler_f221cac56bf3808494806d335a56bb87}
 
 
@@ -173,5 +167,5 @@ checks whether given string is in IPv4 format
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 
-\hyperlink{AddrHandler_8h}{AddrHandler.h}\item 
-\hyperlink{AddrHandler_8cpp}{AddrHandler.cpp}\end{CompactItemize}
+AddrHandler.h\item 
+AddrHandler.cpp\end{CompactItemize}

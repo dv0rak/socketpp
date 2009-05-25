@@ -16,19 +16,23 @@ Inheritance diagram for socketpp::SocketServer::\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hyperlink{classsocketpp_1_1SocketServer_7a6c01da97c291e40adfcd33a5548c1b}{SocketServer} ()
-\item 
-\hyperlink{classsocketpp_1_1SocketServer_3a6955b6d5617457cf31206ea9492786}{SocketServer} (\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} t)
+\hypertarget{classsocketpp_1_1SocketServer_3a6955b6d5617457cf31206ea9492786}{
+\hyperlink{classsocketpp_1_1SocketServer_3a6955b6d5617457cf31206ea9492786}{SocketServer} (type t)}
+\label{classsocketpp_1_1SocketServer_3a6955b6d5617457cf31206ea9492786}
+
 \begin{CompactList}\small\item\em calls BaseSocket(t) \item\end{CompactList}\item 
-\hyperlink{classsocketpp_1_1SocketServer_e83ff222d6d4dd600dc162926afdac0f}{SocketServer} (const \hyperlink{classsocketpp_1_1SocketServer}{SocketServer} \&s)
+\hypertarget{classsocketpp_1_1SocketServer_e83ff222d6d4dd600dc162926afdac0f}{
+\hyperlink{classsocketpp_1_1SocketServer_e83ff222d6d4dd600dc162926afdac0f}{SocketServer} (const \hyperlink{classsocketpp_1_1SocketServer}{SocketServer} \&s)}
+\label{classsocketpp_1_1SocketServer_e83ff222d6d4dd600dc162926afdac0f}
+
 \begin{CompactList}\small\item\em copy constructor \item\end{CompactList}\item 
-\hyperlink{classsocketpp_1_1SocketServer_73c5125f9e5a6cf03dc15f6d4250e345}{SocketServer} (\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} t, in\_\-addr\_\-t addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port, unsigned int maxconn=0)
+\hyperlink{classsocketpp_1_1SocketServer_73c5125f9e5a6cf03dc15f6d4250e345}{SocketServer} (type t, in\_\-addr\_\-t addr, port\_\-t port, unsigned int maxconn=0)
 \begin{CompactList}\small\item\em binds socket and puts it in listening mode \item\end{CompactList}\item 
-\hyperlink{classsocketpp_1_1SocketServer_2b43397fd614dc7953559d7372f1c6ca}{SocketServer} (\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} t, const std::string \&addr, \hyperlink{namespacesocketpp_5517ef80f249b891a2ba64b95fc1e723}{port\_\-t} port, unsigned int maxconn=0)
+\hyperlink{classsocketpp_1_1SocketServer_2b43397fd614dc7953559d7372f1c6ca}{SocketServer} (type t, const std::string \&addr, port\_\-t port, unsigned int maxconn=0)
 \begin{CompactList}\small\item\em binds socket and puts it in listening mode \item\end{CompactList}\item 
-\hyperlink{classsocketpp_1_1SocketServer_594f3a739f4cd053f9fd0512e42473be}{SocketServer} (\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} t, in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL, unsigned int maxconn=0)
+\hyperlink{classsocketpp_1_1SocketServer_594f3a739f4cd053f9fd0512e42473be}{SocketServer} (type t, in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL, unsigned int maxconn=0)
 \begin{CompactList}\small\item\em binds socket and puts it in listening mode \item\end{CompactList}\item 
-\hyperlink{classsocketpp_1_1SocketServer_667f8c2b7b1325c80f018ecf85a9551f}{SocketServer} (\hyperlink{namespacesocketpp_635f4c3b3f85aba331587404d59ae52d}{type} t, const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL, unsigned int maxconn=0)
+\hyperlink{classsocketpp_1_1SocketServer_667f8c2b7b1325c80f018ecf85a9551f}{SocketServer} (type t, const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL, unsigned int maxconn=0)
 \begin{CompactList}\small\item\em binds socket and puts it in listening mode \item\end{CompactList}\item 
 \hyperlink{classsocketpp_1_1Socket}{Socket} \& \hyperlink{classsocketpp_1_1SocketServer_de24bd723d353d62d034718a1d95c02f}{accept} ()
 \begin{CompactList}\small\item\em Accepts connection request. \item\end{CompactList}\item 
@@ -42,35 +46,10 @@ void \hyperlink{classsocketpp_1_1SocketServer_0ded92a6348a6cf953d9f646fac43ac2}{
 TCP server class which can accept simultaneously multiple connections through multithreading. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classsocketpp_1_1SocketServer_7a6c01da97c291e40adfcd33a5548c1b}{
-\index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
-\index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
-\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1SocketServer_7a6c01da97c291e40adfcd33a5548c1b}
-
-
-\hypertarget{classsocketpp_1_1SocketServer_3a6955b6d5617457cf31206ea9492786}{
-\index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
-\index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
-\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer ({\bf type} {\em t})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1SocketServer_3a6955b6d5617457cf31206ea9492786}
-
-
-calls BaseSocket(t) 
-
-\hypertarget{classsocketpp_1_1SocketServer_e83ff222d6d4dd600dc162926afdac0f}{
-\index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
-\index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
-\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer (const {\bf SocketServer} \& {\em s})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1SocketServer_e83ff222d6d4dd600dc162926afdac0f}
-
-
-copy constructor 
-
 \hypertarget{classsocketpp_1_1SocketServer_73c5125f9e5a6cf03dc15f6d4250e345}{
 \index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
 \index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
-\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer ({\bf type} {\em t}, \/  in\_\-addr\_\-t {\em addr}, \/  {\bf port\_\-t} {\em port}, \/  unsigned int {\em maxconn} = {\tt 0})}}
+\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer (type {\em t}, \/  in\_\-addr\_\-t {\em addr}, \/  port\_\-t {\em port}, \/  unsigned int {\em maxconn} = {\tt 0})}}
 \label{classsocketpp_1_1SocketServer_73c5125f9e5a6cf03dc15f6d4250e345}
 
 
@@ -84,7 +63,7 @@ binds socket and puts it in listening mode
 \hypertarget{classsocketpp_1_1SocketServer_2b43397fd614dc7953559d7372f1c6ca}{
 \index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
 \index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
-\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer ({\bf type} {\em t}, \/  const std::string \& {\em addr}, \/  {\bf port\_\-t} {\em port}, \/  unsigned int {\em maxconn} = {\tt 0})}}
+\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer (type {\em t}, \/  const std::string \& {\em addr}, \/  port\_\-t {\em port}, \/  unsigned int {\em maxconn} = {\tt 0})}}
 \label{classsocketpp_1_1SocketServer_2b43397fd614dc7953559d7372f1c6ca}
 
 
@@ -98,7 +77,7 @@ binds socket and puts it in listening mode
 \hypertarget{classsocketpp_1_1SocketServer_594f3a739f4cd053f9fd0512e42473be}{
 \index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
 \index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
-\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer ({\bf type} {\em t}, \/  in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  unsigned int {\em maxconn} = {\tt 0})}}
+\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer (type {\em t}, \/  in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  unsigned int {\em maxconn} = {\tt 0})}}
 \label{classsocketpp_1_1SocketServer_594f3a739f4cd053f9fd0512e42473be}
 
 
@@ -112,7 +91,7 @@ binds socket and puts it in listening mode
 \hypertarget{classsocketpp_1_1SocketServer_667f8c2b7b1325c80f018ecf85a9551f}{
 \index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
 \index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
-\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer ({\bf type} {\em t}, \/  const std::string \& {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  unsigned int {\em maxconn} = {\tt 0})}}
+\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer (type {\em t}, \/  const std::string \& {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  unsigned int {\em maxconn} = {\tt 0})}}
 \label{classsocketpp_1_1SocketServer_667f8c2b7b1325c80f018ecf85a9551f}
 
 
@@ -169,5 +148,5 @@ puts server in multithreaded mode
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 
-\hyperlink{SocketServer_8h}{SocketServer.h}\item 
-\hyperlink{SocketServer_8cpp}{SocketServer.cpp}\end{CompactItemize}
+SocketServer.h\item 
+SocketServer.cpp\end{CompactItemize}

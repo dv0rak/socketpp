@@ -10,36 +10,59 @@
 
 namespace ftplib {
 
-class error : public std::exception {
+///@brief	exception thrown when a FTP error code in the range 400-499 is received
+class error_temp : public std::exception {
 public:
-    virtual const char * what() const throw() { return _msg.c_str(); }
-    ~error() throw() {}
-protected:
-    std::string _msg;
-
-    error(const std::string& msg) throw() { _msg = msg; }
-};
-
-class error_temp : public error {
-public:
-    error_temp(int code, const std::string &msg) throw() : error(msg) { _code = code; }
+    error_temp(int code, const std::string &msg) throw()
+    {
+        _code = code;
+        _msg = msg;
+    }
     ~error_temp() throw() {}
+
+    virtual const char * what() const throw()
+    {
+        return _msg.c_str(); 
+    }
 private:
     int _code;
+    std::string _msg;
 };
 
-class error_perm : public error {
+///@brief	exception thrown when a FTP error code in the range 500-599 is received
+class error_perm : public std::exception {
 public:
-    error_perm(int code, const std::string &msg) throw() : error(msg) { _code = code; }
+    error_perm(int code, const std::string &msg) throw()
+    {
+        _code = code;
+        _msg = msg;
+    }
     ~error_perm() throw() {}
+    
+    virtual const char * what() const throw()
+    {
+        return _msg.c_str(); 
+    }
 private:
     int _code;
+    std::string _msg;
 };
 
-class error_proto : public error {
+///@brief	exception thrown when a unexpected reply from the server is received
+class error_proto : public std::exception {
 public:
-    error_proto(const std::string &msg) throw() : error(msg) {}
+    error_proto(const std::string &msg) throw()
+    {
+        _msg = msg;
+    }
     ~error_proto() throw() {}
+    
+    virtual const char * what() const throw()
+    {
+        return _msg.c_str(); 
+    }
+private:
+    std::string _msg;
 };
 
 ///@brief This class tries to imitate the ftplib.FTP python class, with a few differences.
