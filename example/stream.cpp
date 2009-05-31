@@ -15,9 +15,9 @@ int main()
     ss<< "Host: www.google.it"<<crlf;
     ss<< "Connection: close"<<crlf<<crlf<<flush;
 
-    char line[SockBuf::BUFSIZE];
+    std::string line;
     while(ss.good()) {
-        ss.getline(line,sizeof(line));
+        getline(ss, line);
         cout<< line<<endl;
     }
     ss->close();

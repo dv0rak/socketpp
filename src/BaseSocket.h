@@ -153,7 +153,7 @@ protected:
     BaseSocket(int fd);
 
     int _select(_select_mode m);
-    
+
     ///@brief	sends data over socket
     ///@param	buf	data buffer
     ///@param   size	size of data in bytes

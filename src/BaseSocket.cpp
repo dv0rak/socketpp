@@ -21,7 +21,7 @@ void BaseSocket::settimeout(double time)
 BaseSocket::BaseSocket()
 {
     _timeout = 0.0;
-    _sd        = -1;
+    _sd = -1;
 }
 
 BaseSocket::BaseSocket(type t, protocol prot)
@@ -52,7 +52,7 @@ int BaseSocket::connect(const std::string& addr, port_t port)
 int BaseSocket::connect(in_addr_t addr, port_t port)
 {
     int ret;
-    struct sockaddr_in remote=__initaddr(htonl(addr),htons(port));
+    struct sockaddr_in remote = __initaddr(htonl(addr),htons(port));
 
     if(_timeout == 0.0)  {
         if((ret=::connect(_sd,(struct sockaddr*)&remote,sizeof(remote))) < 0) {
@@ -117,7 +117,7 @@ int BaseSocket::bind(in_addr_t addr, port_t port)
 void BaseSocket::close()
 {
     ::close(_sd);
-    _sd        = -1;
+    _sd = -1;
 }
 
 BaseSocket::~BaseSocket()
@@ -128,7 +128,7 @@ BaseSocket::~BaseSocket()
 std::string BaseSocket::remoteAddr()
 {
     struct sockaddr_in remote;
-    size_t len=sizeof(remote);
+    size_t len = sizeof(remote);
     if(::getpeername(_sd,(struct sockaddr*)&remote,&len) < 0) {
         throw error("remoteAddr",errno,"getpeername");
     }
@@ -138,7 +138,7 @@ std::string BaseSocket::remoteAddr()
 port_t BaseSocket::remotePort()
 {
     struct sockaddr_in remote;
-    size_t len=sizeof(remote);
+    size_t len = sizeof(remote);
     if(::getpeername(_sd,(struct sockaddr*)&remote,&len) < 0) {
         throw error("remotePort",errno,"getpeername");
     }
@@ -148,7 +148,7 @@ port_t BaseSocket::remotePort()
 std::string BaseSocket::localAddr()
 {
     struct sockaddr_in local;
-    size_t len=sizeof(local);
+    size_t len = sizeof(local);
     if(::getsockname(_sd,(struct sockaddr*)&local,&len) < 0) {
         throw error("localAddr",errno,"getsockname");
     }
@@ -158,7 +158,7 @@ std::string BaseSocket::localAddr()
 port_t BaseSocket::localPort()
 {
     struct sockaddr_in local;
-    size_t len=sizeof(local);
+    size_t len = sizeof(local);
     if(::getsockname(_sd,(struct sockaddr*)&local,&len) < 0) {
         throw error("localPort",errno,"getsockname");
     }
@@ -168,9 +168,9 @@ port_t BaseSocket::localPort()
 struct sockaddr_in BaseSocket::__initaddr(in_addr_t addr, port_t port)
 {
     struct sockaddr_in in;
-    in.sin_family=AF_INET;
-    in.sin_port=port;
-    in.sin_addr.s_addr=addr;
+    in.sin_family = AF_INET;
+    in.sin_port   = port;
+    in.sin_addr.s_addr = addr;
     return in;
 }
 
@@ -204,15 +204,26 @@ int BaseSocket::bind(in_addr_t addr, const std::string& serv, const char *prot)
 size_t BaseSocket::send(const char buf[], size_t size)
 {
     int ret = 0, n;
-    while(size > 0) {
-        if(_timeout!=0.0 && _select(write)==0) 
-            throw timeout("send","timeout expired");
+    
+    if(_timeout != 0.0) {
+        while(size > 0) {
+            if(_select(write) == 0) 
+                throw timeout("send","timeout expired");
 
-        if((n=::write(_sd,buf+ret,size)) < 0)
-            throw error("send",errno,"write");
-        
-        size -= n;
-        ret += n;
+            if((n=::write(_sd,buf+ret,size)) < 0)
+                throw error("send",errno,"write");
+
+            size -= n;
+            ret += n;
+        }
+    } else {
+        while(size > 0) {
+            if((n=::write(_sd,buf+ret,size)) < 0)
+                throw error("send",errno,"write");
+
+            size -= n;
+            ret += n;
+        }
     }
     return ret;
 }
@@ -238,7 +249,7 @@ size_t BaseSocket::recv(char buf[], size_t size)
 size_t BaseSocket::recv(std::string& buf, size_t size)
 {
     char *nbuf = new char[size];
-    int n=recv(nbuf,size);
+    int n = recv(nbuf,size);
     buf.assign(nbuf,n);
     delete[] nbuf;
     return n;
@@ -248,14 +259,26 @@ size_t BaseSocket::sendto(const char buf[], size_t size, in_addr_t addr, port_t 
 {
     int n, ret=0;
     struct sockaddr_in remote=__initaddr(htonl(addr),htons(port));
-    while(size > 0) {
-        if(_timeout!=0.0 && _select(write)==0) 
-            throw timeout("sendto","timeout expired");
+    
+    if(_timeout != 0.0) {
+        
+        while(size > 0) {
+            if(_select(write) == 0) 
+                throw timeout("sendto","timeout expired");
 
-        if((n=::sendto(_sd,buf+ret,size,0,(struct sockaddr*)&remote,sizeof(remote))) < 0)
-            throw error("sendto",errno,"sendto");
-        size -= n;
-        ret += n;
+            if((n=::sendto(_sd,buf+ret,size,0,(struct sockaddr*)&remote,sizeof(remote))) < 0)
+                throw error("sendto",errno,"sendto");
+            size -= n;
+            ret += n;
+        }
+    } else {
+
+        while(size > 0) {
+            if((n=::sendto(_sd,buf+ret,size,0,(struct sockaddr*)&remote,sizeof(remote))) < 0)
+                throw error("sendto",errno,"sendto");
+            size -= n;
+            ret += n;
+        }
     }
     return ret;
 }
@@ -268,7 +291,7 @@ size_t BaseSocket::sendto(const std::string& buf, in_addr_t addr, port_t port)
 size_t BaseSocket::sendto(const char buf[], size_t size, const std::string& addr, port_t port)
 {
     in_addr_t in;
-    in=_h.inet_aton(_h.isIPv4(addr)? addr: _h.gethostbyname(addr));
+    in = _h.inet_aton(_h.isIPv4(addr)? addr: _h.gethostbyname(addr));
     return sendto(buf,size,in,port);
 }
 
@@ -305,7 +328,7 @@ size_t BaseSocket::recvfrom(char buf[], size_t size, in_addr_t& addr, port_t& po
 {
     int n;
     struct sockaddr_in remote;
-    size_t slen=sizeof(remote);
+    size_t slen = sizeof(remote);
 
     if(_timeout!=0.0 && _select(read)==0) 
         throw timeout("recvfrom","timeout expired");
@@ -313,15 +336,15 @@ size_t BaseSocket::recvfrom(char buf[], size_t size, in_addr_t& addr, port_t& po
     if((n=::recvfrom(_sd,buf,size,0,(struct sockaddr*)&remote,&slen)) < 0) {
         throw error("recvfrom",errno,"recvfrom");
     }
-    addr=::ntohl(remote.sin_addr.s_addr);
-    port=::ntohs(remote.sin_port);
+    addr = ::ntohl(remote.sin_addr.s_addr);
+    port = ::ntohs(remote.sin_port);
     return n;
 }
 
 size_t BaseSocket::recvfrom(std::string &buf, size_t size, in_addr_t& addr, port_t& port)
 {
     char *nbuf = new char[size];
-    int n=recvfrom(nbuf,size,addr,port);
+    int n = recvfrom(nbuf,size,addr,port);
     buf.assign(nbuf,n);
     delete[] nbuf;
     return n;
@@ -330,15 +353,15 @@ size_t BaseSocket::recvfrom(std::string &buf, size_t size, in_addr_t& addr, port
 size_t BaseSocket::recvfrom(char buf[], size_t size, std::string& addr, port_t& port)
 {
     in_addr_t in;
-    size_t n=recvfrom(buf,size,in,port);
-    addr=_h.inet_ntoa(in);
+    size_t n = recvfrom(buf,size,in,port);
+    addr = _h.inet_ntoa(in);
     return n;
 }
 
 size_t BaseSocket::recvfrom(std::string &buf, size_t size, std::string& addr, port_t& port)
 {
     char *nbuf = new char[size];
-    int n=recvfrom(nbuf,size,addr,port);
+    int n = recvfrom(nbuf,size,addr,port);
     buf.assign(nbuf,n);
     delete[] nbuf;
     return n;
@@ -353,7 +376,7 @@ size_t BaseSocket::recvfrom(char buf[], size_t size, in_addr_t& addr)
 size_t BaseSocket::recvfrom(std::string &buf, size_t size, in_addr_t& addr)
 {
     char *nbuf = new char[size];
-    int n=recvfrom(nbuf,size,addr);
+    int n = recvfrom(nbuf,size,addr);
     buf.assign(nbuf,n);
     delete[] nbuf;
     return n;
@@ -368,7 +391,7 @@ size_t BaseSocket::recvfrom(char buf[], size_t size, std::string& addr)
 size_t BaseSocket::recvfrom(std::string &buf, size_t size, std::string& addr)
 {
     char *nbuf = new char[size];
-    int n=recvfrom(nbuf,size,addr);
+    int n = recvfrom(nbuf,size,addr);
     buf.assign(nbuf,n);
     delete[] nbuf;
     return n;

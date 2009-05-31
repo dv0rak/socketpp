@@ -62,7 +62,7 @@ std::vector<std::string> FTP::nlst(const std::string &path)
     retrlines("NLST "+path,resp);
     while(resp.good()) {
         ret.resize(ret.size()+1);
-        resp >> ret[ret.size()-1];
+        resp >> ret.back();
     }
     ret.resize(ret.size()-1);
     return ret;
@@ -77,7 +77,7 @@ std::string FTP::pwd()
 {
     std::string resp = sendcmd("PWD");
     std::string pattern = "\"(.*)\"";
-    std::vector<std::string> dir(2);
+    std::vector<std::string> dir;
     
     if(_regex(resp, pattern, 2, dir) < 0) {
         throw error_proto("Unexpected reply to PWD command :\n" +resp);
@@ -139,10 +139,9 @@ std::string FTP::storlines(const std::string &cmd, std::istream &is)
 
     std::string buf;
     while(is.good()) {
-        char line[BUFSIZ];
-        is.getline(line, sizeof line);
-        buf += line;
-        buf += "\r\n";
+        std::string line;
+        getline(is, line);
+        buf += line + "\r\n";
     }
     s.send(buf.substr(0,buf.size()-2));
     s.close();
@@ -215,9 +214,10 @@ int FTP::_regex(const std::string &str, const std::string &pattern, int nmatch, 
  
     if(::regcomp(&re, pattern.c_str(), REG_EXTENDED) != 0) return -1;
     if(::regexec(&re, str.c_str(), nmatch, _pmatch, 0) != 0) return -1;
-    
+
+    pmatch.clear();
     for(int i=0; i<nmatch; i++) {
-        pmatch[i] = str.substr(_pmatch[i].rm_so, _pmatch[i].rm_eo - _pmatch[i].rm_so);
+        pmatch.push_back( str.substr(_pmatch[i].rm_so,_pmatch[i].rm_eo-_pmatch[i].rm_so) );
     }
     delete[] _pmatch;
     return 0;
@@ -225,7 +225,7 @@ int FTP::_regex(const std::string &str, const std::string &pattern, int nmatch, 
 
 void FTP::_getAddress(const std::string& resp, std::string& ip, socketpp::port_t& port)
 {
-    std::vector<std::string> tok(7);
+    std::vector<std::string> tok;
     std::string pattern = "\\(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])," \
                           "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])," \
                           "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])," \
