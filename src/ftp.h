@@ -5,8 +5,6 @@
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
-#include <sstream>
-#include <regex.h>
 
 namespace ftplib {
 

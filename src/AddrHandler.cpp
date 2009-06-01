@@ -1,6 +1,29 @@
 #include "AddrHandler.h"
+#include <sys/ioctl.h>
+#include <net/if.h>
+#include <arpa/inet.h>
+#include <netdb.h>
 
 namespace socketpp {
+
+in_addr_t AddrHandler::getAddrByIface(const std::string &name)
+{
+    int sd = ::socket(AF_INET, SOCK_DGRAM, 0);
+    if(sd < 0) {
+        throw error("getAddrByIface", errno, "socket");
+    }
+    struct ifreq ifr;
+    strncpy((char *)ifr.ifr_name, name.c_str(), IFNAMSIZ);
+    
+    if(ioctl(sd, SIOCGIFINDEX, &ifr) < 0) {
+        throw error("getAddrByIface", errno, "ioctl");
+    }
+    if(ioctl(sd, SIOCGIFADDR, &ifr) < 0) {
+        throw error("getAddrByIface", errno, "ioctl");
+    }
+    struct sockaddr_in *sin = (struct sockaddr_in *)&ifr.ifr_addr;
+    return ::htonl(sin->sin_addr.s_addr);
+}
 
 std::string AddrHandler::gethostbyname(const std::string& name)
 {

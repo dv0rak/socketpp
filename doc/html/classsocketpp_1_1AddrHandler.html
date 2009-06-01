@@ -34,6 +34,9 @@
 <a href="classsocketpp_1_1AddrHandler-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">in_addr_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#75b342f24605c5d167aabaa0422ff1ad">getAddrByIface</a> (const std::string &amp;name)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets IP address bound to specified interface  <a href="#75b342f24605c5d167aabaa0422ff1ad"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1AddrHandler.html#19aebc1e9779dee4e5f06d7b39e18959">gethostbyname</a> (const std::string &amp;name)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">resolves given name through a DNS lookup  <a href="#19aebc1e9779dee4e5f06d7b39e18959"></a><br></td></tr>
@@ -67,6 +70,34 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 Class which deals with several things, like dns resolving or address format conversion. <hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="75b342f24605c5d167aabaa0422ff1ad"></a><!-- doxytag: member="socketpp::AddrHandler::getAddrByIface" ref="75b342f24605c5d167aabaa0422ff1ad" args="(const std::string &amp;name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">in_addr_t socketpp::AddrHandler::getAddrByIface           </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>name</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+gets IP address bound to specified interface 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td>interface name </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>IP numerical address </dd></dl>
+
+</div>
+</div><p>
 <a class="anchor" name="4e10f2291b27d7db2a2860502721f960"></a><!-- doxytag: member="socketpp::AddrHandler::getDnsCache" ref="4e10f2291b27d7db2a2860502721f960" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -308,7 +339,7 @@ checks whether given string is in IPv4 format
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="AddrHandler_8h-source.html">AddrHandler.h</a><li>AddrHandler.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun May 31 16:39:22 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 1 15:28:36 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -19,7 +19,7 @@ int main()
     memset(&ip_h, 0, sizeof ip_h);
     ip_h.version = 4;
     ip_h.ttl	= 64;
-    ip_h.saddr 	= get_iface_ip(IFACE);
+    ip_h.saddr 	= addr.getAddrByIface(IFACE);
     ip_h.daddr	= addr.inet_aton(addr.gethostbyname("www.google.it"));
     icmp.build_IP_header(ip_h);
  

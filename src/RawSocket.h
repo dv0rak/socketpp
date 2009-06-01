@@ -2,15 +2,8 @@
 #define __RAWSOCKET_H 1
 
 #include "Socket.h"
-#include <sys/ioctl.h>
-#include <net/if.h>
 
 namespace socketpp {
-
-/// @brief	gets IP address bound to specified interface
-/// @param	name	interface name
-/// @return	IP numerical address, BaseSocket::inaddr_none on failure
-in_addr_t get_iface_ip(const std::string &name);
 
 /// @brief	abstract base raw socket class. This class and all its derived classes don't require to perform any byte order conversion
 class RawSocket : public BaseSocket {

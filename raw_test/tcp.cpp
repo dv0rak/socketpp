@@ -21,7 +21,7 @@ int main()
     tcp_h.syn    = 1; 
     tcp.build_TCP_header(tcp_h);
 
-    tcp.adjust_TCP_all(get_iface_ip(IFACE),addr.inet_aton(addr.gethostbyname("www.google.it")));
+    tcp.adjust_TCP_all(addr.getAddrByIface(IFACE),addr.inet_aton(addr.gethostbyname("www.google.it")));
 
     tcp.send_packet();
 

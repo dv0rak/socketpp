@@ -26,7 +26,7 @@ int main()
     ip_h.version = 4;
     ip_h.ttl	= 64;
     ip_h.daddr 	= addr.inet_aton(addr.gethostbyname("www.google.it"));
-    ip_h.saddr	= get_iface_ip(IFACE);
+    ip_h.saddr	= addr.getAddrByIface(IFACE);
     tcp.build_IP_header(ip_h);
  
     tcp.adjust_TCP_IP_all();

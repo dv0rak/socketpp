@@ -1,4 +1,5 @@
 #include <socket++.h>
+#include <sstream>
 using namespace std;
 using namespace socketpp;
 

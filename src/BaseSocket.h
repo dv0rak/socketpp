@@ -2,8 +2,6 @@
 #define __BASE_SOCKET_H TRUE
 
 #include "AddrHandler.h"
-#include <fcntl.h>
-#include <sys/select.h>
 #include <string>
 
 namespace socketpp {

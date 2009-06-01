@@ -3,8 +3,6 @@
 
 #include "socketpp_def.h"
 #include "SockException.h"
-#include <arpa/inet.h>
-#include <netdb.h>
 #include <map>
 #include <string>
 
@@ -13,6 +11,11 @@ namespace socketpp {
 ///@brief Class which deals with several things, like dns resolving or address format conversion
 class AddrHandler {
 public:
+    /// @brief	gets IP address bound to specified interface
+    /// @param	name	interface name
+    /// @return	IP numerical address
+    in_addr_t getAddrByIface(const std::string &name);
+
     /// @brief   resolves given name through a DNS lookup
     /// @param   name  hostname to resolve
     /// @return  IP address

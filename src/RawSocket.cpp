@@ -3,21 +3,6 @@
 
 namespace socketpp {
 
-in_addr_t get_iface_ip(const std::string &name)
-{
-    Socket sd(sock_dgram);
-    struct ifreq ifr;
-
-    strncpy((char *)ifr.ifr_name, name.c_str(), IFNAMSIZ);
-    if(ioctl(int(sd), SIOCGIFINDEX, &ifr) < 0) 
-        return inaddr_none;
-    if(ioctl(int(sd), SIOCGIFADDR, &ifr) < 0) 
-        return inaddr_none;
-
-    struct sockaddr_in *sin = (struct sockaddr_in *)&ifr.ifr_addr;
-    return ::htonl(sin->sin_addr.s_addr);
-}
-
 void RawSocket::build_data_payload(const char *buf, size_t len)
 {
     data_payload.assign(buf,len);

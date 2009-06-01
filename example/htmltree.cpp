@@ -4,6 +4,7 @@
  */
 
 #include <socket++.h>
+#include <sstream>
 using namespace ftplib;
 using namespace std;
 
