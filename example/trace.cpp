@@ -24,14 +24,14 @@ int main(int argc, char **argv)
         return -1;
     }
     if(argc >= 4) {
-        stringstream t(argv[3]);
+        istringstream t(argv[3]);
         t >> timeout;
         if(t.fail()) {
             cerr << "`" <<argv[3]<<"` not a valid timeout value" <<endl;
             return -1;
         }
         if(argc >= 5) {
-            stringstream n(argv[4]);
+            istringstream n(argv[4]);
             n >> nprobes;
             if(n.fail()) {
                 cerr << "`" <<argv[4]<<"` not a valid number of probes" <<endl;
@@ -56,16 +56,16 @@ int main(int argc, char **argv)
 
     srandom(time(NULL));
 
-    for (int i=1; !ended; i++) {
+    for (int ttl=1; !ended; ttl++) {
         std::string prev_sender_ip = "";
 
-        cout << i<< flush;
+        cout << ttl<< flush;
  
-        for(int j=0; j<nprobes; j++) {
+        for(int i=0; i<nprobes; i++) {
             struct timeval t1;
 
-            udp.build_IP_header(0, 4, 0,0,0,0, i, 0,0, h.getAddrByIface(argv[2]), h.inet_aton(host_ip));
-            udp.build_UDP_header(random()%(65535-49152)+49152, start_port+i+j-1, 0,0);
+            udp.build_IP_header(0, 4, 0,0,0,0, ttl, 0,0, h.getAddrByIface(argv[2]), h.inet_aton(host_ip));
+            udp.build_UDP_header(random()%(65535-49152)+49152, start_port+(ttl-1)*nprobes+i, 0,0);
             udp.build_data_payload(payload);
             udp.adjust_UDP_IP_all();
  
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
             icmp.settimeout(timeout);
             gettimeofday (&t1, NULL);
 
-            try { 
+            try {
                 while(1) {
                     double delta;
                     struct timeval t2;
