@@ -1,6 +1,7 @@
 #include "ftp.h"
 #include <sstream>
 #include <regex.h>
+#include <cstdlib>
 
 namespace ftplib {
     

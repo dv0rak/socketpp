@@ -2,7 +2,6 @@
 #define __FTP_H 1
 
 #include "Socket.h"
-#include <stdlib.h>
 #include <iostream>
 #include <vector>
 

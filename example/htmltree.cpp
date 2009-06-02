@@ -5,6 +5,7 @@
 
 #include <socket++.h>
 #include <sstream>
+#include <cstdlib>
 using namespace ftplib;
 using namespace std;
 
