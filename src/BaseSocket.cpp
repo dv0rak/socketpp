@@ -86,7 +86,7 @@ int BaseSocket::_select(_select_mode m)
 
     struct timeval tv;
     tv.tv_sec = int(_timeout); 
-    tv.tv_usec = int((_timeout*1000) - double(tv.tv_sec*1000));
+    tv.tv_usec = int((_timeout - double(tv.tv_sec))*1000000);
 
     if     (m == read)  ret = ::select(_sd+1, &set, NULL, NULL, &tv);
     else if(m == write) ret = ::select(_sd+1, NULL, &set, NULL, &tv);

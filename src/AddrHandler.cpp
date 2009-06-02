@@ -21,6 +21,7 @@ in_addr_t AddrHandler::getAddrByIface(const std::string &name)
     if(ioctl(sd, SIOCGIFADDR, &ifr) < 0) {
         throw error("getAddrByIface", errno, "ioctl");
     }
+    ::close(sd);
     struct sockaddr_in *sin = (struct sockaddr_in *)&ifr.ifr_addr;
     return ::htonl(sin->sin_addr.s_addr);
 }
