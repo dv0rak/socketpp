@@ -154,8 +154,8 @@ void IP_RawSocket::build_IP_header(const iphdr &ip)
     IP_h.daddr	   = ::ntohl(ip.daddr);
 }
 
-void IP_RawSocket::build_IP_header(_u8 ihl, _u8 version, _u8 tos, _u16 tot_len, _u16 id, _u16 frag_off,
-		                   _u8 ttl, _u8 protocol, _u16 check, _u32 saddr, _u32 daddr)
+void IP_RawSocket::build_IP_header(_u32 saddr, _u32 daddr, _u8 ttl, _u8 version, _u8 protocol, _u16 id, 
+                                   _u8 tos, _u16 frag_off, _u8 ihl, _u16 tot_len, _u16 check)
 {
     IP_h.ihl	   = ihl;
     IP_h.version   = version;
@@ -258,7 +258,7 @@ void ICMP_RawSocket::build_ICMP_header(const icmphdr &icmp)
     ICMP_h.sequence = ::htons(icmp.sequence);
 }
 
-void ICMP_RawSocket::build_ICMP_header(_u8 type, _u8 code, _u16 check, _u16 id, _u16 sequence)
+void ICMP_RawSocket::build_ICMP_header(_u8 type, _u8 code, _u16 id, _u16 sequence, _u16 check)
 {
     ICMP_h.type	    = type;
     ICMP_h.code	    = code;
@@ -428,9 +428,9 @@ void UDP_IP_RawSocket::_set_fields(const std::string &packet)
     rcvd_data_payload = packet.substr(rcvd_IP_h.ihl*4 +UDPSIZE);
 }
 
-void TCP_RawSocket::build_TCP_header(_u16 source, _u16 dest, _u32 seq, _u32 ack_seq, _u8 res1, _u8 doff,
-                                     _u8 fin, _u8 syn, _u8 rst, _u8 psh, _u8 ack, _u8 urg, 
-                            	     _u8 ece, _u8 cwr, _u16 window, _u16 check, _u16 urg_ptr)
+void TCP_RawSocket::build_TCP_header(_u16 source, _u16 dest, _u32 seq, _u32 ack_seq, _u16 window,
+                                     _u8 fin, _u8 syn, _u8 rst, _u8 psh, _u8 ack, _u8 urg,
+                                     _u8 ece, _u8 cwr, _u8 doff, _u16 urg_ptr, _u16 check, _u8 res1)
 {
     TCP_h.source   = ::htons(source);
     TCP_h.dest	   = ::htons(dest);

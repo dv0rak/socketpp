@@ -8,7 +8,7 @@ bool ping(const string& addr)
     ICMP_RawSocket sock;
     sock.connect(addr);
 
-    sock.build_ICMP_header(ICMP_ECHO, 0, 0, 1, 1);
+    sock.build_ICMP_header(ICMP_ECHO, 0, 1, 1);
     sock.adjust_ICMP_csum();
 
     sock.settimeout(1.0);

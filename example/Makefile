@@ -5,5 +5,6 @@ all:
 	g++ -o htmltree htmltree.cpp -lsocketpp
 	g++ -o synflood synflood.cpp -lsocketpp
 	g++ -o trace trace.cpp -lsocketpp
+	g++ -o sscan sscan.cpp -lsocketpp
 clean:
-	rm -f *~ server stream ping htmltree synflood trace
+	rm -f *~ server stream ping htmltree synflood trace sscan

@@ -87,8 +87,8 @@ public:
     /// @param	ip	IP header
     void build_IP_header(const iphdr &ip);
     /// @brief	builds the internal IP header to send
-    void build_IP_header(_u8 ihl, _u8 version, _u8 tos, _u16 tot_len, _u16 id, _u16 frag_off,
-		         _u8 ttl, _u8 protocol, _u16 check, _u32 saddr, _u32 daddr);
+    void build_IP_header(_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=0, _u16 id=0,
+                         _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0);
 
     /// @brief	sets the IP options field
     /// @param	opt 	pointer to option field
@@ -144,7 +144,7 @@ public:
     /// @param	icmp	icmp header
     void build_ICMP_header(const icmphdr &icmp);
     /// @brief	builds the internal ICMP header to send
-    void build_ICMP_header(_u8 type, _u8 code, _u16 check, _u16 id, _u16 sequence);
+    void build_ICMP_header(_u8 type, _u8 code=0, _u16 id=0, _u16 sequence=0, _u16 check=0);
 
     /// @brief	sets the internal ICMP header checksum
     void adjust_ICMP_csum();
@@ -203,7 +203,7 @@ public:
     /// @param  dest	   destination port
     /// @param  len	   UDP+data total length in bytes
     /// @param  check	   UDP pseudo-checksum
-    void build_UDP_header(_u16 source, _u16 dest, _u16 len, _u16 check);
+    void build_UDP_header(_u16 source, _u16 dest, _u16 len=0, _u16 check=0);
     /// @brief	builds the internal UDP header
     /// @param  udp	   UDP header
     void build_UDP_header(const udphdr &udp);
@@ -275,9 +275,9 @@ public:
     static _u16 tcp_checksum(const std::string &buf, _u32 saddr, _u32 daddr);
     
     /// @brief	builds the internal TCP header
-    void build_TCP_header(_u16 source, _u16 dest, _u32 seq, _u32 ack_seq, _u8 res1, _u8 doff,
-                          _u8 fin, _u8 syn, _u8 rst, _u8 psh, _u8 ack, _u8 urg, 
-                          _u8 ece, _u8 cwr, _u16 window, _u16 check, _u16 urg_ptr);
+    void build_TCP_header(_u16 source, _u16 dest, _u32 seq, _u32 ack_seq, _u16 window,
+                          _u8 fin=0, _u8 syn=0, _u8 rst=0, _u8 psh=0, _u8 ack=0, _u8 urg=0,
+                          _u8 ece=0, _u8 cwr=0, _u8 doff=0, _u16 urg_ptr=0, _u16 check=0, _u8 res1=0);
     /// @brief	builds the internal TCP header
     /// @param  tcp	   TCP header
     void build_TCP_header(const tcphdr &tcp);

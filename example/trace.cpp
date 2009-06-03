@@ -64,8 +64,8 @@ int main(int argc, char **argv)
         for(int i=0; i<nprobes; i++) {
             struct timeval t1;
 
-            udp.build_IP_header(0, 4, 0,0,0,0, ttl, 0,0, h.getAddrByIface(argv[2]), h.inet_aton(host_ip));
-            udp.build_UDP_header(random()%(65535-49152)+49152, start_port+(ttl-1)*nprobes+i, 0,0);
+            udp.build_IP_header(h.getAddrByIface(argv[2]), h.inet_aton(host_ip), ttl);
+            udp.build_UDP_header(random()%(65535-49152)+49152, start_port+(ttl-1)*nprobes+i);
             udp.build_data_payload(payload);
             udp.adjust_UDP_IP_all();
  
