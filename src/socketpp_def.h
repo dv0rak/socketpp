@@ -49,6 +49,19 @@ enum level {
     sol_socket= SOL_SOCKET 
 };
 
+enum msg_flag {
+    msg_none = 0,
+    msg_oob = MSG_OOB,
+    msg_dontroute = MSG_DONTROUTE,
+    msg_peek = MSG_PEEK,
+    msg_waitall = MSG_WAITALL
+};
+
+inline msg_flag operator|(msg_flag l, msg_flag r)
+{
+    return msg_flag(static_cast<int>(l) | static_cast<int>(r));
+}
+
 struct icmphdr {
     _u8  type;
     _u8  code;
