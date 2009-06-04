@@ -10,36 +10,20 @@ using namespace socketpp;
 const char * payload = "\x40\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f" \
                        "\x50\x51\x52\x53\x55\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f";
 const int start_port = 33434;
+static const double timeo = 5.0;
+static const unsigned int nprobes = 3;
 
 int main(int argc, char **argv)
 {
     AddrHandler h;
     std::string hostname, host_ip;
-    double timeout = 5.0;
-    unsigned int nprobes = 3;
     bool ended = false;
  
     if(argc < 3) {
-        cerr << argv[0] << " <host> <interface> <timeout=5.0> <nprobes=3>" <<endl;
+        cerr << argv[0] << " <host> <interface>" <<endl;
         return -1;
     }
-    if(argc >= 4) {
-        istringstream t(argv[3]);
-        t >> timeout;
-        if(t.fail()) {
-            cerr << "`" <<argv[3]<<"` not a valid timeout value" <<endl;
-            return -1;
-        }
-        if(argc >= 5) {
-            istringstream n(argv[4]);
-            n >> nprobes;
-            if(n.fail()) {
-                cerr << "`" <<argv[4]<<"` not a valid number of probes" <<endl;
-                return -1;
-            }
-        }
-    }
- 
+
     if(h.isIPv4(argv[1])) {
         host_ip = argv[1];
         hostname = host_ip;
@@ -70,7 +54,7 @@ int main(int argc, char **argv)
             udp.adjust_UDP_IP_all();
  
             udp.send_packet(host_ip);
-            icmp.settimeout(timeout);
+            icmp.settimeout(timeo);
             gettimeofday (&t1, NULL);
 
             try {
@@ -85,7 +69,7 @@ int main(int argc, char **argv)
 
                     gettimeofday(&t2, NULL);
                     delta = (t2.tv_sec-t1.tv_sec)*1000 + double(t2.tv_usec-t1.tv_usec)/1000;
-                    icmp.settimeout(double(timeout - delta/1000));
+                    icmp.settimeout(double(timeo - delta/1000));
 
                     if(icmp_h.type==ICMP_TIME_EXCEEDED || (icmp_h.type==ICMP_DEST_UNREACH && host_ip==sender_ip)) {
 
@@ -104,7 +88,7 @@ int main(int argc, char **argv)
                         break;
                     }
                 }
-            } catch(socketpp::timeout) {
+            } catch(timeout) {
                 prev_sender_ip = "";
                 cout <<" *" <<flush;
             }
