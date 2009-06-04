@@ -19,8 +19,8 @@ int main(int argc, char **argv)
     std::string hostname, host_ip;
     bool ended = false;
  
-    if(argc < 3) {
-        cerr << argv[0] << " <host> <interface>" <<endl;
+    if(argc < 2) {
+        cerr << argv[0] << " <host>" <<endl;
         return -1;
     }
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
     cout << "Tracerouting " << hostname << " (" << host_ip << ")" <<endl<<endl;
 
-    UDP_IP_RawSocket udp; 
+    Socket udp(sock_dgram); 
     ICMP_RawSocket icmp;
 
     srandom(time(NULL));
@@ -48,14 +48,11 @@ int main(int argc, char **argv)
         for(int i=0; i<nprobes; i++) {
             struct timeval t1;
 
-            udp.build_IP_header(h.getAddrByIface(argv[2]), h.inet_aton(host_ip), ttl);
-            udp.build_UDP_header(random()%(65535-49152)+49152, start_port+(ttl-1)*nprobes+i);
-            udp.build_data_payload(payload);
-            udp.adjust_UDP_IP_all();
- 
-            udp.send_packet(host_ip);
-            icmp.settimeout(timeo);
+            udp.setsockopt(sol_ip, ip_ttl, ttl);
+            udp.sendto(string(payload), host_ip, start_port+(ttl-1)*nprobes+i);
             gettimeofday (&t1, NULL);
+
+            icmp.settimeout(timeo);
 
             try {
                 while(1) {

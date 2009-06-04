@@ -41,7 +41,8 @@ enum option {
     so_sndtimeo	= SO_SNDTIMEO,
     so_rcvtimeo	= SO_RCVTIMEO,
     so_error	= SO_ERROR,
-    ip_multicast_ttl = IP_MULTICAST_TTL
+    ip_multicast_ttl = IP_MULTICAST_TTL,
+    ip_ttl	= IP_TTL
 };	
 enum level {
     sol_ip    = SOL_IP,
