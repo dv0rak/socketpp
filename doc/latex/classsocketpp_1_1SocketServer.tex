@@ -1,0 +1,152 @@
+\hypertarget{classsocketpp_1_1SocketServer}{
+\section{socketpp::SocketServer Class Reference}
+\label{classsocketpp_1_1SocketServer}\index{socketpp::SocketServer@{socketpp::SocketServer}}
+}
+TCP server class which can accept simultaneously multiple connections through multithreading.  
+
+
+{\tt \#include $<$SocketServer.h$>$}
+
+Inheritance diagram for socketpp::SocketServer::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classsocketpp_1_1SocketServer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{classsocketpp_1_1SocketServer_3a6955b6d5617457cf31206ea9492786}{
+\hyperlink{classsocketpp_1_1SocketServer_3a6955b6d5617457cf31206ea9492786}{SocketServer} (type t)}
+\label{classsocketpp_1_1SocketServer_3a6955b6d5617457cf31206ea9492786}
+
+\begin{CompactList}\small\item\em calls BaseSocket(t) \item\end{CompactList}\item 
+\hypertarget{classsocketpp_1_1SocketServer_e83ff222d6d4dd600dc162926afdac0f}{
+\hyperlink{classsocketpp_1_1SocketServer_e83ff222d6d4dd600dc162926afdac0f}{SocketServer} (const \hyperlink{classsocketpp_1_1SocketServer}{SocketServer} \&s)}
+\label{classsocketpp_1_1SocketServer_e83ff222d6d4dd600dc162926afdac0f}
+
+\begin{CompactList}\small\item\em copy constructor \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SocketServer_73c5125f9e5a6cf03dc15f6d4250e345}{SocketServer} (type t, in\_\-addr\_\-t addr, port\_\-t port, unsigned int maxconn=0)
+\begin{CompactList}\small\item\em binds socket and puts it in listening mode \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SocketServer_2b43397fd614dc7953559d7372f1c6ca}{SocketServer} (type t, const std::string \&addr, port\_\-t port, unsigned int maxconn=0)
+\begin{CompactList}\small\item\em binds socket and puts it in listening mode \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SocketServer_594f3a739f4cd053f9fd0512e42473be}{SocketServer} (type t, in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL, unsigned int maxconn=0)
+\begin{CompactList}\small\item\em binds socket and puts it in listening mode \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1SocketServer_667f8c2b7b1325c80f018ecf85a9551f}{SocketServer} (type t, const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL, unsigned int maxconn=0)
+\begin{CompactList}\small\item\em binds socket and puts it in listening mode \item\end{CompactList}\item 
+\hyperlink{classsocketpp_1_1Socket}{Socket} \& \hyperlink{classsocketpp_1_1SocketServer_de24bd723d353d62d034718a1d95c02f}{accept} ()
+\begin{CompactList}\small\item\em Accepts connection request. \item\end{CompactList}\item 
+int \hyperlink{classsocketpp_1_1SocketServer_034ddc2def5342b5a26264ffcb9e8e36}{listen} (int maxconn)
+\begin{CompactList}\small\item\em puts socket in listening mode \item\end{CompactList}\item 
+void \hyperlink{classsocketpp_1_1SocketServer_0ded92a6348a6cf953d9f646fac43ac2}{threadClientHandle} (void($\ast$f)(\hyperlink{classsocketpp_1_1Socket}{Socket} \&, void $\ast$), void $\ast$pt)
+\begin{CompactList}\small\item\em puts server in multithreaded mode \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+TCP server class which can accept simultaneously multiple connections through multithreading. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsocketpp_1_1SocketServer_73c5125f9e5a6cf03dc15f6d4250e345}{
+\index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
+\index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
+\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer (type {\em t}, \/  in\_\-addr\_\-t {\em addr}, \/  port\_\-t {\em port}, \/  unsigned int {\em maxconn} = {\tt 0})}}
+\label{classsocketpp_1_1SocketServer_73c5125f9e5a6cf03dc15f6d4250e345}
+
+
+binds socket and puts it in listening mode 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em t}]socket type \item[{\em addr}]numerical local address to bind \item[{\em port}]local port to bind \item[{\em maxconn}]max number of connections to accept \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1SocketServer_2b43397fd614dc7953559d7372f1c6ca}{
+\index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
+\index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
+\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer (type {\em t}, \/  const std::string \& {\em addr}, \/  port\_\-t {\em port}, \/  unsigned int {\em maxconn} = {\tt 0})}}
+\label{classsocketpp_1_1SocketServer_2b43397fd614dc7953559d7372f1c6ca}
+
+
+binds socket and puts it in listening mode 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em t}]socket type \item[{\em addr}]dotted decimal local address to bind \item[{\em port}]local port to bind \item[{\em maxconn}]max number of connections to accept \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1SocketServer_594f3a739f4cd053f9fd0512e42473be}{
+\index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
+\index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
+\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer (type {\em t}, \/  in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  unsigned int {\em maxconn} = {\tt 0})}}
+\label{classsocketpp_1_1SocketServer_594f3a739f4cd053f9fd0512e42473be}
+
+
+binds socket and puts it in listening mode 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em t}]socket type \item[{\em addr}]numerical local address to bind \item[{\em serv}]local service to bind \item[{\em prot}]transport layer protocol \item[{\em maxconn}]max number of connections to accept \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1SocketServer_667f8c2b7b1325c80f018ecf85a9551f}{
+\index{socketpp::SocketServer@{socketpp::SocketServer}!SocketServer@{SocketServer}}
+\index{SocketServer@{SocketServer}!socketpp::SocketServer@{socketpp::SocketServer}}
+\subsubsection[{SocketServer}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::SocketServer::SocketServer (type {\em t}, \/  const std::string \& {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  unsigned int {\em maxconn} = {\tt 0})}}
+\label{classsocketpp_1_1SocketServer_667f8c2b7b1325c80f018ecf85a9551f}
+
+
+binds socket and puts it in listening mode 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em t}]socket type \item[{\em addr}]dotted decimal local address to bind \item[{\em serv}]local service to bind \item[{\em prot}]transport layer protocol \item[{\em maxconn}]max number of connections to accept \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1SocketServer_de24bd723d353d62d034718a1d95c02f}{
+\index{socketpp::SocketServer@{socketpp::SocketServer}!accept@{accept}}
+\index{accept@{accept}!socketpp::SocketServer@{socketpp::SocketServer}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Socket} \& socketpp::SocketServer::accept ()}}
+\label{classsocketpp_1_1SocketServer_de24bd723d353d62d034718a1d95c02f}
+
+
+Accepts connection request. 
+
+\begin{Desc}
+\item[Returns:]connected socket object \end{Desc}
+\hypertarget{classsocketpp_1_1SocketServer_034ddc2def5342b5a26264ffcb9e8e36}{
+\index{socketpp::SocketServer@{socketpp::SocketServer}!listen@{listen}}
+\index{listen@{listen}!socketpp::SocketServer@{socketpp::SocketServer}}
+\subsubsection[{listen}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::SocketServer::listen (int {\em maxconn})}}
+\label{classsocketpp_1_1SocketServer_034ddc2def5342b5a26264ffcb9e8e36}
+
+
+puts socket in listening mode 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em maxconn}]max number of connections to accept \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1SocketServer_0ded92a6348a6cf953d9f646fac43ac2}{
+\index{socketpp::SocketServer@{socketpp::SocketServer}!threadClientHandle@{threadClientHandle}}
+\index{threadClientHandle@{threadClientHandle}!socketpp::SocketServer@{socketpp::SocketServer}}
+\subsubsection[{threadClientHandle}]{\setlength{\rightskip}{0pt plus 5cm}void socketpp::SocketServer::threadClientHandle (void($\ast$)({\bf Socket} \&, void $\ast$) {\em f}, \/  void $\ast$ {\em pt})}}
+\label{classsocketpp_1_1SocketServer_0ded92a6348a6cf953d9f646fac43ac2}
+
+
+puts server in multithreaded mode 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em f}]function to call when a connection is accepted, it requires as arguments the connected socket and a void pointer \item[{\em pt}]pointer to arguments accepted by function f \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+SocketServer.h\item 
+SocketServer.cpp\end{CompactItemize}

@@ -1,0 +1,63 @@
+\hypertarget{classsocketpp_1_1h__error}{
+\section{socketpp::h\_\-error Class Reference}
+\label{classsocketpp_1_1h__error}\index{socketpp::h\_\-error@{socketpp::h\_\-error}}
+}
+address-related exception class  
+
+
+{\tt \#include $<$SockException.h$>$}
+
+Inherits std::exception.
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classsocketpp_1_1h__error_c15a1c6216114250241349fdfcdeb98a}{h\_\-error} (const std::string \&meth, const std::string \&err, const std::string \&func=\char`\"{}\char`\"{})  throw ()
+\item 
+\hyperlink{classsocketpp_1_1h__error_67e7b6bcd23ebdd79a5fdcf1f01070fe}{h\_\-error} (const std::string \&meth, int err, const std::string \&func=\char`\"{}\char`\"{})  throw ()
+\item 
+\hypertarget{classsocketpp_1_1h__error_055c1a5b55b5d02fe81fd74cb8b900d2}{
+virtual const char $\ast$ \hyperlink{classsocketpp_1_1h__error_055c1a5b55b5d02fe81fd74cb8b900d2}{what} () const   throw ()}
+\label{classsocketpp_1_1h__error_055c1a5b55b5d02fe81fd74cb8b900d2}
+
+\begin{CompactList}\small\item\em returns complete \hyperlink{classsocketpp_1_1error}{error} string \item\end{CompactList}\item 
+\hypertarget{classsocketpp_1_1h__error_b2aabd50ea2f3189b09bc749a875e38f}{
+int \textbf{get\_\-h\_\-errno} ()}
+\label{classsocketpp_1_1h__error_b2aabd50ea2f3189b09bc749a875e38f}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+address-related exception class 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsocketpp_1_1h__error_c15a1c6216114250241349fdfcdeb98a}{
+\index{socketpp::h\_\-error@{socketpp::h\_\-error}!h\_\-error@{h\_\-error}}
+\index{h\_\-error@{h\_\-error}!socketpp::h_error@{socketpp::h\_\-error}}
+\subsubsection[{h\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::h\_\-error::h\_\-error (const std::string \& {\em meth}, \/  const std::string \& {\em err}, \/  const std::string \& {\em func} = {\tt \char`\"{}\char`\"{}})  throw ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1h__error_c15a1c6216114250241349fdfcdeb98a}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em meth}]method which threw exception \item[{\em err}]\hyperlink{classsocketpp_1_1error}{error} description string \item[{\em func}]C function which returned \hyperlink{classsocketpp_1_1error}{error} \end{description}
+\end{Desc}
+\hypertarget{classsocketpp_1_1h__error_67e7b6bcd23ebdd79a5fdcf1f01070fe}{
+\index{socketpp::h\_\-error@{socketpp::h\_\-error}!h\_\-error@{h\_\-error}}
+\index{h\_\-error@{h\_\-error}!socketpp::h_error@{socketpp::h\_\-error}}
+\subsubsection[{h\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::h\_\-error::h\_\-error (const std::string \& {\em meth}, \/  int {\em err}, \/  const std::string \& {\em func} = {\tt \char`\"{}\char`\"{}})  throw ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{classsocketpp_1_1h__error_67e7b6bcd23ebdd79a5fdcf1f01070fe}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em meth}]method which threw exception \item[{\em err}]h\_\-errno code \item[{\em func}]C function which returned \hyperlink{classsocketpp_1_1error}{error} \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+SockException.h\end{CompactItemize}

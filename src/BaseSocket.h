@@ -155,13 +155,15 @@ protected:
     ///@brief	sends data over socket
     ///@param	buf	data buffer
     ///@param   size	size of data in bytes
+    ///@param	flags	C send() flags
     ///@return  number of bytes sent
-    size_t send(const char buf[], size_t size);
+    size_t send(const char buf[], size_t size, int flags=0);
     ///@brief	reads data on socket
     ///@param   buf	buffer to fill with data
     ///@param	size 	max number of bytes to read
+    ///@param	flags	C recv() flags
     ///@return  number of bytes received
-    size_t recv(char buf[], size_t size);
+    size_t recv(char buf[], size_t size, int flags=0);
     ///@brief	sends data over socket
     ///@param	buf	data string
     ///@return  number of bytes sent
@@ -169,122 +171,139 @@ protected:
     ///@brief	reads data on socket
     ///@param	buf	string to fill with data
     ///@param	size 	max number of bytes to read
+    ///@param	flags	C recv() flags
     ///@return  number of bytes received
-    size_t recv(std::string &buf, size_t size);
+    size_t recv(std::string &buf, size_t size, int flags=0);
 
     ///@brief	sends data over socket
     ///@param	buf	data buffer
     ///@param   size	size of data in bytes
     ///@param	addr	numerical remote address
     ///@param	port	remote port
+    ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
-    size_t sendto(const char buf[], size_t size, in_addr_t addr, port_t port=0);
+    size_t sendto(const char buf[], size_t size, in_addr_t addr, port_t port=0, int flags=0);
     ///@brief	sends data over socket
     ///@param	buf	data string
     ///@param	addr	numerical remote address
     ///@param	port	remote port
+    ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
-    size_t sendto(const std::string &buf, in_addr_t addr, port_t port=0);
+    size_t sendto(const std::string &buf, in_addr_t addr, port_t port=0, int flags=0);
     ///@brief	sends data over socket
     ///@param	buf	data buffer
     ///@param   size	size of data in bytes
     ///@param	addr	dotted decimal remote address
     ///@param	port	remote port
+    ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
-    size_t sendto(const char buf[], size_t size, const std::string& addr, port_t port=0);
+    size_t sendto(const char buf[], size_t size, const std::string& addr, port_t port=0, int flags=0);
     ///@brief	sends data over socket
     ///@param	buf	data string
     ///@param	addr	dotted decimal remote address
     ///@param	port	remote port
+    ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
-    size_t sendto(const std::string& buf, const std::string& addr, port_t port=0);
+    size_t sendto(const std::string& buf, const std::string& addr, port_t port=0, int flags=0);
     ///@brief	sends data over socket
     ///@param	buf	data buffer
     ///@param   size	size of data in bytes
     ///@param	addr	numerical remote address
     ///@param	serv	service name
     ///@param	prot 	transport layer protocol
+    ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
     size_t sendto
-    (const char buf[],size_t size,in_addr_t addr,const std::string& serv,const char *prot=NULL);
+    (const char buf[],size_t size,in_addr_t addr,const std::string& serv,const char *prot=NULL, int flags=0);
     ///@brief	sends data over socket
     ///@param	buf	data string
     ///@param	addr	numerical remote address
     ///@param	serv	service name
     ///@param	prot 	transport layer protocol
+    ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
     size_t sendto
-    (const std::string& buf, in_addr_t addr,const std::string& serv,const char *prot=NULL);
+    (const std::string& buf, in_addr_t addr,const std::string& serv,const char *prot=NULL, int flags=0);
     ///@brief	sends data over socket
     ///@param	buf	data buffer
     ///@param   size	size of data in bytes
     ///@param	addr	dotted decimal remote address
     ///@param	serv	service name
     ///@param	prot 	transport layer protocol
+    ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
     size_t sendto
-    (const char buf[],size_t size,const std::string& addr,const std::string& serv,const char *prot=NULL);
+    (const char buf[],size_t size,const std::string& addr,const std::string& serv,const char *prot=NULL, int flags=0);
     ///@brief	sends data over socket
     ///@param	buf	data string
     ///@param	addr	dotted decimal remote address
     ///@param	serv	service name
     ///@param	prot 	transport layer protocol
+    ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
     size_t sendto
-    (const std::string& buf,const std::string& addr,const std::string& serv,const char *prot=NULL);
+    (const std::string& buf,const std::string& addr,const std::string& serv,const char *prot=NULL, int flags=0);
 
     ///@brief	reads data on socket
     ///@param   buf	buffer to fill with data
     ///@param	size 	max number of bytes to read
     ///@param	addr	field filled with numerical remote address
     ///@param	port	field filled with remote port
+    ///@param	flags	C recvfrom() flags
     ///@return  number of bytes received
-    size_t recvfrom(char buf[], size_t size, in_addr_t& addr, port_t& port);
+    size_t recvfrom(char buf[], size_t size, in_addr_t& addr, port_t& port, int flags=0);
     ///@brief	reads data on socket
     ///@param	buf	string to fill with data
     ///@param	size 	max number of bytes to read
     ///@param	addr	field filled with numerical remote address
     ///@param	port	field filled with remote port
+    ///@param	flags	C recvfrom() flags
     ///@return  number of bytes received
-    size_t recvfrom(std::string& buf, size_t size, in_addr_t& addr, port_t& port);
+    size_t recvfrom(std::string& buf, size_t size, in_addr_t& addr, port_t& port, int flags=0);
     ///@brief	reads data on socket
     ///@param   buf	buffer to fill with data
     ///@param	size 	max number of bytes to read
     ///@param	addr	field filled with dotted decimal remote address
     ///@param	port	field filled with remote port
+    ///@param	flags	C recvfrom() flags
     ///@return  number of bytes received
-    size_t recvfrom(char buf[], size_t size, std::string& addr, port_t& port);
+    size_t recvfrom(char buf[], size_t size, std::string& addr, port_t& port, int flags=0);
     ///@brief	reads data on socket
     ///@param	buf	string to fill with data
     ///@param	size 	max number of bytes to read
     ///@param	addr	field filled with dotted decimal remote address
     ///@param	port	field filled with remote port
+    ///@param	flags	C recvfrom() flags
     ///@return  number of bytes received
-    size_t recvfrom(std::string& buf, size_t size, std::string& addr, port_t& port);
+    size_t recvfrom(std::string& buf, size_t size, std::string& addr, port_t& port, int flags=0);
     ///@brief	reads data on socket
     ///@param   buf	buffer to fill with data
     ///@param	size 	max number of bytes to read
     ///@param	addr	field filled with numerical remote address
+    ///@param	flags	C recvfrom() flags
     ///@return  number of bytes received
-    size_t recvfrom(char buf[], size_t size, in_addr_t& addr);
+    size_t recvfrom(char buf[], size_t size, in_addr_t& addr, int flags=0);
     ///@brief	reads data on socket
     ///@param	buf	string to fill with data
     ///@param	size 	max number of bytes to read
     ///@param	addr	field filled with numerical remote address
+    ///@param	flags	C recvfrom() flags
     ///@return  number of bytes received
-    size_t recvfrom(std::string &buf, size_t size, in_addr_t& addr);
+    size_t recvfrom(std::string &buf, size_t size, in_addr_t& addr, int flags=0);
     ///@brief	reads data on socket
     ///@param   buf	buffer to fill with data
     ///@param	size 	max number of bytes to read
     ///@param	addr	field filled with dotted decimal remote address
+    ///@param	flags	C recvfrom() flags
     ///@return  number of bytes received
-    size_t recvfrom(char buf[], size_t size, std::string& addr);
+    size_t recvfrom(char buf[], size_t size, std::string& addr, int flags=0);
     ///@brief	reads data on socket
     ///@param	buf	string to fill with data
     ///@param	size 	max number of bytes to read
     ///@param	addr	field filled with dotted decimal remote address
+    ///@param	flags	C recvfrom() flags
     ///@return  number of bytes received
-    size_t recvfrom(std::string &buf, size_t size, std::string& addr);
+    size_t recvfrom(std::string &buf, size_t size, std::string& addr, int flags=0);
 
 private:
     struct sockaddr_in __initaddr(in_addr_t, port_t);
