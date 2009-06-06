@@ -150,7 +150,10 @@ protected:
     ///@param 	fd	file descriptor
     BaseSocket(int fd);
 
-    int _select(_select_mode m);
+    ///@brief	causes all or part of a full-duplex connection on the socket to be shut down
+    ///@param	how	shutdown mode
+    ///@return	C shutdown() return value
+    int shutdown(shut_mode how);
 
     ///@brief	sends data over socket
     ///@param	buf	data buffer
@@ -305,6 +308,8 @@ protected:
     ///@param	flags	C recvfrom() flags
     ///@return  number of bytes received
     size_t recvfrom(std::string &buf, size_t size, std::string& addr, msg_flag flags=msg_none);
+
+    int _select(_select_mode m);
 
 private:
     struct sockaddr_in __initaddr(in_addr_t, port_t);

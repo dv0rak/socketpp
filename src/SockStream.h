@@ -12,18 +12,24 @@ class SockBuf : public std::streambuf, public BaseSocket {
 public:
     static const int BUFSIZE=BUFSIZ;
 
-    SockBuf() 		     			  : BaseSocket() { __initBuf(); }
+    SockBuf() : BaseSocket()
+        { __initBuf(); }
     ///@brief	calls BaseSocket(s)
-    SockBuf(const Socket &s)  			  : BaseSocket(s) { __initBuf(); }
+    SockBuf(const Socket &s) : BaseSocket(s)
+        { __initBuf(); }
     ///@brief	calls BaseSocket(t,prot)
-    SockBuf(type t, protocol prot=ipproto_ip) : BaseSocket(t, prot) { __initBuf(); } 
+    SockBuf(type t, protocol prot=ipproto_ip) : BaseSocket(t, prot)
+        { __initBuf(); } 
     ///@brief	calls BaseSocket(sd)
-    SockBuf(int sd) 				  : BaseSocket(sd) { __initBuf(); }
+    SockBuf(int sd) : BaseSocket(sd)
+        { __initBuf(); }
     
     ///@brief	closes socket descriptor and flushes output buffer
     void close();
     ///@brief	calls close()
     ~SockBuf();
+
+    using BaseSocket::shutdown;
 
 protected:
     virtual int overflow(int c = EOF);
@@ -39,21 +45,31 @@ private:
 ///@brief inherits from std::iostream, it allows the C++ stream approach with sockets
 class SockStream : public std::iostream {
 public:
-    SockStream()	   	    : std::iostream(new SockBuf()) { exceptions(badbit); }
+    SockStream() : std::iostream(new SockBuf()) 
+        { exceptions(badbit); }
     ///@brief	calls std::iostream(&s)
-    SockStream(SockBuf &s)          : std::iostream(&s) { exceptions(badbit); }
+    SockStream(SockBuf &s) : std::iostream(&s) 
+        { exceptions(badbit); }
     ///@brief	calls std::iostream(new SockBuf(s))
-    SockStream(const Socket &s)     : std::iostream(new SockBuf(s)) { exceptions(badbit); }
+    SockStream(const Socket &s) : std::iostream(new SockBuf(s))
+        { exceptions(badbit); }
     ///@brief	copy constructor
-    SockStream(const SockStream &s) : std::iostream(s.sockbuf()) { exceptions(badbit); }
+    SockStream(const SockStream &s) : std::iostream(s.sockbuf())
+        { exceptions(badbit); }
     ///@brief	calls std::iostream(new SockBuf(t,prot))
-    SockStream(type t, protocol prot=ipproto_ip) 
-        			    : std::iostream(new SockBuf(t,prot)) { exceptions(badbit); }
+    SockStream(type t, protocol prot=ipproto_ip) : std::iostream(new SockBuf(t,prot))
+        { exceptions(badbit); }
  
     ///@brief	returns pointer to internal SockBuf object
-    SockBuf* sockbuf() const { return (SockBuf*)rdbuf(); }
+    inline SockBuf* sockbuf() const
+    { 
+        return (SockBuf *)rdbuf();
+    }
     ///@brief	operates on internal SockBuf object
-    SockBuf* operator->()  { return sockbuf(); }
+    inline SockBuf* operator->() 
+    {
+        return sockbuf();
+    }
 };
 
 ///@brief SockStream manipulator which writes "\r\n"

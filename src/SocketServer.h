@@ -8,11 +8,11 @@ namespace socketpp {
 ///@brief	TCP server class which can accept simultaneously multiple connections through multithreading
 class SocketServer : public BaseSocket {
 public:
-    SocketServer() 	     		: BaseSocket()	   { }
+    SocketServer() : BaseSocket() { }
     ///@brief	calls BaseSocket(t)
-    SocketServer(type t) 		: BaseSocket(t) { }
+    SocketServer(type t) : BaseSocket(t) { }
     ///@brief copy constructor
-    SocketServer(const SocketServer &s) : BaseSocket(s)   { }
+    SocketServer(const SocketServer &s) : BaseSocket(s) { }
 
     ///@brief	binds socket and puts it in listening mode
     ///@param	t	socket type

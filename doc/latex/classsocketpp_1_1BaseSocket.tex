@@ -98,11 +98,8 @@ enum \textbf{\_\-select\_\-mode} \{ \textbf{read},
 \begin{CompactList}\small\item\em constructor which opens the socket descriptor calling socket(AF\_\-INET, t, prot) \item\end{CompactList}\item 
 \hyperlink{classsocketpp_1_1BaseSocket_f7e18d6700868abb2b476e797506eafb}{BaseSocket} (int fd)
 \begin{CompactList}\small\item\em constructor which uses the given socket descriptor \item\end{CompactList}\item 
-\hypertarget{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}{
-int \textbf{\_\-select} (\_\-select\_\-mode m)}
-\label{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}
-
-\item 
+int \hyperlink{classsocketpp_1_1BaseSocket_7550a79d05baaf4b19c20fa0fa9bc8b9}{shutdown} (shut\_\-mode how)
+\begin{CompactList}\small\item\em causes all or part of a full-duplex connection on the socket to be shut down \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_a63e58c917c6be09f641f9ff1830e74a}{send} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, msg\_\-flag flags=msg\_\-none)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_d74160ecc96cacec56f61d36f9ab747d}{recv} (char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, msg\_\-flag flags=msg\_\-none)
@@ -142,7 +139,12 @@ size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_723f0c1b9325ef3be7c97f520e6bc77
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_5ee0ad55fa03ca79a879e1d73670ede9}{recvfrom} (char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, std::string \&addr, msg\_\-flag flags=msg\_\-none)
 \begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_8ba6376183fbcce5266775ecc1749e0a}{recvfrom} (std::string \&buf, size\_\-t size, std::string \&addr, msg\_\-flag flags=msg\_\-none)
-\begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\end{CompactItemize}
+\begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\item 
+\hypertarget{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}{
+int \textbf{\_\-select} (\_\-select\_\-mode m)}
+\label{classsocketpp_1_1BaseSocket_9c925091102c9371be9990fedd605f1c}
+
+\end{CompactItemize}
 \subsection*{Protected Attributes}
 \begin{CompactItemize}
 \item 
@@ -786,6 +788,22 @@ sets a \hyperlink{classsocketpp_1_1timeout}{timeout} on the following IO operati
 \begin{description}
 \item[{\em time}]\hyperlink{classsocketpp_1_1timeout}{timeout} in seconds \end{description}
 \end{Desc}
+\hypertarget{classsocketpp_1_1BaseSocket_7550a79d05baaf4b19c20fa0fa9bc8b9}{
+\index{socketpp::BaseSocket@{socketpp::BaseSocket}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!socketpp::BaseSocket@{socketpp::BaseSocket}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::shutdown (shut\_\-mode {\em how})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1BaseSocket_7550a79d05baaf4b19c20fa0fa9bc8b9}
+
+
+causes all or part of a full-duplex connection on the socket to be shut down 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em how}]shutdown mode \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]C \hyperlink{classsocketpp_1_1BaseSocket_7550a79d05baaf4b19c20fa0fa9bc8b9}{shutdown()} return value \end{Desc}
 
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}

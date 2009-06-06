@@ -15,15 +15,13 @@ bool ping(const string& addr)
     sock.send_packet();
 
     try { sock.read_packet(BUFSIZ); }
-    catch (timeout &e) { return false; }
+    catch (timeout) { return false; }
  
     return true;
 }
 
 int main(int argc, char *argv[])
 {
-    bool ret;
-
     if(argc != 2) {
         cerr<< argv[0]<< " <host>"<< endl;
         return -1;

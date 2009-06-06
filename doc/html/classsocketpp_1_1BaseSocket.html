@@ -153,9 +153,9 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#f7e18d6700868abb2b476e797506eafb">BaseSocket</a> (int fd)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">constructor which uses the given socket descriptor  <a href="#f7e18d6700868abb2b476e797506eafb"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="9c925091102c9371be9990fedd605f1c"></a><!-- doxytag: member="socketpp::BaseSocket::_select" ref="9c925091102c9371be9990fedd605f1c" args="(_select_mode m)" -->
-int&nbsp;</td><td class="memItemRight" valign="bottom"><b>_select</b> (_select_mode m)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#7550a79d05baaf4b19c20fa0fa9bc8b9">shutdown</a> (shut_mode how)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">causes all or part of a full-duplex connection on the socket to be shut down  <a href="#7550a79d05baaf4b19c20fa0fa9bc8b9"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#a63e58c917c6be09f641f9ff1830e74a">send</a> (const char buf[], size_t size, msg_flag flags=msg_none)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends data over socket  <a href="#a63e58c917c6be09f641f9ff1830e74a"></a><br></td></tr>
@@ -216,6 +216,9 @@ int&nbsp;</td><td class="memItemRight" valign="bottom"><b>_select</b> (_select_m
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#8ba6376183fbcce5266775ecc1749e0a">recvfrom</a> (std::string &amp;buf, size_t size, std::string &amp;addr, msg_flag flags=msg_none)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">reads data on socket  <a href="#8ba6376183fbcce5266775ecc1749e0a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="9c925091102c9371be9990fedd605f1c"></a><!-- doxytag: member="socketpp::BaseSocket::_select" ref="9c925091102c9371be9990fedd605f1c" args="(_select_mode m)" -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><b>_select</b> (_select_mode m)</td></tr>
+
 <tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a5ef6b5fabb3988bced6a23d9631985d"></a><!-- doxytag: member="socketpp::BaseSocket::_sd" ref="a5ef6b5fabb3988bced6a23d9631985d" args="" -->
 int&nbsp;</td><td class="memItemRight" valign="bottom"><b>_sd</b></td></tr>
@@ -2032,10 +2035,38 @@ sets a <a class="el" href="classsocketpp_1_1timeout.html" title="timeout-related
 
 </div>
 </div><p>
+<a class="anchor" name="7550a79d05baaf4b19c20fa0fa9bc8b9"></a><!-- doxytag: member="socketpp::BaseSocket::shutdown" ref="7550a79d05baaf4b19c20fa0fa9bc8b9" args="(shut_mode how)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int socketpp::BaseSocket::shutdown           </td>
+          <td>(</td>
+          <td class="paramtype">shut_mode&nbsp;</td>
+          <td class="paramname"> <em>how</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+causes all or part of a full-duplex connection on the socket to be shut down 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>how</em>&nbsp;</td><td>shutdown mode </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>C <a class="el" href="classsocketpp_1_1BaseSocket.html#7550a79d05baaf4b19c20fa0fa9bc8b9" title="causes all or part of a full-duplex connection on the socket to be shut down">shutdown()</a> return value </dd></dl>
+
+</div>
+</div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="BaseSocket_8h-source.html">BaseSocket.h</a><li>BaseSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 4 16:48:28 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jun 6 03:31:20 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

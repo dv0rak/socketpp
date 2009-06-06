@@ -15,6 +15,16 @@ void BaseSocket::setBlocking(bool yes)
     }
 }
 
+
+int BaseSocket::shutdown(shut_mode how)
+{
+    int ret = ::shutdown(_sd, how);
+    if(ret == -1) {
+        throw error("shutdown", errno, "shutdown");
+    }
+    return ret;
+}
+
 void BaseSocket::settimeout(double time)
 {
     _timeout = time;

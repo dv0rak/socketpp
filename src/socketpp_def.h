@@ -49,6 +49,12 @@ enum level {
     sol_socket= SOL_SOCKET 
 };
 
+enum shut_mode {
+    shut_rd = SHUT_RD,
+    shut_wr = SHUT_WR,
+    shut_rdwr = SHUT_RDWR
+};
+
 enum msg_flag {
     msg_none = 0,
     msg_oob = MSG_OOB,
