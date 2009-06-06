@@ -11,10 +11,10 @@ namespace socketpp {
 ///@brief Class which deals with several things, like dns resolving or address format conversion
 class AddrHandler {
 public:
-    /// @brief	gets IP address bound to specified interface
-    /// @param	name	interface name
+    /// @brief	gets IP source address to reach given destination address, watching kernel routing table
+    /// @param	to	destination address
     /// @return	IP numerical address
-    in_addr_t getAddrByIface(const std::string &name);
+    in_addr_t getAddrByRoute(in_addr_t to);
 
     /// @brief   resolves given name through a DNS lookup
     /// @param   name  hostname to resolve
@@ -55,6 +55,7 @@ public:
     inline std::map<std::string,std::string> getDnsCache() { return resolved; }
     /// @brief   cleans internal DNS cache
     inline void cleanDnsCache() { resolved.clear(); }
+
 private:
     std::map<std::string, std::string> resolved;
 

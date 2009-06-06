@@ -17,8 +17,8 @@ int main(int argc, char **argv)
     string hostname, host_ip;
     int nclosed=0, nfiltered=0;
 
-    if(argc < 3) {
-        cerr << argv[0]<< " <target> <interface>" <<endl;
+    if(argc < 2) {
+        cerr << argv[0]<< " <target>" <<endl;
         return -1;
     }
     // Custom port array initialization
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
         port_t dstport = ports.back();
         ports.pop_back();
 
-        sock.build_IP_header(h.getAddrByIface(argv[2]), h.inet_aton(host_ip));
+        sock.build_IP_header(h.getAddrByRoute(h.inet_aton(host_ip)), h.inet_aton(host_ip));
         sock.build_TCP_header(srcport, dstport, 1, 0, 1024*(random()%4+1), 0, 1);
 
         long opt = htonl(TCP_OPT);
@@ -77,7 +77,7 @@ int main(int argc, char **argv)
                         cout << "Port "<< dstport<< "/tcp is open"<< endl;
  
                         sock.build_TCP_header(srcport, dstport, 2, 0, 0, 0, 0, 1);
-                        sock.build_IP_header(h.getAddrByIface(argv[2]), h.inet_aton(host_ip));
+                        sock.build_IP_header(h.getAddrByRoute(h.inet_aton(host_ip)), h.inet_aton(host_ip));
                         sock.adjust_TCP_IP_all();
 
                         sock.settimeout(0);

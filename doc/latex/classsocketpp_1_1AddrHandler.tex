@@ -10,8 +10,8 @@ Class which deals with several things, like dns resolving or address format conv
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-in\_\-addr\_\-t \hyperlink{classsocketpp_1_1AddrHandler_75b342f24605c5d167aabaa0422ff1ad}{getAddrByIface} (const std::string \&name)
-\begin{CompactList}\small\item\em gets IP address bound to specified interface \item\end{CompactList}\item 
+in\_\-addr\_\-t \hyperlink{classsocketpp_1_1AddrHandler_79db1454cc9c12bbd44b526f61ff84fb}{getAddrByRoute} (in\_\-addr\_\-t to)
+\begin{CompactList}\small\item\em gets IP source address to reach given destination address, watching kernel routing table \item\end{CompactList}\item 
 std::string \hyperlink{classsocketpp_1_1AddrHandler_19aebc1e9779dee4e5f06d7b39e18959}{gethostbyname} (const std::string \&name)
 \begin{CompactList}\small\item\em resolves given name through a DNS lookup \item\end{CompactList}\item 
 std::string \hyperlink{classsocketpp_1_1AddrHandler_2e9b9e6dc7ea4fc4a3500665b3f4062d}{gethostbyaddr} (const std::string \&addr)
@@ -42,19 +42,19 @@ static std::string \hyperlink{classsocketpp_1_1AddrHandler_a4377d84c8ea976aeada2
 Class which deals with several things, like dns resolving or address format conversion. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classsocketpp_1_1AddrHandler_75b342f24605c5d167aabaa0422ff1ad}{
-\index{socketpp::AddrHandler@{socketpp::AddrHandler}!getAddrByIface@{getAddrByIface}}
-\index{getAddrByIface@{getAddrByIface}!socketpp::AddrHandler@{socketpp::AddrHandler}}
-\subsubsection[{getAddrByIface}]{\setlength{\rightskip}{0pt plus 5cm}in\_\-addr\_\-t socketpp::AddrHandler::getAddrByIface (const std::string \& {\em name})}}
-\label{classsocketpp_1_1AddrHandler_75b342f24605c5d167aabaa0422ff1ad}
+\hypertarget{classsocketpp_1_1AddrHandler_79db1454cc9c12bbd44b526f61ff84fb}{
+\index{socketpp::AddrHandler@{socketpp::AddrHandler}!getAddrByRoute@{getAddrByRoute}}
+\index{getAddrByRoute@{getAddrByRoute}!socketpp::AddrHandler@{socketpp::AddrHandler}}
+\subsubsection[{getAddrByRoute}]{\setlength{\rightskip}{0pt plus 5cm}in\_\-addr\_\-t socketpp::AddrHandler::getAddrByRoute (in\_\-addr\_\-t {\em to})}}
+\label{classsocketpp_1_1AddrHandler_79db1454cc9c12bbd44b526f61ff84fb}
 
 
-gets IP address bound to specified interface 
+gets IP source address to reach given destination address, watching kernel routing table 
 
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em name}]interface name \end{description}
+\item[{\em to}]destination address \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]IP numerical address \end{Desc}
