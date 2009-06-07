@@ -57,12 +57,12 @@ Inheritance diagram for socketpp::SocketServer:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SocketServer.html#2b43397fd614dc7953559d7372f1c6ca">SocketServer</a> (type t, const std::string &amp;addr, port_t port, unsigned int maxconn=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket and puts it in listening mode  <a href="#2b43397fd614dc7953559d7372f1c6ca"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SocketServer.html#594f3a739f4cd053f9fd0512e42473be">SocketServer</a> (type t, in_addr_t addr, const std::string &amp;serv, const char *prot=NULL, unsigned int maxconn=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SocketServer.html#d1c5c7df1da1c52df7a1fae7df4488b1">SocketServer</a> (type t, in_addr_t addr, const std::string &amp;serv, unsigned int maxconn=0)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket and puts it in listening mode  <a href="#594f3a739f4cd053f9fd0512e42473be"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SocketServer.html#667f8c2b7b1325c80f018ecf85a9551f">SocketServer</a> (type t, const std::string &amp;addr, const std::string &amp;serv, const char *prot=NULL, unsigned int maxconn=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket and puts it in listening mode  <a href="#d1c5c7df1da1c52df7a1fae7df4488b1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SocketServer.html#ed1844f6c0c6e9e3b69e69903355d171">SocketServer</a> (type t, const std::string &amp;addr, const std::string &amp;serv, unsigned int maxconn=0)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket and puts it in listening mode  <a href="#667f8c2b7b1325c80f018ecf85a9551f"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">binds socket and puts it in listening mode  <a href="#ed1844f6c0c6e9e3b69e69903355d171"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classsocketpp_1_1Socket.html">Socket</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1SocketServer.html#de24bd723d353d62d034718a1d95c02f">accept</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Accepts connection request.  <a href="#de24bd723d353d62d034718a1d95c02f"></a><br></td></tr>
@@ -177,7 +177,7 @@ binds socket and puts it in listening mode
 
 </div>
 </div><p>
-<a class="anchor" name="594f3a739f4cd053f9fd0512e42473be"></a><!-- doxytag: member="socketpp::SocketServer::SocketServer" ref="594f3a739f4cd053f9fd0512e42473be" args="(type t, in_addr_t addr, const std::string &amp;serv, const char *prot=NULL, unsigned int maxconn=0)" -->
+<a class="anchor" name="d1c5c7df1da1c52df7a1fae7df4488b1"></a><!-- doxytag: member="socketpp::SocketServer::SocketServer" ref="d1c5c7df1da1c52df7a1fae7df4488b1" args="(type t, in_addr_t addr, const std::string &amp;serv, unsigned int maxconn=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -202,12 +202,6 @@ binds socket and puts it in listening mode
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>prot</em> = <code>NULL</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">unsigned int&nbsp;</td>
           <td class="paramname"> <em>maxconn</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
@@ -228,14 +222,13 @@ binds socket and puts it in listening mode
     <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>socket type </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>addr</em>&nbsp;</td><td>numerical local address to bind </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>serv</em>&nbsp;</td><td>local service to bind </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>prot</em>&nbsp;</td><td>transport layer protocol </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>maxconn</em>&nbsp;</td><td>max number of connections to accept </td></tr>
   </table>
 </dl>
 
 </div>
 </div><p>
-<a class="anchor" name="667f8c2b7b1325c80f018ecf85a9551f"></a><!-- doxytag: member="socketpp::SocketServer::SocketServer" ref="667f8c2b7b1325c80f018ecf85a9551f" args="(type t, const std::string &amp;addr, const std::string &amp;serv, const char *prot=NULL, unsigned int maxconn=0)" -->
+<a class="anchor" name="ed1844f6c0c6e9e3b69e69903355d171"></a><!-- doxytag: member="socketpp::SocketServer::SocketServer" ref="ed1844f6c0c6e9e3b69e69903355d171" args="(type t, const std::string &amp;addr, const std::string &amp;serv, unsigned int maxconn=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -260,12 +253,6 @@ binds socket and puts it in listening mode
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&nbsp;</td>
-          <td class="paramname"> <em>prot</em> = <code>NULL</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">unsigned int&nbsp;</td>
           <td class="paramname"> <em>maxconn</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
@@ -286,7 +273,6 @@ binds socket and puts it in listening mode
     <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>socket type </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>addr</em>&nbsp;</td><td>dotted decimal local address to bind </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>serv</em>&nbsp;</td><td>local service to bind </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>prot</em>&nbsp;</td><td>transport layer protocol </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>maxconn</em>&nbsp;</td><td>max number of connections to accept </td></tr>
   </table>
 </dl>
@@ -383,7 +369,7 @@ puts server in multithreaded mode
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="SocketServer_8h-source.html">SocketServer.h</a><li>SocketServer.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jun 6 14:38:10 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 16:24:21 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

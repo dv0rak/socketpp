@@ -1,0 +1,52 @@
+Warning: Tag `DETAILS_AT_TOP' at line 163 of file doxygen.conf has become obsolete.
+To avoid this warning please update your configuration file using "doxygen -u"
+/home/dvorak/socketpp/src/socketpp_def.h:75: Warning: Compound socketpp::icmphdr is not documented.
+/home/dvorak/socketpp/src/SocketServer.cpp:4: Warning: Compound thrdarg is not documented.
+/home/dvorak/socketpp/src/ftp.h:14: Warning: Member error_temp(int code, const std::string &msg) (function) of class ftplib::error_temp is not documented.
+/home/dvorak/socketpp/src/ftp.h:21: Warning: Member what() const  (function) of class ftplib::error_temp is not documented.
+/home/dvorak/socketpp/src/ftp.h:33: Warning: Member error_perm(int code, const std::string &msg) (function) of class ftplib::error_perm is not documented.
+/home/dvorak/socketpp/src/ftp.h:40: Warning: Member what() const  (function) of class ftplib::error_perm is not documented.
+/home/dvorak/socketpp/src/ftp.h:52: Warning: Member error_proto(const std::string &msg) (function) of class ftplib::error_proto is not documented.
+/home/dvorak/socketpp/src/ftp.h:58: Warning: Member what() const  (function) of class ftplib::error_proto is not documented.
+/home/dvorak/socketpp/src/BaseSocket.h:128: Warning: Member _select_mode (enumeration) of class socketpp::BaseSocket is not documented.
+/home/dvorak/socketpp/src/BaseSocket.h:301: Warning: Member _select(_select_mode m) (function) of class socketpp::BaseSocket is not documented.
+/home/dvorak/socketpp/src/BaseSocket.h:124: Warning: Member _sd (variable) of class socketpp::BaseSocket is not documented.
+/home/dvorak/socketpp/src/BaseSocket.h:125: Warning: Member _h (variable) of class socketpp::BaseSocket is not documented.
+/home/dvorak/socketpp/src/BaseSocket.h:126: Warning: Member _timeout (variable) of class socketpp::BaseSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:74: Warning: Member _build_packet(std::string &packet)=0 (function) of class socketpp::RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:75: Warning: Member _set_fields(const std::string &packet)=0 (function) of class socketpp::RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:77: Warning: Member pseudo_checksum(const void *, size_t, _u32, _u32, _u16) (function) of class socketpp::RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:71: Warning: Member data_payload (variable) of class socketpp::RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:72: Warning: Member rcvd_data_payload (variable) of class socketpp::RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:130: Warning: Member _build_packet(std::string &packet) (function) of class socketpp::IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:131: Warning: Member _set_fields(const std::string &packet) (function) of class socketpp::IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:125: Warning: Member IP_h (variable) of class socketpp::IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:126: Warning: Member rcvd_IP_h (variable) of class socketpp::IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:127: Warning: Member IP_opt (variable) of class socketpp::IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:128: Warning: Member rcvd_IP_opt (variable) of class socketpp::IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:160: Warning: Member _build_packet(std::string &packet) (function) of class socketpp::ICMP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:161: Warning: Member _set_fields(const std::string &packet) (function) of class socketpp::ICMP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:157: Warning: Member ICMP_h (variable) of class socketpp::ICMP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:158: Warning: Member rcvd_ICMP_h (variable) of class socketpp::ICMP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:177: Warning: Member _build_packet(std::string &packet) (function) of class socketpp::ICMP_IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:178: Warning: Member _set_fields(const std::string &packet) (function) of class socketpp::ICMP_IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:231: Warning: Member _build_packet(std::string &packet) (function) of class socketpp::UDP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:232: Warning: Member _set_fields(const std::string &packet) (function) of class socketpp::UDP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:228: Warning: Member UDP_h (variable) of class socketpp::UDP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:229: Warning: Member rcvd_UDP_h (variable) of class socketpp::UDP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:252: Warning: Member _build_packet(std::string &packet) (function) of class socketpp::UDP_IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:253: Warning: Member _set_fields(const std::string &packet) (function) of class socketpp::UDP_IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:324: Warning: Member _build_packet(std::string &packet) (function) of class socketpp::TCP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:325: Warning: Member _set_fields(const std::string &packet) (function) of class socketpp::TCP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:319: Warning: Member TCP_h (variable) of class socketpp::TCP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:320: Warning: Member rcvd_TCP_h (variable) of class socketpp::TCP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:321: Warning: Member TCP_opt (variable) of class socketpp::TCP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:322: Warning: Member rcvd_TCP_opt (variable) of class socketpp::TCP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:344: Warning: Member _build_packet(std::string &packet) (function) of class socketpp::TCP_IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/RawSocket.h:345: Warning: Member _set_fields(const std::string &packet) (function) of class socketpp::TCP_IP_RawSocket is not documented.
+/home/dvorak/socketpp/src/SockException.h:46: Warning: Member get_errno() (function) of class socketpp::error is not documented.
+/home/dvorak/socketpp/src/SockException.h:85: Warning: Member get_gai_errno() (function) of class socketpp::gai_error is not documented.
+/home/dvorak/socketpp/src/SockStream.h:13: Warning: Member BUFSIZE (variable) of class socketpp::SockBuf is not documented.
+/home/dvorak/socketpp/src/SockStream.h:35: Warning: Member overflow(int c=EOF) (function) of class socketpp::SockBuf is not documented.
+/home/dvorak/socketpp/src/SockStream.h:36: Warning: Member underflow() (function) of class socketpp::SockBuf is not documented.
+/home/dvorak/socketpp/src/SockStream.h:37: Warning: Member sync() (function) of class socketpp::SockBuf is not documented.

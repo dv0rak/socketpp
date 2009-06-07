@@ -33,17 +33,17 @@ int \hyperlink{classsocketpp_1_1BaseSocket_769710192256606aaec1a776468d75fa}{con
 \begin{CompactList}\small\item\em connects socket to remote address \item\end{CompactList}\item 
 int \hyperlink{classsocketpp_1_1BaseSocket_2bdd6d459e6f9cf2f71636b01787b250}{connect} (in\_\-addr\_\-t addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em connects socket to remote address \item\end{CompactList}\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_eb0f4c84546c22fd9023169701d8fae8}{connect} (const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL)
+int \hyperlink{classsocketpp_1_1BaseSocket_ec01996bf257fdf9d71c1c3eb6bb6519}{connect} (const std::string \&addr, const std::string \&serv)
 \begin{CompactList}\small\item\em connects socket to remote address \item\end{CompactList}\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_83666b030a93368675a842a992e0c2af}{connect} (in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL)
+int \hyperlink{classsocketpp_1_1BaseSocket_7603795bfbcf43a4167fedc8fe8fe5b3}{connect} (in\_\-addr\_\-t addr, const std::string \&serv)
 \begin{CompactList}\small\item\em connects socket to remote address \item\end{CompactList}\item 
 int \hyperlink{classsocketpp_1_1BaseSocket_78c2a8e6a5c7dfbc708c9cd637e88e51}{bind} (const std::string \&addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
 int \hyperlink{classsocketpp_1_1BaseSocket_d3df73f534900d40f9dff26171ec93b5}{bind} (in\_\-addr\_\-t addr, port\_\-t port=0)
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_4775f13f8e1cceaaed40106162b2149f}{bind} (const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL)
+int \hyperlink{classsocketpp_1_1BaseSocket_c82e79c07750af528b8bd705f0910e43}{bind} (const std::string \&addr, const std::string \&serv)
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
-int \hyperlink{classsocketpp_1_1BaseSocket_aab800bcb5ee48cd4410ae2b9ed83e23}{bind} (in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL)
+int \hyperlink{classsocketpp_1_1BaseSocket_1b1249c5843a5d9205a6599670addf87}{bind} (in\_\-addr\_\-t addr, const std::string \&serv)
 \begin{CompactList}\small\item\em binds socket to local given address \item\end{CompactList}\item 
 void \hyperlink{classsocketpp_1_1BaseSocket_0804d148470fd742cda495d3533b25c6}{settimeout} (double time)
 \begin{CompactList}\small\item\em sets a \hyperlink{classsocketpp_1_1timeout}{timeout} on the following IO operations. If time is 0 \hyperlink{classsocketpp_1_1timeout}{timeout} is cancelled. \item\end{CompactList}\item 
@@ -67,8 +67,6 @@ void \hyperlink{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}{cl
 \label{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}
 
 \begin{CompactList}\small\item\em cleans internal DNS cache \item\end{CompactList}\item 
-std::map$<$ std::string, std::string $>$ \hyperlink{classsocketpp_1_1BaseSocket_52bf8df48bf4da48eff4adc690caa211}{getDnsCache} ()
-\begin{CompactList}\small\item\em returns internal DNS cache \item\end{CompactList}\item 
 \hypertarget{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{
 virtual \hyperlink{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{$\sim$BaseSocket} ()}
 \label{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}
@@ -116,13 +114,13 @@ size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_33e5d93278884480c62a1586a2a4a11
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_63cabdd45f7985f6a63cf11eb2e031c5}{sendto} (const std::string \&buf, const std::string \&addr, port\_\-t port=0, msg\_\-flag flags=msg\_\-none)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_66dd5d38b741346d3b37cff6d26e7b8c}{sendto} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL, msg\_\-flag flags=msg\_\-none)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_ca4c0bbe94058654d01b82d517c9c590}{sendto} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, in\_\-addr\_\-t addr, const std::string \&serv, msg\_\-flag flags=msg\_\-none)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_d3b26301f9af47aa8bdcf38c32ba8c9d}{sendto} (const std::string \&buf, in\_\-addr\_\-t addr, const std::string \&serv, const char $\ast$prot=NULL, msg\_\-flag flags=msg\_\-none)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_8ffad80d557d9d77e681742c177522f2}{sendto} (const std::string \&buf, in\_\-addr\_\-t addr, const std::string \&serv, msg\_\-flag flags=msg\_\-none)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_31b240c268f150718c7411da62efff7d}{sendto} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL, msg\_\-flag flags=msg\_\-none)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_d12f0e8c85c766765fe9d88dc4833dcc}{sendto} (const char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, const std::string \&addr, const std::string \&serv, msg\_\-flag flags=msg\_\-none)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
-size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_f3e7f526290cc37aeaaa1f6686c17ee3}{sendto} (const std::string \&buf, const std::string \&addr, const std::string \&serv, const char $\ast$prot=NULL, msg\_\-flag flags=msg\_\-none)
+size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_1bcaa3e5552273e0ef51811bd6987dc8}{sendto} (const std::string \&buf, const std::string \&addr, const std::string \&serv, msg\_\-flag flags=msg\_\-none)
 \begin{CompactList}\small\item\em sends data over socket \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1BaseSocket_6a207860c0a1328dc05bea32bb62e81f}{recvfrom} (char buf\mbox{[}$\,$\mbox{]}, size\_\-t size, in\_\-addr\_\-t \&addr, port\_\-t \&port, msg\_\-flag flags=msg\_\-none)
 \begin{CompactList}\small\item\em reads data on socket \item\end{CompactList}\item 
@@ -200,11 +198,11 @@ constructor which uses the given socket descriptor
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classsocketpp_1_1BaseSocket_aab800bcb5ee48cd4410ae2b9ed83e23}{
+\hypertarget{classsocketpp_1_1BaseSocket_1b1249c5843a5d9205a6599670addf87}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!bind@{bind}}
 \index{bind@{bind}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::bind (in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL})}}
-\label{classsocketpp_1_1BaseSocket_aab800bcb5ee48cd4410ae2b9ed83e23}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::bind (in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv})}}
+\label{classsocketpp_1_1BaseSocket_1b1249c5843a5d9205a6599670addf87}
 
 
 binds socket to local given address 
@@ -212,15 +210,15 @@ binds socket to local given address
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em addr}]IPv4 numerical address \item[{\em serv}]service name \item[{\em prot}]transport layer protocol \end{description}
+\item[{\em addr}]IPv4 numerical address \item[{\em serv}]service name \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]\hyperlink{classsocketpp_1_1BaseSocket_78c2a8e6a5c7dfbc708c9cd637e88e51}{bind()} return value \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_4775f13f8e1cceaaed40106162b2149f}{
+\hypertarget{classsocketpp_1_1BaseSocket_c82e79c07750af528b8bd705f0910e43}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!bind@{bind}}
 \index{bind@{bind}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::bind (const std::string \& {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL})}}
-\label{classsocketpp_1_1BaseSocket_4775f13f8e1cceaaed40106162b2149f}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::bind (const std::string \& {\em addr}, \/  const std::string \& {\em serv})}}
+\label{classsocketpp_1_1BaseSocket_c82e79c07750af528b8bd705f0910e43}
 
 
 binds socket to local given address 
@@ -228,7 +226,7 @@ binds socket to local given address
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em addr}]IPv4 dotted decimal address \item[{\em serv}]service name \item[{\em prot}]transport layer protocol \end{description}
+\item[{\em addr}]IPv4 dotted decimal address \item[{\em serv}]service name \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]\hyperlink{classsocketpp_1_1BaseSocket_78c2a8e6a5c7dfbc708c9cd637e88e51}{bind()} return value \end{Desc}
@@ -264,11 +262,11 @@ binds socket to local given address
 \end{Desc}
 \begin{Desc}
 \item[Returns:]\hyperlink{classsocketpp_1_1BaseSocket_78c2a8e6a5c7dfbc708c9cd637e88e51}{bind()} return value \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_83666b030a93368675a842a992e0c2af}{
+\hypertarget{classsocketpp_1_1BaseSocket_7603795bfbcf43a4167fedc8fe8fe5b3}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!connect@{connect}}
 \index{connect@{connect}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::connect (in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL})}}
-\label{classsocketpp_1_1BaseSocket_83666b030a93368675a842a992e0c2af}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::connect (in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv})}}
+\label{classsocketpp_1_1BaseSocket_7603795bfbcf43a4167fedc8fe8fe5b3}
 
 
 connects socket to remote address 
@@ -276,15 +274,15 @@ connects socket to remote address
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em addr}]IPv4 numerical address \item[{\em serv}]service name \item[{\em prot}]transport layer protocol \end{description}
+\item[{\em addr}]IPv4 numerical address \item[{\em serv}]service name \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]\hyperlink{classsocketpp_1_1BaseSocket_769710192256606aaec1a776468d75fa}{connect()} return value \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_eb0f4c84546c22fd9023169701d8fae8}{
+\hypertarget{classsocketpp_1_1BaseSocket_ec01996bf257fdf9d71c1c3eb6bb6519}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!connect@{connect}}
 \index{connect@{connect}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::connect (const std::string \& {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL})}}
-\label{classsocketpp_1_1BaseSocket_eb0f4c84546c22fd9023169701d8fae8}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}int socketpp::BaseSocket::connect (const std::string \& {\em addr}, \/  const std::string \& {\em serv})}}
+\label{classsocketpp_1_1BaseSocket_ec01996bf257fdf9d71c1c3eb6bb6519}
 
 
 connects socket to remote address 
@@ -292,7 +290,7 @@ connects socket to remote address
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em addr}]IPv4 dotted decimal address \item[{\em serv}]service name \item[{\em prot}]transport layer protocol \end{description}
+\item[{\em addr}]IPv4 dotted decimal address \item[{\em serv}]service name \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]\hyperlink{classsocketpp_1_1BaseSocket_769710192256606aaec1a776468d75fa}{connect()} return value \end{Desc}
@@ -339,17 +337,6 @@ returns socket descriptor number
 
 \begin{Desc}
 \item[Returns:]descriptor number \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_52bf8df48bf4da48eff4adc690caa211}{
-\index{socketpp::BaseSocket@{socketpp::BaseSocket}!getDnsCache@{getDnsCache}}
-\index{getDnsCache@{getDnsCache}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{getDnsCache}]{\setlength{\rightskip}{0pt plus 5cm}std::map$<$std::string,std::string$>$ socketpp::BaseSocket::getDnsCache ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_52bf8df48bf4da48eff4adc690caa211}
-
-
-returns internal DNS cache 
-
-\begin{Desc}
-\item[Returns:]DNS cache \end{Desc}
 \hypertarget{classsocketpp_1_1BaseSocket_c845c3a037f0f400fd50dfb58706b6e4}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!getsockopt@{getsockopt}}
 \index{getsockopt@{getsockopt}!socketpp::BaseSocket@{socketpp::BaseSocket}}
@@ -616,11 +603,11 @@ sends data over socket
 \end{Desc}
 \begin{Desc}
 \item[Returns:]number of bytes sent \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_f3e7f526290cc37aeaaa1f6686c17ee3}{
+\hypertarget{classsocketpp_1_1BaseSocket_1bcaa3e5552273e0ef51811bd6987dc8}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!sendto@{sendto}}
 \index{sendto@{sendto}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const std::string \& {\em buf}, \/  const std::string \& {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  msg\_\-flag {\em flags} = {\tt msg\_\-none})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_f3e7f526290cc37aeaaa1f6686c17ee3}
+\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const std::string \& {\em buf}, \/  const std::string \& {\em addr}, \/  const std::string \& {\em serv}, \/  msg\_\-flag {\em flags} = {\tt msg\_\-none})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1BaseSocket_1bcaa3e5552273e0ef51811bd6987dc8}
 
 
 sends data over socket 
@@ -628,15 +615,15 @@ sends data over socket
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em buf}]data string \item[{\em addr}]dotted decimal remote address \item[{\em serv}]service name \item[{\em prot}]transport layer protocol \item[{\em flags}]C \hyperlink{classsocketpp_1_1BaseSocket_d6df36281c6fce81e5c4c493ac91a6f8}{sendto()} flags \end{description}
+\item[{\em buf}]data string \item[{\em addr}]dotted decimal remote address \item[{\em serv}]service name \item[{\em flags}]C \hyperlink{classsocketpp_1_1BaseSocket_d6df36281c6fce81e5c4c493ac91a6f8}{sendto()} flags \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]number of bytes sent \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_31b240c268f150718c7411da62efff7d}{
+\hypertarget{classsocketpp_1_1BaseSocket_d12f0e8c85c766765fe9d88dc4833dcc}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!sendto@{sendto}}
 \index{sendto@{sendto}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  const std::string \& {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  msg\_\-flag {\em flags} = {\tt msg\_\-none})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_31b240c268f150718c7411da62efff7d}
+\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  const std::string \& {\em addr}, \/  const std::string \& {\em serv}, \/  msg\_\-flag {\em flags} = {\tt msg\_\-none})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1BaseSocket_d12f0e8c85c766765fe9d88dc4833dcc}
 
 
 sends data over socket 
@@ -644,15 +631,15 @@ sends data over socket
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em buf}]data buffer \item[{\em size}]size of data in bytes \item[{\em addr}]dotted decimal remote address \item[{\em serv}]service name \item[{\em prot}]transport layer protocol \item[{\em flags}]C \hyperlink{classsocketpp_1_1BaseSocket_d6df36281c6fce81e5c4c493ac91a6f8}{sendto()} flags \end{description}
+\item[{\em buf}]data buffer \item[{\em size}]size of data in bytes \item[{\em addr}]dotted decimal remote address \item[{\em serv}]service name \item[{\em flags}]C \hyperlink{classsocketpp_1_1BaseSocket_d6df36281c6fce81e5c4c493ac91a6f8}{sendto()} flags \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]number of bytes sent \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_d3b26301f9af47aa8bdcf38c32ba8c9d}{
+\hypertarget{classsocketpp_1_1BaseSocket_8ffad80d557d9d77e681742c177522f2}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!sendto@{sendto}}
 \index{sendto@{sendto}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const std::string \& {\em buf}, \/  in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  msg\_\-flag {\em flags} = {\tt msg\_\-none})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_d3b26301f9af47aa8bdcf38c32ba8c9d}
+\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const std::string \& {\em buf}, \/  in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  msg\_\-flag {\em flags} = {\tt msg\_\-none})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1BaseSocket_8ffad80d557d9d77e681742c177522f2}
 
 
 sends data over socket 
@@ -660,15 +647,15 @@ sends data over socket
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em buf}]data string \item[{\em addr}]numerical remote address \item[{\em serv}]service name \item[{\em prot}]transport layer protocol \item[{\em flags}]C \hyperlink{classsocketpp_1_1BaseSocket_d6df36281c6fce81e5c4c493ac91a6f8}{sendto()} flags \end{description}
+\item[{\em buf}]data string \item[{\em addr}]numerical remote address \item[{\em serv}]service name \item[{\em flags}]C \hyperlink{classsocketpp_1_1BaseSocket_d6df36281c6fce81e5c4c493ac91a6f8}{sendto()} flags \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]number of bytes sent \end{Desc}
-\hypertarget{classsocketpp_1_1BaseSocket_66dd5d38b741346d3b37cff6d26e7b8c}{
+\hypertarget{classsocketpp_1_1BaseSocket_ca4c0bbe94058654d01b82d517c9c590}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!sendto@{sendto}}
 \index{sendto@{sendto}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  const char $\ast$ {\em prot} = {\tt NULL}, \/  msg\_\-flag {\em flags} = {\tt msg\_\-none})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
-\label{classsocketpp_1_1BaseSocket_66dd5d38b741346d3b37cff6d26e7b8c}
+\subsubsection[{sendto}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t socketpp::BaseSocket::sendto (const char {\em buf}\mbox{[}$\,$\mbox{]}, \/  size\_\-t {\em size}, \/  in\_\-addr\_\-t {\em addr}, \/  const std::string \& {\em serv}, \/  msg\_\-flag {\em flags} = {\tt msg\_\-none})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\label{classsocketpp_1_1BaseSocket_ca4c0bbe94058654d01b82d517c9c590}
 
 
 sends data over socket 
@@ -676,7 +663,7 @@ sends data over socket
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em buf}]data buffer \item[{\em size}]size of data in bytes \item[{\em addr}]numerical remote address \item[{\em serv}]service name \item[{\em prot}]transport layer protocol \item[{\em flags}]C \hyperlink{classsocketpp_1_1BaseSocket_d6df36281c6fce81e5c4c493ac91a6f8}{sendto()} flags \end{description}
+\item[{\em buf}]data buffer \item[{\em size}]size of data in bytes \item[{\em addr}]numerical remote address \item[{\em serv}]service name \item[{\em flags}]C \hyperlink{classsocketpp_1_1BaseSocket_d6df36281c6fce81e5c4c493ac91a6f8}{sendto()} flags \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]number of bytes sent \end{Desc}

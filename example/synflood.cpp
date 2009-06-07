@@ -39,7 +39,7 @@ int main(int argc, char **argv)
     if(h.isIPv4(argv[1])) {
         addr = h.inet_aton(argv[1]);
     } else {
-        addr = h.inet_aton(h.gethostbyname(argv[1]));
+        addr = h.inet_aton(h.gethostbyname(argv[1])[0]);
     }
 
     synflood(addr, port);

@@ -33,7 +33,7 @@ int main(int argc, char **argv)
         hostname = host_ip;
     } else {
         hostname = argv[1];
-        host_ip = h.gethostbyname(argv[1]);
+        host_ip = h.gethostbyname(argv[1])[0];
     }
     sock.connect(host_ip);
 

@@ -8,36 +8,54 @@
 
 namespace socketpp {
 
-std::string AddrHandler::gethostbyname(const std::string& name)
+std::vector<std::string> AddrHandler::gethostbyname(const std::string& name)
 {
-    std::map<std::string,std::string>::iterator i=resolved.find(name);
-    if(i!= resolved.end()) {
-        return i->second;
+    struct addrinfo *result;
+    struct addrinfo hints;
+
+    if(resolved.find(name) == resolved.end()) {
+        ::bzero(&hints, sizeof hints);
+        hints.ai_family = AF_INET;
+
+        int error = ::getaddrinfo(name.c_str(), NULL, &hints, &result);
+        if(error)
+            throw gai_error("gethostbyname", error, "getaddrinfo");
+
+        in_addr_t prev_addr = 0;
+
+        for(struct addrinfo *res=result; res!=NULL; res=res->ai_next) { 
+            in_addr_t addr = ::htonl(((struct sockaddr_in *)res->ai_addr)->sin_addr.s_addr);
+
+            if(addr == prev_addr)
+                continue;
+            prev_addr = addr;
+
+            resolved[name].push_back(inet_ntoa(addr));
+        }
+        ::freeaddrinfo(result);
     }
-    struct hostent *he = ::gethostbyname(name.c_str());
-    if(he == NULL) {
-        throw h_error("gethostbyname", h_errno, "gethostbyname");
-    }
-    std::string addr=inet_ntoa(::ntohl((*(struct in_addr *)he->h_addr).s_addr));
-    resolved[name]=addr;
-    return addr;
+    return resolved[name];
 }
+
+
 
 std::string AddrHandler::gethostbyaddr(const std::string& addr)
 {
-    for(std::map<std::string,std::string>::iterator i=resolved.begin(); i!=resolved.end(); i++) {
-        if(i->second==addr) {
-            return i->first;
-        }
+    if(reversed.find(addr) == reversed.end()) {
+        char hostname[NI_MAXHOST];
+        struct sockaddr_in sa;
+
+        sa.sin_family = AF_INET;
+        sa.sin_addr.s_addr = ::htonl(inet_aton(addr));
+        sa.sin_port = 0;
+
+        int error = ::getnameinfo((struct sockaddr *)&sa, sizeof sa, hostname, sizeof hostname, NULL, 0, 0); 
+        if(error)
+            throw gai_error("gethostbyaddr", error, "getnameinfo");
+ 
+        reversed[addr] = hostname;
     }
-    struct in_addr in;
-    in.s_addr = ::htonl(inet_aton(addr));
-    struct hostent *he = ::gethostbyaddr(&in,sizeof in,AF_INET);
-    if(he == NULL) {
-        throw h_error("gethostbyaddr", h_errno, "gethostbyaddr");
-    }
-    resolved[he->h_name] = addr;
-    return he->h_name;
+    return reversed[addr];
 }
 
 bool AddrHandler::isIPv4(const std::string& str) throw()
@@ -51,35 +69,56 @@ bool AddrHandler::isIPv4(const std::string& str) throw()
 in_addr_t AddrHandler::inet_aton(const std::string& str)
 {
     in_addr_t addr;
-    if(::inet_pton(AF_INET, str.c_str(), &addr) == 0) {
-        throw h_error("inet_aton", "`"+ str+ "' not a IPv4 address");
-    }
+    int err = ::inet_pton(AF_INET, str.c_str(), &addr);
+    if(err < 0)
+        throw error("inet_aton", errno, "inet_pton");
+    if(err == 0)
+        throw h_error("inet_aton", "`"+str+"` not a valid IPv4 address", "inet_pton"); 
+    
     return ::ntohl(addr);
 }
 
-std::string AddrHandler::inet_ntoa(in_addr_t addr) throw()
+std::string AddrHandler::inet_ntoa(in_addr_t addr)
 {
+    char dst[INET_ADDRSTRLEN];
     struct in_addr in;
     in.s_addr = ::htonl(addr);
-    return ::inet_ntoa(in);
+
+    if(::inet_ntop(AF_INET, &in, dst, INET_ADDRSTRLEN) == NULL)
+        throw error("inet_ntoa", errno, "inet_ntop");
+    return dst;
 }
 
-port_t AddrHandler::getservbyname(const std::string& name, const char *prot)
+port_t AddrHandler::getservbyname(const std::string& name)
 {
-    servent *s;
-    s = ::getservbyname(name.c_str(),prot);
-    if(s == NULL) {
-        throw h_error("getservbyname", "error", "getservbyname");
-    }
-    return ::ntohs(s->s_port);
+    struct addrinfo *result;
+    struct addrinfo hints;
+
+    ::bzero(&hints, sizeof hints);
+    hints.ai_family = AF_INET;
+
+    int error = ::getaddrinfo(NULL, name.c_str(), &hints, &result);
+    if(error)
+        throw gai_error("getservbyname", error, "getaddrinfo");
+
+    ::freeaddrinfo(result);
+    return ::htons(((struct sockaddr_in *)result->ai_addr)->sin_port);
 }
 
-std::string AddrHandler::getservbyport(port_t port, const char *prot) throw()
+std::string AddrHandler::getservbyport(port_t port, gai_proto prot)
 {
-    servent *s;
-    s = ::getservbyport(::htons(port),prot);
-    if(s == NULL) return "";
-    return s->s_name;
+    char servname[NI_MAXSERV];
+    struct sockaddr_in sa;
+
+    sa.sin_family = AF_INET;
+    sa.sin_addr.s_addr = 0;
+    sa.sin_port = ::htons(port);
+
+    int error = ::getnameinfo((struct sockaddr *)&sa,sizeof sa,NULL,0,servname,sizeof servname,prot==tcp ? 0 : NI_DGRAM);
+    if(error)
+        throw gai_error("getservbyport", error, "getnameinfo");
+
+    return servname;
 }
 
 // Taken from http://www.linuxjournal.com/article/8498
@@ -89,6 +128,8 @@ in_addr_t AddrHandler::getAddrByRoute(in_addr_t to)
         return INADDR_LOOPBACK;
     }
 
+    if(routeCache.find(to) != routeCache.end())
+        return routeCache[to];
 
     // open socket
     int fd = ::socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE);
@@ -250,11 +291,13 @@ in_addr_t AddrHandler::getAddrByRoute(in_addr_t to)
             }
             ::close(sd);
             struct sockaddr_in *sin = (struct sockaddr_in *)&ifr.ifr_addr;
-            return ::htonl(sin->sin_addr.s_addr);
+
+            routeCache[to] = ::htonl(sin->sin_addr.s_addr);
+            return routeCache[to];
         }
     }
 
-    return -1;
+    return inaddr_none;
 }
 
 };

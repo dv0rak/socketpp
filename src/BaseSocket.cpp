@@ -58,7 +58,7 @@ BaseSocket::BaseSocket(int sd)
 
 int BaseSocket::connect(const std::string& addr, port_t port)
 {
-    return connect(_h.inet_aton(_h.isIPv4(addr)? addr: _h.gethostbyname(addr)),port);
+    return connect(_h.inet_aton(_h.isIPv4(addr)? addr: _h.gethostbyname(addr)[0]),port);
 }
 
 int BaseSocket::connect(in_addr_t addr, port_t port)
@@ -113,7 +113,7 @@ int BaseSocket::_select(_select_mode m)
 
 int BaseSocket::bind(const std::string& addr, port_t port)
 {
-    return bind(_h.inet_aton(_h.isIPv4(addr)? addr: _h.gethostbyname(addr)),port);
+    return bind(_h.inet_aton(_h.isIPv4(addr)? addr: _h.gethostbyname(addr)[0]),port);
 }
 
 int BaseSocket::bind(in_addr_t addr, port_t port)
@@ -193,24 +193,24 @@ BaseSocket::BaseSocket(const BaseSocket &s)
     _sd		= s._sd;
 }
 
-int BaseSocket::connect(const std::string& addr, const std::string& serv, const char *prot)
+int BaseSocket::connect(const std::string& addr, const std::string& serv)
 {
-    return connect(addr, _h.getservbyname(serv, prot));
+    return connect(addr, _h.getservbyname(serv));
 }
 
-int BaseSocket::connect(in_addr_t addr, const std::string& serv, const char *prot)
+int BaseSocket::connect(in_addr_t addr, const std::string& serv)
 {
-    return connect(addr, _h.getservbyname(serv, prot));
+    return connect(addr, _h.getservbyname(serv));
 }
 
-int BaseSocket::bind(const std::string& addr, const std::string& serv, const char *prot)
+int BaseSocket::bind(const std::string& addr, const std::string& serv)
 {
-    return bind(addr, _h.getservbyname(serv,prot));
+    return bind(addr, _h.getservbyname(serv));
 }    
 
-int BaseSocket::bind(in_addr_t addr, const std::string& serv, const char *prot)
+int BaseSocket::bind(in_addr_t addr, const std::string& serv)
 {
-    return bind(addr, _h.getservbyname(serv,prot));
+    return bind(addr, _h.getservbyname(serv));
 }
 
 size_t BaseSocket::send(const char buf[], size_t size, msg_flag flags)
@@ -270,7 +270,7 @@ size_t BaseSocket::recv(std::string& buf, size_t size, msg_flag flags)
 size_t BaseSocket::sendto(const char buf[], size_t size, in_addr_t addr, port_t port, msg_flag flags)
 {
     int n, ret=0;
-    struct sockaddr_in remote=__initaddr(htonl(addr),htons(port));
+    struct sockaddr_in remote = __initaddr(htonl(addr),htons(port));
     
     if(_timeout != 0.0) {
         
@@ -303,7 +303,7 @@ size_t BaseSocket::sendto(const std::string& buf, in_addr_t addr, port_t port, m
 size_t BaseSocket::sendto(const char buf[], size_t size, const std::string& addr, port_t port, msg_flag flags)
 {
     in_addr_t in;
-    in = _h.inet_aton(_h.isIPv4(addr)? addr: _h.gethostbyname(addr));
+    in = _h.inet_aton(_h.isIPv4(addr)? addr: _h.gethostbyname(addr)[0]);
     return sendto(buf,size,in,port,flags);
 }
 
@@ -313,27 +313,27 @@ size_t BaseSocket::sendto(const std::string& buf, const std::string& addr, port_
 }
 
 size_t BaseSocket::sendto
-(const char buf[],size_t size,in_addr_t addr,const std::string& serv,const char *prot, msg_flag flags)
+(const char buf[],size_t size,in_addr_t addr,const std::string& serv, msg_flag flags)
 {
-    return sendto(buf, size, addr, _h.getservbyname(serv,prot), flags);
+    return sendto(buf, size, addr, _h.getservbyname(serv), flags);
 }
 
 size_t BaseSocket::sendto
-(const std::string& buf, in_addr_t addr,const std::string& serv,const char *prot, msg_flag flags)
+(const std::string& buf, in_addr_t addr,const std::string& serv, msg_flag flags)
 {
-    return sendto(buf.c_str(), buf.size(), addr, _h.getservbyname(serv,prot), flags);
+    return sendto(buf.c_str(), buf.size(), addr, _h.getservbyname(serv), flags);
 }
 
 size_t BaseSocket::sendto
-(const char buf[],size_t size,const std::string& addr,const std::string& serv,const char *prot, msg_flag flags)
+(const char buf[],size_t size,const std::string& addr,const std::string& serv, msg_flag flags)
 {
-    return sendto(buf, size, addr, _h.getservbyname(serv,prot), flags);
+    return sendto(buf, size, addr, _h.getservbyname(serv), flags);
 }
 
 size_t BaseSocket::sendto
-(const std::string& buf, const std::string& addr,const std::string& serv,const char *prot, msg_flag flags)
+(const std::string& buf, const std::string& addr,const std::string& serv, msg_flag flags)
 {
-    return sendto(buf.c_str(),buf.size(),addr,serv,prot,flags);
+    return sendto(buf.c_str(),buf.size(),addr,serv,flags);
 }
 
 size_t BaseSocket::recvfrom(char buf[], size_t size, in_addr_t& addr, port_t& port, msg_flag flags)

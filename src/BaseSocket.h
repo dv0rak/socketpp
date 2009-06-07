@@ -62,15 +62,13 @@ public:
     ///@brief connects socket to remote address
     ///@param addr	IPv4 dotted decimal address
     ///@param serv	service name
-    ///@param prot	transport layer protocol
     ///@return	connect() return value
-    int connect(const std::string& addr, const std::string& serv, const char *prot=NULL);
+    int connect(const std::string& addr, const std::string& serv);
     ///@brief connects socket to remote address
     ///@param addr	IPv4 numerical address
     ///@param serv	service name
-    ///@param prot	transport layer protocol
     ///@return	connect() return value
-    int connect(in_addr_t addr, const std::string& serv, const char *prot=NULL);
+    int connect(in_addr_t addr, const std::string& serv);
 
     ///@brief	binds socket to local given address
     ///@param addr	IPv4 dotted decimal address
@@ -85,15 +83,13 @@ public:
     ///@brief	binds socket to local given address
     ///@param addr	IPv4 dotted decimal address
     ///@param serv	service name
-    ///@param prot	transport layer protocol
     ///@return	bind() return value
-    int bind(const std::string& addr, const std::string& serv, const char *prot=NULL);
+    int bind(const std::string& addr, const std::string& serv);
     ///@brief	binds socket to local given address
     ///@param addr	IPv4 numerical address
     ///@param serv	service name
-    ///@param prot	transport layer protocol
     ///@return	bind() return value
-    int bind(in_addr_t addr, const std::string& serv, const char *prot=NULL);
+    int bind(in_addr_t addr, const std::string& serv);
 
     ///@brief sets a timeout on the following IO operations. If time is 0 timeout is cancelled.
     ///@param	time	timeout in seconds
@@ -120,9 +116,6 @@ public:
     
     ///@brief cleans internal DNS cache
     inline void   cleanDnsCache() { _h.cleanDnsCache(); }
-    ///@brief returns internal DNS cache
-    ///@return DNS cache
-    inline std::map<std::string,std::string> getDnsCache() { return _h.getDnsCache(); }
 
     ///@brief desctuctor which calls close()
     virtual ~BaseSocket();
@@ -214,39 +207,35 @@ protected:
     ///@param   size	size of data in bytes
     ///@param	addr	numerical remote address
     ///@param	serv	service name
-    ///@param	prot 	transport layer protocol
     ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
     size_t sendto
-    (const char buf[],size_t size,in_addr_t addr,const std::string& serv,const char *prot=NULL, msg_flag flags=msg_none);
+    (const char buf[],size_t size,in_addr_t addr,const std::string& serv, msg_flag flags=msg_none);
     ///@brief	sends data over socket
     ///@param	buf	data string
     ///@param	addr	numerical remote address
     ///@param	serv	service name
-    ///@param	prot 	transport layer protocol
     ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
     size_t sendto
-    (const std::string& buf, in_addr_t addr,const std::string& serv,const char *prot=NULL, msg_flag flags=msg_none);
+    (const std::string& buf, in_addr_t addr,const std::string& serv, msg_flag flags=msg_none);
     ///@brief	sends data over socket
     ///@param	buf	data buffer
     ///@param   size	size of data in bytes
     ///@param	addr	dotted decimal remote address
     ///@param	serv	service name
-    ///@param	prot 	transport layer protocol
     ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
     size_t sendto
-    (const char buf[],size_t size,const std::string& addr,const std::string& serv,const char *prot=NULL, msg_flag flags=msg_none);
+    (const char buf[],size_t size,const std::string& addr,const std::string& serv, msg_flag flags=msg_none);
     ///@brief	sends data over socket
     ///@param	buf	data string
     ///@param	addr	dotted decimal remote address
     ///@param	serv	service name
-    ///@param	prot 	transport layer protocol
     ///@param	flags	C sendto() flags
     ///@return  number of bytes sent
     size_t sendto
-    (const std::string& buf,const std::string& addr,const std::string& serv,const char *prot=NULL, msg_flag flags=msg_none);
+    (const std::string& buf,const std::string& addr,const std::string& serv, msg_flag flags=msg_none);
 
     ///@brief	reads data on socket
     ///@param   buf	buffer to fill with data

@@ -69,16 +69,16 @@ SocketServer::SocketServer
 }
     
 SocketServer::SocketServer
-(type t,in_addr_t addr, const std::string& serv, const char *prot, unsigned int maxconn) : BaseSocket(t)
+(type t,in_addr_t addr, const std::string& serv, unsigned int maxconn) : BaseSocket(t)
 {
-    bind(addr, serv, prot);
+    bind(addr, serv);
     if(maxconn) listen(maxconn);
 }
 
 SocketServer::SocketServer
-(type t, const std::string& addr,const std::string& serv,const char *prot,unsigned int maxconn) : BaseSocket(t)
+(type t, const std::string& addr,const std::string& serv, unsigned int maxconn) : BaseSocket(t)
 {
-    bind(addr, serv, prot);
+    bind(addr, serv);
     if(maxconn) listen(maxconn);
 }
 

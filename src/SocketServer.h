@@ -20,30 +20,28 @@ public:
     ///@param	port	local port to bind
     ///@param	maxconn	max number of connections to accept
     SocketServer
-    (type t,in_addr_t addr,port_t port,unsigned int maxconn=0);
+    (type t, in_addr_t addr,port_t port, unsigned int maxconn=0);
     ///@brief	binds socket and puts it in listening mode
     ///@param	t	socket type
     ///@param 	addr	dotted decimal local address to bind
     ///@param	port	local port to bind
     ///@param	maxconn	max number of connections to accept
     SocketServer
-    (type t,const std::string& addr,port_t port,unsigned int maxconn=0);
+    (type t, const std::string& addr, port_t port, unsigned int maxconn=0);
     ///@brief	binds socket and puts it in listening mode
     ///@param	t	socket type
     ///@param 	addr	numerical local address to bind
     ///@param	serv	local service to bind
-    ///@param	prot	transport layer protocol
     ///@param	maxconn	max number of connections to accept
     SocketServer
-    (type t,in_addr_t addr,const std::string& serv,const char *prot=NULL,unsigned int maxconn=0);
+    (type t, in_addr_t addr,const std::string& serv, unsigned int maxconn=0);
     ///@brief	binds socket and puts it in listening mode
     ///@param	t	socket type
     ///@param 	addr	dotted decimal local address to bind
     ///@param	serv	local service to bind
-    ///@param	prot	transport layer protocol
     ///@param	maxconn	max number of connections to accept
     SocketServer
-    (type t,const std::string& addr,const std::string& serv,const char *prot=NULL,unsigned int maxconn=0);
+    (type t, const std::string& addr, const std::string& serv, unsigned int maxconn=0);
  
     ///@brief	Accepts connection request
     ///@return connected socket object

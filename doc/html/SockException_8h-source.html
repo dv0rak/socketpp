@@ -60,13 +60,13 @@
 <a name="l00048"></a>00048     ~<a class="code" href="classsocketpp_1_1error.html#614fef9f326d7bb212771eb20a046290">error</a>() throw() {}
 <a name="l00049"></a>00049 };
 <a name="l00050"></a>00050 
-<a name="l00052"></a><a class="code" href="classsocketpp_1_1h__error.html">00052</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1h__error.html" title="address-related exception class">h_error</a> : <span class="keyword">public</span> std::exception {
+<a name="l00052"></a><a class="code" href="classsocketpp_1_1gai__error.html">00052</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1gai__error.html" title="exception class related to C getaddrinfo() and getnameinfo() functions">gai_error</a> : <span class="keyword">public</span> std::exception {
 <a name="l00053"></a>00053 <span class="keyword">private</span>:
 <a name="l00054"></a>00054     std::string msg;
 <a name="l00055"></a>00055     <span class="keywordtype">int</span> code;
 <a name="l00056"></a>00056 
 <a name="l00057"></a>00057 <span class="keyword">public</span>:
-<a name="l00061"></a><a class="code" href="classsocketpp_1_1h__error.html#c15a1c6216114250241349fdfcdeb98a">00061</a>     <a class="code" href="classsocketpp_1_1h__error.html#c15a1c6216114250241349fdfcdeb98a">h_error</a>(<span class="keyword">const</span> std::string&amp; meth, <span class="keyword">const</span> std::string&amp; err, <span class="keyword">const</span> std::string&amp; func=<span class="stringliteral">""</span>) throw()
+<a name="l00061"></a><a class="code" href="classsocketpp_1_1gai__error.html#617e195448875097f6561a39cca1f49b">00061</a>     <a class="code" href="classsocketpp_1_1gai__error.html#617e195448875097f6561a39cca1f49b">gai_error</a>(<span class="keyword">const</span> std::string&amp; meth, <span class="keyword">const</span> std::string&amp; err, <span class="keyword">const</span> std::string&amp; func=<span class="stringliteral">""</span>) throw()
 <a name="l00062"></a>00062     {
 <a name="l00063"></a>00063         msg = meth + <span class="stringliteral">"(): "</span> + err;
 <a name="l00064"></a>00064         <span class="keywordflow">if</span>(func != <span class="stringliteral">""</span>) {
@@ -75,28 +75,28 @@
 <a name="l00067"></a>00067         code = 0;
 <a name="l00068"></a>00068     }
 <a name="l00069"></a>00069     
-<a name="l00073"></a><a class="code" href="classsocketpp_1_1h__error.html#67e7b6bcd23ebdd79a5fdcf1f01070fe">00073</a>     <a class="code" href="classsocketpp_1_1h__error.html#c15a1c6216114250241349fdfcdeb98a">h_error</a>(<span class="keyword">const</span> std::string&amp; meth, <span class="keywordtype">int</span> err, <span class="keyword">const</span> std::string&amp; func=<span class="stringliteral">""</span>) throw()
+<a name="l00073"></a><a class="code" href="classsocketpp_1_1gai__error.html#fc03a724180e0edd90f7502eedb68da1">00073</a>     <a class="code" href="classsocketpp_1_1gai__error.html#617e195448875097f6561a39cca1f49b">gai_error</a>(<span class="keyword">const</span> std::string&amp; meth, <span class="keywordtype">int</span> err, <span class="keyword">const</span> std::string&amp; func=<span class="stringliteral">""</span>) throw()
 <a name="l00074"></a>00074     {
-<a name="l00075"></a>00075         msg = meth + <span class="stringliteral">"(): "</span> + ::hstrerror(err);
+<a name="l00075"></a>00075         msg = meth + <span class="stringliteral">"(): "</span> + ::gai_strerror(err);
 <a name="l00076"></a>00076         <span class="keywordflow">if</span>(func != <span class="stringliteral">""</span>) {
 <a name="l00077"></a>00077             msg += <span class="stringliteral">" [C "</span>+func+<span class="stringliteral">"()]"</span>;
 <a name="l00078"></a>00078         }
 <a name="l00079"></a>00079         code = err;
 <a name="l00080"></a>00080     }
 <a name="l00081"></a>00081     
-<a name="l00083"></a><a class="code" href="classsocketpp_1_1h__error.html#055c1a5b55b5d02fe81fd74cb8b900d2">00083</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsocketpp_1_1h__error.html#055c1a5b55b5d02fe81fd74cb8b900d2" title="returns complete error string">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> msg.c_str(); }
+<a name="l00083"></a><a class="code" href="classsocketpp_1_1gai__error.html#1ee33e241f637684183e4c395a22a1df">00083</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsocketpp_1_1gai__error.html#1ee33e241f637684183e4c395a22a1df" title="returns complete error string">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> msg.c_str(); }
 <a name="l00084"></a>00084     
-<a name="l00085"></a>00085     <span class="keyword">inline</span> <span class="keywordtype">int</span> get_h_errno() { <span class="keywordflow">return</span> code; }
+<a name="l00085"></a>00085     <span class="keyword">inline</span> <span class="keywordtype">int</span> get_gai_errno() { <span class="keywordflow">return</span> code; }
 <a name="l00086"></a>00086 
-<a name="l00087"></a>00087     ~<a class="code" href="classsocketpp_1_1h__error.html#c15a1c6216114250241349fdfcdeb98a">h_error</a>() throw() {}
+<a name="l00087"></a>00087     ~<a class="code" href="classsocketpp_1_1gai__error.html#617e195448875097f6561a39cca1f49b">gai_error</a>() throw() {}
 <a name="l00088"></a>00088 };
 <a name="l00089"></a>00089 
-<a name="l00091"></a><a class="code" href="classsocketpp_1_1timeout.html">00091</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> : <span class="keyword">public</span> std::exception {
+<a name="l00091"></a><a class="code" href="classsocketpp_1_1h__error.html">00091</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1h__error.html" title="address-related exception class">h_error</a> : <span class="keyword">public</span> std::exception {
 <a name="l00092"></a>00092 <span class="keyword">private</span>:
 <a name="l00093"></a>00093     std::string msg;
 <a name="l00094"></a>00094 
 <a name="l00095"></a>00095 <span class="keyword">public</span>:
-<a name="l00099"></a><a class="code" href="classsocketpp_1_1timeout.html#e93bd15dc9a3209c582782770b909049">00099</a>     <a class="code" href="classsocketpp_1_1timeout.html#e93bd15dc9a3209c582782770b909049">timeout</a>(<span class="keyword">const</span> std::string&amp; meth, <span class="keyword">const</span> std::string&amp; err, <span class="keyword">const</span> std::string&amp; func=<span class="stringliteral">""</span>) throw()
+<a name="l00099"></a><a class="code" href="classsocketpp_1_1h__error.html#c15a1c6216114250241349fdfcdeb98a">00099</a>     <a class="code" href="classsocketpp_1_1h__error.html#c15a1c6216114250241349fdfcdeb98a">h_error</a>(<span class="keyword">const</span> std::string&amp; meth, <span class="keyword">const</span> std::string&amp; err, <span class="keyword">const</span> std::string&amp; func=<span class="stringliteral">""</span>) throw()
 <a name="l00100"></a>00100     {
 <a name="l00101"></a>00101         msg = meth + <span class="stringliteral">"(): "</span> + err;
 <a name="l00102"></a>00102         <span class="keywordflow">if</span>(func != <span class="stringliteral">""</span>) {
@@ -104,15 +104,33 @@
 <a name="l00104"></a>00104         }
 <a name="l00105"></a>00105     }
 <a name="l00106"></a>00106     
-<a name="l00108"></a><a class="code" href="classsocketpp_1_1timeout.html#4ec44590b052339b206a94afbcba6ffb">00108</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsocketpp_1_1timeout.html#4ec44590b052339b206a94afbcba6ffb" title="returns complete error string">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> msg.c_str(); }
+<a name="l00108"></a><a class="code" href="classsocketpp_1_1h__error.html#055c1a5b55b5d02fe81fd74cb8b900d2">00108</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsocketpp_1_1h__error.html#055c1a5b55b5d02fe81fd74cb8b900d2" title="returns complete error string">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> msg.c_str(); }
 <a name="l00109"></a>00109     
-<a name="l00110"></a>00110     ~<a class="code" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a>() throw() {}
+<a name="l00110"></a>00110     ~<a class="code" href="classsocketpp_1_1h__error.html" title="address-related exception class">h_error</a>() throw() {}
 <a name="l00111"></a>00111 };
 <a name="l00112"></a>00112 
-<a name="l00113"></a>00113 };
-<a name="l00114"></a>00114 <span class="preprocessor">#endif</span>
+<a name="l00114"></a><a class="code" href="classsocketpp_1_1timeout.html">00114</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a> : <span class="keyword">public</span> std::exception {
+<a name="l00115"></a>00115 <span class="keyword">private</span>:
+<a name="l00116"></a>00116     std::string msg;
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 <span class="keyword">public</span>:
+<a name="l00122"></a><a class="code" href="classsocketpp_1_1timeout.html#e93bd15dc9a3209c582782770b909049">00122</a>     <a class="code" href="classsocketpp_1_1timeout.html#e93bd15dc9a3209c582782770b909049">timeout</a>(<span class="keyword">const</span> std::string&amp; meth, <span class="keyword">const</span> std::string&amp; err, <span class="keyword">const</span> std::string&amp; func=<span class="stringliteral">""</span>) throw()
+<a name="l00123"></a>00123     {
+<a name="l00124"></a>00124         msg = meth + <span class="stringliteral">"(): "</span> + err;
+<a name="l00125"></a>00125         <span class="keywordflow">if</span>(func != <span class="stringliteral">""</span>) {
+<a name="l00126"></a>00126             msg += <span class="stringliteral">" [C "</span>+func+<span class="stringliteral">"()]"</span>;
+<a name="l00127"></a>00127         }
+<a name="l00128"></a>00128     }
+<a name="l00129"></a>00129     
+<a name="l00131"></a><a class="code" href="classsocketpp_1_1timeout.html#4ec44590b052339b206a94afbcba6ffb">00131</a>     <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classsocketpp_1_1timeout.html#4ec44590b052339b206a94afbcba6ffb" title="returns complete error string">what</a>() <span class="keyword">const</span> throw() { <span class="keywordflow">return</span> msg.c_str(); }
+<a name="l00132"></a>00132     
+<a name="l00133"></a>00133     ~<a class="code" href="classsocketpp_1_1timeout.html" title="timeout-related exception class">timeout</a>() throw() {}
+<a name="l00134"></a>00134 };
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136 };
+<a name="l00137"></a>00137 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jun 6 14:38:07 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 16:24:19 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

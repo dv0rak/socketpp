@@ -48,8 +48,8 @@ public:
     ~error() throw() {}
 };
 
-///@brief	address-related exception class
-class h_error : public std::exception {
+///@brief	exception class related to C getaddrinfo() and getnameinfo() functions
+class gai_error : public std::exception {
 private:
     std::string msg;
     int code;
@@ -58,7 +58,7 @@ public:
     ///@param	meth 	method which threw exception
     ///@param	err	error description string
     ///@param	func	C function which returned error
-    h_error(const std::string& meth, const std::string& err, const std::string& func="") throw()
+    gai_error(const std::string& meth, const std::string& err, const std::string& func="") throw()
     {
         msg = meth + "(): " + err;
         if(func != "") {
@@ -70,9 +70,9 @@ public:
     ///@param	meth 	method which threw exception
     ///@param	err	h_errno code
     ///@param	func	C function which returned error
-    h_error(const std::string& meth, int err, const std::string& func="") throw()
+    gai_error(const std::string& meth, int err, const std::string& func="") throw()
     {
-        msg = meth + "(): " + ::hstrerror(err);
+        msg = meth + "(): " + ::gai_strerror(err);
         if(func != "") {
             msg += " [C "+func+"()]";
         }
@@ -82,8 +82,31 @@ public:
     ///@brief	returns complete error string
     virtual const char * what() const throw() { return msg.c_str(); }
     
-    inline int get_h_errno() { return code; }
+    inline int get_gai_errno() { return code; }
 
+    ~gai_error() throw() {}
+};
+
+///@brief	address-related exception class
+class h_error : public std::exception {
+private:
+    std::string msg;
+
+public:
+    ///@param	meth 	method which threw exception
+    ///@param	err	error description string
+    ///@param	func	C function which returned error
+    h_error(const std::string& meth, const std::string& err, const std::string& func="") throw()
+    {
+        msg = meth + "(): " + err;
+        if(func != "") {
+            msg += " [C "+func+"()]";
+        }
+    }
+    
+    ///@brief	returns complete error string
+    virtual const char * what() const throw() { return msg.c_str(); }
+    
     ~h_error() throw() {}
 };
 

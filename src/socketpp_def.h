@@ -48,6 +48,10 @@ enum level {
     sol_ip    = SOL_IP,
     sol_socket= SOL_SOCKET 
 };
+enum gai_proto {
+    tcp,
+    udp
+};
 
 enum shut_mode {
     shut_rd = SHUT_RD,
