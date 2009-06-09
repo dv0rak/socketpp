@@ -202,7 +202,6 @@ void IP_RawSocket::adjust_IP_tot_len()
 
 void IP_RawSocket::adjust_IP_all()
 {
-    adjust_IP_proto();
     adjust_IP_ihl();
     adjust_IP_tot_len();
     adjust_IP_csum();
@@ -308,11 +307,6 @@ void ICMP_IP_RawSocket::adjust_ICMP_IP_all()
     adjust_IP_all();
 }
 
-void ICMP_IP_RawSocket::adjust_IP_proto()
-{
-    IP_h.protocol = IPPROTO_ICMP;
-}
-
 void ICMP_IP_RawSocket::_build_packet(std::string &packet)
 {
     packet.assign((char *)&IP_h, IPSIZE);
@@ -405,11 +399,6 @@ void UDP_IP_RawSocket::adjust_UDP_IP_all()
 {
     adjust_UDP_all();
     adjust_IP_all();
-}
-
-void UDP_IP_RawSocket::adjust_IP_proto()
-{
-    IP_h.protocol = IPPROTO_UDP;
 }
 
 void UDP_IP_RawSocket::_build_packet(std::string &packet)
@@ -567,11 +556,6 @@ void TCP_IP_RawSocket::adjust_TCP_all()
     adjust_TCP_csum();
 }
 
-void TCP_IP_RawSocket::adjust_IP_proto()
-{
-    IP_h.protocol = IPPROTO_TCP;
-}
-
 void TCP_IP_RawSocket::adjust_TCP_IP_all()
 {
     adjust_TCP_all();
@@ -594,6 +578,24 @@ void TCP_IP_RawSocket::_set_fields(const std::string &packet)
     rcvd_TCP_h = *(tcphdr *)(packet.c_str() + rcvd_IP_h.ihl*4);
     rcvd_TCP_opt = packet.substr(rcvd_IP_h.ihl*4 +TCPSIZE, rcvd_TCP_h.doff*4 -TCPSIZE);
     rcvd_data_payload = packet.substr(rcvd_IP_h.ihl*4 +rcvd_TCP_h.doff*4);
+}
+
+void TCP_IP_RawSocket::build_IP_header
+(_u32 saddr,_u32 daddr,_u8 ttl,_u8 version,_u8 protocol,_u16 id,_u8 tos,_u16 frag_off,_u8 ihl,_u16 tot_len,_u16 check)
+{
+    IP_RawSocket::build_IP_header(saddr,daddr,ttl,version,protocol,id,tos,frag_off,ihl,tot_len,check);
+}
+
+void ICMP_IP_RawSocket::build_IP_header
+(_u32 saddr,_u32 daddr,_u8 ttl,_u8 version,_u8 protocol,_u16 id,_u8 tos,_u16 frag_off,_u8 ihl,_u16 tot_len,_u16 check)
+{
+    IP_RawSocket::build_IP_header(saddr,daddr,ttl,version,protocol,id,tos,frag_off,ihl,tot_len,check);
+}
+
+void UDP_IP_RawSocket::build_IP_header
+(_u32 saddr,_u32 daddr,_u8 ttl,_u8 version,_u8 protocol,_u16 id,_u8 tos,_u16 frag_off,_u8 ihl,_u16 tot_len,_u16 check)
+{
+    IP_RawSocket::build_IP_header(saddr,daddr,ttl,version,protocol,id,tos,frag_off,ihl,tot_len,check);
 }
 
 };

@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     AddrHandler h;
     TCP_IP_RawSocket sock;
     vector<port_t> ports, closed, filtered;
-    string hostname, host_ip;
+    string host_ip;
     int nclosed=0, nfiltered=0;
 
     if(argc < 2) {
@@ -28,16 +28,10 @@ int main(int argc, char **argv)
     srandom(time(NULL));
     random_shuffle(ports.begin(), ports.end());
     
-    if(h.isIPv4(argv[1])) {
-        host_ip = argv[1];
-        hostname = host_ip;
-    } else {
-        hostname = argv[1];
-        host_ip = h.gethostbyname(argv[1])[0];
-    }
+    host_ip = h.gethostbyname(argv[1])[0];
     sock.connect(host_ip);
 
-    cout <<"Port-scanning "<<hostname <<" ("<< host_ip <<")" <<endl<<endl;
+    cout <<"Port-scanning "<<argv[1] <<" ("<< host_ip <<")" <<endl<<endl;
 
     while(! ports.empty()) {
         double elapsed;
@@ -74,7 +68,7 @@ int main(int argc, char **argv)
 
                 if(tcp_h.source==dstport && tcp_h.dest==srcport) {
                     if(tcp_h.syn && tcp_h.ack) {
-                        cout << "Port "<< dstport<< "/tcp is open"<< endl;
+                        cout << "Port "<< dstport<< "/tcp (" <<h.getservbyport(dstport) <<") is open"<< endl;
  
                         sock.build_TCP_header(srcport, dstport, 2, 0, 0, 0, 0, 1);
                         sock.build_IP_header(h.getAddrByRoute(h.inet_aton(host_ip)), h.inet_aton(host_ip));
@@ -106,13 +100,13 @@ int main(int argc, char **argv)
 
     if(nfiltered <= 10)
         for(vector<port_t>::iterator it=filtered.begin(); it!=filtered.end(); it++)
-            cout <<"Port "<< *it<<"/tcp is filtered" <<endl;
+            cout <<"Port "<< *it<<"/tcp (" <<h.getservbyport(*it) <<") is filtered" <<endl;
     else
         cout <<"Totally "<<nfiltered<<" ports filtered" <<endl;
 
     if(nclosed <= 10)
         for(vector<port_t>::iterator it=closed.begin(); it!=closed.end(); it++)
-            cout <<"Port "<< *it<<"/tcp is closed" <<endl;
+            cout <<"Port "<< *it<<"/tcp (" <<h.getservbyport(*it) <<") is closed" <<endl;
     else
         cout <<"Totally "<<nclosed<<" ports closed" <<endl;
 

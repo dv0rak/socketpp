@@ -104,7 +104,7 @@ public:
     ///@brief returns local port to which socket is bound
     ///@return port number
     port_t localPort();
-    ///@brief returns remote port bound to which socket is connected
+    ///@brief returns remote port to which socket is connected
     ///@return port number
     port_t remotePort();
 
@@ -112,13 +112,10 @@ public:
     ///@return descriptor number
     inline int fileno() const  { return _sd; }
     ///@brief calls fileno()
-    operator int() const { return fileno(); }
+    inline operator int() const { return fileno(); }
     
     ///@brief cleans internal DNS cache
     inline void   cleanDnsCache() { _h.cleanDnsCache(); }
-
-    ///@brief desctuctor which calls close()
-    virtual ~BaseSocket();
 
 protected:
     int _sd;

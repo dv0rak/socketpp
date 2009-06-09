@@ -16,7 +16,7 @@ static const unsigned int nprobes = 3;
 int main(int argc, char **argv)
 {
     AddrHandler h;
-    std::string hostname, host_ip;
+    std::string host_ip;
     bool ended = false;
  
     if(argc < 2) {
@@ -24,16 +24,9 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    if(h.isIPv4(argv[1])) {
-        host_ip = argv[1];
-        hostname = host_ip;
-    } else {
-        hostname = argv[1];
-        host_ip = h.gethostbyname(argv[1])[0];
-    }
-    h.cleanDnsCache();
+    host_ip = h.gethostbyname(argv[1])[0];
 
-    cout << "Tracerouting " << hostname << " (" << host_ip << ")" <<endl<<endl;
+    cout << "Tracerouting " << argv[1] << " (" << host_ip << ")" <<endl<<endl;
 
     Socket udp(sock_dgram); 
     ICMP_RawSocket icmp;
@@ -71,8 +64,7 @@ int main(int argc, char **argv)
                     if(icmp_h.type==ICMP_TIME_EXCEEDED || (icmp_h.type==ICMP_DEST_UNREACH && host_ip==sender_ip)) {
 
                         if(sender_ip != prev_sender_ip) { 
-                            try { sender_name = h.gethostbyaddr(sender_ip); }
-                            catch(h_error) { sender_name = sender_ip; }
+                            sender_name = h.gethostbyaddr(sender_ip);
                             prev_sender_ip = sender_ip;
                             cout<<" "<<  sender_name <<" (" <<sender_ip <<")  " <<delta <<" ms" <<flush;
                         } else {

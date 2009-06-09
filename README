@@ -9,9 +9,6 @@ It includes these main classes:
 - SockBuf : publicly derived from std::streambuf and BaseSocket
 - SockStream : extension of std::iostream, it works with SockBuf objects, and allows the well-known stream approach with sockets
 - RawSocket : family of several protocol-based raw socket classes, including TCP, ICMP, and UDP with or without IP header handling. It doesn't require programmer to perform any byte order conversion
-- error : socket-related exception class
-- h_error : address-related exception class
-- timeout : timeout-related exception class
 - ftp : This class tries to imitate the ftplib.FTP python class, with a few differences.
 
 

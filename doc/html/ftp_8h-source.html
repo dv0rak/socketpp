@@ -104,7 +104,7 @@
 <a name="l00141"></a>00141 
 <a name="l00146"></a>00146     std::string <a class="code" href="classftplib_1_1FTP.html#42749c4425e33349f605ec0a8b389731" title="lists all the files in the directory, through the LIST command param path directory...">dir</a>(<span class="keyword">const</span> std::string&amp; path=<span class="stringliteral">"."</span>, std::ostream &amp;os = std::cout);
 <a name="l00147"></a>00147 
-<a name="l00151"></a>00151     <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it aims to be a simple C-socket wrapper">socketpp::Socket</a>&amp; <a class="code" href="classftplib_1_1FTP.html#c949b3cd7b92534705ff041bb43d989b" title="initiate a transfer over the data connection, using PASV or PORT mode depending on...">transfercmd</a>(<span class="keyword">const</span> std::string &amp;cmd);
+<a name="l00151"></a>00151     <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it&amp;#39;s simply a C-socket wrapper">socketpp::Socket</a>&amp; <a class="code" href="classftplib_1_1FTP.html#c949b3cd7b92534705ff041bb43d989b" title="initiate a transfer over the data connection, using PASV or PORT mode depending on...">transfercmd</a>(<span class="keyword">const</span> std::string &amp;cmd);
 <a name="l00154"></a>00154     <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#e35230239f093f01fb295ccb007de1b2" title="sets either PORT or PASV mode">set_pasv</a>(<span class="keywordtype">bool</span> p) <span class="keywordflow">throw</span>();
 <a name="l00155"></a>00155 
 <a name="l00158"></a>00158     std::string <a class="code" href="classftplib_1_1FTP.html#bd6e018a5cc17b1c8007064830823c71" title="sends the &amp;#39;QUIT&amp;#39; command and closes socket">quit</a>();
@@ -113,7 +113,7 @@
 <a name="l00164"></a><a class="code" href="classftplib_1_1FTP.html#a6603cda3b7c44c48c6a2b8d688d3bb7">00164</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classftplib_1_1FTP.html#a6603cda3b7c44c48c6a2b8d688d3bb7" title="sets timeout on all IO socket operations">settimeout</a>(<span class="keywordtype">double</span> time) { _sock.<a class="code" href="classsocketpp_1_1BaseSocket.html#0804d148470fd742cda495d3533b25c6" title="sets a timeout on the following IO operations. If time is 0 timeout is cancelled...">settimeout</a>(time); }
 <a name="l00165"></a>00165 
 <a name="l00166"></a>00166 <span class="keyword">private</span>:
-<a name="l00167"></a>00167     <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it aims to be a simple C-socket wrapper">socketpp::Socket</a> _sock;
+<a name="l00167"></a>00167     <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it&amp;#39;s simply a C-socket wrapper">socketpp::Socket</a> _sock;
 <a name="l00168"></a>00168     <span class="keywordtype">bool</span> _pasv;
 <a name="l00169"></a>00169 
 <a name="l00170"></a>00170     std::string _readAnswer();
@@ -126,7 +126,7 @@
 <a name="l00177"></a>00177 
 <a name="l00178"></a>00178 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 16:24:19 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 19:47:53 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

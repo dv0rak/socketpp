@@ -23,7 +23,7 @@ public:
     std::vector<std::string> gethostbyname(const std::string& name);
     /// @brief   tries to obtain an hostname from a IP address, through a reverse DNS lookup
     /// @param   addr	IP address
-    /// @return  hostname
+    /// @return  hostname, or the address itself if no name was found
     std::string gethostbyaddr(const std::string& addr);
 
     /// @brief   obtains port conventionally bound to given service name
@@ -32,8 +32,8 @@ public:
     static port_t getservbyname(const std::string& name);
     /// @brief   obtains service name conventionally bound to given port
     /// @param   port 	port number
-    /// @param   prot	transport layer protocol
-    /// @return  service name, empty string if failed
+    /// @param   prot	transport layer protocol, default tcp
+    /// @return  service name, or the port number itself if no name was found
     static std::string getservbyport(port_t port, gai_proto prot = tcp);
 
     /// @brief   checks whether given string is in IPv4 format 
@@ -56,7 +56,7 @@ public:
         resolved.clear();
         reversed.clear();
     }
-    /// @brief	 clean internal route table cache
+    /// @brief	 clean internal routing table cache
     inline void cleanRouteCache()
     {
         routeCache.clear();

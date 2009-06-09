@@ -67,10 +67,10 @@
 <a name="l00100"></a>00100     std::string <a class="code" href="classsocketpp_1_1BaseSocket.html#483c6186ae60d0c399983e14f55af600" title="returns remote address to which socket is connected">remoteAddr</a>();
 <a name="l00103"></a>00103     std::string <a class="code" href="classsocketpp_1_1BaseSocket.html#0caed2e7d3f0e4db7d4c1aa3aba52caf" title="returns local address to which socket is bound">localAddr</a>();
 <a name="l00106"></a>00106     port_t <a class="code" href="classsocketpp_1_1BaseSocket.html#d4a2c0e4932436ef61f911514385d16c" title="returns local port to which socket is bound">localPort</a>();
-<a name="l00109"></a>00109     port_t <a class="code" href="classsocketpp_1_1BaseSocket.html#039db642444d2111f2f58ebe032c5f5f" title="returns remote port bound to which socket is connected">remotePort</a>();
+<a name="l00109"></a>00109     port_t <a class="code" href="classsocketpp_1_1BaseSocket.html#039db642444d2111f2f58ebe032c5f5f" title="returns remote port to which socket is connected">remotePort</a>();
 <a name="l00110"></a>00110 
 <a name="l00113"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1">00113</a>     <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno</a>()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> _sd; }
-<a name="l00115"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90">00115</a>     <a class="code" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90" title="calls fileno()">operator int</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno</a>(); }
+<a name="l00115"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90">00115</a>     <span class="keyword">inline</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90" title="calls fileno()">operator int</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno</a>(); }
 <a name="l00116"></a>00116     
 <a name="l00118"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da">00118</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span>   <a class="code" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da" title="cleans internal DNS cache">cleanDnsCache</a>() { _h.<a class="code" href="classsocketpp_1_1AddrHandler.html#89a2929af6c042fd7e16661303dfabcb" title="cleans internal DNS cache">cleanDnsCache</a>(); }
 <a name="l00119"></a>00119 
@@ -131,7 +131,7 @@
 <a name="l00308"></a>00308 
 <a name="l00309"></a>00309 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 16:24:19 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 19:47:53 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

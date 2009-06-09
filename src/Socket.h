@@ -5,7 +5,7 @@
 
 namespace socketpp {
 
-///@brief	inherits from BaseSocket, it aims to be a simple C-socket wrapper
+///@brief	inherits from BaseSocket, it's simply a C-socket wrapper
 class Socket : public BaseSocket {
 public:
     Socket() : BaseSocket() { }

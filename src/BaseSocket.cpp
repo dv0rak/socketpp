@@ -132,11 +132,6 @@ void BaseSocket::close()
     _sd = -1;
 }
 
-BaseSocket::~BaseSocket()
-{
-//  close();
-}
-
 std::string BaseSocket::remoteAddr()
 {
     struct sockaddr_in remote;

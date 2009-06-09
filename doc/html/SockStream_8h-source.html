@@ -33,7 +33,7 @@
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015     <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>() : <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a>()
 <a name="l00016"></a>00016         { __initBuf(); }
-<a name="l00018"></a><a class="code" href="classsocketpp_1_1SockBuf.html#065ef76cdf18c04857350c643bd620e3">00018</a>     <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>(<span class="keyword">const</span> <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it aims to be a simple C-socket wrapper">Socket</a> &amp;s) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(s)
+<a name="l00018"></a><a class="code" href="classsocketpp_1_1SockBuf.html#065ef76cdf18c04857350c643bd620e3">00018</a>     <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>(<span class="keyword">const</span> <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it&amp;#39;s simply a C-socket wrapper">Socket</a> &amp;s) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(s)
 <a name="l00019"></a>00019         { __initBuf(); }
 <a name="l00021"></a><a class="code" href="classsocketpp_1_1SockBuf.html#5e8a5860fd67228e5d39ea28f9d67341">00021</a>     <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>(type t, protocol prot=ipproto_ip) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(t, prot)
 <a name="l00022"></a>00022         { __initBuf(); } 
@@ -62,7 +62,7 @@
 <a name="l00049"></a>00049         { exceptions(badbit); }
 <a name="l00051"></a><a class="code" href="classsocketpp_1_1SockStream.html#11fbfc7bda45c178c6e09ac6d67512fd">00051</a>     <a class="code" href="classsocketpp_1_1SockStream.html" title="inherits from std::iostream, it allows the C++ stream approach with sockets">SockStream</a>(<a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a> &amp;s) : std::iostream(&amp;s) 
 <a name="l00052"></a>00052         { exceptions(badbit); }
-<a name="l00054"></a><a class="code" href="classsocketpp_1_1SockStream.html#704f4e77af424bd0638e736653e2d1b3">00054</a>     <a class="code" href="classsocketpp_1_1SockStream.html" title="inherits from std::iostream, it allows the C++ stream approach with sockets">SockStream</a>(<span class="keyword">const</span> <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it aims to be a simple C-socket wrapper">Socket</a> &amp;s) : std::iostream(new <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>(s))
+<a name="l00054"></a><a class="code" href="classsocketpp_1_1SockStream.html#704f4e77af424bd0638e736653e2d1b3">00054</a>     <a class="code" href="classsocketpp_1_1SockStream.html" title="inherits from std::iostream, it allows the C++ stream approach with sockets">SockStream</a>(<span class="keyword">const</span> <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it&amp;#39;s simply a C-socket wrapper">Socket</a> &amp;s) : std::iostream(new <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>(s))
 <a name="l00055"></a>00055         { exceptions(badbit); }
 <a name="l00057"></a><a class="code" href="classsocketpp_1_1SockStream.html#0310cdd1f212beec6b686d0a549f1788">00057</a>     <a class="code" href="classsocketpp_1_1SockStream.html" title="inherits from std::iostream, it allows the C++ stream approach with sockets">SockStream</a>(<span class="keyword">const</span> <a class="code" href="classsocketpp_1_1SockStream.html" title="inherits from std::iostream, it allows the C++ stream approach with sockets">SockStream</a> &amp;s) : std::iostream(s.sockbuf())
 <a name="l00058"></a>00058         { exceptions(badbit); }
@@ -88,7 +88,7 @@
 <a name="l00082"></a>00082 
 <a name="l00083"></a>00083 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 16:24:19 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 19:47:53 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
