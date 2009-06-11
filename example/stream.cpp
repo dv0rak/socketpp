@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    SockStream ss = SockStream(sock_stream);
+    SockStream ss(sock_stream);
 
     ss->connect("www.google.it", "http");
     

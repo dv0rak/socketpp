@@ -48,14 +48,14 @@ Inheritance diagram for socketpp::TCP_IP_RawSocket:</div>
 <a href="classsocketpp_1_1TCP__IP__RawSocket-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="10edb8c09e89f09c0b99b5b2febce821"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::build_IP_header" ref="10edb8c09e89f09c0b99b5b2febce821" args="(_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=IPPROTO_TCP, _u16 id=0, _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#10edb8c09e89f09c0b99b5b2febce821">build_IP_header</a> (_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=IPPROTO_TCP, _u16 id=0, _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">builds the internal IP header to send <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="1b08f12274fd9590f805bc876c44edd9"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::TCP_IP_RawSocket" ref="1b08f12274fd9590f805bc876c44edd9" args="()" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#1b08f12274fd9590f805bc876c44edd9">TCP_IP_RawSocket</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">constructor which calls RawSocket(ipproto_tcp) and setsockopt(ip_hdrincl) <br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="1f7408daf2943c00f051db544d0034c8"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::adjust_IP_proto" ref="1f7408daf2943c00f051db544d0034c8" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#1f7408daf2943c00f051db544d0034c8">adjust_IP_proto</a> ()</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets "protocol" field of the IP header to IPPROTO_TCP <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c203b188308532333bdf53a4e18bc230"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::adjust_TCP_csum" ref="c203b188308532333bdf53a4e18bc230" args="()" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#c203b188308532333bdf53a4e18bc230">adjust_TCP_csum</a> ()</td></tr>
 
@@ -67,7 +67,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="dd3b21314f1768962bf399291f406768"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::adjust_TCP_IP_all" ref="dd3b21314f1768962bf399291f406768" args="()" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#dd3b21314f1768962bf399291f406768">adjust_TCP_IP_all</a> ()</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls <a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#3644327ff72d322ff809ac432f59783b" title="calls adjust_TCP_doff() &amp;&amp; adjust_TCP_csum()">adjust_TCP_all()</a> &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#45e60510233daaa2f279d3a4706fdce5" title="calls adjust_IP_proto() &amp;&amp; adjust_IP_tot_len() &amp;&amp; adjust_IP_ihl()...">adjust_IP_all()</a> <br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls <a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#3644327ff72d322ff809ac432f59783b" title="calls adjust_TCP_doff() &amp;&amp; adjust_TCP_csum()">adjust_TCP_all()</a> &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#45e60510233daaa2f279d3a4706fdce5" title="calls adjust_IP_tot_len() &amp;&amp; adjust_IP_ihl() &amp;&amp; adjust_IP_csum()">adjust_IP_all()</a> <br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="281508237add8a3c530bb0be0b6a1e7b"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::_build_packet" ref="281508237add8a3c530bb0be0b6a1e7b" args="(std::string &amp;packet)" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet)</td></tr>
@@ -80,7 +80,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (cons
 TCP raw socket with IP header handling. <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 19:47:56 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 11 02:43:06 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

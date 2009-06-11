@@ -70,7 +70,7 @@ public:
     ///@param	user    if not empty it calls FTP::login(user, passw)
     ///@param	passwd	login password 
     ///@param	timeout	if not empty it calls FTP::settimeout(timeout)
-    FTP(const std::string &host="", const std::string &user="", const std::string &passwd="", double timeout=0.0);
+    explicit FTP(const std::string &host="", const std::string &user="", const std::string &passwd="", double timeout=0.0);
 
     ///@brief	connects to given FTP server
     ///@param	host	remote server address

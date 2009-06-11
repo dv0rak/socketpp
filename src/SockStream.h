@@ -10,19 +10,19 @@ namespace socketpp {
 ///@brief	publicly derived from std::streambuf and BaseSocket
 class SockBuf : public std::streambuf, public BaseSocket {
 public:
-    static const int BUFSIZE=BUFSIZ;
+    static const int BUFSIZE = BUFSIZ;
 
     SockBuf() : BaseSocket()
-        { __initBuf(); }
+        { _initBuf(); }
     ///@brief	calls BaseSocket(s)
     SockBuf(const Socket &s) : BaseSocket(s)
-        { __initBuf(); }
+        { _initBuf(); }
     ///@brief	calls BaseSocket(t,prot)
-    SockBuf(type t, protocol prot=ipproto_ip) : BaseSocket(t, prot)
-        { __initBuf(); } 
+    explicit SockBuf(type t, protocol prot=ipproto_ip) : BaseSocket(t, prot)
+        { _initBuf(); } 
     ///@brief	calls BaseSocket(sd)
     SockBuf(int sd) : BaseSocket(sd)
-        { __initBuf(); }
+        { _initBuf(); }
     
     ///@brief	closes socket descriptor and flushes output buffer
     void close();
@@ -39,26 +39,35 @@ protected:
 private:
     char _inBuf[BUFSIZE], _outBuf[BUFSIZE];
     
-    void __initBuf();
+    void _initBuf();
 };    
 
 ///@brief inherits from std::iostream, it allows the C++ stream approach with sockets
 class SockStream : public std::iostream {
 public:
-    SockStream() : std::iostream(new SockBuf()) 
-        { exceptions(badbit); }
+    SockStream() : std::iostream(new SockBuf())
+    {
+        exceptions(badbit);
+        free = true;
+    }
     ///@brief	calls std::iostream(&s)
-    SockStream(SockBuf &s) : std::iostream(&s) 
-        { exceptions(badbit); }
+    explicit SockStream(SockBuf &s) : std::iostream(&s)
+    {
+        exceptions(badbit);
+        free = false;
+    }
     ///@brief	calls std::iostream(new SockBuf(s))
-    SockStream(const Socket &s) : std::iostream(new SockBuf(s))
-        { exceptions(badbit); }
-    ///@brief	copy constructor
-    SockStream(const SockStream &s) : std::iostream(s.sockbuf())
-        { exceptions(badbit); }
+    explicit SockStream(const Socket &s) : std::iostream(new SockBuf(s))
+    {
+        exceptions(badbit);
+        free = true;
+    }
     ///@brief	calls std::iostream(new SockBuf(t,prot))
-    SockStream(type t, protocol prot=ipproto_ip) : std::iostream(new SockBuf(t,prot))
-        { exceptions(badbit); }
+    explicit SockStream(type t, protocol prot=ipproto_ip) : std::iostream(new SockBuf(t,prot))
+    {
+        exceptions(badbit);
+        free = true;
+    }
  
     ///@brief	returns pointer to internal SockBuf object
     inline SockBuf* sockbuf() const
@@ -70,6 +79,14 @@ public:
     {
         return sockbuf();
     }
+    ~SockStream()
+    {
+        if(free)
+            delete sockbuf();
+    }
+
+private:
+    bool free;
 };
 
 ///@brief SockStream manipulator which writes "\r\n"

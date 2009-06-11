@@ -10,7 +10,7 @@ class RawSocket : public BaseSocket {
 public:
     /// @brief	 constructor which calls BaseSocket(sock_raw, prot)
     /// @param	prot	Socket protocol
-    RawSocket(protocol prot) : BaseSocket(sock_raw, prot) { }
+    explicit RawSocket(protocol prot) : BaseSocket(sock_raw, prot) { }
 
     /// @brief	calculates internet checksum
     /// @param	buf	pointer to packet top

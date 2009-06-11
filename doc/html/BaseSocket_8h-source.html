@@ -74,64 +74,63 @@
 <a name="l00116"></a>00116     
 <a name="l00118"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da">00118</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span>   <a class="code" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da" title="cleans internal DNS cache">cleanDnsCache</a>() { _h.<a class="code" href="classsocketpp_1_1AddrHandler.html#89a2929af6c042fd7e16661303dfabcb" title="cleans internal DNS cache">cleanDnsCache</a>(); }
 <a name="l00119"></a>00119 
-<a name="l00121"></a>00121     <span class="keyword">virtual</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#2e066addfaa6f5648e68b3e6b0a15e79" title="desctuctor which calls close()">~BaseSocket</a>();
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123 <span class="keyword">protected</span>:
-<a name="l00124"></a>00124     <span class="keywordtype">int</span> _sd;
-<a name="l00125"></a>00125     <a class="code" href="classsocketpp_1_1AddrHandler.html" title="Class which deals with several things, like dns resolving or address format conversion...">AddrHandler</a> _h;
-<a name="l00126"></a>00126     <span class="keywordtype">double</span> _timeout;
-<a name="l00127"></a>00127 
-<a name="l00128"></a>00128     <span class="keyword">enum</span> _select_mode {
-<a name="l00129"></a>00129         read,
-<a name="l00130"></a>00130         write,
-<a name="l00131"></a>00131         err
-<a name="l00132"></a>00132     };
-<a name="l00133"></a>00133 
-<a name="l00135"></a>00135     <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a>();
-<a name="l00137"></a>00137     <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a>(<span class="keyword">const</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a> &amp;s);
-<a name="l00141"></a>00141     <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a>(type t, protocol prot=ipproto_ip);
-<a name="l00144"></a>00144     <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a>(<span class="keywordtype">int</span> fd);
-<a name="l00145"></a>00145 
-<a name="l00149"></a>00149     <span class="keywordtype">int</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#7550a79d05baaf4b19c20fa0fa9bc8b9" title="causes all or part of a full-duplex connection on the socket to be shut down">shutdown</a>(shut_mode how);
-<a name="l00150"></a>00150 
-<a name="l00156"></a>00156     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#a63e58c917c6be09f641f9ff1830e74a" title="sends data over socket">send</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, msg_flag flags=msg_none);
-<a name="l00162"></a>00162     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d74160ecc96cacec56f61d36f9ab747d" title="reads data on socket">recv</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, msg_flag flags=msg_none);
-<a name="l00167"></a>00167     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#a63e58c917c6be09f641f9ff1830e74a" title="sends data over socket">send</a>(<span class="keyword">const</span> std::string &amp;buf, msg_flag flags=msg_none);
-<a name="l00173"></a>00173     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d74160ecc96cacec56f61d36f9ab747d" title="reads data on socket">recv</a>(std::string &amp;buf, <span class="keywordtype">size_t</span> size, msg_flag flags=msg_none);
-<a name="l00174"></a>00174 
-<a name="l00182"></a>00182     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, in_addr_t addr, port_t port=0, msg_flag flags=msg_none);
-<a name="l00189"></a>00189     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>(<span class="keyword">const</span> std::string &amp;buf, in_addr_t addr, port_t port=0, msg_flag flags=msg_none);
-<a name="l00197"></a>00197     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, <span class="keyword">const</span> std::string&amp; addr, port_t port=0, msg_flag flags=msg_none);
-<a name="l00204"></a>00204     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>(<span class="keyword">const</span> std::string&amp; buf, <span class="keyword">const</span> std::string&amp; addr, port_t port=0, msg_flag flags=msg_none);
-<a name="l00212"></a>00212     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>
-<a name="l00213"></a>00213     (<span class="keyword">const</span> <span class="keywordtype">char</span> buf[],<span class="keywordtype">size_t</span> size,in_addr_t addr,<span class="keyword">const</span> std::string&amp; serv, msg_flag flags=msg_none);
-<a name="l00220"></a>00220     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>
-<a name="l00221"></a>00221     (<span class="keyword">const</span> std::string&amp; buf, in_addr_t addr,<span class="keyword">const</span> std::string&amp; serv, msg_flag flags=msg_none);
-<a name="l00229"></a>00229     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>
-<a name="l00230"></a>00230     (<span class="keyword">const</span> <span class="keywordtype">char</span> buf[],<span class="keywordtype">size_t</span> size,<span class="keyword">const</span> std::string&amp; addr,<span class="keyword">const</span> std::string&amp; serv, msg_flag flags=msg_none);
-<a name="l00237"></a>00237     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>
-<a name="l00238"></a>00238     (<span class="keyword">const</span> std::string&amp; buf,<span class="keyword">const</span> std::string&amp; addr,<span class="keyword">const</span> std::string&amp; serv, msg_flag flags=msg_none);
-<a name="l00239"></a>00239 
-<a name="l00247"></a>00247     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, in_addr_t&amp; addr, port_t&amp; port, msg_flag flags=msg_none);
-<a name="l00255"></a>00255     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(std::string&amp; buf, <span class="keywordtype">size_t</span> size, in_addr_t&amp; addr, port_t&amp; port, msg_flag flags=msg_none);
-<a name="l00263"></a>00263     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, std::string&amp; addr, port_t&amp; port, msg_flag flags=msg_none);
-<a name="l00271"></a>00271     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(std::string&amp; buf, <span class="keywordtype">size_t</span> size, std::string&amp; addr, port_t&amp; port, msg_flag flags=msg_none);
-<a name="l00278"></a>00278     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, in_addr_t&amp; addr, msg_flag flags=msg_none);
-<a name="l00285"></a>00285     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(std::string &amp;buf, <span class="keywordtype">size_t</span> size, in_addr_t&amp; addr, msg_flag flags=msg_none);
-<a name="l00292"></a>00292     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, std::string&amp; addr, msg_flag flags=msg_none);
-<a name="l00299"></a>00299     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(std::string &amp;buf, <span class="keywordtype">size_t</span> size, std::string&amp; addr, msg_flag flags=msg_none);
-<a name="l00300"></a>00300 
-<a name="l00301"></a>00301     <span class="keywordtype">int</span> _select(_select_mode m);
+<a name="l00120"></a>00120     <span class="keyword">virtual</span> ~<a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>() { }
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122 <span class="keyword">protected</span>:
+<a name="l00123"></a>00123     <span class="keywordtype">int</span> _sd;
+<a name="l00124"></a>00124     AddrHandler _h;
+<a name="l00125"></a>00125     <span class="keywordtype">double</span> _timeout;
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127     <span class="keyword">enum</span> _select_mode {
+<a name="l00128"></a>00128         read,
+<a name="l00129"></a>00129         write,
+<a name="l00130"></a>00130         err
+<a name="l00131"></a>00131     };
+<a name="l00132"></a>00132 
+<a name="l00134"></a>00134     <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a>();
+<a name="l00138"></a>00138     <span class="keyword">explicit</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a>(type t, protocol prot=ipproto_ip);
+<a name="l00141"></a>00141     <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a>(<span class="keywordtype">int</span> fd);
+<a name="l00142"></a>00142 
+<a name="l00146"></a>00146     <span class="keywordtype">int</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#7550a79d05baaf4b19c20fa0fa9bc8b9" title="causes all or part of a full-duplex connection on the socket to be shut down">shutdown</a>(shut_mode how);
+<a name="l00147"></a>00147 
+<a name="l00153"></a>00153     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#a63e58c917c6be09f641f9ff1830e74a" title="sends data over socket">send</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, msg_flag flags=msg_none);
+<a name="l00159"></a>00159     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d74160ecc96cacec56f61d36f9ab747d" title="reads data on socket">recv</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, msg_flag flags=msg_none);
+<a name="l00164"></a>00164     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#a63e58c917c6be09f641f9ff1830e74a" title="sends data over socket">send</a>(<span class="keyword">const</span> std::string &amp;buf, msg_flag flags=msg_none);
+<a name="l00170"></a>00170     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d74160ecc96cacec56f61d36f9ab747d" title="reads data on socket">recv</a>(std::string &amp;buf, <span class="keywordtype">size_t</span> size, msg_flag flags=msg_none);
+<a name="l00171"></a>00171 
+<a name="l00179"></a>00179     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, in_addr_t addr, port_t port=0, msg_flag flags=msg_none);
+<a name="l00186"></a>00186     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>(<span class="keyword">const</span> std::string &amp;buf, in_addr_t addr, port_t port=0, msg_flag flags=msg_none);
+<a name="l00194"></a>00194     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, <span class="keyword">const</span> std::string&amp; addr, port_t port=0, msg_flag flags=msg_none);
+<a name="l00201"></a>00201     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>(<span class="keyword">const</span> std::string&amp; buf, <span class="keyword">const</span> std::string&amp; addr, port_t port=0, msg_flag flags=msg_none);
+<a name="l00209"></a>00209     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>
+<a name="l00210"></a>00210     (<span class="keyword">const</span> <span class="keywordtype">char</span> buf[],<span class="keywordtype">size_t</span> size,in_addr_t addr,<span class="keyword">const</span> std::string&amp; serv, msg_flag flags=msg_none);
+<a name="l00217"></a>00217     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>
+<a name="l00218"></a>00218     (<span class="keyword">const</span> std::string&amp; buf, in_addr_t addr,<span class="keyword">const</span> std::string&amp; serv, msg_flag flags=msg_none);
+<a name="l00226"></a>00226     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>
+<a name="l00227"></a>00227     (<span class="keyword">const</span> <span class="keywordtype">char</span> buf[],<span class="keywordtype">size_t</span> size,<span class="keyword">const</span> std::string&amp; addr,<span class="keyword">const</span> std::string&amp; serv, msg_flag flags=msg_none);
+<a name="l00234"></a>00234     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#d6df36281c6fce81e5c4c493ac91a6f8" title="sends data over socket">sendto</a>
+<a name="l00235"></a>00235     (<span class="keyword">const</span> std::string&amp; buf,<span class="keyword">const</span> std::string&amp; addr,<span class="keyword">const</span> std::string&amp; serv, msg_flag flags=msg_none);
+<a name="l00236"></a>00236 
+<a name="l00244"></a>00244     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, in_addr_t&amp; addr, port_t&amp; port, msg_flag flags=msg_none);
+<a name="l00252"></a>00252     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(std::string&amp; buf, <span class="keywordtype">size_t</span> size, in_addr_t&amp; addr, port_t&amp; port, msg_flag flags=msg_none);
+<a name="l00260"></a>00260     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, std::string&amp; addr, port_t&amp; port, msg_flag flags=msg_none);
+<a name="l00268"></a>00268     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(std::string&amp; buf, <span class="keywordtype">size_t</span> size, std::string&amp; addr, port_t&amp; port, msg_flag flags=msg_none);
+<a name="l00275"></a>00275     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, in_addr_t&amp; addr, msg_flag flags=msg_none);
+<a name="l00282"></a>00282     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(std::string &amp;buf, <span class="keywordtype">size_t</span> size, in_addr_t&amp; addr, msg_flag flags=msg_none);
+<a name="l00289"></a>00289     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(<span class="keywordtype">char</span> buf[], <span class="keywordtype">size_t</span> size, std::string&amp; addr, msg_flag flags=msg_none);
+<a name="l00296"></a>00296     <span class="keywordtype">size_t</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#6a207860c0a1328dc05bea32bb62e81f" title="reads data on socket">recvfrom</a>(std::string &amp;buf, <span class="keywordtype">size_t</span> size, std::string&amp; addr, msg_flag flags=msg_none);
+<a name="l00297"></a>00297 
+<a name="l00298"></a>00298     <span class="keywordtype">int</span> _select(_select_mode m);
+<a name="l00299"></a>00299 
+<a name="l00300"></a>00300 <span class="keyword">private</span>:
+<a name="l00301"></a>00301     <span class="keyword">struct </span>sockaddr_in _initaddr(in_addr_t, port_t);
 <a name="l00302"></a>00302 
-<a name="l00303"></a>00303 <span class="keyword">private</span>:
-<a name="l00304"></a>00304     <span class="keyword">struct </span>sockaddr_in __initaddr(in_addr_t, port_t);
+<a name="l00303"></a>00303 };
+<a name="l00304"></a>00304 };
 <a name="l00305"></a>00305 
-<a name="l00306"></a>00306 };
-<a name="l00307"></a>00307 };
-<a name="l00308"></a>00308 
-<a name="l00309"></a>00309 <span class="preprocessor">#endif</span>
+<a name="l00306"></a>00306 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 19:47:53 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 11 02:43:03 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

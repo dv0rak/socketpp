@@ -124,10 +124,6 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da">cleanDnsCache</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">cleans internal DNS cache <br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="2e066addfaa6f5648e68b3e6b0a15e79"></a><!-- doxytag: member="socketpp::BaseSocket::~BaseSocket" ref="2e066addfaa6f5648e68b3e6b0a15e79" args="()" -->
-virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#2e066addfaa6f5648e68b3e6b0a15e79">~BaseSocket</a> ()</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">desctuctor which calls <a class="el" href="classsocketpp_1_1BaseSocket.html#f067195056bb6b5a65c4bc1d2ac7da72" title="closes socket descriptor">close()</a> <br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Types</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><b>_select_mode</b> { <b>read</b>, 
 <b>write</b>, 
@@ -139,10 +135,6 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2">BaseSocket</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">simply instantiates the class without setting the internal socket descriptor <br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="0c142db99422572579c91f3e176035c6"></a><!-- doxytag: member="socketpp::BaseSocket::BaseSocket" ref="0c142db99422572579c91f3e176035c6" args="(const BaseSocket &amp;s)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#0c142db99422572579c91f3e176035c6">BaseSocket</a> (const <a class="el" href="classsocketpp_1_1BaseSocket.html">BaseSocket</a> &amp;s)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">copy constructor <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1BaseSocket.html#35c982d7aef2041c100439cf38aa7f4d">BaseSocket</a> (type t, protocol prot=ipproto_ip)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">constructor which opens the socket descriptor calling socket(AF_INET, t, prot)  <a href="#35c982d7aef2041c100439cf38aa7f4d"></a><br></td></tr>
@@ -247,7 +239,7 @@ Abstract base class. <hr><h2>Constructor &amp; Destructor Documentation</h2>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td><td><code> [protected]</code></td>
+          <td></td><td></td><td><code> [explicit, protected]</code></td>
         </tr>
       </table>
 </div>
@@ -1984,7 +1976,7 @@ causes all or part of a full-duplex connection on the socket to be shut down
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="BaseSocket_8h-source.html">BaseSocket.h</a><li>BaseSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sun Jun 7 19:47:54 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 11 02:43:04 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

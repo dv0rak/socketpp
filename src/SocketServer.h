@@ -10,9 +10,7 @@ class SocketServer : public BaseSocket {
 public:
     SocketServer() : BaseSocket() { }
     ///@brief	calls BaseSocket(t)
-    SocketServer(type t) : BaseSocket(t) { }
-    ///@brief copy constructor
-    SocketServer(const SocketServer &s) : BaseSocket(s) { }
+    explicit SocketServer(type t) : BaseSocket(t) { }
 
     ///@brief	binds socket and puts it in listening mode
     ///@param	t	socket type
@@ -45,7 +43,7 @@ public:
  
     ///@brief	Accepts connection request
     ///@return connected socket object
-    Socket& accept();
+    Socket accept();
     ///@brief	puts socket in listening mode
     ///@param	maxconn		max number of connections to accept
     int listen(int maxconn);

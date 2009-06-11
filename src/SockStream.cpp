@@ -34,7 +34,7 @@ int SockBuf::overflow(int c)
     return 0;
 }
 
-void SockBuf::__initBuf()
+void SockBuf::_initBuf()
 {
     setp(_outBuf, _outBuf+BUFSIZE);
     setg(_inBuf, _inBuf, _inBuf);

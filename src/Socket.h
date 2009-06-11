@@ -9,10 +9,8 @@ namespace socketpp {
 class Socket : public BaseSocket {
 public:
     Socket() : BaseSocket() { }
-    ///@brief	copy constructor
-    Socket(const Socket &s) : BaseSocket(s) { }
     ///@brief	calls BaseSocket(t,prot)
-    Socket(type t, protocol prot=ipproto_ip) : BaseSocket(t, prot) { }
+    explicit Socket(type t, protocol prot=ipproto_ip) : BaseSocket(t, prot) { }
     ///@brief	calls BaseSocket(sd)
     Socket(int sd) : BaseSocket(sd) { }
 

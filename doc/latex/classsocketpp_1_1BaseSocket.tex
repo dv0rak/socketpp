@@ -66,12 +66,7 @@ int \hyperlink{classsocketpp_1_1BaseSocket_c96db07cc917926d895d89cf73734ea1}{fil
 void \hyperlink{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}{cleanDnsCache} ()}
 \label{classsocketpp_1_1BaseSocket_f3a4c01a7bf911460296a873ce0913da}
 
-\begin{CompactList}\small\item\em cleans internal DNS cache \item\end{CompactList}\item 
-\hypertarget{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{
-virtual \hyperlink{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}{$\sim$BaseSocket} ()}
-\label{classsocketpp_1_1BaseSocket_2e066addfaa6f5648e68b3e6b0a15e79}
-
-\begin{CompactList}\small\item\em desctuctor which calls \hyperlink{classsocketpp_1_1BaseSocket_f067195056bb6b5a65c4bc1d2ac7da72}{close()} \item\end{CompactList}\end{CompactItemize}
+\begin{CompactList}\small\item\em cleans internal DNS cache \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Types}
 \begin{CompactItemize}
 \item 
@@ -87,11 +82,6 @@ enum \textbf{\_\-select\_\-mode} \{ \textbf{read},
 \label{classsocketpp_1_1BaseSocket_3eb81ecbf94ce83afa6b2f60206c77f2}
 
 \begin{CompactList}\small\item\em simply instantiates the class without setting the internal socket descriptor \item\end{CompactList}\item 
-\hypertarget{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}{
-\hyperlink{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}{BaseSocket} (const \hyperlink{classsocketpp_1_1BaseSocket}{BaseSocket} \&s)}
-\label{classsocketpp_1_1BaseSocket_0c142db99422572579c91f3e176035c6}
-
-\begin{CompactList}\small\item\em copy constructor \item\end{CompactList}\item 
 \hyperlink{classsocketpp_1_1BaseSocket_35c982d7aef2041c100439cf38aa7f4d}{BaseSocket} (type t, protocol prot=ipproto\_\-ip)
 \begin{CompactList}\small\item\em constructor which opens the socket descriptor calling socket(AF\_\-INET, t, prot) \item\end{CompactList}\item 
 \hyperlink{classsocketpp_1_1BaseSocket_f7e18d6700868abb2b476e797506eafb}{BaseSocket} (int fd)
@@ -170,7 +160,7 @@ Abstract base class.
 \hypertarget{classsocketpp_1_1BaseSocket_35c982d7aef2041c100439cf38aa7f4d}{
 \index{socketpp::BaseSocket@{socketpp::BaseSocket}!BaseSocket@{BaseSocket}}
 \index{BaseSocket@{BaseSocket}!socketpp::BaseSocket@{socketpp::BaseSocket}}
-\subsubsection[{BaseSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::BaseSocket::BaseSocket (type {\em t}, \/  protocol {\em prot} = {\tt ipproto\_\-ip})\hspace{0.3cm}{\tt  \mbox{[}protected\mbox{]}}}}
+\subsubsection[{BaseSocket}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::BaseSocket::BaseSocket (type {\em t}, \/  protocol {\em prot} = {\tt ipproto\_\-ip})\hspace{0.3cm}{\tt  \mbox{[}explicit, protected\mbox{]}}}}
 \label{classsocketpp_1_1BaseSocket_35c982d7aef2041c100439cf38aa7f4d}
 
 

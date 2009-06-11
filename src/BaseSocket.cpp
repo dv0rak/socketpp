@@ -15,7 +15,6 @@ void BaseSocket::setBlocking(bool yes)
     }
 }
 
-
 int BaseSocket::shutdown(shut_mode how)
 {
     int ret = ::shutdown(_sd, how);
@@ -64,7 +63,7 @@ int BaseSocket::connect(const std::string& addr, port_t port)
 int BaseSocket::connect(in_addr_t addr, port_t port)
 {
     int ret;
-    struct sockaddr_in remote = __initaddr(htonl(addr),htons(port));
+    struct sockaddr_in remote = _initaddr(htonl(addr),htons(port));
 
     if(_timeout == 0.0)  {
         if((ret=::connect(_sd,(struct sockaddr*)&remote,sizeof(remote))) < 0) {
@@ -119,7 +118,7 @@ int BaseSocket::bind(const std::string& addr, port_t port)
 int BaseSocket::bind(in_addr_t addr, port_t port)
 {
     int ret;
-    struct sockaddr_in local=__initaddr(htonl(addr),htons(port));
+    struct sockaddr_in local=_initaddr(htonl(addr),htons(port));
     if((ret=::bind(_sd,(struct sockaddr*)&local,sizeof(local))) < 0) {
         throw error("bind",errno,"bind");
     }
@@ -172,20 +171,13 @@ port_t BaseSocket::localPort()
     return ::ntohs(local.sin_port);
 }
 
-struct sockaddr_in BaseSocket::__initaddr(in_addr_t addr, port_t port)
+struct sockaddr_in BaseSocket::_initaddr(in_addr_t addr, port_t port)
 {
     struct sockaddr_in in;
     in.sin_family = AF_INET;
     in.sin_port   = port;
     in.sin_addr.s_addr = addr;
     return in;
-}
-
-BaseSocket::BaseSocket(const BaseSocket &s)
-{
-    _timeout    = s._timeout;
-    _h		= s._h;
-    _sd		= s._sd;
 }
 
 int BaseSocket::connect(const std::string& addr, const std::string& serv)
@@ -265,7 +257,7 @@ size_t BaseSocket::recv(std::string& buf, size_t size, msg_flag flags)
 size_t BaseSocket::sendto(const char buf[], size_t size, in_addr_t addr, port_t port, msg_flag flags)
 {
     int n, ret=0;
-    struct sockaddr_in remote = __initaddr(htonl(addr),htons(port));
+    struct sockaddr_in remote = _initaddr(htonl(addr),htons(port));
     
     if(_timeout != 0.0) {
         

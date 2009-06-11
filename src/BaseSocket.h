@@ -117,6 +117,8 @@ public:
     ///@brief cleans internal DNS cache
     inline void   cleanDnsCache() { _h.cleanDnsCache(); }
 
+    virtual ~BaseSocket() { }
+
 protected:
     int _sd;
     AddrHandler _h;
@@ -130,12 +132,10 @@ protected:
 
     ///@brief	simply instantiates the class without setting the internal socket descriptor 
     BaseSocket();
-    ///@brief copy constructor
-    BaseSocket(const BaseSocket &s);
     ///@brief constructor which opens the socket descriptor calling ::socket(AF_INET, t, prot)
     ///@param	t	socket type
     ///@param	prot	socket protocol
-    BaseSocket(type t, protocol prot=ipproto_ip);
+    explicit BaseSocket(type t, protocol prot=ipproto_ip);
     ///@brief	constructor which uses the given socket descriptor
     ///@param 	fd	file descriptor
     BaseSocket(int fd);
@@ -298,7 +298,7 @@ protected:
     int _select(_select_mode m);
 
 private:
-    struct sockaddr_in __initaddr(in_addr_t, port_t);
+    struct sockaddr_in _initaddr(in_addr_t, port_t);
 
 };
 };

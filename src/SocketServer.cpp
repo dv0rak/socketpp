@@ -30,7 +30,7 @@ void SocketServer::threadClientHandle(void (*func)(Socket&, void*), void *p)
     }
 }
 
-Socket& SocketServer::accept()
+Socket SocketServer::accept()
 {
     struct sockaddr remote;
     socklen_t slen = sizeof(remote);
@@ -42,7 +42,7 @@ Socket& SocketServer::accept()
     if(sd < 0) {
         throw error("accept",errno,"accept");
     }
-    return *(new Socket(sd));
+    return Socket(sd);
 }
 
 int SocketServer::listen(int maxconn)
