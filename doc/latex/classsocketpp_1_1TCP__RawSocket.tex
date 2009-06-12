@@ -50,20 +50,10 @@ size\_\-t \hyperlink{classsocketpp_1_1TCP__RawSocket_67ab79f764a710067590427cb35
 \subsection*{Static Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1TCP__RawSocket_91cf9d3aaf57d50ba1e26c8621083728}{
-static \_\-u16 \textbf{tcp\_\-checksum} (const struct tcphdr \&tcp, in\_\-addr\_\-t saddr, in\_\-addr\_\-t daddr, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$tcp\_\-opt=NULL, size\_\-t tcp\_\-opt\_\-len=0)}
-\label{classsocketpp_1_1TCP__RawSocket_91cf9d3aaf57d50ba1e26c8621083728}
-
-\item 
-\hypertarget{classsocketpp_1_1TCP__RawSocket_237a9811c114b7d38e41e9d65265b4cd}{
-static \_\-u16 \textbf{tcp\_\-checksum} (const struct tcphdr \&tcp, in\_\-addr\_\-t saddr, in\_\-addr\_\-t daddr, const std::string \&payload, const std::string \&tcp\_\-opt)}
-\label{classsocketpp_1_1TCP__RawSocket_237a9811c114b7d38e41e9d65265b4cd}
-
-\item 
-static \_\-u16 \hyperlink{classsocketpp_1_1TCP__RawSocket_a0d080dc7c3318b854801d9d8887683c}{tcp\_\-checksum} (const void $\ast$buf, size\_\-t nchar, \_\-u32 saddr, \_\-u32 daddr)
-\begin{CompactList}\small\item\em calculates tcp checksum on pseudo-header \item\end{CompactList}\item 
-static \_\-u16 \hyperlink{classsocketpp_1_1TCP__RawSocket_1ac43948171803538577ca50dcd86402}{tcp\_\-checksum} (const std::string \&buf, \_\-u32 saddr, \_\-u32 daddr)
-\begin{CompactList}\small\item\em calculates tcp checksum on pseudo-header \item\end{CompactList}\end{CompactItemize}
+static \_\-u16 \hyperlink{classsocketpp_1_1TCP__RawSocket_91cf9d3aaf57d50ba1e26c8621083728}{tcp\_\-checksum} (const struct tcphdr \&tcp, in\_\-addr\_\-t saddr, in\_\-addr\_\-t daddr, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$tcp\_\-opt=NULL, size\_\-t tcp\_\-opt\_\-len=0)
+\begin{CompactList}\small\item\em calculates TCP header checksum \item\end{CompactList}\item 
+static \_\-u16 \hyperlink{classsocketpp_1_1TCP__RawSocket_237a9811c114b7d38e41e9d65265b4cd}{tcp\_\-checksum} (const struct tcphdr \&tcp, in\_\-addr\_\-t saddr, in\_\-addr\_\-t daddr, const std::string \&payload, const std::string \&tcp\_\-opt)
+\begin{CompactList}\small\item\em calculates TCP header checksum \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
@@ -225,35 +215,35 @@ sets the TCP options field
 \begin{description}
 \item[{\em opt}]pointer to option field \item[{\em len}]option length \end{description}
 \end{Desc}
-\hypertarget{classsocketpp_1_1TCP__RawSocket_1ac43948171803538577ca50dcd86402}{
+\hypertarget{classsocketpp_1_1TCP__RawSocket_237a9811c114b7d38e41e9d65265b4cd}{
 \index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!tcp\_\-checksum@{tcp\_\-checksum}}
 \index{tcp\_\-checksum@{tcp\_\-checksum}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}static \_\-u16 socketpp::TCP\_\-RawSocket::tcp\_\-checksum (const std::string \& {\em buf}, \/  \_\-u32 {\em saddr}, \/  \_\-u32 {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1TCP__RawSocket_1ac43948171803538577ca50dcd86402}
+\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::TCP\_\-RawSocket::tcp\_\-checksum (const struct tcphdr \& {\em tcp}, \/  in\_\-addr\_\-t {\em saddr}, \/  in\_\-addr\_\-t {\em daddr}, \/  const std::string \& {\em payload}, \/  const std::string \& {\em tcp\_\-opt})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1TCP__RawSocket_237a9811c114b7d38e41e9d65265b4cd}
 
 
-calculates tcp checksum on pseudo-header 
+calculates TCP header checksum 
 
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em buf}]packet string \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
+\item[{\em tcp}]TCP header \item[{\em saddr}]source address \item[{\em daddr}]destination address \item[{\em payload}]data payload field \item[{\em tcp\_\-opt}]TCP options field \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]checksum value \end{Desc}
-\hypertarget{classsocketpp_1_1TCP__RawSocket_a0d080dc7c3318b854801d9d8887683c}{
+\hypertarget{classsocketpp_1_1TCP__RawSocket_91cf9d3aaf57d50ba1e26c8621083728}{
 \index{socketpp::TCP\_\-RawSocket@{socketpp::TCP\_\-RawSocket}!tcp\_\-checksum@{tcp\_\-checksum}}
 \index{tcp\_\-checksum@{tcp\_\-checksum}!socketpp::TCP_RawSocket@{socketpp::TCP\_\-RawSocket}}
-\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}static \_\-u16 socketpp::TCP\_\-RawSocket::tcp\_\-checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar}, \/  \_\-u32 {\em saddr}, \/  \_\-u32 {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1TCP__RawSocket_a0d080dc7c3318b854801d9d8887683c}
+\subsubsection[{tcp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::TCP\_\-RawSocket::tcp\_\-checksum (const struct tcphdr \& {\em tcp}, \/  in\_\-addr\_\-t {\em saddr}, \/  in\_\-addr\_\-t {\em daddr}, \/  const void $\ast$ {\em payload} = {\tt NULL}, \/  size\_\-t {\em psize} = {\tt 0}, \/  const void $\ast$ {\em tcp\_\-opt} = {\tt NULL}, \/  size\_\-t {\em tcp\_\-opt\_\-len} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1TCP__RawSocket_91cf9d3aaf57d50ba1e26c8621083728}
 
 
-calculates tcp checksum on pseudo-header 
+calculates TCP header checksum 
 
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em buf}]pointer to packet top \item[{\em nchar}]size of packet in bytes \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
+\item[{\em tcp}]TCP header \item[{\em saddr}]source address \item[{\em daddr}]destination address \item[{\em payload}]pointer to data payload field \item[{\em psize}]data payload size \item[{\em tcp\_\-opt}]pointer to TCP options field \item[{\em tcp\_\-opt\_\-len}]TCP options length \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]checksum value \end{Desc}

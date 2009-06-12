@@ -39,20 +39,10 @@ void \hyperlink{classsocketpp_1_1UDP__RawSocket_597a30fc537dce06c85663add29defdc
 \subsection*{Static Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1UDP__RawSocket_095971358f1de99857aaf649aae9b1ea}{
-static \_\-u16 \textbf{udp\_\-checksum} (const struct udphdr \&udp, in\_\-addr\_\-t saddr, in\_\-addr\_\-t daddr, const void $\ast$payload=NULL, size\_\-t psize=0)}
-\label{classsocketpp_1_1UDP__RawSocket_095971358f1de99857aaf649aae9b1ea}
-
-\item 
-\hypertarget{classsocketpp_1_1UDP__RawSocket_331a9aa1b1bc9aa16a25954061c04551}{
-static \_\-u16 \textbf{udp\_\-checksum} (const struct udphdr \&udp, in\_\-addr\_\-t saddr, in\_\-addr\_\-t daddr, const std::string \&payload)}
-\label{classsocketpp_1_1UDP__RawSocket_331a9aa1b1bc9aa16a25954061c04551}
-
-\item 
-static \_\-u16 \hyperlink{classsocketpp_1_1UDP__RawSocket_8e32b5a6458da2a8660b6353a1c7ad9b}{udp\_\-checksum} (const void $\ast$buf, size\_\-t nchar, \_\-u32 saddr, \_\-u32 daddr)
-\begin{CompactList}\small\item\em calculates udp checksum on pseudo-header \item\end{CompactList}\item 
-static \_\-u16 \hyperlink{classsocketpp_1_1UDP__RawSocket_912bdb1e33f25bb30f7c49f9906344c5}{udp\_\-checksum} (const std::string \&buf, \_\-u32 saddr, \_\-u32 daddr)
-\begin{CompactList}\small\item\em calculates udp checksum on pseudo-header \item\end{CompactList}\end{CompactItemize}
+static \_\-u16 \hyperlink{classsocketpp_1_1UDP__RawSocket_095971358f1de99857aaf649aae9b1ea}{udp\_\-checksum} (const struct udphdr \&udp, in\_\-addr\_\-t saddr, in\_\-addr\_\-t daddr, const void $\ast$payload=NULL, size\_\-t psize=0)
+\begin{CompactList}\small\item\em calculates UDP header checksum \item\end{CompactList}\item 
+static \_\-u16 \hyperlink{classsocketpp_1_1UDP__RawSocket_331a9aa1b1bc9aa16a25954061c04551}{udp\_\-checksum} (const struct udphdr \&udp, in\_\-addr\_\-t saddr, in\_\-addr\_\-t daddr, const std::string \&payload)
+\begin{CompactList}\small\item\em calculates UDP header checksum \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
@@ -163,35 +153,35 @@ gets the received UDP header
 \begin{description}
 \item[{\em udp}]header to modify \end{description}
 \end{Desc}
-\hypertarget{classsocketpp_1_1UDP__RawSocket_912bdb1e33f25bb30f7c49f9906344c5}{
+\hypertarget{classsocketpp_1_1UDP__RawSocket_331a9aa1b1bc9aa16a25954061c04551}{
 \index{socketpp::UDP\_\-RawSocket@{socketpp::UDP\_\-RawSocket}!udp\_\-checksum@{udp\_\-checksum}}
 \index{udp\_\-checksum@{udp\_\-checksum}!socketpp::UDP_RawSocket@{socketpp::UDP\_\-RawSocket}}
-\subsubsection[{udp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}static \_\-u16 socketpp::UDP\_\-RawSocket::udp\_\-checksum (const std::string \& {\em buf}, \/  \_\-u32 {\em saddr}, \/  \_\-u32 {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1UDP__RawSocket_912bdb1e33f25bb30f7c49f9906344c5}
+\subsubsection[{udp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::UDP\_\-RawSocket::udp\_\-checksum (const struct udphdr \& {\em udp}, \/  in\_\-addr\_\-t {\em saddr}, \/  in\_\-addr\_\-t {\em daddr}, \/  const std::string \& {\em payload})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1UDP__RawSocket_331a9aa1b1bc9aa16a25954061c04551}
 
 
-calculates udp checksum on pseudo-header 
+calculates UDP header checksum 
 
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em buf}]packet string \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
+\item[{\em udp}]UDP header \item[{\em saddr}]source address \item[{\em daddr}]destination address \item[{\em payload}]data payload field \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]checksum value \end{Desc}
-\hypertarget{classsocketpp_1_1UDP__RawSocket_8e32b5a6458da2a8660b6353a1c7ad9b}{
+\hypertarget{classsocketpp_1_1UDP__RawSocket_095971358f1de99857aaf649aae9b1ea}{
 \index{socketpp::UDP\_\-RawSocket@{socketpp::UDP\_\-RawSocket}!udp\_\-checksum@{udp\_\-checksum}}
 \index{udp\_\-checksum@{udp\_\-checksum}!socketpp::UDP_RawSocket@{socketpp::UDP\_\-RawSocket}}
-\subsubsection[{udp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}static \_\-u16 socketpp::UDP\_\-RawSocket::udp\_\-checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar}, \/  \_\-u32 {\em saddr}, \/  \_\-u32 {\em daddr})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1UDP__RawSocket_8e32b5a6458da2a8660b6353a1c7ad9b}
+\subsubsection[{udp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::UDP\_\-RawSocket::udp\_\-checksum (const struct udphdr \& {\em udp}, \/  in\_\-addr\_\-t {\em saddr}, \/  in\_\-addr\_\-t {\em daddr}, \/  const void $\ast$ {\em payload} = {\tt NULL}, \/  size\_\-t {\em psize} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1UDP__RawSocket_095971358f1de99857aaf649aae9b1ea}
 
 
-calculates udp checksum on pseudo-header 
+calculates UDP header checksum 
 
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em buf}]pointer to packet top \item[{\em nchar}]size of packet in bytes \item[{\em saddr}]IPv4 source address \item[{\em daddr}]IPv4 destination address \end{description}
+\item[{\em udp}]UDP header \item[{\em saddr}]source address \item[{\em daddr}]destination address \item[{\em payload}]pointer to data payload field \item[{\em psize}]data payload size \end{description}
 \end{Desc}
 \begin{Desc}
 \item[Returns:]checksum value \end{Desc}

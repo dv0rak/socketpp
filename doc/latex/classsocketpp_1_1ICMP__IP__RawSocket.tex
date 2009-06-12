@@ -44,16 +44,10 @@ void \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_c3f54f7a266586af46e4bfa4494
 \subsection*{Static Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_65eb1bc40fd501a49fee9055e22229dc}{
-static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const struct icmphdr \&icmp, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0)}
-\label{classsocketpp_1_1ICMP__IP__RawSocket_65eb1bc40fd501a49fee9055e22229dc}
-
-\item 
-\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_0723a72dc06b401f6dd101a25da6348f}{
-static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const struct icmphdr \&icmp, const std::string \&payload, const std::string \&ip\_\-opt)}
-\label{classsocketpp_1_1ICMP__IP__RawSocket_0723a72dc06b401f6dd101a25da6348f}
-
-\end{CompactItemize}
+static \_\-u16 \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_65eb1bc40fd501a49fee9055e22229dc}{ip\_\-checksum} (const struct iphdr \&ip, const struct icmphdr \&icmp, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0)
+\begin{CompactList}\small\item\em calculates IP header checksum of a ICMP packet \item\end{CompactList}\item 
+static \_\-u16 \hyperlink{classsocketpp_1_1ICMP__IP__RawSocket_0723a72dc06b401f6dd101a25da6348f}{ip\_\-checksum} (const struct iphdr \&ip, const struct icmphdr \&icmp, const std::string \&payload, const std::string \&ip\_\-opt)
+\begin{CompactList}\small\item\em calculates IP header checksum of a ICMP packet \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
@@ -71,6 +65,41 @@ void \textbf{\_\-set\_\-fields} (const std::string \&packet)}
 
 \subsection{Detailed Description}
 ICMP raw socket with IP header handling. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_0723a72dc06b401f6dd101a25da6348f}{
+\index{socketpp::ICMP\_\-IP\_\-RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}!ip\_\-checksum@{ip\_\-checksum}}
+\index{ip\_\-checksum@{ip\_\-checksum}!socketpp::ICMP_IP_RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}}
+\subsubsection[{ip\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::ICMP\_\-IP\_\-RawSocket::ip\_\-checksum (const struct iphdr \& {\em ip}, \/  const struct icmphdr \& {\em icmp}, \/  const std::string \& {\em payload}, \/  const std::string \& {\em ip\_\-opt})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1ICMP__IP__RawSocket_0723a72dc06b401f6dd101a25da6348f}
+
+
+calculates IP header checksum of a ICMP packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]IP header \item[{\em icmp}]ICMP header \item[{\em payload}]data payload field \item[{\em ip\_\-opt}]IP options field \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1ICMP__IP__RawSocket_65eb1bc40fd501a49fee9055e22229dc}{
+\index{socketpp::ICMP\_\-IP\_\-RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}!ip\_\-checksum@{ip\_\-checksum}}
+\index{ip\_\-checksum@{ip\_\-checksum}!socketpp::ICMP_IP_RawSocket@{socketpp::ICMP\_\-IP\_\-RawSocket}}
+\subsubsection[{ip\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::ICMP\_\-IP\_\-RawSocket::ip\_\-checksum (const struct iphdr \& {\em ip}, \/  const struct icmphdr \& {\em icmp}, \/  const void $\ast$ {\em payload} = {\tt NULL}, \/  size\_\-t {\em psize} = {\tt 0}, \/  const void $\ast$ {\em ip\_\-opt} = {\tt NULL}, \/  size\_\-t {\em ip\_\-opt\_\-len} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1ICMP__IP__RawSocket_65eb1bc40fd501a49fee9055e22229dc}
+
+
+calculates IP header checksum of a ICMP packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]IP header \item[{\em icmp}]ICMP header \item[{\em payload}]pointer to data payload field \item[{\em psize}]data payload size \item[{\em ip\_\-opt}]pointer to IP options field \item[{\em ip\_\-opt\_\-len}]IP options length \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 

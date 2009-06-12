@@ -64,12 +64,12 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the received ICMP header  <a href="#9b0ed9bb87d2895f2302db13b7ca5f06"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="6c8a1364919485932221942c472ea95e"></a><!-- doxytag: member="socketpp::ICMP_RawSocket::icmp_checksum" ref="6c8a1364919485932221942c472ea95e" args="(const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>icmp_checksum</b> (const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1ICMP__RawSocket.html#6c8a1364919485932221942c472ea95e">icmp_checksum</a> (const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="eb8e83796aefe5a5dd7035490902a537"></a><!-- doxytag: member="socketpp::ICMP_RawSocket::icmp_checksum" ref="eb8e83796aefe5a5dd7035490902a537" args="(const struct icmphdr &amp;icmp, const std::string &amp;payload)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>icmp_checksum</b> (const struct icmphdr &amp;icmp, const std::string &amp;payload)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates ICMP header checksum  <a href="#6c8a1364919485932221942c472ea95e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1ICMP__RawSocket.html#eb8e83796aefe5a5dd7035490902a537">icmp_checksum</a> (const struct icmphdr &amp;icmp, const std::string &amp;payload)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates ICMP header checksum  <a href="#eb8e83796aefe5a5dd7035490902a537"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="1dcbe47b02ddfff9545cedca9d78e36c"></a><!-- doxytag: member="socketpp::ICMP_RawSocket::_build_packet" ref="1dcbe47b02ddfff9545cedca9d78e36c" args="(std::string &amp;packet) const " -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet) const </td></tr>
@@ -145,10 +145,93 @@ gets the received ICMP header
 
 </div>
 </div><p>
+<a class="anchor" name="eb8e83796aefe5a5dd7035490902a537"></a><!-- doxytag: member="socketpp::ICMP_RawSocket::icmp_checksum" ref="eb8e83796aefe5a5dd7035490902a537" args="(const struct icmphdr &amp;icmp, const std::string &amp;payload)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_u16 socketpp::ICMP_RawSocket::icmp_checksum           </td>
+          <td>(</td>
+          <td class="paramtype">const struct icmphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>icmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>payload</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+calculates ICMP header checksum 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>icmp</em>&nbsp;</td><td>ICMP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>data payload field </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="6c8a1364919485932221942c472ea95e"></a><!-- doxytag: member="socketpp::ICMP_RawSocket::icmp_checksum" ref="6c8a1364919485932221942c472ea95e" args="(const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_u16 socketpp::ICMP_RawSocket::icmp_checksum           </td>
+          <td>(</td>
+          <td class="paramtype">const struct icmphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>icmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>payload</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>psize</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+calculates ICMP header checksum 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>icmp</em>&nbsp;</td><td>ICMP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>pointer to data payload field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>psize</em>&nbsp;</td><td>data payload size </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
+
+</div>
+</div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:54 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 21:11:09 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

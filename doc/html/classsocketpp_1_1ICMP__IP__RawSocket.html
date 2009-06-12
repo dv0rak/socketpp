@@ -69,12 +69,12 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls adjust_ICMP_all() &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#45e60510233daaa2f279d3a4706fdce5" title="calls adjust_IP_tot_len() &amp;&amp; adjust_IP_ihl() &amp;&amp; adjust_IP_csum()">adjust_IP_all()</a> <br></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="65eb1bc40fd501a49fee9055e22229dc"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::ip_checksum" ref="65eb1bc40fd501a49fee9055e22229dc" args="(const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1ICMP__IP__RawSocket.html#65eb1bc40fd501a49fee9055e22229dc">ip_checksum</a> (const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="0723a72dc06b401f6dd101a25da6348f"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::ip_checksum" ref="0723a72dc06b401f6dd101a25da6348f" args="(const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const std::string &amp;payload, const std::string &amp;ip_opt)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const std::string &amp;payload, const std::string &amp;ip_opt)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates IP header checksum of a ICMP packet  <a href="#65eb1bc40fd501a49fee9055e22229dc"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1ICMP__IP__RawSocket.html#0723a72dc06b401f6dd101a25da6348f">ip_checksum</a> (const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const std::string &amp;payload, const std::string &amp;ip_opt)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates IP header checksum of a ICMP packet  <a href="#0723a72dc06b401f6dd101a25da6348f"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ccfc4205717c474435dcf7e2603d1200"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::_build_packet" ref="ccfc4205717c474435dcf7e2603d1200" args="(std::string &amp;packet) const " -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet) const </td></tr>
@@ -84,10 +84,129 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (cons
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-ICMP raw socket with IP header handling. <hr>The documentation for this class was generated from the following files:<ul>
+ICMP raw socket with IP header handling. <hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="0723a72dc06b401f6dd101a25da6348f"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::ip_checksum" ref="0723a72dc06b401f6dd101a25da6348f" args="(const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const std::string &amp;payload, const std::string &amp;ip_opt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_u16 socketpp::ICMP_IP_RawSocket::ip_checksum           </td>
+          <td>(</td>
+          <td class="paramtype">const struct iphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct icmphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>icmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>ip_opt</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+calculates IP header checksum of a ICMP packet 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ip</em>&nbsp;</td><td>IP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>icmp</em>&nbsp;</td><td>ICMP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>data payload field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip_opt</em>&nbsp;</td><td>IP options field </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="65eb1bc40fd501a49fee9055e22229dc"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::ip_checksum" ref="65eb1bc40fd501a49fee9055e22229dc" args="(const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_u16 socketpp::ICMP_IP_RawSocket::ip_checksum           </td>
+          <td>(</td>
+          <td class="paramtype">const struct iphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct icmphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>icmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>payload</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>psize</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>ip_opt</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>ip_opt_len</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+calculates IP header checksum of a ICMP packet 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ip</em>&nbsp;</td><td>IP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>icmp</em>&nbsp;</td><td>ICMP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>pointer to data payload field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>psize</em>&nbsp;</td><td>data payload size </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip_opt</em>&nbsp;</td><td>pointer to IP options field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip_opt_len</em>&nbsp;</td><td>IP options length </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
+
+</div>
+</div><p>
+<hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:54 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 21:11:09 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

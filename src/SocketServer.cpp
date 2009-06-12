@@ -29,9 +29,14 @@ Socket SocketServer::accept()
     struct sockaddr remote;
     socklen_t slen = sizeof(remote);
 
-    if(_timeout!=0.0 && _select(read)==0) 
-        throw timeout("accept","timeout expired");
-
+    if(_timeout != 0.0) { 
+        int s = _select(read);
+        if(s == 0) { 
+            throw timeout("accept","timeout expired");
+        }
+        if(s < 0)
+            throw error("accept",errno);
+    }
     int sd = ::accept(_sd,&remote,&slen);
     if(sd < 0) {
         throw error("accept",errno,"accept");

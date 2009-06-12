@@ -54,16 +54,10 @@ void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_1a0f6360760f94f5c1569adde67d
 \subsection*{Static Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_23e1e3f2f4b206d88b6c8ca4e0b514fd}{
-static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const struct udphdr \&udp, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0)}
-\label{classsocketpp_1_1UDP__IP__RawSocket_23e1e3f2f4b206d88b6c8ca4e0b514fd}
-
-\item 
-\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_6af969961a1dbe17e2da9f26dce18463}{
-static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const struct udphdr \&udp, const std::string \&payload, const std::string \&ip\_\-opt)}
-\label{classsocketpp_1_1UDP__IP__RawSocket_6af969961a1dbe17e2da9f26dce18463}
-
-\end{CompactItemize}
+static \_\-u16 \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_23e1e3f2f4b206d88b6c8ca4e0b514fd}{ip\_\-checksum} (const struct iphdr \&ip, const struct udphdr \&udp, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0)
+\begin{CompactList}\small\item\em calculates IP header checksum of a UDP packet \item\end{CompactList}\item 
+static \_\-u16 \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_6af969961a1dbe17e2da9f26dce18463}{ip\_\-checksum} (const struct iphdr \&ip, const struct udphdr \&udp, const std::string \&payload, const std::string \&ip\_\-opt)
+\begin{CompactList}\small\item\em calculates IP header checksum of a UDP packet \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
@@ -81,6 +75,41 @@ void \textbf{\_\-set\_\-fields} (const std::string \&packet)}
 
 \subsection{Detailed Description}
 UDP raw socket with IP header handling. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_6af969961a1dbe17e2da9f26dce18463}{
+\index{socketpp::UDP\_\-IP\_\-RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}!ip\_\-checksum@{ip\_\-checksum}}
+\index{ip\_\-checksum@{ip\_\-checksum}!socketpp::UDP_IP_RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}}
+\subsubsection[{ip\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::UDP\_\-IP\_\-RawSocket::ip\_\-checksum (const struct iphdr \& {\em ip}, \/  const struct udphdr \& {\em udp}, \/  const std::string \& {\em payload}, \/  const std::string \& {\em ip\_\-opt})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1UDP__IP__RawSocket_6af969961a1dbe17e2da9f26dce18463}
+
+
+calculates IP header checksum of a UDP packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]IP header \item[{\em udp}]udp header \item[{\em payload}]data payload field \item[{\em ip\_\-opt}]IP options field \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_23e1e3f2f4b206d88b6c8ca4e0b514fd}{
+\index{socketpp::UDP\_\-IP\_\-RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}!ip\_\-checksum@{ip\_\-checksum}}
+\index{ip\_\-checksum@{ip\_\-checksum}!socketpp::UDP_IP_RawSocket@{socketpp::UDP\_\-IP\_\-RawSocket}}
+\subsubsection[{ip\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::UDP\_\-IP\_\-RawSocket::ip\_\-checksum (const struct iphdr \& {\em ip}, \/  const struct udphdr \& {\em udp}, \/  const void $\ast$ {\em payload} = {\tt NULL}, \/  size\_\-t {\em psize} = {\tt 0}, \/  const void $\ast$ {\em ip\_\-opt} = {\tt NULL}, \/  size\_\-t {\em ip\_\-opt\_\-len} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1UDP__IP__RawSocket_23e1e3f2f4b206d88b6c8ca4e0b514fd}
+
+
+calculates IP header checksum of a UDP packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]IP header \item[{\em udp}]udp header \item[{\em payload}]pointer to data payload field \item[{\em psize}]data payload size \item[{\em ip\_\-opt}]pointer to IP options field \item[{\em ip\_\-opt\_\-len}]IP options length \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 

@@ -38,16 +38,10 @@ void \hyperlink{classsocketpp_1_1ICMP__RawSocket_9b0ed9bb87d2895f2302db13b7ca5f0
 \subsection*{Static Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1ICMP__RawSocket_6c8a1364919485932221942c472ea95e}{
-static \_\-u16 \textbf{icmp\_\-checksum} (const struct icmphdr \&icmp, const void $\ast$payload=NULL, size\_\-t psize=0)}
-\label{classsocketpp_1_1ICMP__RawSocket_6c8a1364919485932221942c472ea95e}
-
-\item 
-\hypertarget{classsocketpp_1_1ICMP__RawSocket_eb8e83796aefe5a5dd7035490902a537}{
-static \_\-u16 \textbf{icmp\_\-checksum} (const struct icmphdr \&icmp, const std::string \&payload)}
-\label{classsocketpp_1_1ICMP__RawSocket_eb8e83796aefe5a5dd7035490902a537}
-
-\end{CompactItemize}
+static \_\-u16 \hyperlink{classsocketpp_1_1ICMP__RawSocket_6c8a1364919485932221942c472ea95e}{icmp\_\-checksum} (const struct icmphdr \&icmp, const void $\ast$payload=NULL, size\_\-t psize=0)
+\begin{CompactList}\small\item\em calculates ICMP header checksum \item\end{CompactList}\item 
+static \_\-u16 \hyperlink{classsocketpp_1_1ICMP__RawSocket_eb8e83796aefe5a5dd7035490902a537}{icmp\_\-checksum} (const struct icmphdr \&icmp, const std::string \&payload)
+\begin{CompactList}\small\item\em calculates ICMP header checksum \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
@@ -116,6 +110,38 @@ gets the received ICMP header
 \begin{description}
 \item[{\em icmp}]ICMP header to modify \end{description}
 \end{Desc}
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_eb8e83796aefe5a5dd7035490902a537}{
+\index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!icmp\_\-checksum@{icmp\_\-checksum}}
+\index{icmp\_\-checksum@{icmp\_\-checksum}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
+\subsubsection[{icmp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::ICMP\_\-RawSocket::icmp\_\-checksum (const struct icmphdr \& {\em icmp}, \/  const std::string \& {\em payload})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1ICMP__RawSocket_eb8e83796aefe5a5dd7035490902a537}
+
+
+calculates ICMP header checksum 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em icmp}]ICMP header \item[{\em payload}]data payload field \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_6c8a1364919485932221942c472ea95e}{
+\index{socketpp::ICMP\_\-RawSocket@{socketpp::ICMP\_\-RawSocket}!icmp\_\-checksum@{icmp\_\-checksum}}
+\index{icmp\_\-checksum@{icmp\_\-checksum}!socketpp::ICMP_RawSocket@{socketpp::ICMP\_\-RawSocket}}
+\subsubsection[{icmp\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::ICMP\_\-RawSocket::icmp\_\-checksum (const struct icmphdr \& {\em icmp}, \/  const void $\ast$ {\em payload} = {\tt NULL}, \/  size\_\-t {\em psize} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1ICMP__RawSocket_6c8a1364919485932221942c472ea95e}
+
+
+calculates ICMP header checksum 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em icmp}]ICMP header \item[{\em payload}]pointer to data payload field \item[{\em psize}]data payload size \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
 
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}

@@ -16,16 +16,16 @@ Inheritance diagram for socketpp::TCP\_\-IP\_\-RawSocket::\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_10edb8c09e89f09c0b99b5b2febce821}{
-void \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_10edb8c09e89f09c0b99b5b2febce821}{build\_\-IP\_\-header} (\_\-u32 saddr, \_\-u32 daddr, \_\-u8 ttl=64, \_\-u8 version=4, \_\-u8 protocol=IPPROTO\_\-TCP, \_\-u16 id=0, \_\-u8 tos=0, \_\-u16 frag\_\-off=0, \_\-u8 ihl=0, \_\-u16 tot\_\-len=0, \_\-u16 check=0)}
-\label{classsocketpp_1_1TCP__IP__RawSocket_10edb8c09e89f09c0b99b5b2febce821}
-
-\begin{CompactList}\small\item\em builds the internal IP header to send \item\end{CompactList}\item 
 \hypertarget{classsocketpp_1_1TCP__IP__RawSocket_1b08f12274fd9590f805bc876c44edd9}{
 \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_1b08f12274fd9590f805bc876c44edd9}{TCP\_\-IP\_\-RawSocket} ()}
 \label{classsocketpp_1_1TCP__IP__RawSocket_1b08f12274fd9590f805bc876c44edd9}
 
 \begin{CompactList}\small\item\em constructor which calls RawSocket(ipproto\_\-tcp) and setsockopt(ip\_\-hdrincl) \item\end{CompactList}\item 
+\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_10edb8c09e89f09c0b99b5b2febce821}{
+void \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_10edb8c09e89f09c0b99b5b2febce821}{build\_\-IP\_\-header} (\_\-u32 saddr, \_\-u32 daddr, \_\-u8 ttl=64, \_\-u8 version=4, \_\-u8 protocol=IPPROTO\_\-TCP, \_\-u16 id=0, \_\-u8 tos=0, \_\-u16 frag\_\-off=0, \_\-u8 ihl=0, \_\-u16 tot\_\-len=0, \_\-u16 check=0)}
+\label{classsocketpp_1_1TCP__IP__RawSocket_10edb8c09e89f09c0b99b5b2febce821}
+
+\begin{CompactList}\small\item\em builds the internal IP header to send \item\end{CompactList}\item 
 \hypertarget{classsocketpp_1_1TCP__IP__RawSocket_cabdd9a217d59c0c2c5511e01c222427}{
 void \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_cabdd9a217d59c0c2c5511e01c222427}{adjust\_\-IP\_\-csum} ()}
 \label{classsocketpp_1_1TCP__IP__RawSocket_cabdd9a217d59c0c2c5511e01c222427}
@@ -54,16 +54,10 @@ void \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_dd3b21314f1768962bf399291f40
 \subsection*{Static Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_abc1c7904d5086de03ab11ae151813a7}{
-static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const struct tcphdr \&tcp, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0, const void $\ast$tcp\_\-opt=NULL, size\_\-t tcp\_\-opt\_\-len=0)}
-\label{classsocketpp_1_1TCP__IP__RawSocket_abc1c7904d5086de03ab11ae151813a7}
-
-\item 
-\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_1fcccb3c1d1454997c08e7afe1518df7}{
-static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const struct tcphdr \&tcp, const std::string \&payload, const std::string \&ip\_\-opt, const std::string \&tcp\_\-opt)}
-\label{classsocketpp_1_1TCP__IP__RawSocket_1fcccb3c1d1454997c08e7afe1518df7}
-
-\end{CompactItemize}
+static \_\-u16 \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_abc1c7904d5086de03ab11ae151813a7}{ip\_\-checksum} (const struct iphdr \&ip, const struct tcphdr \&tcp, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0, const void $\ast$tcp\_\-opt=NULL, size\_\-t tcp\_\-opt\_\-len=0)
+\begin{CompactList}\small\item\em calculates IP header checksum of a TCP packet \item\end{CompactList}\item 
+static \_\-u16 \hyperlink{classsocketpp_1_1TCP__IP__RawSocket_1fcccb3c1d1454997c08e7afe1518df7}{ip\_\-checksum} (const struct iphdr \&ip, const struct tcphdr \&tcp, const std::string \&payload, const std::string \&ip\_\-opt, const std::string \&tcp\_\-opt)
+\begin{CompactList}\small\item\em calculates IP header checksum of a TCP packet \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
@@ -81,6 +75,41 @@ void \textbf{\_\-set\_\-fields} (const std::string \&packet)}
 
 \subsection{Detailed Description}
 TCP raw socket with IP header handling. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_1fcccb3c1d1454997c08e7afe1518df7}{
+\index{socketpp::TCP\_\-IP\_\-RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}!ip\_\-checksum@{ip\_\-checksum}}
+\index{ip\_\-checksum@{ip\_\-checksum}!socketpp::TCP_IP_RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}}
+\subsubsection[{ip\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::TCP\_\-IP\_\-RawSocket::ip\_\-checksum (const struct iphdr \& {\em ip}, \/  const struct tcphdr \& {\em tcp}, \/  const std::string \& {\em payload}, \/  const std::string \& {\em ip\_\-opt}, \/  const std::string \& {\em tcp\_\-opt})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1TCP__IP__RawSocket_1fcccb3c1d1454997c08e7afe1518df7}
+
+
+calculates IP header checksum of a TCP packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]IP header \item[{\em tcp}]TCP header \item[{\em payload}]data payload field \item[{\em ip\_\-opt}]IP options field \item[{\em tcp\_\-opt}]TCP options field \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1TCP__IP__RawSocket_abc1c7904d5086de03ab11ae151813a7}{
+\index{socketpp::TCP\_\-IP\_\-RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}!ip\_\-checksum@{ip\_\-checksum}}
+\index{ip\_\-checksum@{ip\_\-checksum}!socketpp::TCP_IP_RawSocket@{socketpp::TCP\_\-IP\_\-RawSocket}}
+\subsubsection[{ip\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::TCP\_\-IP\_\-RawSocket::ip\_\-checksum (const struct iphdr \& {\em ip}, \/  const struct tcphdr \& {\em tcp}, \/  const void $\ast$ {\em payload} = {\tt NULL}, \/  size\_\-t {\em psize} = {\tt 0}, \/  const void $\ast$ {\em ip\_\-opt} = {\tt NULL}, \/  size\_\-t {\em ip\_\-opt\_\-len} = {\tt 0}, \/  const void $\ast$ {\em tcp\_\-opt} = {\tt NULL}, \/  size\_\-t {\em tcp\_\-opt\_\-len} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1TCP__IP__RawSocket_abc1c7904d5086de03ab11ae151813a7}
+
+
+calculates IP header checksum of a TCP packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]IP header \item[{\em tcp}]TCP header \item[{\em payload}]pointer to data payload field \item[{\em psize}]data payload size \item[{\em ip\_\-opt}]pointer to IP options field \item[{\em ip\_\-opt\_\-len}]IP options length \item[{\em tcp\_\-opt}]pointer to TCP options field \item[{\em tcp\_\-opt\_\-len}]TCP options length \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+
 
 The documentation for this class was generated from the following files:\begin{CompactItemize}
 \item 

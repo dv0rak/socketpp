@@ -61,16 +61,10 @@ size\_\-t \hyperlink{classsocketpp_1_1IP__RawSocket_c9bec0c1db60871bb1cb5560b97e
 \subsection*{Static Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1IP__RawSocket_91cc7b27ebb5eb8da6be6cdd14087f21}{
-static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0)}
-\label{classsocketpp_1_1IP__RawSocket_91cc7b27ebb5eb8da6be6cdd14087f21}
-
-\item 
-\hypertarget{classsocketpp_1_1IP__RawSocket_6b48548362fb5509bbba7d36e9ffdb5d}{
-static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const std::string \&payload, const std::string \&ip\_\-opt)}
-\label{classsocketpp_1_1IP__RawSocket_6b48548362fb5509bbba7d36e9ffdb5d}
-
-\end{CompactItemize}
+static \_\-u16 \hyperlink{classsocketpp_1_1IP__RawSocket_91cc7b27ebb5eb8da6be6cdd14087f21}{ip\_\-checksum} (const struct iphdr \&ip, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0)
+\begin{CompactList}\small\item\em calculates IP header checksum of a IP packet \item\end{CompactList}\item 
+static \_\-u16 \hyperlink{classsocketpp_1_1IP__RawSocket_6b48548362fb5509bbba7d36e9ffdb5d}{ip\_\-checksum} (const struct iphdr \&ip, const std::string \&payload, const std::string \&ip\_\-opt)
+\begin{CompactList}\small\item\em calculates IP header checksum of a IP packet \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
@@ -181,6 +175,38 @@ gets received IP options
 \end{Desc}
 \begin{Desc}
 \item[Returns:]bytes written \end{Desc}
+\hypertarget{classsocketpp_1_1IP__RawSocket_6b48548362fb5509bbba7d36e9ffdb5d}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!ip\_\-checksum@{ip\_\-checksum}}
+\index{ip\_\-checksum@{ip\_\-checksum}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{ip\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::IP\_\-RawSocket::ip\_\-checksum (const struct iphdr \& {\em ip}, \/  const std::string \& {\em payload}, \/  const std::string \& {\em ip\_\-opt})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1IP__RawSocket_6b48548362fb5509bbba7d36e9ffdb5d}
+
+
+calculates IP header checksum of a IP packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]IP header \item[{\em payload}]data payload field \item[{\em ip\_\-opt}]IP options field \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
+\hypertarget{classsocketpp_1_1IP__RawSocket_91cc7b27ebb5eb8da6be6cdd14087f21}{
+\index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!ip\_\-checksum@{ip\_\-checksum}}
+\index{ip\_\-checksum@{ip\_\-checksum}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}
+\subsubsection[{ip\_\-checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::IP\_\-RawSocket::ip\_\-checksum (const struct iphdr \& {\em ip}, \/  const void $\ast$ {\em payload} = {\tt NULL}, \/  size\_\-t {\em psize} = {\tt 0}, \/  const void $\ast$ {\em ip\_\-opt} = {\tt NULL}, \/  size\_\-t {\em ip\_\-opt\_\-len} = {\tt 0})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
+\label{classsocketpp_1_1IP__RawSocket_91cc7b27ebb5eb8da6be6cdd14087f21}
+
+
+calculates IP header checksum of a IP packet 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ip}]IP header \item[{\em payload}]pointer to data payload field \item[{\em psize}]data payload size \item[{\em ip\_\-opt}]pointer to IP options field \item[{\em ip\_\-opt\_\-len}]IP options length \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]checksum value \end{Desc}
 \hypertarget{classsocketpp_1_1IP__RawSocket_9d88ecec5e362b3cf3d3dbc51d5dd0cd}{
 \index{socketpp::IP\_\-RawSocket@{socketpp::IP\_\-RawSocket}!set\_\-IP\_\-options@{set\_\-IP\_\-options}}
 \index{set\_\-IP\_\-options@{set\_\-IP\_\-options}!socketpp::IP_RawSocket@{socketpp::IP\_\-RawSocket}}

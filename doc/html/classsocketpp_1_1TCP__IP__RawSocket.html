@@ -48,14 +48,14 @@ Inheritance diagram for socketpp::TCP_IP_RawSocket:</div>
 <a href="classsocketpp_1_1TCP__IP__RawSocket-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="10edb8c09e89f09c0b99b5b2febce821"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::build_IP_header" ref="10edb8c09e89f09c0b99b5b2febce821" args="(_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=IPPROTO_TCP, _u16 id=0, _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#10edb8c09e89f09c0b99b5b2febce821">build_IP_header</a> (_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=IPPROTO_TCP, _u16 id=0, _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">builds the internal IP header to send <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="1b08f12274fd9590f805bc876c44edd9"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::TCP_IP_RawSocket" ref="1b08f12274fd9590f805bc876c44edd9" args="()" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#1b08f12274fd9590f805bc876c44edd9">TCP_IP_RawSocket</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">constructor which calls RawSocket(ipproto_tcp) and setsockopt(ip_hdrincl) <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="10edb8c09e89f09c0b99b5b2febce821"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::build_IP_header" ref="10edb8c09e89f09c0b99b5b2febce821" args="(_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=IPPROTO_TCP, _u16 id=0, _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#10edb8c09e89f09c0b99b5b2febce821">build_IP_header</a> (_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=IPPROTO_TCP, _u16 id=0, _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">builds the internal IP header to send <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="cabdd9a217d59c0c2c5511e01c222427"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::adjust_IP_csum" ref="cabdd9a217d59c0c2c5511e01c222427" args="()" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#cabdd9a217d59c0c2c5511e01c222427">adjust_IP_csum</a> ()</td></tr>
 
@@ -77,12 +77,12 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls <a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#3644327ff72d322ff809ac432f59783b" title="calls adjust_TCP_doff() &amp;&amp; adjust_TCP_csum()">adjust_TCP_all()</a> &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#45e60510233daaa2f279d3a4706fdce5" title="calls adjust_IP_tot_len() &amp;&amp; adjust_IP_ihl() &amp;&amp; adjust_IP_csum()">adjust_IP_all()</a> <br></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="abc1c7904d5086de03ab11ae151813a7"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::ip_checksum" ref="abc1c7904d5086de03ab11ae151813a7" args="(const struct iphdr &amp;ip, const struct tcphdr &amp;tcp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const struct tcphdr &amp;tcp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#abc1c7904d5086de03ab11ae151813a7">ip_checksum</a> (const struct iphdr &amp;ip, const struct tcphdr &amp;tcp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="1fcccb3c1d1454997c08e7afe1518df7"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::ip_checksum" ref="1fcccb3c1d1454997c08e7afe1518df7" args="(const struct iphdr &amp;ip, const struct tcphdr &amp;tcp, const std::string &amp;payload, const std::string &amp;ip_opt, const std::string &amp;tcp_opt)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const struct tcphdr &amp;tcp, const std::string &amp;payload, const std::string &amp;ip_opt, const std::string &amp;tcp_opt)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates IP header checksum of a TCP packet  <a href="#abc1c7904d5086de03ab11ae151813a7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__IP__RawSocket.html#1fcccb3c1d1454997c08e7afe1518df7">ip_checksum</a> (const struct iphdr &amp;ip, const struct tcphdr &amp;tcp, const std::string &amp;payload, const std::string &amp;ip_opt, const std::string &amp;tcp_opt)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates IP header checksum of a TCP packet  <a href="#1fcccb3c1d1454997c08e7afe1518df7"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="e624076d0f5f1f63bd8c13e97a7e46ce"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::_build_packet" ref="e624076d0f5f1f63bd8c13e97a7e46ce" args="(std::string &amp;packet) const " -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet) const </td></tr>
@@ -92,10 +92,150 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (cons
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
-TCP raw socket with IP header handling. <hr>The documentation for this class was generated from the following files:<ul>
+TCP raw socket with IP header handling. <hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="1fcccb3c1d1454997c08e7afe1518df7"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::ip_checksum" ref="1fcccb3c1d1454997c08e7afe1518df7" args="(const struct iphdr &amp;ip, const struct tcphdr &amp;tcp, const std::string &amp;payload, const std::string &amp;ip_opt, const std::string &amp;tcp_opt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_u16 socketpp::TCP_IP_RawSocket::ip_checksum           </td>
+          <td>(</td>
+          <td class="paramtype">const struct iphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct tcphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>tcp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>ip_opt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>tcp_opt</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+calculates IP header checksum of a TCP packet 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ip</em>&nbsp;</td><td>IP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp</em>&nbsp;</td><td>TCP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>data payload field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip_opt</em>&nbsp;</td><td>IP options field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp_opt</em>&nbsp;</td><td>TCP options field </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="abc1c7904d5086de03ab11ae151813a7"></a><!-- doxytag: member="socketpp::TCP_IP_RawSocket::ip_checksum" ref="abc1c7904d5086de03ab11ae151813a7" args="(const struct iphdr &amp;ip, const struct tcphdr &amp;tcp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_u16 socketpp::TCP_IP_RawSocket::ip_checksum           </td>
+          <td>(</td>
+          <td class="paramtype">const struct iphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct tcphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>tcp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>payload</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>psize</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>ip_opt</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>ip_opt_len</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>tcp_opt</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>tcp_opt_len</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+calculates IP header checksum of a TCP packet 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ip</em>&nbsp;</td><td>IP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp</em>&nbsp;</td><td>TCP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>pointer to data payload field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>psize</em>&nbsp;</td><td>data payload size </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip_opt</em>&nbsp;</td><td>pointer to IP options field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip_opt_len</em>&nbsp;</td><td>IP options length </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp_opt</em>&nbsp;</td><td>pointer to TCP options field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp_opt_len</em>&nbsp;</td><td>TCP options length </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
+
+</div>
+</div><p>
+<hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:55 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 21:11:10 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

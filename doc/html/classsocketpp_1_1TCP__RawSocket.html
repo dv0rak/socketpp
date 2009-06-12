@@ -82,18 +82,12 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets received TCP options  <a href="#67ab79f764a710067590427cb35aeea0"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="91cf9d3aaf57d50ba1e26c8621083728"></a><!-- doxytag: member="socketpp::TCP_RawSocket::tcp_checksum" ref="91cf9d3aaf57d50ba1e26c8621083728" args="(const struct tcphdr &amp;tcp, in_addr_t saddr, in_addr_t daddr, const void *payload=NULL, size_t psize=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>tcp_checksum</b> (const struct tcphdr &amp;tcp, in_addr_t saddr, in_addr_t daddr, const void *payload=NULL, size_t psize=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__RawSocket.html#91cf9d3aaf57d50ba1e26c8621083728">tcp_checksum</a> (const struct tcphdr &amp;tcp, in_addr_t saddr, in_addr_t daddr, const void *payload=NULL, size_t psize=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="237a9811c114b7d38e41e9d65265b4cd"></a><!-- doxytag: member="socketpp::TCP_RawSocket::tcp_checksum" ref="237a9811c114b7d38e41e9d65265b4cd" args="(const struct tcphdr &amp;tcp, in_addr_t saddr, in_addr_t daddr, const std::string &amp;payload, const std::string &amp;tcp_opt)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>tcp_checksum</b> (const struct tcphdr &amp;tcp, in_addr_t saddr, in_addr_t daddr, const std::string &amp;payload, const std::string &amp;tcp_opt)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates TCP header checksum  <a href="#91cf9d3aaf57d50ba1e26c8621083728"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__RawSocket.html#237a9811c114b7d38e41e9d65265b4cd">tcp_checksum</a> (const struct tcphdr &amp;tcp, in_addr_t saddr, in_addr_t daddr, const std::string &amp;payload, const std::string &amp;tcp_opt)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__RawSocket.html#a0d080dc7c3318b854801d9d8887683c">tcp_checksum</a> (const void *buf, size_t nchar, _u32 saddr, _u32 daddr)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates tcp checksum on pseudo-header  <a href="#a0d080dc7c3318b854801d9d8887683c"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1TCP__RawSocket.html#1ac43948171803538577ca50dcd86402">tcp_checksum</a> (const std::string &amp;buf, _u32 saddr, _u32 daddr)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates tcp checksum on pseudo-header  <a href="#1ac43948171803538577ca50dcd86402"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates TCP header checksum  <a href="#237a9811c114b7d38e41e9d65265b4cd"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="bc5c2885494099eb5371d8e15cfce054"></a><!-- doxytag: member="socketpp::TCP_RawSocket::_build_packet" ref="bc5c2885494099eb5371d8e15cfce054" args="(std::string &amp;packet) const " -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet) const </td></tr>
@@ -374,27 +368,39 @@ sets the TCP options field
 
 </div>
 </div><p>
-<a class="anchor" name="1ac43948171803538577ca50dcd86402"></a><!-- doxytag: member="socketpp::TCP_RawSocket::tcp_checksum" ref="1ac43948171803538577ca50dcd86402" args="(const std::string &amp;buf, _u32 saddr, _u32 daddr)" -->
+<a class="anchor" name="237a9811c114b7d38e41e9d65265b4cd"></a><!-- doxytag: member="socketpp::TCP_RawSocket::tcp_checksum" ref="237a9811c114b7d38e41e9d65265b4cd" args="(const struct tcphdr &amp;tcp, in_addr_t saddr, in_addr_t daddr, const std::string &amp;payload, const std::string &amp;tcp_opt)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static _u16 socketpp::TCP_RawSocket::tcp_checksum           </td>
+          <td class="memname">_u16 socketpp::TCP_RawSocket::tcp_checksum           </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&nbsp;</td>
-          <td class="paramname"> <em>buf</em>, </td>
+          <td class="paramtype">const struct tcphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>tcp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">_u32&nbsp;</td>
+          <td class="paramtype">in_addr_t&nbsp;</td>
           <td class="paramname"> <em>saddr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">_u32&nbsp;</td>
-          <td class="paramname"> <em>daddr</em></td><td>&nbsp;</td>
+          <td class="paramtype">in_addr_t&nbsp;</td>
+          <td class="paramname"> <em>daddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>tcp_opt</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -406,46 +412,66 @@ sets the TCP options field
 <div class="memdoc">
 
 <p>
-calculates tcp checksum on pseudo-header 
+calculates TCP header checksum 
 <p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>packet string </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>saddr</em>&nbsp;</td><td>IPv4 source address </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>daddr</em>&nbsp;</td><td>IPv4 destination address </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp</em>&nbsp;</td><td>TCP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>saddr</em>&nbsp;</td><td>source address </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>daddr</em>&nbsp;</td><td>destination address </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>data payload field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp_opt</em>&nbsp;</td><td>TCP options field </td></tr>
   </table>
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
 
 </div>
 </div><p>
-<a class="anchor" name="a0d080dc7c3318b854801d9d8887683c"></a><!-- doxytag: member="socketpp::TCP_RawSocket::tcp_checksum" ref="a0d080dc7c3318b854801d9d8887683c" args="(const void *buf, size_t nchar, _u32 saddr, _u32 daddr)" -->
+<a class="anchor" name="91cf9d3aaf57d50ba1e26c8621083728"></a><!-- doxytag: member="socketpp::TCP_RawSocket::tcp_checksum" ref="91cf9d3aaf57d50ba1e26c8621083728" args="(const struct tcphdr &amp;tcp, in_addr_t saddr, in_addr_t daddr, const void *payload=NULL, size_t psize=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static _u16 socketpp::TCP_RawSocket::tcp_checksum           </td>
+          <td class="memname">_u16 socketpp::TCP_RawSocket::tcp_checksum           </td>
           <td>(</td>
-          <td class="paramtype">const void *&nbsp;</td>
-          <td class="paramname"> <em>buf</em>, </td>
+          <td class="paramtype">const struct tcphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>tcp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&nbsp;</td>
-          <td class="paramname"> <em>nchar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">_u32&nbsp;</td>
+          <td class="paramtype">in_addr_t&nbsp;</td>
           <td class="paramname"> <em>saddr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">_u32&nbsp;</td>
-          <td class="paramname"> <em>daddr</em></td><td>&nbsp;</td>
+          <td class="paramtype">in_addr_t&nbsp;</td>
+          <td class="paramname"> <em>daddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>payload</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>psize</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>tcp_opt</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>tcp_opt_len</em> = <code>0</code></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -457,14 +483,17 @@ calculates tcp checksum on pseudo-header
 <div class="memdoc">
 
 <p>
-calculates tcp checksum on pseudo-header 
+calculates TCP header checksum 
 <p>
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>pointer to packet top </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>nchar</em>&nbsp;</td><td>size of packet in bytes </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>saddr</em>&nbsp;</td><td>IPv4 source address </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>daddr</em>&nbsp;</td><td>IPv4 destination address </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp</em>&nbsp;</td><td>TCP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>saddr</em>&nbsp;</td><td>source address </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>daddr</em>&nbsp;</td><td>destination address </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>pointer to data payload field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>psize</em>&nbsp;</td><td>data payload size </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp_opt</em>&nbsp;</td><td>pointer to TCP options field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tcp_opt_len</em>&nbsp;</td><td>TCP options length </td></tr>
   </table>
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
@@ -474,7 +503,7 @@ calculates tcp checksum on pseudo-header
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:55 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 21:11:10 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

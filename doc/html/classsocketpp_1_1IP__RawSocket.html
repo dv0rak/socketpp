@@ -90,12 +90,12 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets received IP options  <a href="#c9bec0c1db60871bb1cb5560b97e02ed"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="91cc7b27ebb5eb8da6be6cdd14087f21"></a><!-- doxytag: member="socketpp::IP_RawSocket::ip_checksum" ref="91cc7b27ebb5eb8da6be6cdd14087f21" args="(const struct iphdr &amp;ip, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#91cc7b27ebb5eb8da6be6cdd14087f21">ip_checksum</a> (const struct iphdr &amp;ip, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="6b48548362fb5509bbba7d36e9ffdb5d"></a><!-- doxytag: member="socketpp::IP_RawSocket::ip_checksum" ref="6b48548362fb5509bbba7d36e9ffdb5d" args="(const struct iphdr &amp;ip, const std::string &amp;payload, const std::string &amp;ip_opt)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const std::string &amp;payload, const std::string &amp;ip_opt)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates IP header checksum of a IP packet  <a href="#91cc7b27ebb5eb8da6be6cdd14087f21"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#6b48548362fb5509bbba7d36e9ffdb5d">ip_checksum</a> (const struct iphdr &amp;ip, const std::string &amp;payload, const std::string &amp;ip_opt)</td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates IP header checksum of a IP packet  <a href="#6b48548362fb5509bbba7d36e9ffdb5d"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a8123cfd347fdf46ad2268205ec81c28"></a><!-- doxytag: member="socketpp::IP_RawSocket::_build_packet" ref="a8123cfd347fdf46ad2268205ec81c28" args="(std::string &amp;packet) const " -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet) const </td></tr>
@@ -243,6 +243,110 @@ gets received IP options
 
 </div>
 </div><p>
+<a class="anchor" name="6b48548362fb5509bbba7d36e9ffdb5d"></a><!-- doxytag: member="socketpp::IP_RawSocket::ip_checksum" ref="6b48548362fb5509bbba7d36e9ffdb5d" args="(const struct iphdr &amp;ip, const std::string &amp;payload, const std::string &amp;ip_opt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_u16 socketpp::IP_RawSocket::ip_checksum           </td>
+          <td>(</td>
+          <td class="paramtype">const struct iphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&nbsp;</td>
+          <td class="paramname"> <em>ip_opt</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+calculates IP header checksum of a IP packet 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ip</em>&nbsp;</td><td>IP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>data payload field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip_opt</em>&nbsp;</td><td>IP options field </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="91cc7b27ebb5eb8da6be6cdd14087f21"></a><!-- doxytag: member="socketpp::IP_RawSocket::ip_checksum" ref="91cc7b27ebb5eb8da6be6cdd14087f21" args="(const struct iphdr &amp;ip, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_u16 socketpp::IP_RawSocket::ip_checksum           </td>
+          <td>(</td>
+          <td class="paramtype">const struct iphdr &amp;&nbsp;</td>
+          <td class="paramname"> <em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>payload</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>psize</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>ip_opt</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>ip_opt_len</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+calculates IP header checksum of a IP packet 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ip</em>&nbsp;</td><td>IP header </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>payload</em>&nbsp;</td><td>pointer to data payload field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>psize</em>&nbsp;</td><td>data payload size </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip_opt</em>&nbsp;</td><td>pointer to IP options field </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ip_opt_len</em>&nbsp;</td><td>IP options length </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
+
+</div>
+</div><p>
 <a class="anchor" name="9d88ecec5e362b3cf3d3dbc51d5dd0cd"></a><!-- doxytag: member="socketpp::IP_RawSocket::set_IP_options" ref="9d88ecec5e362b3cf3d3dbc51d5dd0cd" args="(const std::string &amp;opt)" -->
 <div class="memitem">
 <div class="memproto">
@@ -310,7 +414,7 @@ sets the IP options field
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:54 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 21:11:09 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
