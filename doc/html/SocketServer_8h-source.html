@@ -27,7 +27,7 @@
 <a name="l00007"></a>00007 
 <a name="l00009"></a><a class="code" href="classsocketpp_1_1SocketServer.html">00009</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1SocketServer.html" title="TCP server class which can accept simultaneously multiple connections through multithreading...">SocketServer</a> : <span class="keyword">public</span> <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a> {
 <a name="l00010"></a>00010 <span class="keyword">public</span>:
-<a name="l00011"></a>00011     <a class="code" href="classsocketpp_1_1SocketServer.html" title="TCP server class which can accept simultaneously multiple connections through multithreading...">SocketServer</a>() : <a class="code" href="classsocketpp_1_1BaseSocket.html#3eb81ecbf94ce83afa6b2f60206c77f2" title="simply instantiates the class without setting the internal socket descriptor">BaseSocket</a>() { }
+<a name="l00011"></a>00011     <a class="code" href="classsocketpp_1_1SocketServer.html" title="TCP server class which can accept simultaneously multiple connections through multithreading...">SocketServer</a>() { }
 <a name="l00013"></a><a class="code" href="classsocketpp_1_1SocketServer.html#3a6955b6d5617457cf31206ea9492786">00013</a>     <span class="keyword">explicit</span> <a class="code" href="classsocketpp_1_1SocketServer.html#3a6955b6d5617457cf31206ea9492786" title="calls BaseSocket(t)">SocketServer</a>(type t) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(t) { }
 <a name="l00014"></a>00014 
 <a name="l00020"></a>00020     <a class="code" href="classsocketpp_1_1SocketServer.html" title="TCP server class which can accept simultaneously multiple connections through multithreading...">SocketServer</a>
@@ -44,11 +44,20 @@
 <a name="l00050"></a>00050 
 <a name="l00054"></a>00054     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1SocketServer.html#0ded92a6348a6cf953d9f646fac43ac2" title="puts server in multithreaded mode">threadClientHandle</a>(<span class="keywordtype">void</span> (*f)(<a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it&amp;#39;s simply a C-socket wrapper">Socket</a>&amp;, <span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *pt);
 <a name="l00055"></a>00055 
-<a name="l00056"></a>00056 };
-<a name="l00057"></a>00057 };
-<a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
+<a name="l00056"></a>00056 <span class="keyword">private</span>:
+<a name="l00057"></a>00057     <span class="keyword">struct </span>_thrdarg {
+<a name="l00058"></a>00058         void (*func)(<a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it&amp;#39;s simply a C-socket wrapper">socketpp::Socket</a>&amp;, <span class="keywordtype">void</span>*);
+<a name="l00059"></a>00059         <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it&amp;#39;s simply a C-socket wrapper">socketpp::Socket</a> sock;
+<a name="l00060"></a>00060         <span class="keywordtype">void</span> *pt;
+<a name="l00061"></a>00061     };
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063     <span class="keyword">static</span> <span class="keywordtype">void</span> * _thread(<span class="keywordtype">void</span>* arg);
+<a name="l00064"></a>00064 };
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 };
+<a name="l00067"></a>00067 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 11 02:43:03 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:52 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

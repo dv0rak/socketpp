@@ -10,17 +10,9 @@ namespace ftplib {
 ///@brief	exception thrown when a FTP error code in the range 400-499 is received
 class error_temp : public std::exception {
 public:
-    error_temp(int code, const std::string &msg) throw()
-    {
-        _code = code;
-        _msg = msg;
-    }
-    ~error_temp() throw() {}
-
-    virtual const char * what() const throw()
-    {
-        return _msg.c_str(); 
-    }
+    inline error_temp(int code, const std::string &msg) throw() : _code(code), _msg(msg) { }
+    inline ~error_temp() throw() {}
+    inline virtual const char * what() const throw() { return _msg.c_str(); }
 private:
     int _code;
     std::string _msg;
@@ -29,17 +21,9 @@ private:
 ///@brief	exception thrown when a FTP error code in the range 500-599 is received
 class error_perm : public std::exception {
 public:
-    error_perm(int code, const std::string &msg) throw()
-    {
-        _code = code;
-        _msg = msg;
-    }
-    ~error_perm() throw() {}
-    
-    virtual const char * what() const throw()
-    {
-        return _msg.c_str(); 
-    }
+    inline error_perm(int code, const std::string &msg) throw() : _code(code), _msg(msg) { }
+    inline ~error_perm() throw() {}
+    inline virtual const char * what() const throw() { return _msg.c_str(); }
 private:
     int _code;
     std::string _msg;
@@ -48,16 +32,9 @@ private:
 ///@brief	exception thrown when a unexpected reply from the server is received
 class error_proto : public std::exception {
 public:
-    error_proto(const std::string &msg) throw()
-    {
-        _msg = msg;
-    }
-    ~error_proto() throw() {}
-    
-    virtual const char * what() const throw()
-    {
-        return _msg.c_str(); 
-    }
+    inline error_proto(const std::string &msg) throw() : _msg(msg) { }
+    inline ~error_proto() throw() {}
+    inline virtual const char * what() const throw() { return _msg.c_str(); }
 private:
     std::string _msg;
 };
@@ -148,7 +125,7 @@ public:
     ///@brief	initiate a transfer over the data connection, using PASV or PORT mode depending on previous calls to set_pasv() (default is PASV), and then send given command
     ///@param	cmd	FTP command to execute
     ///@return	connected FTP-data Socket object
-    socketpp::Socket& transfercmd(const std::string &cmd);
+    socketpp::Socket transfercmd(const std::string &cmd);
     ///@brief	sets either PORT or PASV mode
     ///@param	p	if true PASV, otherwise PORT
     void set_pasv(bool p) throw();
@@ -161,7 +138,7 @@ public:
 
     ///@brief	sets timeout on all IO socket operations
     ///@param	time	timeout value in seconds, if 0.0 timeout is cancelled
-    inline void settimeout(double time) { _sock.settimeout(time); }
+    void settimeout(double time);
 
 private:
     socketpp::Socket _sock;

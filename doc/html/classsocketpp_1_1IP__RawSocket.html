@@ -65,11 +65,11 @@ virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets the IP options field  <a href="#9d88ecec5e362b3cf3d3dbc51d5dd0cd"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="187bab79c6a8bae17b400a132063a9d1"></a><!-- doxytag: member="socketpp::IP_RawSocket::adjust_IP_csum" ref="187bab79c6a8bae17b400a132063a9d1" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#187bab79c6a8bae17b400a132063a9d1">adjust_IP_csum</a> ()</td></tr>
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#187bab79c6a8bae17b400a132063a9d1">adjust_IP_csum</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets IP checksum field <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="32d2c08139fb43abb92679bdabecf778"></a><!-- doxytag: member="socketpp::IP_RawSocket::adjust_IP_tot_len" ref="32d2c08139fb43abb92679bdabecf778" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#32d2c08139fb43abb92679bdabecf778">adjust_IP_tot_len</a> ()</td></tr>
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#32d2c08139fb43abb92679bdabecf778">adjust_IP_tot_len</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets IP "total length" field <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="d84d5e193a15baf421c64011a9c27359"></a><!-- doxytag: member="socketpp::IP_RawSocket::adjust_IP_ihl" ref="d84d5e193a15baf421c64011a9c27359" args="()" -->
@@ -89,19 +89,30 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1IP__RawSocket.html#c9bec0c1db60871bb1cb5560b97e02ed">get_IP_options</a> (std::string &amp;opt)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets received IP options  <a href="#c9bec0c1db60871bb1cb5560b97e02ed"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="91cc7b27ebb5eb8da6be6cdd14087f21"></a><!-- doxytag: member="socketpp::IP_RawSocket::ip_checksum" ref="91cc7b27ebb5eb8da6be6cdd14087f21" args="(const struct iphdr &amp;ip, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="6b48548362fb5509bbba7d36e9ffdb5d"></a><!-- doxytag: member="socketpp::IP_RawSocket::ip_checksum" ref="6b48548362fb5509bbba7d36e9ffdb5d" args="(const struct iphdr &amp;ip, const std::string &amp;payload, const std::string &amp;ip_opt)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const std::string &amp;payload, const std::string &amp;ip_opt)</td></tr>
+
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="6863cc399c543073e9aa3615c3f50940"></a><!-- doxytag: member="socketpp::IP_RawSocket::_build_packet" ref="6863cc399c543073e9aa3615c3f50940" args="(std::string &amp;packet)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a8123cfd347fdf46ad2268205ec81c28"></a><!-- doxytag: member="socketpp::IP_RawSocket::_build_packet" ref="a8123cfd347fdf46ad2268205ec81c28" args="(std::string &amp;packet) const " -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet) const </td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c39832f1ad83184cd5ba94c4c967f465"></a><!-- doxytag: member="socketpp::IP_RawSocket::_set_fields" ref="c39832f1ad83184cd5ba94c4c967f465" args="(const std::string &amp;packet)" -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (const std::string &amp;packet)</td></tr>
 
-<tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a8ddf1b2172c1e6f4b50d18c825978dc"></a><!-- doxytag: member="socketpp::IP_RawSocket::IP_h" ref="a8ddf1b2172c1e6f4b50d18c825978dc" args="" -->
-iphdr&nbsp;</td><td class="memItemRight" valign="bottom"><b>IP_h</b></td></tr>
+<tr><td colspan="2"><br><h2>Static Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="27451e7fdda82854d42530a269afa06d"></a><!-- doxytag: member="socketpp::IP_RawSocket::_ip_convert" ref="27451e7fdda82854d42530a269afa06d" args="(const struct iphdr &amp;, struct iphdr &amp;)" -->
+static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_ip_convert</b> (const struct iphdr &amp;, struct iphdr &amp;)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="005f2299268c452f0e1689d070fa0cab"></a><!-- doxytag: member="socketpp::IP_RawSocket::rcvd_IP_h" ref="005f2299268c452f0e1689d070fa0cab" args="" -->
-iphdr&nbsp;</td><td class="memItemRight" valign="bottom"><b>rcvd_IP_h</b></td></tr>
+<tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ea5a4e6f2855dd60e3f1fabfa4f9f94f"></a><!-- doxytag: member="socketpp::IP_RawSocket::IP_h" ref="ea5a4e6f2855dd60e3f1fabfa4f9f94f" args="" -->
+struct iphdr&nbsp;</td><td class="memItemRight" valign="bottom"><b>IP_h</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a5f802e17a5d5503cddf5a6020db056f"></a><!-- doxytag: member="socketpp::IP_RawSocket::rcvd_IP_h" ref="a5f802e17a5d5503cddf5a6020db056f" args="" -->
+struct iphdr&nbsp;</td><td class="memItemRight" valign="bottom"><b>rcvd_IP_h</b></td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="05761cfc5307ac731cb05fdc0f500469"></a><!-- doxytag: member="socketpp::IP_RawSocket::IP_opt" ref="05761cfc5307ac731cb05fdc0f500469" args="" -->
 std::string&nbsp;</td><td class="memItemRight" valign="bottom"><b>IP_opt</b></td></tr>
@@ -299,7 +310,7 @@ sets the IP options field
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 11 02:43:04 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:54 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

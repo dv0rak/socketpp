@@ -1,31 +1,25 @@
 #include "SocketServer.h"
 #include <pthread.h>
 
-struct thrdarg {
-    void (*func)(socketpp::Socket&, void*);
-    socketpp::Socket sock;
-    void *pt;
-};
+namespace socketpp {
 
-static void * thread(void* a)
+void * SocketServer::_thread(void* a)
 {
-    thrdarg *arg = (thrdarg*)a;
+    _thrdarg *arg = (_thrdarg *)a;
     (arg->func)(arg->sock, arg->pt);
     delete arg;
     ::pthread_exit(NULL);
 }
 
-namespace socketpp {
-
 void SocketServer::threadClientHandle(void (*func)(Socket&, void*), void *p)
 {
     while(1) {
         pthread_t t;
-        ::thrdarg *arg = new ::thrdarg;
+        _thrdarg *arg = new _thrdarg;
         arg->sock = accept();
         arg->func = func;
         arg->pt   = p;
-        ::pthread_create(&t,NULL,thread,arg);
+        ::pthread_create(&t, NULL, _thread, arg);
         ::pthread_detach(t);
     }
 }

@@ -26,6 +26,16 @@ void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_bd80d6a249cfce0ed85dfbd55d90
 \label{classsocketpp_1_1UDP__IP__RawSocket_bd80d6a249cfce0ed85dfbd55d901065}
 
 \begin{CompactList}\small\item\em builds the internal IP header to send \item\end{CompactList}\item 
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_066530debd67e2f4746f33780bc8818d}{
+void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_066530debd67e2f4746f33780bc8818d}{adjust\_\-IP\_\-csum} ()}
+\label{classsocketpp_1_1UDP__IP__RawSocket_066530debd67e2f4746f33780bc8818d}
+
+\begin{CompactList}\small\item\em sets IP checksum field \item\end{CompactList}\item 
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_d13e97a0b436eeb96825965223361095}{
+void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_d13e97a0b436eeb96825965223361095}{adjust\_\-IP\_\-tot\_\-len} ()}
+\label{classsocketpp_1_1UDP__IP__RawSocket_d13e97a0b436eeb96825965223361095}
+
+\begin{CompactList}\small\item\em sets IP \char`\"{}total length\char`\"{} field \item\end{CompactList}\item 
 \hypertarget{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}{
 void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}{adjust\_\-UDP\_\-csum} ()}
 \label{classsocketpp_1_1UDP__IP__RawSocket_6c2f6c375cec90f64fd093af37369d6a}
@@ -41,12 +51,25 @@ void \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_1a0f6360760f94f5c1569adde67d
 \label{classsocketpp_1_1UDP__IP__RawSocket_1a0f6360760f94f5c1569adde67d6d1b}
 
 \begin{CompactList}\small\item\em calls \hyperlink{classsocketpp_1_1UDP__IP__RawSocket_94bec31d8c856ccdafa083c74b8b7e58}{adjust\_\-UDP\_\-all()} and \hyperlink{classsocketpp_1_1IP__RawSocket_45e60510233daaa2f279d3a4706fdce5}{adjust\_\-IP\_\-all()} \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_23e1e3f2f4b206d88b6c8ca4e0b514fd}{
+static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const struct udphdr \&udp, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0)}
+\label{classsocketpp_1_1UDP__IP__RawSocket_23e1e3f2f4b206d88b6c8ca4e0b514fd}
+
+\item 
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_6af969961a1dbe17e2da9f26dce18463}{
+static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const struct udphdr \&udp, const std::string \&payload, const std::string \&ip\_\-opt)}
+\label{classsocketpp_1_1UDP__IP__RawSocket_6af969961a1dbe17e2da9f26dce18463}
+
+\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_16035f1b701b898f0e4de44a9ac8bbb3}{
-void \textbf{\_\-build\_\-packet} (std::string \&packet)}
-\label{classsocketpp_1_1UDP__IP__RawSocket_16035f1b701b898f0e4de44a9ac8bbb3}
+\hypertarget{classsocketpp_1_1UDP__IP__RawSocket_25aebd67b52bc7e675930cc812918270}{
+void \textbf{\_\-build\_\-packet} (std::string \&packet) const }
+\label{classsocketpp_1_1UDP__IP__RawSocket_25aebd67b52bc7e675930cc812918270}
 
 \item 
 \hypertarget{classsocketpp_1_1UDP__IP__RawSocket_40fde867fa138b495f660864023a3eb1}{

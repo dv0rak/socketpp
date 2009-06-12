@@ -42,7 +42,7 @@ void SockBuf::_initBuf()
 
 SockBuf::~SockBuf()
 {
-    close();
+    sync();
 }
 
 };

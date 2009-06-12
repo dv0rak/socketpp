@@ -102,9 +102,9 @@ int BaseSocket::_select(_select_mode m)
     else                ret = ::select(_sd+1, NULL, NULL, &set, &tv);
 
     if(ret < 0) {
-        throw error("_select",errno,"select");
+        throw error("_select", errno, "select");
     } else if(ret > 0) {
-        getsockopt(sol_socket, so_error, errno); 
+        getsockopt(sol_socket, so_error, errno);
         if(errno) return -1;
     }
     return ret;
@@ -206,8 +206,11 @@ size_t BaseSocket::send(const char buf[], size_t size, msg_flag flags)
     
     if(_timeout != 0.0) {
         while(size > 0) {
-            if(_select(write) == 0) 
+            int s = _select(write);
+            if(s == 0) 
                 throw timeout("send","timeout expired");
+            if(s < 0)
+                throw error("send",errno);
 
             if((n=::send(_sd,buf+ret,size,flags)) < 0)
                 throw error("send",errno,"send");
@@ -236,9 +239,13 @@ size_t BaseSocket::recv(char buf[], size_t size, msg_flag flags)
 {
     int n;
     
-    if(_timeout!=0.0 && _select(read)==0) 
-        throw timeout("recv","timeout expired");
-
+    if(_timeout != 0.0) {
+        int s = _select(read);
+        if(s == 0) 
+            throw timeout("recv","timeout expired");
+        if(s < 0)
+            throw error("recv",errno);
+    }
     if((n=::recv(_sd,buf,size,flags)) < 0)
         throw error("recv",errno,"recv");
 
@@ -260,10 +267,12 @@ size_t BaseSocket::sendto(const char buf[], size_t size, in_addr_t addr, port_t 
     struct sockaddr_in remote = _initaddr(htonl(addr),htons(port));
     
     if(_timeout != 0.0) {
-        
         while(size > 0) {
-            if(_select(write) == 0) 
+            int s = _select(write);
+            if(s == 0) 
                 throw timeout("sendto","timeout expired");
+            if(s < 0)
+                throw error("sendto",errno);
 
             if((n=::sendto(_sd,buf+ret,size,flags,(struct sockaddr*)&remote,sizeof(remote))) < 0)
                 throw error("sendto",errno,"sendto");
@@ -329,9 +338,13 @@ size_t BaseSocket::recvfrom(char buf[], size_t size, in_addr_t& addr, port_t& po
     struct sockaddr_in remote;
     size_t slen = sizeof(remote);
 
-    if(_timeout!=0.0 && _select(read)==0) 
-        throw timeout("recvfrom","timeout expired");
-
+    if(_timeout != 0.0) {
+        int s = _select(read);
+        if(s == 0) 
+            throw timeout("recvfrom","timeout expired");
+        if(s < 0)
+            throw error("recvfrom", errno);
+    }
     if((n=::recvfrom(_sd,buf,size,flags,(struct sockaddr*)&remote,&slen)) < 0) {
         throw error("recvfrom",errno,"recvfrom");
     }

@@ -12,16 +12,6 @@ public:
     /// @param	prot	Socket protocol
     explicit RawSocket(protocol prot) : BaseSocket(sock_raw, prot) { }
 
-    /// @brief	calculates internet checksum
-    /// @param	buf	pointer to packet top
-    /// @param	nchar	size of packet in bytes
-    /// @return	checksum value
-    static _u16 checksum(const void *buf, size_t nchar);
-    /// @brief	calculates internet checksum
-    /// @param	buf 	packet string
-    /// @return	checksum value
-    static _u16 checksum(const std::string &buf);
-
     /// @brief	builds the internal data payload to send
     /// @param	data	pointer to data payload buffer
     /// @param	len	deta length in bytes
@@ -71,10 +61,13 @@ protected:
     std::string data_payload;
     std::string rcvd_data_payload;
 
-    virtual void _build_packet(std::string &packet) = 0;
+    virtual void _build_packet(std::string &packet) const = 0;
     virtual void _set_fields(const std::string &packet) = 0;
     
-    static _u16 pseudo_checksum(const void*, size_t, _u32, _u32, _u16);
+    static _u16 _checksum(const std::string&);
+    static _u16 _checksum(const void *buf, size_t nchar);
+    static _u16 _pseudo_checksum(const void*, size_t, _u32, _u32, _u16);
+    static _u16 _pseudo_checksum(const std::string&, _u32, _u32, _u16);
 };
 
 /// @brief	IP raw socket, without transport-based protocol. ONLY SENDING METHODS WORK
@@ -82,6 +75,10 @@ class IP_RawSocket : virtual public RawSocket {
 public:
     /// @brief	constructor which calls RawSocket(ipproto_raw)
     IP_RawSocket() : RawSocket(ipproto_raw) { }
+
+    static _u16 ip_checksum(const struct iphdr &ip, const void *payload=NULL, size_t psize=0,
+                            const void *ip_opt=NULL, size_t ip_opt_len=0);
+    static _u16 ip_checksum(const struct iphdr &ip, const std::string& payload, const std::string &ip_opt);
 
     /// @brief	builds the internal IP header to send
     /// @param	ip	IP header
@@ -99,9 +96,9 @@ public:
     void set_IP_options(const std::string& opt);
 
     /// @brief	sets IP checksum field
-    void adjust_IP_csum();
+    virtual void adjust_IP_csum();
     /// @brief	sets IP "total length" field
-    void adjust_IP_tot_len();
+    virtual void adjust_IP_tot_len();
     /// @brief	sets IP "header length" field
     void adjust_IP_ihl();
     /// @brief	calls adjust_IP_tot_len() && adjust_IP_ihl() && adjust_IP_csum()
@@ -122,12 +119,13 @@ public:
     size_t get_IP_options(std::string &opt);
 
 protected:
-    iphdr IP_h;
-    iphdr rcvd_IP_h;
+    struct iphdr IP_h;
+    struct iphdr rcvd_IP_h;
     std::string IP_opt;
     std::string rcvd_IP_opt;
-    
-    virtual void _build_packet(std::string &packet);
+
+    static void _ip_convert(const struct iphdr&, struct iphdr&);
+    virtual void _build_packet(std::string &packet) const;
     virtual void _set_fields(const std::string &packet);
 };
 
@@ -136,6 +134,9 @@ class ICMP_RawSocket : virtual public RawSocket {
 public:
     /// @brief 	constructor which calls RawSocket(ipproto_icmp)
     ICMP_RawSocket() : RawSocket(ipproto_icmp) { }
+
+    static _u16 icmp_checksum(const struct icmphdr &icmp, const void *payload=NULL, size_t psize=0);
+    static _u16 icmp_checksum(const struct icmphdr &icmp, const std::string &payload);
 
     /// @brief	builds the internal ICMP header to send
     /// @param	icmp	icmp header
@@ -154,7 +155,8 @@ protected:
     icmphdr ICMP_h;
     icmphdr rcvd_ICMP_h;
 
-    virtual void _build_packet(std::string &packet);
+    static void _icmp_convert(const struct icmphdr&, struct icmphdr&);
+    virtual void _build_packet(std::string &packet) const;
     virtual void _set_fields(const std::string &packet);
     
 };
@@ -165,15 +167,25 @@ public:
     /// @brief	  constructor which calls RawSocket(ipproto_udp) and setsockopt(ip_hdrincl)
     ICMP_IP_RawSocket();
 
+    static _u16 ip_checksum(const struct iphdr &ip, const struct icmphdr &icmp, const void *payload=NULL, size_t psize=0,
+                            const void *ip_opt=NULL, size_t ip_opt_len=0);
+    static _u16 ip_checksum(const struct iphdr &ip, const struct icmphdr &icmp, const std::string &payload, 
+                            const std::string &ip_opt);
+
     /// @brief	builds the internal IP header to send
     void build_IP_header(_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=IPPROTO_ICMP, _u16 id=0,
                          _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0);
+
+    /// @brief	sets IP checksum field
+    void adjust_IP_csum();
+    /// @brief	sets IP "total length" field
+    void adjust_IP_tot_len();
 
     /// @brief	calls adjust_ICMP_all() && adjust_IP_all()
     void adjust_ICMP_IP_all();
 
 protected:
-    void _build_packet(std::string &packet);
+    void _build_packet(std::string &packet) const;
     void _set_fields(const std::string &packet);
 };
 
@@ -182,6 +194,10 @@ class UDP_RawSocket : virtual public RawSocket {
 public:
     /// @brief	constructor which calls RawSocket(ipproto_udp)
     UDP_RawSocket() : RawSocket(ipproto_udp) { }
+
+    static _u16 udp_checksum(const struct udphdr &udp, in_addr_t saddr, in_addr_t daddr, 
+                             const void *payload=NULL, size_t psize=0);
+    static _u16 udp_checksum(const struct udphdr &udp, in_addr_t saddr, in_addr_t daddr, const std::string &payload);
 
     /// @brief  calculates udp checksum on pseudo-header
     /// @param	buf	pointer to packet top
@@ -227,7 +243,8 @@ protected:
     udphdr UDP_h;
     udphdr rcvd_UDP_h;
 
-    virtual void _build_packet(std::string &packet);
+    static void _udp_convert(const struct udphdr&, struct udphdr&);
+    virtual void _build_packet(std::string &packet) const;
     virtual void _set_fields(const std::string &packet);
     
 };
@@ -242,6 +259,16 @@ public:
     void build_IP_header(_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=IPPROTO_UDP, _u16 id=0,
                          _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0);
 
+    static _u16 ip_checksum(const struct iphdr &ip, const struct udphdr &udp, const void *payload=NULL, size_t psize=0,
+                            const void *ip_opt=NULL, size_t ip_opt_len=0);
+    static _u16 ip_checksum(const struct iphdr &ip, const struct udphdr &udp, const std::string &payload, 
+                            const std::string &ip_opt);
+
+    /// @brief	sets IP checksum field
+    void adjust_IP_csum();
+    /// @brief	sets IP "total length" field
+    void adjust_IP_tot_len();
+
     /// @brief	   sets UDP checksum, using source and dest IP addresses token by IP header
     void adjust_UDP_csum();
     /// @brief	   calls adjust_UDP_len() && adjust_UDP_csum()
@@ -250,7 +277,7 @@ public:
     void adjust_UDP_IP_all();
 
 protected:
-    void _build_packet(std::string &packet);
+    void _build_packet(std::string &packet) const ;
     void _set_fields(const std::string &packet);
     
 };
@@ -260,6 +287,11 @@ class TCP_RawSocket : virtual public RawSocket {
 public:
     /// @brief	constructor which calls RawSocket(ipproto_tcp)
     TCP_RawSocket() : RawSocket(ipproto_tcp) { }
+
+    static _u16 tcp_checksum(const struct tcphdr &tcp, in_addr_t saddr, in_addr_t daddr,
+                             const void *payload=NULL, size_t psize=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0);
+    static _u16 tcp_checksum(const struct tcphdr &tcp, in_addr_t saddr, in_addr_t daddr,
+                             const std::string &payload, const std::string &tcp_opt);
 
     /// @brief  calculates tcp checksum on pseudo-header
     /// @param	buf	pointer to packet top
@@ -322,7 +354,8 @@ protected:
     std::string TCP_opt;
     std::string rcvd_TCP_opt;
 
-    virtual void _build_packet(std::string &packet);
+    static void _tcp_convert(const struct tcphdr&, struct tcphdr&);
+    virtual void _build_packet(std::string &packet) const;
     virtual void _set_fields(const std::string &packet);
 };
 
@@ -336,6 +369,16 @@ public:
     /// @brief	constructor which calls RawSocket(ipproto_tcp) and setsockopt(ip_hdrincl)
     TCP_IP_RawSocket();
 
+    static _u16 ip_checksum(const struct iphdr &ip, const struct tcphdr &tcp, const void *payload=NULL, size_t psize=0,
+                            const void *ip_opt=NULL, size_t ip_opt_len=0, const void *tcp_opt=NULL, size_t tcp_opt_len=0);
+    static _u16 ip_checksum(const struct iphdr &ip, const struct tcphdr &tcp, const std::string &payload,
+                            const std::string &ip_opt, const std::string &tcp_opt);
+
+    /// @brief	sets IP checksum field
+    void adjust_IP_csum();
+    /// @brief	sets IP "total length" field
+    void adjust_IP_tot_len();
+
     /// @brief	   sets TCP checksum, using source and dest IP addresses token by IP header
     void adjust_TCP_csum();
     /// @brief	   calls adjust_TCP_doff() && adjust_TCP_csum()
@@ -344,7 +387,7 @@ public:
     void adjust_TCP_IP_all();
 
 protected:
-    void _build_packet(std::string &packet);
+    void _build_packet(std::string &packet) const;
     void _set_fields(const std::string &packet);
 };
 

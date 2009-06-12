@@ -33,12 +33,12 @@ void \hyperlink{classsocketpp_1_1IP__RawSocket_82c0b2c75d081bc84d8e60bf18199e65}
 void \hyperlink{classsocketpp_1_1IP__RawSocket_9d88ecec5e362b3cf3d3dbc51d5dd0cd}{set\_\-IP\_\-options} (const std::string \&opt)
 \begin{CompactList}\small\item\em sets the IP options field \item\end{CompactList}\item 
 \hypertarget{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}{
-void \hyperlink{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}{adjust\_\-IP\_\-csum} ()}
+virtual void \hyperlink{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}{adjust\_\-IP\_\-csum} ()}
 \label{classsocketpp_1_1IP__RawSocket_187bab79c6a8bae17b400a132063a9d1}
 
 \begin{CompactList}\small\item\em sets IP checksum field \item\end{CompactList}\item 
 \hypertarget{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}{
-void \hyperlink{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}{adjust\_\-IP\_\-tot\_\-len} ()}
+virtual void \hyperlink{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}{adjust\_\-IP\_\-tot\_\-len} ()}
 \label{classsocketpp_1_1IP__RawSocket_32d2c08139fb43abb92679bdabecf778}
 
 \begin{CompactList}\small\item\em sets IP \char`\"{}total length\char`\"{} field \item\end{CompactList}\item 
@@ -58,12 +58,25 @@ size\_\-t \hyperlink{classsocketpp_1_1IP__RawSocket_686fcc72997b0843b2ece0c4d8a5
 \begin{CompactList}\small\item\em gets received IP options \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1IP__RawSocket_c9bec0c1db60871bb1cb5560b97e02ed}{get\_\-IP\_\-options} (std::string \&opt)
 \begin{CompactList}\small\item\em gets received IP options \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{classsocketpp_1_1IP__RawSocket_91cc7b27ebb5eb8da6be6cdd14087f21}{
+static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const void $\ast$payload=NULL, size\_\-t psize=0, const void $\ast$ip\_\-opt=NULL, size\_\-t ip\_\-opt\_\-len=0)}
+\label{classsocketpp_1_1IP__RawSocket_91cc7b27ebb5eb8da6be6cdd14087f21}
+
+\item 
+\hypertarget{classsocketpp_1_1IP__RawSocket_6b48548362fb5509bbba7d36e9ffdb5d}{
+static \_\-u16 \textbf{ip\_\-checksum} (const struct iphdr \&ip, const std::string \&payload, const std::string \&ip\_\-opt)}
+\label{classsocketpp_1_1IP__RawSocket_6b48548362fb5509bbba7d36e9ffdb5d}
+
+\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1IP__RawSocket_6863cc399c543073e9aa3615c3f50940}{
-virtual void \textbf{\_\-build\_\-packet} (std::string \&packet)}
-\label{classsocketpp_1_1IP__RawSocket_6863cc399c543073e9aa3615c3f50940}
+\hypertarget{classsocketpp_1_1IP__RawSocket_a8123cfd347fdf46ad2268205ec81c28}{
+virtual void \textbf{\_\-build\_\-packet} (std::string \&packet) const }
+\label{classsocketpp_1_1IP__RawSocket_a8123cfd347fdf46ad2268205ec81c28}
 
 \item 
 \hypertarget{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}{
@@ -71,17 +84,25 @@ virtual void \textbf{\_\-set\_\-fields} (const std::string \&packet)}
 \label{classsocketpp_1_1IP__RawSocket_c39832f1ad83184cd5ba94c4c967f465}
 
 \end{CompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{classsocketpp_1_1IP__RawSocket_27451e7fdda82854d42530a269afa06d}{
+static void \textbf{\_\-ip\_\-convert} (const struct iphdr \&, struct iphdr \&)}
+\label{classsocketpp_1_1IP__RawSocket_27451e7fdda82854d42530a269afa06d}
+
+\end{CompactItemize}
 \subsection*{Protected Attributes}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1IP__RawSocket_a8ddf1b2172c1e6f4b50d18c825978dc}{
-iphdr \textbf{IP\_\-h}}
-\label{classsocketpp_1_1IP__RawSocket_a8ddf1b2172c1e6f4b50d18c825978dc}
+\hypertarget{classsocketpp_1_1IP__RawSocket_ea5a4e6f2855dd60e3f1fabfa4f9f94f}{
+struct iphdr \textbf{IP\_\-h}}
+\label{classsocketpp_1_1IP__RawSocket_ea5a4e6f2855dd60e3f1fabfa4f9f94f}
 
 \item 
-\hypertarget{classsocketpp_1_1IP__RawSocket_005f2299268c452f0e1689d070fa0cab}{
-iphdr \textbf{rcvd\_\-IP\_\-h}}
-\label{classsocketpp_1_1IP__RawSocket_005f2299268c452f0e1689d070fa0cab}
+\hypertarget{classsocketpp_1_1IP__RawSocket_a5f802e17a5d5503cddf5a6020db056f}{
+struct iphdr \textbf{rcvd\_\-IP\_\-h}}
+\label{classsocketpp_1_1IP__RawSocket_a5f802e17a5d5503cddf5a6020db056f}
 
 \item 
 \hypertarget{classsocketpp_1_1IP__RawSocket_05761cfc5307ac731cb05fdc0f500469}{

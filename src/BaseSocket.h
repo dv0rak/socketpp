@@ -117,7 +117,7 @@ public:
     ///@brief cleans internal DNS cache
     inline void   cleanDnsCache() { _h.cleanDnsCache(); }
 
-    virtual ~BaseSocket() { }
+    inline virtual ~BaseSocket() { }
 
 protected:
     int _sd;

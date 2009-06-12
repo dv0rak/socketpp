@@ -8,7 +8,7 @@ namespace socketpp {
 ///@brief	inherits from BaseSocket, it's simply a C-socket wrapper
 class Socket : public BaseSocket {
 public:
-    Socket() : BaseSocket() { }
+    Socket() { }
     ///@brief	calls BaseSocket(t,prot)
     explicit Socket(type t, protocol prot=ipproto_ip) : BaseSocket(t, prot) { }
     ///@brief	calls BaseSocket(sd)

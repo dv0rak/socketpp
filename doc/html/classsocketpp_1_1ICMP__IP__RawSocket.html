@@ -56,13 +56,28 @@ Inheritance diagram for socketpp::ICMP_IP_RawSocket:</div>
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1ICMP__IP__RawSocket.html#08d5813e94daff127499b2d1f7e93324">build_IP_header</a> (_u32 saddr, _u32 daddr, _u8 ttl=64, _u8 version=4, _u8 protocol=IPPROTO_ICMP, _u16 id=0, _u8 tos=0, _u16 frag_off=0, _u8 ihl=0, _u16 tot_len=0, _u16 check=0)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">builds the internal IP header to send <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="fa1f786f26097ab8008e7f022b1da2d3"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::adjust_IP_csum" ref="fa1f786f26097ab8008e7f022b1da2d3" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1ICMP__IP__RawSocket.html#fa1f786f26097ab8008e7f022b1da2d3">adjust_IP_csum</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets IP checksum field <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f45d8e72973d314a727e3f953dfaaf8e"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::adjust_IP_tot_len" ref="f45d8e72973d314a727e3f953dfaaf8e" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1ICMP__IP__RawSocket.html#f45d8e72973d314a727e3f953dfaaf8e">adjust_IP_tot_len</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets IP "total length" field <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c3f54f7a266586af46e4bfa4494f90d6"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::adjust_ICMP_IP_all" ref="c3f54f7a266586af46e4bfa4494f90d6" args="()" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1ICMP__IP__RawSocket.html#c3f54f7a266586af46e4bfa4494f90d6">adjust_ICMP_IP_all</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calls adjust_ICMP_all() &amp;&amp; <a class="el" href="classsocketpp_1_1IP__RawSocket.html#45e60510233daaa2f279d3a4706fdce5" title="calls adjust_IP_tot_len() &amp;&amp; adjust_IP_ihl() &amp;&amp; adjust_IP_csum()">adjust_IP_all()</a> <br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="65eb1bc40fd501a49fee9055e22229dc"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::ip_checksum" ref="65eb1bc40fd501a49fee9055e22229dc" args="(const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const void *payload=NULL, size_t psize=0, const void *ip_opt=NULL, size_t ip_opt_len=0)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="0723a72dc06b401f6dd101a25da6348f"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::ip_checksum" ref="0723a72dc06b401f6dd101a25da6348f" args="(const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const std::string &amp;payload, const std::string &amp;ip_opt)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>ip_checksum</b> (const struct iphdr &amp;ip, const struct icmphdr &amp;icmp, const std::string &amp;payload, const std::string &amp;ip_opt)</td></tr>
+
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="49a62078d6febf7a11b9350de1e23903"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::_build_packet" ref="49a62078d6febf7a11b9350de1e23903" args="(std::string &amp;packet)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="ccfc4205717c474435dcf7e2603d1200"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::_build_packet" ref="ccfc4205717c474435dcf7e2603d1200" args="(std::string &amp;packet) const " -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet) const </td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="6d2f188d46030afa13f9c3971d43d518"></a><!-- doxytag: member="socketpp::ICMP_IP_RawSocket::_set_fields" ref="6d2f188d46030afa13f9c3971d43d518" args="(const std::string &amp;packet)" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (const std::string &amp;packet)</td></tr>
@@ -72,7 +87,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (cons
 ICMP raw socket with IP header handling. <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 11 02:43:05 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:54 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

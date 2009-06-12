@@ -156,20 +156,20 @@ std::string FTP::dir(const std::string& path, std::ostream &os)
     return retrlines("LIST " + path, os);
 }
 
-socketpp::Socket& FTP::transfercmd(const std::string &cmd)
+socketpp::Socket FTP::transfercmd(const std::string &cmd)
 {
-    socketpp::Socket *s;
+    socketpp::Socket s (socketpp::sock_stream);
     if(_pasv) {
         std::string ip;
         socketpp::port_t port;
 
         _getAddress(sendcmd("PASV"), ip, port);
-        s = new socketpp::Socket(socketpp::sock_stream);
-        s->connect(ip, port);
+        s.connect(ip, port);
+
     } else {
         throw error_proto("Not yet implemented!\n");
     }
-    return *s;
+    return s;
 }
         
 void FTP::set_pasv(bool p) throw()
@@ -187,6 +187,11 @@ std::string FTP::quit()
 void FTP::close()
 {
     _sock.close();
+}
+ 
+void FTP::settimeout(double time)
+{
+    _sock.settimeout(time);
 }
 
 std::string FTP::_readAnswer()

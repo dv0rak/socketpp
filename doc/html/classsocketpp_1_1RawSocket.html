@@ -86,23 +86,25 @@ Inheritance diagram for socketpp::RawSocket:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1RawSocket.html#de47c63d60cba25d1ae82f242851610d">get_data_payload</a> (std::string &amp;data)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the received data payload  <a href="#de47c63d60cba25d1ae82f242851610d"></a><br></td></tr>
-<tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1RawSocket.html#bb78ecebb5bd5ab5be4ee46d786fe5cd">checksum</a> (const void *buf, size_t nchar)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates internet checksum  <a href="#bb78ecebb5bd5ab5be4ee46d786fe5cd"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1RawSocket.html#67af2c9f3bc37146b54fc9fb69c0dd8d">checksum</a> (const std::string &amp;buf)</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates internet checksum  <a href="#67af2c9f3bc37146b54fc9fb69c0dd8d"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="eb0a3f716c0fc46efa4123acf0fe1e66"></a><!-- doxytag: member="socketpp::RawSocket::_build_packet" ref="eb0a3f716c0fc46efa4123acf0fe1e66" args="(std::string &amp;packet)=0" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet)=0</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="9973d08473e212d99e0254520469b395"></a><!-- doxytag: member="socketpp::RawSocket::_build_packet" ref="9973d08473e212d99e0254520469b395" args="(std::string &amp;packet) const =0" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet) const =0</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="45e6b041703cb8ae0f93dd19766865d5"></a><!-- doxytag: member="socketpp::RawSocket::_set_fields" ref="45e6b041703cb8ae0f93dd19766865d5" args="(const std::string &amp;packet)=0" -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (const std::string &amp;packet)=0</td></tr>
 
 <tr><td colspan="2"><br><h2>Static Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c9422942a0ed23c9900d26426a96a0ee"></a><!-- doxytag: member="socketpp::RawSocket::pseudo_checksum" ref="c9422942a0ed23c9900d26426a96a0ee" args="(const void *, size_t, _u32, _u32, _u16)" -->
-static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>pseudo_checksum</b> (const void *, size_t, _u32, _u32, _u16)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="e114c1e1636e95760336713f33b9b2c5"></a><!-- doxytag: member="socketpp::RawSocket::_checksum" ref="e114c1e1636e95760336713f33b9b2c5" args="(const std::string &amp;)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>_checksum</b> (const std::string &amp;)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a6e38eab5a27b4bda8c6d2f6932b6543"></a><!-- doxytag: member="socketpp::RawSocket::_checksum" ref="a6e38eab5a27b4bda8c6d2f6932b6543" args="(const void *buf, size_t nchar)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>_checksum</b> (const void *buf, size_t nchar)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="36370cd40b54b68470f30a9e9c265d1f"></a><!-- doxytag: member="socketpp::RawSocket::_pseudo_checksum" ref="36370cd40b54b68470f30a9e9c265d1f" args="(const void *, size_t, _u32, _u32, _u16)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>_pseudo_checksum</b> (const void *, size_t, _u32, _u32, _u16)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="6b881ff5a36ad69629cf6eabad5b1a33"></a><!-- doxytag: member="socketpp::RawSocket::_pseudo_checksum" ref="6b881ff5a36ad69629cf6eabad5b1a33" args="(const std::string &amp;, _u32, _u32, _u16)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>_pseudo_checksum</b> (const std::string &amp;, _u32, _u32, _u16)</td></tr>
 
 <tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4d3a1236c4ac42ab029323ae14586ff8"></a><!-- doxytag: member="socketpp::RawSocket::data_payload" ref="4d3a1236c4ac42ab029323ae14586ff8" args="" -->
@@ -203,72 +205,6 @@ builds the internal data payload to send
     <tr><td valign="top"></td><td valign="top"><em>len</em>&nbsp;</td><td>deta length in bytes </td></tr>
   </table>
 </dl>
-
-</div>
-</div><p>
-<a class="anchor" name="67af2c9f3bc37146b54fc9fb69c0dd8d"></a><!-- doxytag: member="socketpp::RawSocket::checksum" ref="67af2c9f3bc37146b54fc9fb69c0dd8d" args="(const std::string &amp;buf)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">_u16 socketpp::RawSocket::checksum           </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&nbsp;</td>
-          <td class="paramname"> <em>buf</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-calculates internet checksum 
-<p>
-<dl compact><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>packet string </td></tr>
-  </table>
-</dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
-
-</div>
-</div><p>
-<a class="anchor" name="bb78ecebb5bd5ab5be4ee46d786fe5cd"></a><!-- doxytag: member="socketpp::RawSocket::checksum" ref="bb78ecebb5bd5ab5be4ee46d786fe5cd" args="(const void *buf, size_t nchar)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">_u16 socketpp::RawSocket::checksum           </td>
-          <td>(</td>
-          <td class="paramtype">const void *&nbsp;</td>
-          <td class="paramname"> <em>buf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&nbsp;</td>
-          <td class="paramname"> <em>nchar</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>
-calculates internet checksum 
-<p>
-<dl compact><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>buf</em>&nbsp;</td><td>pointer to packet top </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>nchar</em>&nbsp;</td><td>size of packet in bytes </td></tr>
-  </table>
-</dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>checksum value </dd></dl>
 
 </div>
 </div><p>
@@ -523,7 +459,7 @@ sends the internal built packet
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 11 02:43:04 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:54 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

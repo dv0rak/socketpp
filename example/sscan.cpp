@@ -27,7 +27,7 @@ int main(int argc, char **argv)
     }
     srandom(time(NULL));
     random_shuffle(ports.begin(), ports.end());
-    
+
     host_ip = h.gethostbyname(argv[1])[0];
     sock.connect(host_ip);
 
@@ -91,7 +91,14 @@ int main(int argc, char **argv)
             elapsed = timeo;
             if(nfiltered++ <= 10)
                 filtered.push_back(dstport);
+
+        } catch(error &e) {
+            if(e.get_errno() == ECONNREFUSED) {
+                if(nfiltered++ <= 10)
+                    filtered.push_back(dstport);
+            } else throw e;
         }
+                
         if(delay-elapsed > 0) {
             sleep(delay-elapsed);
             usleep(((delay-elapsed)-int(delay-elapsed))*1000000);

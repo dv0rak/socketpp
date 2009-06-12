@@ -82,9 +82,9 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#42749c4425e33349f605ec0a8b389731">dir</a> (const std::string &amp;path=&quot;.&quot;, std::ostream &amp;os=std::cout)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">lists all the files in the directory, through the LIST command param path directory to list, "." if empty param os std::ostream on which output is written, std::cout if empty  <a href="#42749c4425e33349f605ec0a8b389731"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classsocketpp_1_1Socket.html">socketpp::Socket</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#c949b3cd7b92534705ff041bb43d989b">transfercmd</a> (const std::string &amp;cmd)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classsocketpp_1_1Socket.html">socketpp::Socket</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#e2c47d7a17f53916d81e0f1e289c9b7c">transfercmd</a> (const std::string &amp;cmd)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">initiate a transfer over the data connection, using PASV or PORT mode depending on previous calls to <a class="el" href="classftplib_1_1FTP.html#e35230239f093f01fb295ccb007de1b2" title="sets either PORT or PASV mode">set_pasv()</a> (default is PASV), and then send given command  <a href="#c949b3cd7b92534705ff041bb43d989b"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">initiate a transfer over the data connection, using PASV or PORT mode depending on previous calls to <a class="el" href="classftplib_1_1FTP.html#e35230239f093f01fb295ccb007de1b2" title="sets either PORT or PASV mode">set_pasv()</a> (default is PASV), and then send given command  <a href="#e2c47d7a17f53916d81e0f1e289c9b7c"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classftplib_1_1FTP.html#e35230239f093f01fb295ccb007de1b2">set_pasv</a> (bool p)  throw ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets either PORT or PASV mode  <a href="#e35230239f093f01fb295ccb007de1b2"></a><br></td></tr>
@@ -624,7 +624,7 @@ sets either PORT or PASV mode
           <td class="paramtype">double&nbsp;</td>
           <td class="paramname"> <em>time</em>          </td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -717,12 +717,12 @@ Stor a file in ASCII transfer mode.
 
 </div>
 </div><p>
-<a class="anchor" name="c949b3cd7b92534705ff041bb43d989b"></a><!-- doxytag: member="ftplib::FTP::transfercmd" ref="c949b3cd7b92534705ff041bb43d989b" args="(const std::string &amp;cmd)" -->
+<a class="anchor" name="e2c47d7a17f53916d81e0f1e289c9b7c"></a><!-- doxytag: member="ftplib::FTP::transfercmd" ref="e2c47d7a17f53916d81e0f1e289c9b7c" args="(const std::string &amp;cmd)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsocketpp_1_1Socket.html">socketpp::Socket</a> &amp; ftplib::FTP::transfercmd           </td>
+          <td class="memname"><a class="el" href="classsocketpp_1_1Socket.html">socketpp::Socket</a> ftplib::FTP::transfercmd           </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>cmd</em>          </td>
@@ -748,7 +748,7 @@ initiate a transfer over the data connection, using PASV or PORT mode depending 
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="ftp_8h-source.html">ftp.h</a><li>ftp.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 11 02:43:03 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:52 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

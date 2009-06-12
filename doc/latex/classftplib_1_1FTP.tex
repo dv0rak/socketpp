@@ -42,7 +42,7 @@ std::string \hyperlink{classftplib_1_1FTP_7c01c7b062848c7fc1d3caf95758b109}{pwd}
 \begin{CompactList}\small\item\em returns current working directory \item\end{CompactList}\item 
 std::string \hyperlink{classftplib_1_1FTP_42749c4425e33349f605ec0a8b389731}{dir} (const std::string \&path=\char`\"{}.\char`\"{}, std::ostream \&os=std::cout)
 \begin{CompactList}\small\item\em lists all the files in the directory, through the LIST command param path directory to list, \char`\"{}.\char`\"{} if empty param os std::ostream on which output is written, std::cout if empty \item\end{CompactList}\item 
-\hyperlink{classsocketpp_1_1Socket}{socketpp::Socket} \& \hyperlink{classftplib_1_1FTP_c949b3cd7b92534705ff041bb43d989b}{transfercmd} (const std::string \&cmd)
+\hyperlink{classsocketpp_1_1Socket}{socketpp::Socket} \hyperlink{classftplib_1_1FTP_e2c47d7a17f53916d81e0f1e289c9b7c}{transfercmd} (const std::string \&cmd)
 \begin{CompactList}\small\item\em initiate a transfer over the data connection, using PASV or PORT mode depending on previous calls to \hyperlink{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{set\_\-pasv()} (default is PASV), and then send given command \item\end{CompactList}\item 
 void \hyperlink{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{set\_\-pasv} (bool p)  throw ()
 \begin{CompactList}\small\item\em sets either PORT or PASV mode \item\end{CompactList}\item 
@@ -304,7 +304,7 @@ sets either PORT or PASV mode
 \hypertarget{classftplib_1_1FTP_a6603cda3b7c44c48c6a2b8d688d3bb7}{
 \index{ftplib::FTP@{ftplib::FTP}!settimeout@{settimeout}}
 \index{settimeout@{settimeout}!ftplib::FTP@{ftplib::FTP}}
-\subsubsection[{settimeout}]{\setlength{\rightskip}{0pt plus 5cm}void ftplib::FTP::settimeout (double {\em time})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\subsubsection[{settimeout}]{\setlength{\rightskip}{0pt plus 5cm}void ftplib::FTP::settimeout (double {\em time})}}
 \label{classftplib_1_1FTP_a6603cda3b7c44c48c6a2b8d688d3bb7}
 
 
@@ -347,11 +347,11 @@ Stor a file in ASCII transfer mode.
 \end{Desc}
 \begin{Desc}
 \item[Returns:]\hyperlink{classftplib_1_1FTP}{FTP} reply \end{Desc}
-\hypertarget{classftplib_1_1FTP_c949b3cd7b92534705ff041bb43d989b}{
+\hypertarget{classftplib_1_1FTP_e2c47d7a17f53916d81e0f1e289c9b7c}{
 \index{ftplib::FTP@{ftplib::FTP}!transfercmd@{transfercmd}}
 \index{transfercmd@{transfercmd}!ftplib::FTP@{ftplib::FTP}}
-\subsubsection[{transfercmd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf socketpp::Socket} \& ftplib::FTP::transfercmd (const std::string \& {\em cmd})}}
-\label{classftplib_1_1FTP_c949b3cd7b92534705ff041bb43d989b}
+\subsubsection[{transfercmd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf socketpp::Socket} ftplib::FTP::transfercmd (const std::string \& {\em cmd})}}
+\label{classftplib_1_1FTP_e2c47d7a17f53916d81e0f1e289c9b7c}
 
 
 initiate a transfer over the data connection, using PASV or PORT mode depending on previous calls to \hyperlink{classftplib_1_1FTP_e35230239f093f01fb295ccb007de1b2}{set\_\-pasv()} (default is PASV), and then send given command 

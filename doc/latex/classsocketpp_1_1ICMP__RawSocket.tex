@@ -35,17 +35,38 @@ void \hyperlink{classsocketpp_1_1ICMP__RawSocket_ab00bba6ed9fe98ca771fc3310983c9
 \begin{CompactList}\small\item\em sets the internal ICMP header checksum \item\end{CompactList}\item 
 void \hyperlink{classsocketpp_1_1ICMP__RawSocket_9b0ed9bb87d2895f2302db13b7ca5f06}{get\_\-ICMP\_\-header} (icmphdr \&icmp)
 \begin{CompactList}\small\item\em gets the received ICMP header \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_6c8a1364919485932221942c472ea95e}{
+static \_\-u16 \textbf{icmp\_\-checksum} (const struct icmphdr \&icmp, const void $\ast$payload=NULL, size\_\-t psize=0)}
+\label{classsocketpp_1_1ICMP__RawSocket_6c8a1364919485932221942c472ea95e}
+
+\item 
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_eb8e83796aefe5a5dd7035490902a537}{
+static \_\-u16 \textbf{icmp\_\-checksum} (const struct icmphdr \&icmp, const std::string \&payload)}
+\label{classsocketpp_1_1ICMP__RawSocket_eb8e83796aefe5a5dd7035490902a537}
+
+\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1ICMP__RawSocket_d8aa8d45c57eb77ab99ee84f1c5dd7da}{
-virtual void \textbf{\_\-build\_\-packet} (std::string \&packet)}
-\label{classsocketpp_1_1ICMP__RawSocket_d8aa8d45c57eb77ab99ee84f1c5dd7da}
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_1dcbe47b02ddfff9545cedca9d78e36c}{
+virtual void \textbf{\_\-build\_\-packet} (std::string \&packet) const }
+\label{classsocketpp_1_1ICMP__RawSocket_1dcbe47b02ddfff9545cedca9d78e36c}
 
 \item 
 \hypertarget{classsocketpp_1_1ICMP__RawSocket_e183b11c080f5d74dbc386ec53e7feb5}{
 virtual void \textbf{\_\-set\_\-fields} (const std::string \&packet)}
 \label{classsocketpp_1_1ICMP__RawSocket_e183b11c080f5d74dbc386ec53e7feb5}
+
+\end{CompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{classsocketpp_1_1ICMP__RawSocket_9ecff00c5732fced1d5dda68a5709651}{
+static void \textbf{\_\-icmp\_\-convert} (const struct icmphdr \&, struct icmphdr \&)}
+\label{classsocketpp_1_1ICMP__RawSocket_9ecff00c5732fced1d5dda68a5709651}
 
 \end{CompactItemize}
 \subsection*{Protected Attributes}

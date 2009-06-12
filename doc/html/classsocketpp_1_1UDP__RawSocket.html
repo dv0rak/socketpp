@@ -69,18 +69,28 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the received UDP header  <a href="#597a30fc537dce06c85663add29defdc"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1UDP__RawSocket.html#fdc782d0436fd9c6d24520034d445063">udp_checksum</a> (const void *buf, size_t nchar, _u32 saddr, _u32 daddr)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="095971358f1de99857aaf649aae9b1ea"></a><!-- doxytag: member="socketpp::UDP_RawSocket::udp_checksum" ref="095971358f1de99857aaf649aae9b1ea" args="(const struct udphdr &amp;udp, in_addr_t saddr, in_addr_t daddr, const void *payload=NULL, size_t psize=0)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>udp_checksum</b> (const struct udphdr &amp;udp, in_addr_t saddr, in_addr_t daddr, const void *payload=NULL, size_t psize=0)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates udp checksum on pseudo-header  <a href="#fdc782d0436fd9c6d24520034d445063"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1UDP__RawSocket.html#166b30d9061b06336dc637cd3a25d12f">udp_checksum</a> (const std::string &amp;buf, _u32 saddr, _u32 daddr)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="331a9aa1b1bc9aa16a25954061c04551"></a><!-- doxytag: member="socketpp::UDP_RawSocket::udp_checksum" ref="331a9aa1b1bc9aa16a25954061c04551" args="(const struct udphdr &amp;udp, in_addr_t saddr, in_addr_t daddr, const std::string &amp;payload)" -->
+static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><b>udp_checksum</b> (const struct udphdr &amp;udp, in_addr_t saddr, in_addr_t daddr, const std::string &amp;payload)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates udp checksum on pseudo-header  <a href="#166b30d9061b06336dc637cd3a25d12f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1UDP__RawSocket.html#8e32b5a6458da2a8660b6353a1c7ad9b">udp_checksum</a> (const void *buf, size_t nchar, _u32 saddr, _u32 daddr)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates udp checksum on pseudo-header  <a href="#8e32b5a6458da2a8660b6353a1c7ad9b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static _u16&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1UDP__RawSocket.html#912bdb1e33f25bb30f7c49f9906344c5">udp_checksum</a> (const std::string &amp;buf, _u32 saddr, _u32 daddr)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates udp checksum on pseudo-header  <a href="#912bdb1e33f25bb30f7c49f9906344c5"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="fe8cc7391c23dcf011f285b1605cad6b"></a><!-- doxytag: member="socketpp::UDP_RawSocket::_build_packet" ref="fe8cc7391c23dcf011f285b1605cad6b" args="(std::string &amp;packet)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="9f087a8fe3d6e62397911657c6b10d29"></a><!-- doxytag: member="socketpp::UDP_RawSocket::_build_packet" ref="9f087a8fe3d6e62397911657c6b10d29" args="(std::string &amp;packet) const " -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_build_packet</b> (std::string &amp;packet) const </td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a2dd7ab190a6730f9272eced4e648b50"></a><!-- doxytag: member="socketpp::UDP_RawSocket::_set_fields" ref="a2dd7ab190a6730f9272eced4e648b50" args="(const std::string &amp;packet)" -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_set_fields</b> (const std::string &amp;packet)</td></tr>
+
+<tr><td colspan="2"><br><h2>Static Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="400dfa2f567ecd89df1f14f08bbb44ac"></a><!-- doxytag: member="socketpp::UDP_RawSocket::_udp_convert" ref="400dfa2f567ecd89df1f14f08bbb44ac" args="(const struct udphdr &amp;, struct udphdr &amp;)" -->
+static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>_udp_convert</b> (const struct udphdr &amp;, struct udphdr &amp;)</td></tr>
 
 <tr><td colspan="2"><br><h2>Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="fbdcc519279aec772f575237ca25f783"></a><!-- doxytag: member="socketpp::UDP_RawSocket::UDP_h" ref="fbdcc519279aec772f575237ca25f783" args="" -->
@@ -271,12 +281,12 @@ gets the received UDP header
 
 </div>
 </div><p>
-<a class="anchor" name="166b30d9061b06336dc637cd3a25d12f"></a><!-- doxytag: member="socketpp::UDP_RawSocket::udp_checksum" ref="166b30d9061b06336dc637cd3a25d12f" args="(const std::string &amp;buf, _u32 saddr, _u32 daddr)" -->
+<a class="anchor" name="912bdb1e33f25bb30f7c49f9906344c5"></a><!-- doxytag: member="socketpp::UDP_RawSocket::udp_checksum" ref="912bdb1e33f25bb30f7c49f9906344c5" args="(const std::string &amp;buf, _u32 saddr, _u32 daddr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">_u16 socketpp::UDP_RawSocket::udp_checksum           </td>
+          <td class="memname">static _u16 socketpp::UDP_RawSocket::udp_checksum           </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&nbsp;</td>
           <td class="paramname"> <em>buf</em>, </td>
@@ -316,12 +326,12 @@ calculates udp checksum on pseudo-header
 
 </div>
 </div><p>
-<a class="anchor" name="fdc782d0436fd9c6d24520034d445063"></a><!-- doxytag: member="socketpp::UDP_RawSocket::udp_checksum" ref="fdc782d0436fd9c6d24520034d445063" args="(const void *buf, size_t nchar, _u32 saddr, _u32 daddr)" -->
+<a class="anchor" name="8e32b5a6458da2a8660b6353a1c7ad9b"></a><!-- doxytag: member="socketpp::UDP_RawSocket::udp_checksum" ref="8e32b5a6458da2a8660b6353a1c7ad9b" args="(const void *buf, size_t nchar, _u32 saddr, _u32 daddr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">_u16 socketpp::UDP_RawSocket::udp_checksum           </td>
+          <td class="memname">static _u16 socketpp::UDP_RawSocket::udp_checksum           </td>
           <td>(</td>
           <td class="paramtype">const void *&nbsp;</td>
           <td class="paramname"> <em>buf</em>, </td>
@@ -371,7 +381,7 @@ calculates udp checksum on pseudo-header
 <hr>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="RawSocket_8h-source.html">RawSocket.h</a><li>RawSocket.cpp</ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu Jun 11 02:43:05 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 20:14:55 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -8,7 +8,7 @@ namespace socketpp {
 ///@brief	TCP server class which can accept simultaneously multiple connections through multithreading
 class SocketServer : public BaseSocket {
 public:
-    SocketServer() : BaseSocket() { }
+    SocketServer() { }
     ///@brief	calls BaseSocket(t)
     explicit SocketServer(type t) : BaseSocket(t) { }
 
@@ -53,6 +53,15 @@ public:
     ///@param   pt	pointer to arguments accepted by function f
     void threadClientHandle(void (*f)(Socket&, void *), void *pt);
 
+private:
+    struct _thrdarg {
+        void (*func)(socketpp::Socket&, void*);
+        socketpp::Socket sock;
+        void *pt;
+    };
+
+    static void * _thread(void* arg);
 };
+
 };
 #endif

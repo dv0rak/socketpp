@@ -38,19 +38,12 @@ size\_\-t \hyperlink{classsocketpp_1_1RawSocket_bd9631abfa5165ad4ed9e2a31640d1f0
 \begin{CompactList}\small\item\em gets the received data payload \item\end{CompactList}\item 
 size\_\-t \hyperlink{classsocketpp_1_1RawSocket_de47c63d60cba25d1ae82f242851610d}{get\_\-data\_\-payload} (std::string \&data)
 \begin{CompactList}\small\item\em gets the received data payload \item\end{CompactList}\end{CompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{CompactItemize}
-\item 
-static \_\-u16 \hyperlink{classsocketpp_1_1RawSocket_bb78ecebb5bd5ab5be4ee46d786fe5cd}{checksum} (const void $\ast$buf, size\_\-t nchar)
-\begin{CompactList}\small\item\em calculates internet checksum \item\end{CompactList}\item 
-static \_\-u16 \hyperlink{classsocketpp_1_1RawSocket_67af2c9f3bc37146b54fc9fb69c0dd8d}{checksum} (const std::string \&buf)
-\begin{CompactList}\small\item\em calculates internet checksum \item\end{CompactList}\end{CompactItemize}
 \subsection*{Protected Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1RawSocket_eb0a3f716c0fc46efa4123acf0fe1e66}{
-virtual void \textbf{\_\-build\_\-packet} (std::string \&packet)=0}
-\label{classsocketpp_1_1RawSocket_eb0a3f716c0fc46efa4123acf0fe1e66}
+\hypertarget{classsocketpp_1_1RawSocket_9973d08473e212d99e0254520469b395}{
+virtual void \textbf{\_\-build\_\-packet} (std::string \&packet) const =0}
+\label{classsocketpp_1_1RawSocket_9973d08473e212d99e0254520469b395}
 
 \item 
 \hypertarget{classsocketpp_1_1RawSocket_45e6b041703cb8ae0f93dd19766865d5}{
@@ -61,9 +54,24 @@ virtual void \textbf{\_\-set\_\-fields} (const std::string \&packet)=0}
 \subsection*{Static Protected Member Functions}
 \begin{CompactItemize}
 \item 
-\hypertarget{classsocketpp_1_1RawSocket_c9422942a0ed23c9900d26426a96a0ee}{
-static \_\-u16 \textbf{pseudo\_\-checksum} (const void $\ast$, size\_\-t, \_\-u32, \_\-u32, \_\-u16)}
-\label{classsocketpp_1_1RawSocket_c9422942a0ed23c9900d26426a96a0ee}
+\hypertarget{classsocketpp_1_1RawSocket_e114c1e1636e95760336713f33b9b2c5}{
+static \_\-u16 \textbf{\_\-checksum} (const std::string \&)}
+\label{classsocketpp_1_1RawSocket_e114c1e1636e95760336713f33b9b2c5}
+
+\item 
+\hypertarget{classsocketpp_1_1RawSocket_a6e38eab5a27b4bda8c6d2f6932b6543}{
+static \_\-u16 \textbf{\_\-checksum} (const void $\ast$buf, size\_\-t nchar)}
+\label{classsocketpp_1_1RawSocket_a6e38eab5a27b4bda8c6d2f6932b6543}
+
+\item 
+\hypertarget{classsocketpp_1_1RawSocket_36370cd40b54b68470f30a9e9c265d1f}{
+static \_\-u16 \textbf{\_\-pseudo\_\-checksum} (const void $\ast$, size\_\-t, \_\-u32, \_\-u32, \_\-u16)}
+\label{classsocketpp_1_1RawSocket_36370cd40b54b68470f30a9e9c265d1f}
+
+\item 
+\hypertarget{classsocketpp_1_1RawSocket_6b881ff5a36ad69629cf6eabad5b1a33}{
+static \_\-u16 \textbf{\_\-pseudo\_\-checksum} (const std::string \&, \_\-u32, \_\-u32, \_\-u16)}
+\label{classsocketpp_1_1RawSocket_6b881ff5a36ad69629cf6eabad5b1a33}
 
 \end{CompactItemize}
 \subsection*{Protected Attributes}
@@ -130,38 +138,6 @@ builds the internal data payload to send
 \begin{description}
 \item[{\em data}]pointer to data payload buffer \item[{\em len}]deta length in bytes \end{description}
 \end{Desc}
-\hypertarget{classsocketpp_1_1RawSocket_67af2c9f3bc37146b54fc9fb69c0dd8d}{
-\index{socketpp::RawSocket@{socketpp::RawSocket}!checksum@{checksum}}
-\index{checksum@{checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
-\subsubsection[{checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::RawSocket::checksum (const std::string \& {\em buf})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1RawSocket_67af2c9f3bc37146b54fc9fb69c0dd8d}
-
-
-calculates internet checksum 
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em buf}]packet string \end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]checksum value \end{Desc}
-\hypertarget{classsocketpp_1_1RawSocket_bb78ecebb5bd5ab5be4ee46d786fe5cd}{
-\index{socketpp::RawSocket@{socketpp::RawSocket}!checksum@{checksum}}
-\index{checksum@{checksum}!socketpp::RawSocket@{socketpp::RawSocket}}
-\subsubsection[{checksum}]{\setlength{\rightskip}{0pt plus 5cm}\_\-u16 socketpp::RawSocket::checksum (const void $\ast$ {\em buf}, \/  size\_\-t {\em nchar})\hspace{0.3cm}{\tt  \mbox{[}static\mbox{]}}}}
-\label{classsocketpp_1_1RawSocket_bb78ecebb5bd5ab5be4ee46d786fe5cd}
-
-
-calculates internet checksum 
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em buf}]pointer to packet top \item[{\em nchar}]size of packet in bytes \end{description}
-\end{Desc}
-\begin{Desc}
-\item[Returns:]checksum value \end{Desc}
 \hypertarget{classsocketpp_1_1RawSocket_de47c63d60cba25d1ae82f242851610d}{
 \index{socketpp::RawSocket@{socketpp::RawSocket}!get\_\-data\_\-payload@{get\_\-data\_\-payload}}
 \index{get\_\-data\_\-payload@{get\_\-data\_\-payload}!socketpp::RawSocket@{socketpp::RawSocket}}
