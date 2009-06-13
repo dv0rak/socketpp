@@ -1,7 +1,7 @@
 #ifndef __SOCK_EXCEPTION_H
 #define __SOCK_EXCEPTION_H 1
 
-#include <exception>
+#include <stdexcept>
 #include <cerrno>
 #include <string>
 #include <cstring>
@@ -9,89 +9,58 @@
 
 namespace socketpp {
 
-///@brief	socket-related exception class
-class error : public std::exception {
-private:
+class error : public std::runtime_error {
+public:
+    const char * what() const throw() { return msg.c_str(); }
+    ~error() throw() { }
+
+protected:
     std::string msg;
-    int code;
+
+    error() : runtime_error("") { }
+};
+
+
+///@brief	socket-related exception class
+class sock_error : public error {
+private:
+    int _errno;
 
 public:
-    ///@param	meth 	method which threw exception
-    ///@param	err	error description string
-    ///@param	func	C function which returned error
-    error(const std::string& meth, const std::string& err, const std::string& func="") throw()
-    {
-        msg = meth + "(): " + err;
-        if(func != "") {
-            msg += " [C "+func+"()]";
-        }
-        code = 0;
-    }
-    
     ///@param	meth 	method which threw exception
     ///@param	err	errno code
     ///@param	func	C function which returned error
-    error(const std::string& meth, int err, const std::string& func="") throw()
+    sock_error(const std::string& meth, int err, const std::string& func="") throw() : _errno(err)
     {
-        msg = meth + "(): " + ::strerror(err);
-        if(func != "") {
+        msg = meth + "(): " + ::strerror(_errno);
+        if(func != "")
             msg += " [C "+func+"()]";
-        }
-        code = err;
     }
 
-    ///@brief	returns complete error string
-    virtual const char * what() const throw() { return msg.c_str(); }
-
-    inline int get_errno() { return code; }
-    
-    ~error() throw() {}
+    int get_errno() const throw() { return _errno; }
 };
 
 ///@brief	exception class related to C getaddrinfo() and getnameinfo() functions
-class gai_error : public std::exception {
+class gai_error : public error {
 private:
-    std::string msg;
-    int code;
+    int _gai_errno;
 
 public:
     ///@param	meth 	method which threw exception
-    ///@param	err	error description string
+    ///@param	err	gai_errno code
     ///@param	func	C function which returned error
-    gai_error(const std::string& meth, const std::string& err, const std::string& func="") throw()
+    gai_error(const std::string& meth, int err, const std::string& func="") throw() : _gai_errno(err)
     {
-        msg = meth + "(): " + err;
-        if(func != "") {
+        msg = meth + "(): " + ::gai_strerror(_gai_errno);
+        if(func != "")
             msg += " [C "+func+"()]";
-        }
-        code = 0;
     }
     
-    ///@param	meth 	method which threw exception
-    ///@param	err	h_errno code
-    ///@param	func	C function which returned error
-    gai_error(const std::string& meth, int err, const std::string& func="") throw()
-    {
-        msg = meth + "(): " + ::gai_strerror(err);
-        if(func != "") {
-            msg += " [C "+func+"()]";
-        }
-        code = err;
-    }
-    
-    ///@brief	returns complete error string
-    virtual const char * what() const throw() { return msg.c_str(); }
-    
-    inline int get_gai_errno() { return code; }
-
-    ~gai_error() throw() {}
+    int get_gai_errno() const throw() { return _gai_errno; }
 };
 
 ///@brief	address-related exception class
-class h_error : public std::exception {
-private:
-    std::string msg;
-
+class h_error : public error {
 public:
     ///@param	meth 	method which threw exception
     ///@param	err	error description string
@@ -99,38 +68,21 @@ public:
     h_error(const std::string& meth, const std::string& err, const std::string& func="") throw()
     {
         msg = meth + "(): " + err;
-        if(func != "") {
+        if(func != "")
             msg += " [C "+func+"()]";
-        }
     }
-    
-    ///@brief	returns complete error string
-    virtual const char * what() const throw() { return msg.c_str(); }
-    
-    ~h_error() throw() {}
 };
 
 ///@brief	timeout-related exception class
-class timeout : public std::exception {
-private:
-    std::string msg;
-
+class timeout : public error {
 public:
     ///@param	meth 	method which threw exception
     ///@param	err	error description string
     ///@param	func	C function which returned error
-    timeout(const std::string& meth, const std::string& err, const std::string& func="") throw()
+    timeout(const std::string& meth, const std::string& err) throw()
     {
         msg = meth + "(): " + err;
-        if(func != "") {
-            msg += " [C "+func+"()]";
-        }
     }
-    
-    ///@brief	returns complete error string
-    virtual const char * what() const throw() { return msg.c_str(); }
-    
-    ~timeout() throw() {}
 };
 
 };

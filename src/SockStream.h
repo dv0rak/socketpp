@@ -12,25 +12,25 @@ class SockBuf : public std::streambuf, public BaseSocket {
 public:
     static const int BUFSIZE = BUFSIZ;
 
-    inline SockBuf() { _initBuf(); }
+    SockBuf() { _initBuf(); }
     ///@brief	calls BaseSocket(s)
-    inline SockBuf(const Socket &s) : BaseSocket(s) { _initBuf(); }
+    SockBuf(const Socket &s) : BaseSocket(s) { _initBuf(); }
     ///@brief	calls BaseSocket(t,prot)
-    inline explicit SockBuf(type t, protocol prot=ipproto_ip) : BaseSocket(t, prot) { _initBuf(); } 
+    explicit SockBuf(type t, protocol prot=ipproto_ip) : BaseSocket(t, prot) { _initBuf(); } 
     ///@brief	calls BaseSocket(sd)
-    inline SockBuf(int sd) : BaseSocket(sd) { _initBuf(); }
+    SockBuf(int sd) : BaseSocket(sd) { _initBuf(); }
     
     ///@brief	closes socket descriptor and flushes output buffer
     void close();
     ///@brief	calls close()
-    ~SockBuf();
+    ~SockBuf() throw();
 
     using BaseSocket::shutdown;
 
 protected:
-    virtual int overflow(int c = EOF);
-    virtual int underflow();
-    virtual int sync();
+    int overflow(int c = EOF);
+    int underflow();
+    int sync();
 
 private:
     char _inBuf[BUFSIZE], _outBuf[BUFSIZE];
@@ -66,9 +66,9 @@ public:
     }
  
     ///@brief	returns pointer to internal SockBuf object
-    inline SockBuf* sockbuf() const { return (SockBuf *)rdbuf(); }
+    SockBuf* sockbuf() const { return (SockBuf *)rdbuf(); }
     ///@brief	operates on internal SockBuf object
-    inline SockBuf* operator->() { return sockbuf(); }
+    SockBuf* operator->() { return sockbuf(); }
 
     ~SockStream() { if(free) delete sockbuf(); }
 
@@ -77,7 +77,7 @@ private:
 };
 
 ///@brief SockStream manipulator which writes "\r\n"
-std::ostream &crlf (std::ostream &s)
+inline std::ostream &crlf (std::ostream &s)
 {
     return s << "\r\n";
 }

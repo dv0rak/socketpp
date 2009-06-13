@@ -51,13 +51,13 @@ public:
     static std::string inet_ntoa(in_addr_t addr);
 
     /// @brief   cleans internal DNS cache
-    inline void cleanDnsCache()
+    void cleanDnsCache()
     {
         resolved.clear();
         reversed.clear();
     }
     /// @brief	 clean internal routing table cache
-    inline void cleanRouteCache()
+    void cleanRouteCache()
     {
         routeCache.clear();
     }

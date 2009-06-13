@@ -40,7 +40,7 @@ void SockBuf::_initBuf()
     setg(_inBuf, _inBuf, _inBuf);
 }
 
-SockBuf::~SockBuf()
+SockBuf::~SockBuf() throw()
 {
     sync();
 }

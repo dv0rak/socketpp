@@ -31,7 +31,7 @@ public:
         int ret;
         size_t siz = sizeof(T);
         if((ret=::getsockopt(_sd,lev,opt,&optval,&siz)) < 0)
-            throw error("getsockopt",errno,"getsockopt");
+            throw sock_error("getsockopt",errno,"getsockopt");
         return ret;
     }
 
@@ -45,7 +45,7 @@ public:
     {
         int ret;
         if((ret=::setsockopt(_sd,lev,opt,&optval,sizeof(T))) < 0)
-            throw error("setsockopt",errno,"setsockopt");
+            throw sock_error("setsockopt",errno,"setsockopt");
         return ret;
     }
 
@@ -110,14 +110,14 @@ public:
 
     ///@brief returns socket descriptor number
     ///@return descriptor number
-    inline int fileno() const  { return _sd; }
+    int fileno() const  { return _sd; }
     ///@brief calls fileno()
-    inline operator int() const { return fileno(); }
+    operator int() const { return fileno(); }
     
     ///@brief cleans internal DNS cache
-    inline void   cleanDnsCache() { _h.cleanDnsCache(); }
+    void   cleanDnsCache() { _h.cleanDnsCache(); }
 
-    inline virtual ~BaseSocket() { }
+    virtual ~BaseSocket() { }
 
 protected:
     int _sd;

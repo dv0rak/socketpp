@@ -8,10 +8,10 @@ void BaseSocket::setBlocking(bool yes)
 {
     long flags = ::fcntl(_sd, F_GETFL, 0);
     if(flags == -1) {
-        throw error("setBlocking", errno, "fcntl");
+        throw sock_error("setBlocking", errno, "fcntl");
     }
     if(::fcntl(_sd, F_SETFL, (yes? flags&~O_NONBLOCK : flags|O_NONBLOCK)) == -1) {
-        throw error("setBlocking", errno, "fcntl");
+        throw sock_error("setBlocking", errno, "fcntl");
     }
 }
 
@@ -19,7 +19,7 @@ int BaseSocket::shutdown(shut_mode how)
 {
     int ret = ::shutdown(_sd, how);
     if(ret == -1) {
-        throw error("shutdown", errno, "shutdown");
+        throw sock_error("shutdown", errno, "shutdown");
     }
     return ret;
 }
@@ -45,7 +45,7 @@ void BaseSocket::open(type t, protocol prot)
 {
     _sd = ::socket(AF_INET,t,prot);
     if(_sd < 0) {
-        throw error("BaseSocket",errno,"socket");
+        throw sock_error("BaseSocket",errno,"socket");
     }
 }
 
@@ -67,7 +67,7 @@ int BaseSocket::connect(in_addr_t addr, port_t port)
 
     if(_timeout == 0.0)  {
         if((ret=::connect(_sd,(struct sockaddr*)&remote,sizeof(remote))) < 0) {
-            throw error("connect",errno,"connect");
+            throw sock_error("connect",errno,"connect");
         }
     } else {
         setBlocking(false);
@@ -75,10 +75,10 @@ int BaseSocket::connect(in_addr_t addr, port_t port)
         if(ret < 0) {
             if(errno == EINPROGRESS) {
                 ret = _select(write);
-                if(ret < 0) throw error("connect",errno,"connect");
-                if(ret == 0) throw timeout("connect","timeout expired","connect");
+                if(ret < 0) throw sock_error("connect", errno);
+                if(ret == 0) throw timeout("connect", "timeout expired");
             } else {
-                throw error("connect",errno,"connect");
+                throw sock_error("connect",errno,"connect");
             }
         }
         setBlocking(true);
@@ -102,7 +102,7 @@ int BaseSocket::_select(_select_mode m)
     else                ret = ::select(_sd+1, NULL, NULL, &set, &tv);
 
     if(ret < 0) {
-        throw error("_select", errno, "select");
+        throw sock_error("_select", errno, "select");
     } else if(ret > 0) {
         getsockopt(sol_socket, so_error, errno);
         if(errno) return -1;
@@ -120,7 +120,7 @@ int BaseSocket::bind(in_addr_t addr, port_t port)
     int ret;
     struct sockaddr_in local=_initaddr(htonl(addr),htons(port));
     if((ret=::bind(_sd,(struct sockaddr*)&local,sizeof(local))) < 0) {
-        throw error("bind",errno,"bind");
+        throw sock_error("bind",errno,"bind");
     }
     return ret;
 }
@@ -136,7 +136,7 @@ std::string BaseSocket::remoteAddr()
     struct sockaddr_in remote;
     size_t len = sizeof(remote);
     if(::getpeername(_sd,(struct sockaddr*)&remote,&len) < 0) {
-        throw error("remoteAddr",errno,"getpeername");
+        throw sock_error("remoteAddr",errno,"getpeername");
     }
     return _h.inet_ntoa(::ntohl(remote.sin_addr.s_addr));
 }
@@ -146,7 +146,7 @@ port_t BaseSocket::remotePort()
     struct sockaddr_in remote;
     size_t len = sizeof(remote);
     if(::getpeername(_sd,(struct sockaddr*)&remote,&len) < 0) {
-        throw error("remotePort",errno,"getpeername");
+        throw sock_error("remotePort",errno,"getpeername");
     }
     return ::ntohs(remote.sin_port);
 }
@@ -156,7 +156,7 @@ std::string BaseSocket::localAddr()
     struct sockaddr_in local;
     size_t len = sizeof(local);
     if(::getsockname(_sd,(struct sockaddr*)&local,&len) < 0) {
-        throw error("localAddr",errno,"getsockname");
+        throw sock_error("localAddr",errno,"getsockname");
     }
     return _h.inet_ntoa(::ntohl(local.sin_addr.s_addr));
 }
@@ -166,7 +166,7 @@ port_t BaseSocket::localPort()
     struct sockaddr_in local;
     size_t len = sizeof(local);
     if(::getsockname(_sd,(struct sockaddr*)&local,&len) < 0) {
-        throw error("localPort",errno,"getsockname");
+        throw sock_error("localPort",errno,"getsockname");
     }
     return ::ntohs(local.sin_port);
 }
@@ -210,10 +210,10 @@ size_t BaseSocket::send(const char buf[], size_t size, msg_flag flags)
             if(s == 0) 
                 throw timeout("send","timeout expired");
             if(s < 0)
-                throw error("send",errno);
+                throw sock_error("send",errno);
 
             if((n=::send(_sd,buf+ret,size,flags)) < 0)
-                throw error("send",errno,"send");
+                throw sock_error("send",errno,"send");
 
             size -= n;
             ret += n;
@@ -221,7 +221,7 @@ size_t BaseSocket::send(const char buf[], size_t size, msg_flag flags)
     } else {
         while(size > 0) {
             if((n=::send(_sd,buf+ret,size,flags)) < 0)
-                throw error("send",errno,"send");
+                throw sock_error("send",errno,"send");
 
             size -= n;
             ret += n;
@@ -244,10 +244,10 @@ size_t BaseSocket::recv(char buf[], size_t size, msg_flag flags)
         if(s == 0) 
             throw timeout("recv","timeout expired");
         if(s < 0)
-            throw error("recv",errno);
+            throw sock_error("recv",errno);
     }
     if((n=::recv(_sd,buf,size,flags)) < 0)
-        throw error("recv",errno,"recv");
+        throw sock_error("recv",errno,"recv");
 
     return n;
 }
@@ -272,10 +272,10 @@ size_t BaseSocket::sendto(const char buf[], size_t size, in_addr_t addr, port_t 
             if(s == 0) 
                 throw timeout("sendto","timeout expired");
             if(s < 0)
-                throw error("sendto",errno);
+                throw sock_error("sendto",errno);
 
             if((n=::sendto(_sd,buf+ret,size,flags,(struct sockaddr*)&remote,sizeof(remote))) < 0)
-                throw error("sendto",errno,"sendto");
+                throw sock_error("sendto",errno,"sendto");
             size -= n;
             ret += n;
         }
@@ -283,7 +283,7 @@ size_t BaseSocket::sendto(const char buf[], size_t size, in_addr_t addr, port_t 
 
         while(size > 0) {
             if((n=::sendto(_sd,buf+ret,size,flags,(struct sockaddr*)&remote,sizeof(remote))) < 0)
-                throw error("sendto",errno,"sendto");
+                throw sock_error("sendto",errno,"sendto");
             size -= n;
             ret += n;
         }
@@ -343,10 +343,10 @@ size_t BaseSocket::recvfrom(char buf[], size_t size, in_addr_t& addr, port_t& po
         if(s == 0) 
             throw timeout("recvfrom","timeout expired");
         if(s < 0)
-            throw error("recvfrom", errno);
+            throw sock_error("recvfrom", errno);
     }
     if((n=::recvfrom(_sd,buf,size,flags,(struct sockaddr*)&remote,&slen)) < 0) {
-        throw error("recvfrom",errno,"recvfrom");
+        throw sock_error("recvfrom",errno,"recvfrom");
     }
     addr = ::ntohl(remote.sin_addr.s_addr);
     port = ::ntohs(remote.sin_port);

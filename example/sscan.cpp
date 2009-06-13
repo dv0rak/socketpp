@@ -92,7 +92,7 @@ int main(int argc, char **argv)
             if(nfiltered++ <= 10)
                 filtered.push_back(dstport);
 
-        } catch(error &e) {
+        } catch(sock_error &e) {
             if(e.get_errno() == ECONNREFUSED) {
                 if(nfiltered++ <= 10)
                     filtered.push_back(dstport);

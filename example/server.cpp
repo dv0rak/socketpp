@@ -9,7 +9,7 @@ void client(Socket &s,void *)
     try {
         ss<<"HELLO " <<ss->remoteAddr() <<":" <<ss->remotePort() <<crlf;
         ss->close();
-    } catch (error &e) {
+    } catch (sock_error &e) {
         cerr<< e.what()<<endl;
     }
 }

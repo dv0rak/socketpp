@@ -35,11 +35,11 @@ Socket SocketServer::accept()
             throw timeout("accept","timeout expired");
         }
         if(s < 0)
-            throw error("accept",errno);
+            throw sock_error("accept",errno);
     }
     int sd = ::accept(_sd,&remote,&slen);
     if(sd < 0) {
-        throw error("accept",errno,"accept");
+        throw sock_error("accept",errno,"accept");
     }
     return Socket(sd);
 }
@@ -48,7 +48,7 @@ int SocketServer::listen(int maxconn)
 {
     int ret;
     if((ret=::listen(_sd,maxconn)) < 0) {
-        throw error("listen",errno,"listen");
+        throw sock_error("listen",errno,"listen");
     }
     return ret;
 }

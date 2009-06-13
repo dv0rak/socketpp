@@ -71,7 +71,7 @@ in_addr_t AddrHandler::inet_aton(const std::string& str)
     in_addr_t addr;
     int err = ::inet_pton(AF_INET, str.c_str(), &addr);
     if(err < 0)
-        throw error("inet_aton", errno, "inet_pton");
+        throw sock_error("inet_aton", errno, "inet_pton");
     if(err == 0)
         throw h_error("inet_aton", "`"+str+"` not a valid IPv4 address", "inet_pton"); 
     
@@ -85,7 +85,7 @@ std::string AddrHandler::inet_ntoa(in_addr_t addr)
     in.s_addr = ::htonl(addr);
 
     if(::inet_ntop(AF_INET, &in, dst, INET_ADDRSTRLEN) == NULL)
-        throw error("inet_ntoa", errno, "inet_ntop");
+        throw sock_error("inet_ntoa", errno, "inet_ntop");
     return dst;
 }
 
@@ -134,7 +134,7 @@ in_addr_t AddrHandler::getAddrByRoute(in_addr_t to)
     // open socket
     int fd = ::socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE);
     if(fd < 0) {
-        throw error("getAddrByRoute", errno, "socket");
+        throw sock_error("getAddrByRoute", errno, "socket");
     }
 
     // setup local address & bind using
@@ -144,7 +144,7 @@ in_addr_t AddrHandler::getAddrByRoute(in_addr_t to)
     la.nl_family = AF_NETLINK;
     la.nl_pid = ::getpid();
     if(::bind(fd, (struct sockaddr*) &la, sizeof(la)) < 0) {
-        throw error("getAddrByRoute", errno, "bind");
+        throw sock_error("getAddrByRoute", errno, "bind");
     }
 
 
@@ -193,7 +193,7 @@ in_addr_t AddrHandler::getAddrByRoute(in_addr_t to)
     int rtn;
     rtn = ::sendmsg(fd, &msg, 0);
     if(rtn < 0) {
-        throw error("getAddrByRoute", errno, "sendmsg");
+        throw sock_error("getAddrByRoute", errno, "sendmsg");
     }
 
 
@@ -213,7 +213,7 @@ in_addr_t AddrHandler::getAddrByRoute(in_addr_t to)
     while(1) {
         rtn = ::recv(fd, p, sizeof(buf) - nll, 0);
         if(rtn < 0) {
-            throw error("getAddrByRoute", errno, "recv");
+            throw sock_error("getAddrByRoute", errno, "recv");
         }
 
         nlp = (struct nlmsghdr *) p;
@@ -281,13 +281,13 @@ in_addr_t AddrHandler::getAddrByRoute(in_addr_t to)
         if((to & mask) == (dstaddr & mask)) {
             int sd = ::socket(AF_INET, SOCK_DGRAM, 0);
             if(sd < 0) {
-                throw error("getAddrByRoute", errno, "socket");
+                throw sock_error("getAddrByRoute", errno, "socket");
             }
             struct ifreq ifr;
             ifr.ifr_ifindex = ifindex;
 
             if (ioctl(sd, SIOCGIFNAME, &ifr)<0 || ioctl(sd, SIOCGIFADDR, &ifr)<0) {
-                throw error("getAddrByRoute", errno, "ioctl");
+                throw sock_error("getAddrByRoute", errno, "ioctl");
             }
             ::close(sd);
             struct sockaddr_in *sin = (struct sockaddr_in *)&ifr.ifr_addr;
