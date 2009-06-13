@@ -7,23 +7,20 @@ exception class related to C getaddrinfo() and getnameinfo() functions
 
 {\tt \#include $<$SockException.h$>$}
 
-Inherits std::exception.
-
+Inheritance diagram for socketpp::gai\_\-error::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classsocketpp_1_1gai__error}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{CompactItemize}
 \item 
-\hyperlink{classsocketpp_1_1gai__error_617e195448875097f6561a39cca1f49b}{gai\_\-error} (const std::string \&meth, const std::string \&err, const std::string \&func=\char`\"{}\char`\"{})  throw ()
-\item 
 \hyperlink{classsocketpp_1_1gai__error_fc03a724180e0edd90f7502eedb68da1}{gai\_\-error} (const std::string \&meth, int err, const std::string \&func=\char`\"{}\char`\"{})  throw ()
 \item 
-\hypertarget{classsocketpp_1_1gai__error_1ee33e241f637684183e4c395a22a1df}{
-virtual const char $\ast$ \hyperlink{classsocketpp_1_1gai__error_1ee33e241f637684183e4c395a22a1df}{what} () const   throw ()}
-\label{classsocketpp_1_1gai__error_1ee33e241f637684183e4c395a22a1df}
-
-\begin{CompactList}\small\item\em returns complete \hyperlink{classsocketpp_1_1error}{error} string \item\end{CompactList}\item 
-\hypertarget{classsocketpp_1_1gai__error_efbf63e4224a250edc14f09bd15a1d3b}{
-int \textbf{get\_\-gai\_\-errno} ()}
-\label{classsocketpp_1_1gai__error_efbf63e4224a250edc14f09bd15a1d3b}
+\hypertarget{classsocketpp_1_1gai__error_d58e15e0fab64e4d5e6ad7f33985bbb4}{
+int \textbf{get\_\-gai\_\-errno} () const   throw ()}
+\label{classsocketpp_1_1gai__error_d58e15e0fab64e4d5e6ad7f33985bbb4}
 
 \end{CompactItemize}
 
@@ -32,18 +29,6 @@ int \textbf{get\_\-gai\_\-errno} ()}
 exception class related to C getaddrinfo() and getnameinfo() functions 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classsocketpp_1_1gai__error_617e195448875097f6561a39cca1f49b}{
-\index{socketpp::gai\_\-error@{socketpp::gai\_\-error}!gai\_\-error@{gai\_\-error}}
-\index{gai\_\-error@{gai\_\-error}!socketpp::gai_error@{socketpp::gai\_\-error}}
-\subsubsection[{gai\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}socketpp::gai\_\-error::gai\_\-error (const std::string \& {\em meth}, \/  const std::string \& {\em err}, \/  const std::string \& {\em func} = {\tt \char`\"{}\char`\"{}})  throw ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{classsocketpp_1_1gai__error_617e195448875097f6561a39cca1f49b}
-
-
-\begin{Desc}
-\item[Parameters:]
-\begin{description}
-\item[{\em meth}]method which threw exception \item[{\em err}]\hyperlink{classsocketpp_1_1error}{error} description string \item[{\em func}]C function which returned \hyperlink{classsocketpp_1_1error}{error} \end{description}
-\end{Desc}
 \hypertarget{classsocketpp_1_1gai__error_fc03a724180e0edd90f7502eedb68da1}{
 \index{socketpp::gai\_\-error@{socketpp::gai\_\-error}!gai\_\-error@{gai\_\-error}}
 \index{gai\_\-error@{gai\_\-error}!socketpp::gai_error@{socketpp::gai\_\-error}}
@@ -54,7 +39,7 @@ exception class related to C getaddrinfo() and getnameinfo() functions
 \begin{Desc}
 \item[Parameters:]
 \begin{description}
-\item[{\em meth}]method which threw exception \item[{\em err}]h\_\-errno code \item[{\em func}]C function which returned \hyperlink{classsocketpp_1_1error}{error} \end{description}
+\item[{\em meth}]method which threw exception \item[{\em err}]gai\_\-errno code \item[{\em func}]C function which returned error \end{description}
 \end{Desc}
 
 

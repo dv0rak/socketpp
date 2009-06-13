@@ -31,28 +31,28 @@
 <a name="l00012"></a>00012 <span class="keyword">public</span>:
 <a name="l00013"></a>00013     <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> BUFSIZE = BUFSIZ;
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015     <span class="keyword">inline</span> <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>() { _initBuf(); }
-<a name="l00017"></a><a class="code" href="classsocketpp_1_1SockBuf.html#065ef76cdf18c04857350c643bd620e3">00017</a>     <span class="keyword">inline</span> <a class="code" href="classsocketpp_1_1SockBuf.html#065ef76cdf18c04857350c643bd620e3" title="calls BaseSocket(s)">SockBuf</a>(<span class="keyword">const</span> <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it&amp;#39;s simply a C-socket wrapper">Socket</a> &amp;s) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(s) { _initBuf(); }
-<a name="l00019"></a><a class="code" href="classsocketpp_1_1SockBuf.html#5e8a5860fd67228e5d39ea28f9d67341">00019</a>     <span class="keyword">inline</span> <span class="keyword">explicit</span> <a class="code" href="classsocketpp_1_1SockBuf.html#5e8a5860fd67228e5d39ea28f9d67341" title="calls BaseSocket(t,prot)">SockBuf</a>(type t, protocol prot=ipproto_ip) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(t, prot) { _initBuf(); } 
-<a name="l00021"></a><a class="code" href="classsocketpp_1_1SockBuf.html#71bbd8cf2bd9dd79b8067b0ef771bf23">00021</a>     <span class="keyword">inline</span> <a class="code" href="classsocketpp_1_1SockBuf.html#71bbd8cf2bd9dd79b8067b0ef771bf23" title="calls BaseSocket(sd)">SockBuf</a>(<span class="keywordtype">int</span> sd) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(sd) { _initBuf(); }
+<a name="l00015"></a>00015     <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>() { _initBuf(); }
+<a name="l00017"></a><a class="code" href="classsocketpp_1_1SockBuf.html#065ef76cdf18c04857350c643bd620e3">00017</a>     <a class="code" href="classsocketpp_1_1SockBuf.html#065ef76cdf18c04857350c643bd620e3" title="calls BaseSocket(s)">SockBuf</a>(<span class="keyword">const</span> <a class="code" href="classsocketpp_1_1Socket.html" title="inherits from BaseSocket, it&amp;#39;s simply a C-socket wrapper">Socket</a> &amp;s) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(s) { _initBuf(); }
+<a name="l00019"></a><a class="code" href="classsocketpp_1_1SockBuf.html#5e8a5860fd67228e5d39ea28f9d67341">00019</a>     <span class="keyword">explicit</span> <a class="code" href="classsocketpp_1_1SockBuf.html#5e8a5860fd67228e5d39ea28f9d67341" title="calls BaseSocket(t,prot)">SockBuf</a>(type t, protocol prot=ipproto_ip) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(t, prot) { _initBuf(); } 
+<a name="l00021"></a><a class="code" href="classsocketpp_1_1SockBuf.html#71bbd8cf2bd9dd79b8067b0ef771bf23">00021</a>     <a class="code" href="classsocketpp_1_1SockBuf.html#71bbd8cf2bd9dd79b8067b0ef771bf23" title="calls BaseSocket(sd)">SockBuf</a>(<span class="keywordtype">int</span> sd) : <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>(sd) { _initBuf(); }
 <a name="l00022"></a>00022     
 <a name="l00024"></a>00024     <span class="keywordtype">void</span> <a class="code" href="classsocketpp_1_1SockBuf.html#28f88c6ac0570ee5e9d57e255733b0f9" title="closes socket descriptor and flushes output buffer">close</a>();
-<a name="l00026"></a>00026     <a class="code" href="classsocketpp_1_1SockBuf.html#ee857faaed622effa453c7b53749ff14" title="calls close()">~SockBuf</a>();
+<a name="l00026"></a>00026     <a class="code" href="classsocketpp_1_1SockBuf.html#ee857faaed622effa453c7b53749ff14" title="calls close()">~SockBuf</a>() throw();
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <span class="keyword">using</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#7550a79d05baaf4b19c20fa0fa9bc8b9" title="causes all or part of a full-duplex connection on the socket to be shut down">BaseSocket::shutdown</a>;
+<a name="l00028"></a>00028     using <a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>::<a class="code" href="classsocketpp_1_1BaseSocket.html#7550a79d05baaf4b19c20fa0fa9bc8b9" title="causes all or part of a full-duplex connection on the socket to be shut down">shutdown</a>;
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keyword">protected</span>:
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <span class="keywordtype">int</span> overflow(<span class="keywordtype">int</span> c = EOF);
-<a name="l00032"></a>00032     <span class="keyword">virtual</span> <span class="keywordtype">int</span> underflow();
-<a name="l00033"></a>00033     <span class="keyword">virtual</span> <span class="keywordtype">int</span> sync();
+<a name="l00030"></a>00030 protected:
+<a name="l00031"></a>00031     <span class="keywordtype">int</span> overflow(<span class="keywordtype">int</span> c = EOF);
+<a name="l00032"></a>00032     <span class="keywordtype">int</span> underflow();
+<a name="l00033"></a>00033     <span class="keywordtype">int</span> sync();
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="keyword">private</span>:
+<a name="l00035"></a>00035 private:
 <a name="l00036"></a>00036     <span class="keywordtype">char</span> _inBuf[BUFSIZE], _outBuf[BUFSIZE];
 <a name="l00037"></a>00037     
 <a name="l00038"></a>00038     <span class="keywordtype">void</span> _initBuf();
 <a name="l00039"></a>00039 };    
 <a name="l00040"></a>00040 
-<a name="l00042"></a><a class="code" href="classsocketpp_1_1SockStream.html">00042</a> <span class="keyword">class </span><a class="code" href="classsocketpp_1_1SockStream.html" title="inherits from std::iostream, it allows the C++ stream approach with sockets">SockStream</a> : <span class="keyword">public</span> std::iostream {
+<a name="l00042"></a><a class="code" href="classsocketpp_1_1SockStream.html">00042</a> class <a class="code" href="classsocketpp_1_1SockStream.html" title="inherits from std::iostream, it allows the C++ stream approach with sockets">SockStream</a> : public std::iostream {
 <a name="l00043"></a>00043 <span class="keyword">public</span>:
 <a name="l00044"></a>00044     <a class="code" href="classsocketpp_1_1SockStream.html" title="inherits from std::iostream, it allows the C++ stream approach with sockets">SockStream</a>() : std::iostream(<span class="keyword">new</span> <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>())
 <a name="l00045"></a>00045     {
@@ -75,8 +75,8 @@
 <a name="l00065"></a>00065         free = <span class="keyword">true</span>;
 <a name="l00066"></a>00066     }
 <a name="l00067"></a>00067  
-<a name="l00069"></a><a class="code" href="classsocketpp_1_1SockStream.html#4b14a0ce8d640deb5f5bd64807c7b68d">00069</a>     <span class="keyword">inline</span> <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>* <a class="code" href="classsocketpp_1_1SockStream.html#4b14a0ce8d640deb5f5bd64807c7b68d" title="returns pointer to internal SockBuf object">sockbuf</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (<a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a> *)rdbuf(); }
-<a name="l00071"></a><a class="code" href="classsocketpp_1_1SockStream.html#c5509fd039943c07c4506e42c75605e3">00071</a>     <span class="keyword">inline</span> <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>* <a class="code" href="classsocketpp_1_1SockStream.html#c5509fd039943c07c4506e42c75605e3" title="operates on internal SockBuf object">operator-&gt;</a>() { <span class="keywordflow">return</span> sockbuf(); }
+<a name="l00069"></a><a class="code" href="classsocketpp_1_1SockStream.html#4b14a0ce8d640deb5f5bd64807c7b68d">00069</a>     <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>* <a class="code" href="classsocketpp_1_1SockStream.html#4b14a0ce8d640deb5f5bd64807c7b68d" title="returns pointer to internal SockBuf object">sockbuf</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (<a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a> *)rdbuf(); }
+<a name="l00071"></a><a class="code" href="classsocketpp_1_1SockStream.html#c5509fd039943c07c4506e42c75605e3">00071</a>     <a class="code" href="classsocketpp_1_1SockBuf.html" title="publicly derived from std::streambuf and BaseSocket">SockBuf</a>* <a class="code" href="classsocketpp_1_1SockStream.html#c5509fd039943c07c4506e42c75605e3" title="operates on internal SockBuf object">operator-&gt;</a>() { <span class="keywordflow">return</span> sockbuf(); }
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073     ~<a class="code" href="classsocketpp_1_1SockStream.html" title="inherits from std::iostream, it allows the C++ stream approach with sockets">SockStream</a>() { <span class="keywordflow">if</span>(free) <span class="keyword">delete</span> sockbuf(); }
 <a name="l00074"></a>00074 
@@ -84,7 +84,7 @@
 <a name="l00076"></a>00076     <span class="keywordtype">bool</span> free;
 <a name="l00077"></a>00077 };
 <a name="l00078"></a>00078 
-<a name="l00080"></a>00080 std::ostream &amp;crlf (std::ostream &amp;s)
+<a name="l00080"></a>00080 <span class="keyword">inline</span> std::ostream &amp;crlf (std::ostream &amp;s)
 <a name="l00081"></a>00081 {
 <a name="l00082"></a>00082     <span class="keywordflow">return</span> s &lt;&lt; <span class="stringliteral">"\r\n"</span>;
 <a name="l00083"></a>00083 }
@@ -93,7 +93,7 @@
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 21:11:08 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jun 13 13:42:07 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -24,13 +24,19 @@
   </div>
 </div>
 <div class="contents">
-<h1>socketpp::h_error Class Reference</h1><!-- doxytag: class="socketpp::h_error" --><!-- doxytag: inherits="std::exception" -->address-related exception class  
+<h1>socketpp::h_error Class Reference</h1><!-- doxytag: class="socketpp::h_error" --><!-- doxytag: inherits="socketpp::error" -->address-related exception class  
 <a href="#_details">More...</a>
 <p>
 <code>#include &lt;<a class="el" href="SockException_8h-source.html">SockException.h</a>&gt;</code>
 <p>
-Inherits std::exception.
-<p>
+<div class="dynheader">
+Inheritance diagram for socketpp::h_error:</div>
+<div class="dynsection">
+
+<p><center><img src="classsocketpp_1_1h__error.png" usemap="#socketpp::h_error_map" border="0" alt=""></center>
+<map name="socketpp::h_error_map">
+</map>
+</div>
 
 <p>
 <a href="classsocketpp_1_1h__error-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
@@ -38,10 +44,6 @@ Inherits std::exception.
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1h__error.html#c15a1c6216114250241349fdfcdeb98a">h_error</a> (const std::string &amp;meth, const std::string &amp;err, const std::string &amp;func=&quot;&quot;)  throw ()</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="055c1a5b55b5d02fe81fd74cb8b900d2"></a><!-- doxytag: member="socketpp::h_error::what" ref="055c1a5b55b5d02fe81fd74cb8b900d2" args="() const " -->
-virtual const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsocketpp_1_1h__error.html#055c1a5b55b5d02fe81fd74cb8b900d2">what</a> () const   throw ()</td></tr>
-
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns complete <a class="el" href="classsocketpp_1_1error.html" title="socket-related exception class">error</a> string <br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 address-related exception class <hr><h2>Constructor &amp; Destructor Documentation</h2>
@@ -80,8 +82,8 @@ address-related exception class <hr><h2>Constructor &amp; Destructor Documentati
 <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>meth</em>&nbsp;</td><td>method which threw exception </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>err</em>&nbsp;</td><td><a class="el" href="classsocketpp_1_1error.html" title="socket-related exception class">error</a> description string </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>C function which returned <a class="el" href="classsocketpp_1_1error.html" title="socket-related exception class">error</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>err</em>&nbsp;</td><td>error description string </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>func</em>&nbsp;</td><td>C function which returned error </td></tr>
   </table>
 </dl>
 
@@ -90,7 +92,7 @@ address-related exception class <hr><h2>Constructor &amp; Destructor Documentati
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="SockException_8h-source.html">SockException.h</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 21:11:10 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jun 13 13:42:11 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -39,7 +39,7 @@
 <a name="l00031"></a>00031         <span class="keywordtype">int</span> ret;
 <a name="l00032"></a>00032         <span class="keywordtype">size_t</span> siz = <span class="keyword">sizeof</span>(T);
 <a name="l00033"></a>00033         <span class="keywordflow">if</span>((ret=::<a class="code" href="classsocketpp_1_1BaseSocket.html#c845c3a037f0f400fd50dfb58706b6e4" title="gets options set on socket descriptor. Wrapper for getsockopt()">getsockopt</a>(_sd,lev,opt,&amp;optval,&amp;siz)) &lt; 0)
-<a name="l00034"></a>00034             <span class="keywordflow">throw</span> <a class="code" href="classsocketpp_1_1error.html" title="socket-related exception class">error</a>(<span class="stringliteral">"getsockopt"</span>,errno,<span class="stringliteral">"getsockopt"</span>);
+<a name="l00034"></a>00034             <span class="keywordflow">throw</span> <a class="code" href="classsocketpp_1_1sock__error.html" title="socket-related exception class">sock_error</a>(<span class="stringliteral">"getsockopt"</span>,errno,<span class="stringliteral">"getsockopt"</span>);
 <a name="l00035"></a>00035         <span class="keywordflow">return</span> ret;
 <a name="l00036"></a>00036     }
 <a name="l00037"></a>00037 
@@ -48,7 +48,7 @@
 <a name="l00045"></a>00045     {
 <a name="l00046"></a>00046         <span class="keywordtype">int</span> ret;
 <a name="l00047"></a>00047         <span class="keywordflow">if</span>((ret=::<a class="code" href="classsocketpp_1_1BaseSocket.html#3f1f168e4953c046bb1159941da2fa30" title="sets options set on socket descriptor. Wrapper for setsockopt()">setsockopt</a>(_sd,lev,opt,&amp;optval,<span class="keyword">sizeof</span>(T))) &lt; 0)
-<a name="l00048"></a>00048             <span class="keywordflow">throw</span> <a class="code" href="classsocketpp_1_1error.html" title="socket-related exception class">error</a>(<span class="stringliteral">"setsockopt"</span>,errno,<span class="stringliteral">"setsockopt"</span>);
+<a name="l00048"></a>00048             <span class="keywordflow">throw</span> <a class="code" href="classsocketpp_1_1sock__error.html" title="socket-related exception class">sock_error</a>(<span class="stringliteral">"setsockopt"</span>,errno,<span class="stringliteral">"setsockopt"</span>);
 <a name="l00049"></a>00049         <span class="keywordflow">return</span> ret;
 <a name="l00050"></a>00050     }
 <a name="l00051"></a>00051 
@@ -69,12 +69,12 @@
 <a name="l00106"></a>00106     port_t <a class="code" href="classsocketpp_1_1BaseSocket.html#d4a2c0e4932436ef61f911514385d16c" title="returns local port to which socket is bound">localPort</a>();
 <a name="l00109"></a>00109     port_t <a class="code" href="classsocketpp_1_1BaseSocket.html#039db642444d2111f2f58ebe032c5f5f" title="returns remote port to which socket is connected">remotePort</a>();
 <a name="l00110"></a>00110 
-<a name="l00113"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1">00113</a>     <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno</a>()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> _sd; }
-<a name="l00115"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90">00115</a>     <span class="keyword">inline</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90" title="calls fileno()">operator int</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno</a>(); }
+<a name="l00113"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1">00113</a>     <span class="keywordtype">int</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno</a>()<span class="keyword"> const  </span>{ <span class="keywordflow">return</span> _sd; }
+<a name="l00115"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90">00115</a>     <a class="code" href="classsocketpp_1_1BaseSocket.html#fa397f810462fe61238dbbf2d9c42c90" title="calls fileno()">operator int</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classsocketpp_1_1BaseSocket.html#c96db07cc917926d895d89cf73734ea1" title="returns socket descriptor number">fileno</a>(); }
 <a name="l00116"></a>00116     
-<a name="l00118"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da">00118</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span>   <a class="code" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da" title="cleans internal DNS cache">cleanDnsCache</a>() { _h.<a class="code" href="classsocketpp_1_1AddrHandler.html#89a2929af6c042fd7e16661303dfabcb" title="cleans internal DNS cache">cleanDnsCache</a>(); }
+<a name="l00118"></a><a class="code" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da">00118</a>     <span class="keywordtype">void</span>   <a class="code" href="classsocketpp_1_1BaseSocket.html#f3a4c01a7bf911460296a873ce0913da" title="cleans internal DNS cache">cleanDnsCache</a>() { _h.<a class="code" href="classsocketpp_1_1AddrHandler.html#89a2929af6c042fd7e16661303dfabcb" title="cleans internal DNS cache">cleanDnsCache</a>(); }
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120     <span class="keyword">inline</span> <span class="keyword">virtual</span> ~<a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>() { }
+<a name="l00120"></a>00120     <span class="keyword">virtual</span> ~<a class="code" href="classsocketpp_1_1BaseSocket.html" title="Abstract base class.">BaseSocket</a>() { }
 <a name="l00121"></a>00121 
 <a name="l00122"></a>00122 <span class="keyword">protected</span>:
 <a name="l00123"></a>00123     <span class="keywordtype">int</span> _sd;
@@ -130,7 +130,7 @@
 <a name="l00305"></a>00305 
 <a name="l00306"></a>00306 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Jun 12 21:11:08 2009 for socket++ by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Sat Jun 13 13:42:07 2009 for socket++ by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
